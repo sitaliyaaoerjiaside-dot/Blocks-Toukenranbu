@@ -32,7 +32,7 @@ An unofficial fan-made Minecraft mod based on *Touken Ranbu*, built for **Minecr
 
 ## Requirements
 - Minecraft **1.20.1**
-- Forge **47.2.x** or newer
+- Forge **47.4.0** or newer
 - [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib) (required for entity animations)
 
 ## Development Setup
