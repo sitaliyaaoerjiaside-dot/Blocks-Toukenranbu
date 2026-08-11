@@ -1,0 +1,15 @@
+{
+  "name": "whetstone",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:whetstone",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "whetstone",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:whetstone",
+      "scale": 1.2,
+      "text": "whetstone is also one of the new resources added by this mod. Similarly, it can be used to craft weapons and building materials, and can also repair your Touken Danshi. Simply hold whetstone and right-click on your Touken Danshi to repair them."
+    }
+  ]
+}

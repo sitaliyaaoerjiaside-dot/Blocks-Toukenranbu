@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "defeat_the_enemy_forces": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:turbid_spiritual_energy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.defeat_the_enemy_forces.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:tantou_max_spawn_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.defeat_the_enemy_forces.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_the_enemy_forces"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

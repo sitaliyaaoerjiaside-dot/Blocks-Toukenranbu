@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "wootz_steel",
+  "ingredient": {
+    "item": "toukenranbu_mod:wootz_steel_ore"
+  },
+  "result": "toukenranbu_mod:wootz_steel"
+}

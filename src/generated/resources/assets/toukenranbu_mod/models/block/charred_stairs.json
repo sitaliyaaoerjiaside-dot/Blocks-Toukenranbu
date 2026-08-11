@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "toukenranbu_mod:block/charred_planks",
+    "side": "toukenranbu_mod:block/charred_planks",
+    "top": "toukenranbu_mod:block/charred_planks"
+  }
+}

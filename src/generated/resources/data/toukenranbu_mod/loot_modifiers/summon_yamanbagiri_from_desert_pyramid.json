@@ -1,0 +1,16 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/desert_pyramid"
+    },
+    {
+      "chance": 0.15,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "toukenranbu_mod:yamanbagiri_kunihiro",
+  "max_count": 1,
+  "min_count": 1
+}

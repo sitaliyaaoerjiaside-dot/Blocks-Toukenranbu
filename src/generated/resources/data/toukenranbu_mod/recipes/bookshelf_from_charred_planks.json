@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:charred_planks"
+    },
+    "|": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "|||",
+    "###"
+  ],
+  "result": {
+    "item": "minecraft:bookshelf"
+  },
+  "show_notification": true
+}

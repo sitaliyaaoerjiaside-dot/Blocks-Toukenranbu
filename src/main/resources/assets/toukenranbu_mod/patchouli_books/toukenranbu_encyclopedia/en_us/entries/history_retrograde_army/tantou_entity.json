@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Tantou",
+  "icon": "toukenranbu_mod:tantou_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Tantou",
+      "text": "Tantou-type monsters are small in size and difficult to hit. They boast fast attack speed and high damage, with the highest spawn frequency among all Retrograde Army monsters."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tantou",
+      "name": "Enemy Tantou",
+      "scale": 0.8,
+      "text": "The basic tantou unit of the Retrograde Army. Small and agile, extremely difficult to hit, with very fast attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tantou_plus",
+      "name": "Enemy Specialized Tantou",
+      "scale": 0.8,
+      "text": "A specialized enemy tantou with further increased attack power and movement speed, posing a significantly greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tantou_max",
+      "name": "Enemy Kiwame Tantou",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy tantou, possessing the highest attack speed and damage among all tantou-type monsters."
+    }
+  ]
+}

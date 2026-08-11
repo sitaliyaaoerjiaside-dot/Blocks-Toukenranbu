@@ -1,0 +1,18 @@
+{
+  "name": "Konnosuke",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:konnosuke_spawn_egg",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:konnosuke",
+      "title": "Konnosuke",
+      "text": "Konnosuke is currently a non-functional mob in the mod. They spawn naturally in random locations. Konnosuke can be tamed using Aburaage (Oil Tofu). See the next page for the crafting recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:oil_tofu",
+      "text": "Aburaage can be used to tame Konnosuke."
+    }
+  ]
+}

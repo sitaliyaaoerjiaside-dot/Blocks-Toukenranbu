@@ -1,0 +1,15 @@
+{
+  "name": "toukenranbu_mod:gov_branch",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "toukenranbu_mod:government_of_time_outpost",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

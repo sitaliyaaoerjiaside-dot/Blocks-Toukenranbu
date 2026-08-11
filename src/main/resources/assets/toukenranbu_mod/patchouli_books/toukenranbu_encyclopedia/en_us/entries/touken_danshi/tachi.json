@@ -1,0 +1,19 @@
+{
+  "name": "Tachi",
+  "icon": "toukenranbu_mod:mikazuki_munechika",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Tachi",
+      "text": "Tachi-type Touken Danshi. Touken Danshi of the same blade type share virtually identical attack speed, detection range, attack power, and movement speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:mikazuki_munechika",
+      "name": "Mikazuki Munechika",
+      "scale": 0.8,
+      "text": "A tachi forged by Sanjou Munechika, a swordsmith of the Heian period.One of the Five Great Swords of Japan.Regarded as the most beautiful among them.As a Touken Danshi, his bearing is as elegant as that of a Heian noble.Calling him magnanimous sounds nice, but in truth he is the ultimate free spirit."
+    }
+  ]
+}

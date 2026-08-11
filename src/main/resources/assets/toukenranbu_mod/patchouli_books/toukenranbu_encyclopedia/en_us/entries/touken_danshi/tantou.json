@@ -1,0 +1,12 @@
+{
+  "name": "Tantou-type Touken Danshi",
+  "icon": "toukenranbu_mod:tantou_max_spawn_egg",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Tantou",
+      "text": "Coming soon."
+    }
+  ]
+}

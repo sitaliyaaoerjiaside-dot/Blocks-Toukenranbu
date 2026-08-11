@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Wakizashi",
+  "icon": "toukenranbu_mod:wakizashi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Wakizashi",
+      "text": "Wakizashi-type monsters are larger in size and easier to hit. They have relatively fast attack speed and high damage, with a spawn frequency lower than that of tantou-type monsters among all Retrograde Army monsters."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:wakizashi",
+      "name": "Enemy Wakizashi",
+      "scale": 0.8,
+      "text": "The basic wakizashi unit of the Retrograde Army. Relatively agile in size, with fast attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:wakizashi_plus",
+      "name": "Enemy Specialized Wakizashi",
+      "scale": 0.8,
+      "text": "A specialized enemy wakizashi with further increased attack power and movement speed, posing a significantly greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:wakizashi_max",
+      "name": "Enemy Kiwame Wakizashi",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy wakizashi, possessing even higher attack speed and damage. The ultimate threat among wakizashi-type monsters."
+    }
+  ]
+}

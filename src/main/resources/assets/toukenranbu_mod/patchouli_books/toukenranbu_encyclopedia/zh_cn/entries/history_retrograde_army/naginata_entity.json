@@ -1,0 +1,33 @@
+{
+  "name": "敌薙刀",
+  "icon": "toukenranbu_mod:naginata_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "敌薙刀",
+      "text": "薙刀类怪物。薙刀类怪物攻速和移动速度较慢，使用全范围攻击伤害，生成频率一般。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata",
+      "name": "敌薙刀",
+      "scale": 0.8,
+      "text": "时间溯行军中的基础薙刀单位，体型大，攻速慢。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata_plus",
+      "name": "敌特化薙刀",
+      "scale": 0.8,
+      "text": "特化后的敌薙刀，攻击力得到小幅度提升，威胁性增加。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata_max",
+      "name": "敌极化薙刀",
+      "scale": 0.8,
+      "text": "极化形态的敌薙刀，拥有更高的大范围攻击伤害，威胁指数高。"
+    }
+  ]
+}

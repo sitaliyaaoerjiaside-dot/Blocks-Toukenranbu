@@ -1,0 +1,9 @@
+// 1.20.1	2026-07-22T23:27:39.0515436	Tags for minecraft:item mod id toukenranbu_mod
+3c0b463ffc5c034a2d442f24cfdb9bd67db30080 data/minecraft/tags/items/logs_that_burn.json
+8330a291e0f5a763e3793c132f5c767ba837f666 data/minecraft/tags/items/planks.json
+b6f6116f843fb469074063c579eac617a032f916 data/minecraft/tags/items/trimmable_armor.json
+ab0fff1d81d9ed55d426eb330ce8f9ba8685c705 data/toukenranbu_mod/tags/items/copper_knife.json
+aa760472282837b9db9a93239c58126c69d0507b data/toukenranbu_mod/tags/items/gold_knife.json
+692efc4c3ee5a76b328574b5a2345d0040508eca data/toukenranbu_mod/tags/items/knife_equipment.json
+17de12a3a40ff7a90715863015cc1a8a0d353025 data/toukenranbu_mod/tags/items/silver_knife.json
+0d056e49f8495ceaf8c2684d1b4a1eb37c651168 data/toukenranbu_mod/tags/items/suger_tag.json

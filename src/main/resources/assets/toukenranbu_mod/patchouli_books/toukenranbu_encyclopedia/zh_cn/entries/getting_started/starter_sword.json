@@ -1,0 +1,20 @@
+{
+  "name": "初始刀与你的第一位刀剑男士",
+  "icon": "toukenranbu_mod:kashuu_kiyomitsu",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 0,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "欢迎来到世界。$(br2)你的第一把刀将陪伴你度过最艰难的初期时光。$(br2)请从以下五把初始刀中，任选一把作为你的初始刀。$(br)手持初始刀物品右键，就可以召唤你的第一位刀剑男士了！"
+    },
+    {
+      "type": "spotlight",
+      "item": "toukenranbu_mod:whetstone_sword",
+      "title": "初始刀",
+      "text": "这是你的第一位刀剑男士。$(br2)你的刀剑男士会永远忠诚于你，他们能够保护你的安全，也能帮你做很多事。"
+    }
+
+  ]
+}

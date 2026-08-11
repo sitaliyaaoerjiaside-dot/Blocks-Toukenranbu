@@ -1,0 +1,18 @@
+{
+  "name": "狐之助",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:konnosuke_spawn_egg",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:konnosuke",
+      "title": "狐之助",
+      "text": "狐之助是目前模组内暂无任何功能的生物，它们会自然在各处随机生成。狐之助可以使用油豆腐进行驯服，油豆腐合成配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:oil_tofu",
+      "text": "油豆腐可用于驯服狐之助。"
+    }
+  ]
+}

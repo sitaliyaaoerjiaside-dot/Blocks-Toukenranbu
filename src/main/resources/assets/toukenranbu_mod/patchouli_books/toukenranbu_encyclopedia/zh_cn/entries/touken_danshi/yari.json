@@ -1,0 +1,12 @@
+{
+  "name": "枪类刀剑男士",
+  "icon": "toukenranbu_mod:yari_max_spawn_egg",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "枪",
+      "text": "敬请期待"
+    }
+  ]
+}

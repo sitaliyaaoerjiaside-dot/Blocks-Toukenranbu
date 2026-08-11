@@ -1,0 +1,19 @@
+{
+  "name": "Starter Sword and Your First Touken Danshi",
+  "icon": "toukenranbu_mod:kashuu_kiyomitsu",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 0,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Welcome to the world.$(br2)Your first blade will stand by you through the hardest early days.$(br2)Please choose any one of the five starter swords from your inventory as your starter sword.$(br)Right-click while holding the starter sword to summon your first Touken Danshi!"
+    },
+    {
+      "type": "spotlight",
+      "item": "toukenranbu_mod:whetstone_sword",
+      "title": "Starter Sword",
+      "text": "This is your first Touken Danshi.$(br)Your Touken Danshi will remain forever loyal to you. $(br)They can protect your safety and help you with many things."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "toukenranbu_mod:block/charred_planks"
+  }
+}

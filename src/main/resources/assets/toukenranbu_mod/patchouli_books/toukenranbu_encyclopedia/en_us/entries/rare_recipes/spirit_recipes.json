@@ -1,0 +1,16 @@
+{
+  "name": "void_spiritual_energy_recipes",
+  "icon": "toukenranbu_mod:void_spiritual_energy",
+  "category": "toukenranbu_mod:rare_recipes",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "You can craft Turbid Spiritual Energy from one Pure Spiritual Energy and one Impure Spiritual Energy.$(br2)It serves as excellent fuel—though naturally, it is quite difficult to obtain."
+    },
+    {
+      "type": "crafting",
+      "recipe": "toukenranbu:void_spiritual_energy"
+    }
+  ]
+}

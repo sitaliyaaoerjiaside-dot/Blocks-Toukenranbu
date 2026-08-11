@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:soldier_candy"
+    },
+    "|": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "|||"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:troop_candy"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "toukenranbu_mod:block/whetstone_block"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Naginata",
+  "icon": "toukenranbu_mod:naginata_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Naginata",
+      "text": "Naginata-type monsters. Naginata-type monsters have relatively slow attack and movement speed, use wide-area attack damage, and have average spawn frequency."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata",
+      "name": "Enemy Naginata",
+      "scale": 0.8,
+      "text": "The basic naginata unit of the Retrograde Army. Large in size, with slow attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata_plus",
+      "name": "Enemy Specialized Naginata",
+      "scale": 0.8,
+      "text": "A specialized enemy naginata with slightly increased attack power, posing a greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:naginata_max",
+      "name": "Enemy Kiwame Naginata",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy naginata, possessing higher wide-area attack damage. A high threat."
+    }
+  ]
+}

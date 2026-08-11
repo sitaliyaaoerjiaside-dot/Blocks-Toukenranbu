@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:charred_planks"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "|#|",
+    "|#|"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:charred_fence_gate"
+  },
+  "show_notification": true
+}

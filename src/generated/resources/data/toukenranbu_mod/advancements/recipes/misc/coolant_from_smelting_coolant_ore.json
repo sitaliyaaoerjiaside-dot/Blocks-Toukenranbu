@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coolant_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:coolant_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:coolant_from_smelting_coolant_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coolant_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:coolant_from_smelting_coolant_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

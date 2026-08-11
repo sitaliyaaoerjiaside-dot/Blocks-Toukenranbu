@@ -1,0 +1,87 @@
+{
+  "has_precipitation": false,
+  "temperature": 1.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 7907327,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 10066329,
+    "foliage_color": 10066329
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "toukenranbu_mod:tantou_plus",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "toukenranbu_mod:wakizashi_max",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "toukenranbu_mod:uchigatana_plus",
+        "weight": 60,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "toukenranbu_mod:tachi_max",
+        "weight": 50,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "toukenranbu_mod:ootachi_plus",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "toukenranbu_mod:yari_plus",
+        "weight": 30,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [], [], [], [], [], [],
+    [
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_iron_upper"
+    ],
+    [],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "minecraft:patch_dead_bush_2",
+      "minecraft:disk_sand"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

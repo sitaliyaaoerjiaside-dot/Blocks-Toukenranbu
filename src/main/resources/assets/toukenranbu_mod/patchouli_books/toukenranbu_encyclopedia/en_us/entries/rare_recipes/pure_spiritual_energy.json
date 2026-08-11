@@ -1,0 +1,15 @@
+{
+  "name": "pure_spiritual_energy",
+  "category": "toukenranbu_mod:rare_recipes",
+  "icon": "toukenranbu_mod:pure_spiritual_energy",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "pure_spiritual_energy",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "Pure Spiritual Energy is a food item. Eating it restores your hunger, serving as a direct counterpart to Impure Spiritual Energy. To obtain it, locate the swordsmith who may be found in villages and purchase it from him."
+    }
+  ]
+}

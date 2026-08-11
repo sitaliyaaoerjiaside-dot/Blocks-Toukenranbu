@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Yari",
+  "icon": "toukenranbu_mod:yari_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Yari",
+      "text": "Yari-type monsters. Yari-type monsters have fast attack speed, fast movement speed, and high damage. They deal true damage that can only be blocked by Resistance by up to 50%. Spawn frequency is relatively low."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yari",
+      "name": "Enemy Yari",
+      "scale": 0.8,
+      "text": "The basic yari unit of the Retrograde Army. Average in size, with relatively fast attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yari_plus",
+      "name": "Enemy Specialized Yari",
+      "scale": 0.8,
+      "text": "A specialized enemy yari with further increased attack power and movement speed, posing a significantly greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yari_max",
+      "name": "Enemy Kiwame Yari / High-Speed Yari",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy yari, also known as the High-Speed Yari. They possess even higher attack speed, movement speed, and higher true damage. An extremely high threat."
+    }
+  ]
+}

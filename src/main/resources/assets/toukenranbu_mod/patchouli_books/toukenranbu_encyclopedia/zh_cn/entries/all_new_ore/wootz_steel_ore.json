@@ -1,0 +1,15 @@
+{
+  "name": "玉钢",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:wootz_steel",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "玉钢",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:wootz_steel",
+      "scale": 1.2,
+      "text": "玉钢是本模组新加入的资源，你可以在这个世界的几乎任何矿层看到它。使用玉钢能够制造很多建材，当你手持它并右击属于你的刀剑男士时，可以修复你的刀剑男士。"
+    }
+  ]
+}

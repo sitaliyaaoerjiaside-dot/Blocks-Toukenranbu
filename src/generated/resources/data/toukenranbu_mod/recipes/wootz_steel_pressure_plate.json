@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:wootz_steel"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:wootz_steel_pressure_plate"
+  },
+  "show_notification": true
+}

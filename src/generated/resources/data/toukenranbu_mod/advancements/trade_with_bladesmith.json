@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:omamori",
+  "criteria": {
+    "trade_with_bladesmith": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:pure_spiritual_energy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.trade_with_bladesmith.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.trade_with_bladesmith.title"
+    }
+  },
+  "requirements": [
+    [
+      "trade_with_bladesmith"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

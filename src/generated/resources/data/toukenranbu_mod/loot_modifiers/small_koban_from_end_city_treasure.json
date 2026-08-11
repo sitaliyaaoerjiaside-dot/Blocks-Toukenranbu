@@ -1,0 +1,16 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
+    },
+    {
+      "chance": 0.35,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "toukenranbu_mod:small_koban",
+  "max_count": 7,
+  "min_count": 5
+}

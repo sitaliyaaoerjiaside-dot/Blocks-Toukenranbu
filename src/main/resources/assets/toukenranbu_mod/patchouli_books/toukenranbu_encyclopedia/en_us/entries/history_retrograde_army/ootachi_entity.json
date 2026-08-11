@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Ootachi",
+  "icon": "toukenranbu_mod:ootachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Ootachi",
+      "text": "Ootachi-type monsters. Ootachi-type monsters have extremely slow attack and movement speed, use splash area-of-effect damage, and have average spawn frequency."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi",
+      "name": "Enemy Ootachi",
+      "scale": 0.8,
+      "text": "The basic ootachi unit of the Retrograde Army. Large in size, with extremely slow attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi_plus",
+      "name": "Enemy Specialized Ootachi",
+      "scale": 0.8,
+      "text": "A specialized enemy ootachi with slightly increased attack power, posing a greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi_max",
+      "name": "Enemy Kiwame Ootachi",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy ootachi, possessing higher splash area-of-effect damage. A relatively high threat."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "toukenranbu_mod:has_dice",
+  "criteria": {
+    "enter_abandoned_history": {
+      "conditions": {
+        "to": "toukenranbu_mod:abandoned_history"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.enter_abandoned_history.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:dice"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.enter_abandoned_history.title"
+    }
+  },
+  "requirements": [
+    [
+      "enter_abandoned_history"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

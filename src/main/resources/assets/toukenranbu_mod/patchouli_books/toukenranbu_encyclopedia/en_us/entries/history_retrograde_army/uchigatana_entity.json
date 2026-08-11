@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Uchigatana",
+  "icon": "toukenranbu_mod:uchigatana_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Uchigatana",
+      "text": "Uchigatana-type monsters. They possess average attack speed, damage, and spawn frequency."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana",
+      "name": "Enemy Uchigatana",
+      "scale": 0.8,
+      "text": "The basic uchigatana unit of the Retrograde Army. Similar in size to the player, with average attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana_plus",
+      "name": "Enemy Specialized Uchigatana",
+      "scale": 0.8,
+      "text": "A specialized enemy uchigatana with slightly increased attack power and movement speed, posing a significantly greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana_max",
+      "name": "Enemy Kiwame Uchigatana",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy uchigatana, possessing higher attack speed and damage. A relatively high threat."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Enemy Tachi",
+  "icon": "toukenranbu_mod:tachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Enemy Tachi",
+      "text": "Tachi-type monsters. They possess average attack speed, damage, and spawn frequency."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi",
+      "name": "Enemy Tachi",
+      "scale": 0.8,
+      "text": "The basic tachi unit of the Retrograde Army. Comparable in size to the player, with slower attack speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi_plus",
+      "name": "Enemy Specialized Tachi",
+      "scale": 0.8,
+      "text": "A specialized enemy tachi with slightly increased attack power and movement speed, posing a greater threat."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi_max",
+      "name": "Enemy Kiwame Tachi",
+      "scale": 0.8,
+      "text": "The Kiwame form of enemy tachi, possessing higher attack speed and damage. A relatively high threat."
+    }
+  ]
+}

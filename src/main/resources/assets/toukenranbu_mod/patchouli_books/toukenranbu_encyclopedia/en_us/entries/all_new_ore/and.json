@@ -1,0 +1,15 @@
+{
+  "name": "charcoal in toukenranbu",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "minecraft:charcoal",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "charcoal in toukenranbu",
+      "link_recipe": true,
+      "item": "minecraft:charcoal",
+      "scale": 1.2,
+      "text": "Vanilla charcoal from Minecraft can be used to repair your Touken Danshi in this mod. In addition, all four of these resources can be used to forge your Touken Danshi!"
+    }
+  ]
+}

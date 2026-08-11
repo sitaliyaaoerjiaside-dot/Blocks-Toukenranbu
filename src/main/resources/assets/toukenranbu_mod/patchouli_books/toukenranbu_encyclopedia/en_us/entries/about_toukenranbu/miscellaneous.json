@@ -1,0 +1,17 @@
+{
+  "name": "Touken Ranbu: Miscellaneous",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:kasen_kanesada",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Touken Ranbu: Miscellaneous",
+      "text": "The mod currently includes many items, some of which are not yet functional—such as the Acceleration Charms and Smithing Charms.$(br2)This is because the Smithing Furnace feature, which is closely tied to them, has not yet been implemented. As a result, these items have been temporarily disabled."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Future Plans",
+      "text": "We will do our best to incorporate content from the original game into the mod. Most features are already lined up in our development roadmap, so please stay tuned for future updates."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "toukenranbu_mod:block/wootz_steel_slab"
+    },
+    "type=double": {
+      "model": "toukenranbu_mod:block/wootz_steel_block"
+    },
+    "type=top": {
+      "model": "toukenranbu_mod:block/wootz_steel_slab_top"
+    }
+  }
+}

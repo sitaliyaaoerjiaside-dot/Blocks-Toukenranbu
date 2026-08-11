@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:whetstone"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#|#",
+    "#|#"
+  ],
+  "result": {
+    "count": 3,
+    "item": "toukenranbu_mod:charred_fence"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,84 @@
+{
+  "parent": "toukenranbu_mod:wootz_steel",
+  "criteria": {
+    "whetstone_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:whetstone_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "whetstone_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:whetstone_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "whetstone_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:whetstone_helmet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "whetstone_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:whetstone_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.whetstone.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:whetstone_helmet",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.whetstone.title"
+    }
+  },
+  "requirements": [
+    [
+      "whetstone_helmet"
+    ],
+    [
+      "whetstone_chestplate"
+    ],
+    [
+      "whetstone_leggings"
+    ],
+    [
+      "whetstone_boots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Ootachi-type Touken Danshi",
+  "icon": "toukenranbu_mod:ootachi_max_spawn_egg",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Ootachi",
+      "text": "Coming soon."
+    }
+  ]
+}

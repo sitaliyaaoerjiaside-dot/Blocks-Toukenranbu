@@ -1,0 +1,19 @@
+{
+  "name": "bronze omamori",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:bronze_omamori",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "bronze omamori",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:bronze_omamori",
+      "text": "A decent-looking bronze omamori. Equipping it to your Touken Danshi provides a small extra bonus. It is fairly common and widely found in various ruin structures.$(br2)See next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:gold_omamori",
+      "title": "recipe"
+    }
+  ]
+}

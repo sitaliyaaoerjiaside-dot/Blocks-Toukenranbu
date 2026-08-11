@@ -1,0 +1,90 @@
+{
+  "criteria": {
+    "has_hachisuka_kotetsu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:hachisuka_kotetsu"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kasen_kanesada": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:kasen_kanesada"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kashuu_kiyomisu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:kashuu_kiyomitsu"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mutsunokami_yoshiyuki": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:mutsunokami_yoshiyuki"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_yamanbagiri_kunihiro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:yamanbagiri_kunihiro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.toukenranbu_mod.new_start.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:mikazuki_munechika"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.new_start.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_kasen_kanesada",
+      "has_hachisuka_kotetsu",
+      "has_kashuu_kiyomisu",
+      "has_yamanbagiri_kunihiro",
+      "has_mutsunokami_yoshiyuki"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:whetstone"
+    }
+  },
+  "pattern": [
+    " # ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "toukenranbu_mod:whetstone_wall"
+  },
+  "show_notification": true
+}

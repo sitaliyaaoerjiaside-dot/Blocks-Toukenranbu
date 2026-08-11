@@ -1,0 +1,22 @@
+{
+  "name": "Modifications to the Original: Mechanics",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:yamanbagiri_kunihiro",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Modifications to the Original: Mechanics",
+      "text": "We have not implemented the sortie party size limit from the original game. In Minecraft, you may bring more than six Touken Danshi into battle with you, and they will actively attack all hostile mobs that aggro on you.$(br2)$(li)Due to the potential for significant performance and memory consumption, please avoid bringing too many Touken Danshi into battle at once.$(br2)$(li)Within this mod, we currently have no plans—and will not in the future—to implement the Rarity (Han-suu) system from the original game. Rarity is equivalent to the star rating in other games, but in Touken Ranbu, a higher number does not necessarily mean a blade is better in every specific situation. This remains crucial within the mod, so please keep it in mind."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Additional Mechanics",
+      "text": "We have altered how Troops (Kiwame equipment) durability is handled. Within the mod, Troops will not degrade; when a Touken Danshi is shattered, their Troops will drop alongside their other items.$(br2)$(li)The Horse feature for Touken Danshi is not yet implemented in this mod. In the original game, horses provide movement speed and partial attack bonuses to Touken Danshi. This feature is still in planning and may be implemented in future versions."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notice",
+      "text": "Notice:$(br2)Some features of this mod are currently unfinished, and certain features may contain bugs. For example, the Touken Danshi Fieldwork (Hata-banshan) system may cause freezes due to certain limitations.$(br2)More Touken Danshi entities will be added in future updates. Please stay tuned for patch notes."
+    }
+  ]
+}

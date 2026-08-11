@@ -1,0 +1,33 @@
+{
+  "name": "敌打刀",
+  "icon": "toukenranbu_mod:uchigatana_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "敌打刀",
+      "text": "打刀类怪物。打刀类怪物攻速一般，伤害一般，生成频率一般。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana",
+      "name": "敌打刀",
+      "scale": 0.8,
+      "text": "时间溯行军中的基础打刀单位，体型与玩家无异，攻速一般。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana_plus",
+      "name": "敌特化打刀",
+      "scale": 0.8,
+      "text": "特化后的敌打刀，攻击力和移动速度得到小幅度提升，威胁性显著增加。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:uchigatana_max",
+      "name": "敌极化打刀",
+      "scale": 0.8,
+      "text": "极化形态的敌打刀，拥有更高的攻击速度与伤害，威胁指数较高。"
+    }
+  ]
+}

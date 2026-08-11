@@ -1,0 +1,12 @@
+{
+  "name": "Touken Ranbu: Background Story",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:hachisuka_kotetsu",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Touken Ranbu: Background Story",
+      "text": "In the year 2205, History Revisionists began attacking past eras in an attempt to alter history. To combat these rebels, the Government of Time dispatched numerous Saniwa.$(br2)The Saniwa possess the ability to awaken the dormant thoughts within objects, granting them consciousness and the power to fight. Together with the strongest tsukumogami awakened from ancient blades—the Touken Danshi (Sword Warriors)—the Saniwa travel back through time to various eras to protect history.$(br2)However, a third party known as the Kebiishi—hostile to both the Touken Danshi and the History Revisionists—intervenes, standing in the way of the Sword Warriors.$(br2)To better suit the gameplay style, we have implemented certain historical periods as dimensions within this mod, while also adapting some mechanics from the original game."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:sweet",
+  "criteria": {
+    "more_koban": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:small_koban"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.more_koban.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:small_koban"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.more_koban.title"
+    }
+  },
+  "requirements": [
+    [
+      "more_koban"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

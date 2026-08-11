@@ -1,0 +1,16 @@
+{
+  "name": "空白灵力的配方与使用",
+  "icon": "toukenranbu_mod:void_spiritual_energy",
+  "category": "toukenranbu_mod:rare_recipes",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "你可以使用一个纯净灵力和一个浑浊灵力合成一个空白灵力。空白灵力是一个很好的燃料——当然，它的获取也较为困难。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "toukenranbu_mod:void_spiritual_energy"
+    }
+  ]
+}

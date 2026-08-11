@@ -1,0 +1,38 @@
+{
+  "name": "Touken Ranbu: About Dimensions",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:mutsunokami_yoshiyuki",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Touken Ranbu: About Dimensions",
+      "text": "The Abandoned History dimension is currently implemented in the mod, though it still has limited content. Future versions plan to add a BOSS to this dimension.$(br2)Currently, only two biomes spawn in the Abandoned History dimension: Ash Grove and Wasteland Plateau. Structures include a large number of vanilla villages and a special mod structure: the Government of Time Branch Office.$(br2)You can find plenty of loot inside the branch office, and more swords will be added to the reward chests in the future. The Government of Time has prepared fully functional tools for Saniwa on long journeys—these can be found on the third floor of the branch office."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "toukenranbu_mod:dice",
+      "title": "Dice",
+      "text": "To enter the Abandoned History dimension, the Saniwa must first craft the teleportation item: the Dice. Right-click on a block while holding the Dice to teleport to the Abandoned History dimension, and right-click again to return to the Overworld.$(br2)See the next page for the crafting recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:dice"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notice",
+      "text": "Notice:$(br2)By default, the mod will teleport your Touken Danshi to the target dimension at the moment you teleport. However, due to certain issues, when performing cross-dimensional teleportation in narrow spaces (such as randomly appearing Nether portals), the server may lose Touken Danshi entity data, causing them to vanish into thin air.$(br2)This bug is currently being worked on. If you are worried about losing your Touken Danshi upon returning, Saniwa are advised not to bring them when traveling to the Nether."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["toukenranbu_mod:textures/patchouli/history_village.png"],
+      "border": true,
+      "text": "Villages that generate in large numbers within the Abandoned History dimension. No villagers spawn here, but iron golems still do."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Dimension Difficulty Warning",
+      "text": "Dimension Difficulty Warning:$(br2)This dimension spawns a large number of Retrograde Army enemies by default. Retrograde Army enemies killed in this dimension will not count toward Kebiishi spawn detection."
+    }
+  ]
+}

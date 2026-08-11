@@ -1,0 +1,17 @@
+{
+  "name": "锻刀炉",
+  "icon": "minecraft:barrier",
+  "category": "toukenranbu_mod:has_been_removed",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "已移除：锻刀炉",
+      "text": "$(bold)锻刀炉$()曾是本模组核心的功能性方块。$(br2)玩家需要向其投入玉钢、冷却材、木炭与砥石，并等待一段时间，方可获得随机的刀剑男士。$(br2)然而在实际测试中，该方块的等待机制并没有达到我预想的效果，导致物品复制漏洞频发。在未能找到解决方案的情况下，我不得不将其移除。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)如果您怀念这种等待的仪式感，欢迎通过反馈渠道告诉我——也许在未来的某个版本中，它会以更安全的形式回归。"
+    }
+  ]
+}

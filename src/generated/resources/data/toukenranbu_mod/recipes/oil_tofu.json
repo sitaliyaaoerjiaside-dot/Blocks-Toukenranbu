@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:kelp"
+    },
+    "@": {
+      "item": "minecraft:bread"
+    },
+    "|": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    " # ",
+    " | ",
+    " @ "
+  ],
+  "result": {
+    "count": 4,
+    "item": "toukenranbu_mod:oil_tofu"
+  },
+  "show_notification": true
+}

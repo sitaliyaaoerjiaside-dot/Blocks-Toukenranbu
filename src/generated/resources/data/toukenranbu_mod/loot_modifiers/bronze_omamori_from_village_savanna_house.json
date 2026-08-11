@@ -1,0 +1,12 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_savanna_house"
+    }
+  ],
+  "item": "toukenranbu_mod:bronze_omamori",
+  "max_count": 2,
+  "min_count": 1
+}

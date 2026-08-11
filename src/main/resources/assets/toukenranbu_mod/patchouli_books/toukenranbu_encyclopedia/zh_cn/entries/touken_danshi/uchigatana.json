@@ -1,0 +1,47 @@
+{
+  "name": "打刀类刀剑男士",
+  "icon": "toukenranbu_mod:kashuu_kiyomitsu",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "打刀",
+      "text": "打刀类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kashuu_kiyomitsu",
+      "name": "加州清光",
+      "scale": 0.8,
+      "text": "新选组的冲田总司使用过的打刀。因为出生于贫寒的环境，觉得只要打扮得漂亮就会被主人疼爱。和大和守安定是看上去完全相反、性格却很相似的吵架伙伴。 "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kasen_kanesada",
+      "name": "歌仙兼定",
+      "scale": 0.8,
+      "text": "曾经的主人细川忠兴由手刃36位家臣的这件事，联想到三十六歌仙而得名歌仙兼定的打刀。仅仅只是自称文化系。 "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamanbagiri_kunihiro",
+      "name": "山姥切国广",
+      "scale": 0.8,
+      "text": "被认为是仿照灵剑“山姥切”所打造的打刀。因并非原作而心情复杂。讨厌被人说好看，特意打扮得十分寒碜。实力虽强，却容易钻牛角尖，把事情越想越复杂。 "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:mutsunokami_yoshiyuki",
+      "name": "陆奥守吉行",
+      "scale": 0.8,
+      "text": "作为坂本龙马佩刀的打刀。虽然土气是不可避免了但很喜欢新事物。自身的野心和对主人的忠诚心，对哪一点都是十分真诚的。 "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:hachisuka_kotetsu",
+      "name": "蜂须贺虎彻",
+      "scale": 0.8,
+      "text": "活跃于江户时代的刀匠，虎彻作的真作的打刀。与宠爱弟弟浦岛虎彻相反，特别排斥赝品的兄长长曾祢虎彻。 "
+    }
+  ]
+}

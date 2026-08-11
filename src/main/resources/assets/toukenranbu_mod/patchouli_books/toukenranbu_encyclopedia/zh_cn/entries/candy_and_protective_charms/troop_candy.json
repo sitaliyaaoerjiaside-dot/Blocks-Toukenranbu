@@ -1,0 +1,18 @@
+{
+  "name": "根兵糖（大）",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:troop_candy",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "根兵糖（大）",
+      "item": "toukenranbu_mod:troop_candy",
+      "text": "大份的根兵糖，它能够被合成。当你吃下大份的根兵糖之后，可以立刻获得1000经验。$(br2)配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:troop_candy",
+      "title": "合成配方"
+    }
+  ]
+}

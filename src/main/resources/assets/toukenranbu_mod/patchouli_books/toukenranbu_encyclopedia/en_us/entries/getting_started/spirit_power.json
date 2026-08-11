@@ -1,0 +1,27 @@
+{
+  "name": "What is Spirit Power?",
+  "icon": "toukenranbu_mod:pure_spiritual_energy",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 1,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Spirit Power",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "Spirit power is your essential ability as a Saniwa to summon Touken Danshi.$(br)When your spirit power is insufficient, you will be unable to summon new blades."
+    },
+    {
+      "type": "image",
+      "title": "Spirit Power UI",
+      "images": [
+        "toukenranbu_mod:textures/gui/spirit_power_bar_empty.png",
+        "toukenranbu_mod:textures/gui/spirit_power_bar_full.png"
+      ],
+      "border": true,
+      "text": "Your spirit power is displayed in the bottom-right corner of the screen. Please keep an eye on the remaining amount."
+    }
+  ]
+}

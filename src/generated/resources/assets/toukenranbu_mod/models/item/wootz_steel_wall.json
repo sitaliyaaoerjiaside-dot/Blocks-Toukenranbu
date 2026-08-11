@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "toukenranbu_mod:block/wootz_steel_block"
+  }
+}

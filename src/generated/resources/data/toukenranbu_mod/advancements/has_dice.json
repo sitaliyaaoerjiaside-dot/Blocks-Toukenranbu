@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "has_dice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:dice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.has_dice.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:dice"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.has_dice.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_dice"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

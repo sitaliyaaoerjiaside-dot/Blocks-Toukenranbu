@@ -1,0 +1,11 @@
+// 1.20.1	2026-08-08T03:44:14.0295551	Tags for minecraft:block mod id toukenranbu_mod
+ac60594ae44fe35e5df06c72a078d9f177c1d262 data/minecraft/tags/blocks/fences.json
+44d07aecaedbe5853127456de523979a3fffa9f9 data/minecraft/tags/blocks/fence_gates.json
+3c0b463ffc5c034a2d442f24cfdb9bd67db30080 data/minecraft/tags/blocks/logs_that_burn.json
+70e774c8d91e625b269ffddbf47adec36831957a data/minecraft/tags/blocks/mineable/pickaxe.json
+a278aa6cb252612470d9760f148e97e64906b7f8 data/minecraft/tags/blocks/mineable/shovel.json
+0c630a9654ead9a9e5b9dc516953b2ba5347216f data/minecraft/tags/blocks/needs_stone_tool.json
+8330a291e0f5a763e3793c132f5c767ba837f666 data/minecraft/tags/blocks/planks.json
+0127f1800fdf2ea039f1703b58013be92c9c24f4 data/minecraft/tags/blocks/walls.json
+671e10006f0977ddc0c22b9ff6663898ccd732d3 data/minecraft/tags/blocks/wooden_fences.json
+3eb30e37ab4e8d5e4e7f8d8060fba94e979ba8d1 data/toukenranbu_mod/tags/blocks/ore_tags.json

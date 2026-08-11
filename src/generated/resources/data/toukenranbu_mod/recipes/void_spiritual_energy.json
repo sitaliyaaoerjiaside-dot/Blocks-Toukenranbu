@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:turbid_spiritual_energy"
+    },
+    {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    }
+  ],
+  "result": {
+    "item": "toukenranbu_mod:void_spiritual_energy"
+  }
+}

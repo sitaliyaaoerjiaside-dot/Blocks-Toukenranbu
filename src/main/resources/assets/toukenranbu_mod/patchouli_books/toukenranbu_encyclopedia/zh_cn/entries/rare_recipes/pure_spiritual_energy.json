@@ -1,0 +1,15 @@
+{
+  "name": "纯净灵力",
+  "category": "toukenranbu_mod:rare_recipes",
+  "icon": "toukenranbu_mod:pure_spiritual_energy",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "纯净灵力",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "纯净灵力是一个食品，吃下纯净灵力可以增加你的饱食度，它跟浑浊灵力是一个对照。想要获取纯净灵力，需要找到村庄里可能会有的锻刀师进行购买。"
+    }
+  ]
+}

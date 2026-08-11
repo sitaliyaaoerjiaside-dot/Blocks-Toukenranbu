@@ -1,0 +1,66 @@
+{
+  "name": "Touken Types",
+  "icon": "toukenranbu_mod:mikazuki_munechika",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi Guide",
+      "text": "Touken Danshi can be summoned using their respective summoning items by right-clicking on a block. Their summoning items cannot currently be crafted and can only be found in chests within various naturally generated structures.$(br2)Touken Danshi possess a 25-slot inventory, can wear player armor and benefit from its effects, and can additionally equip mod-exclusive gear: omamori. Different omamori provide varying levels of health and attack damage bonuses.$(br2)For more details, see the following Touken Danshi GUI panel.$(br2)Touken Danshi cannot use or equip shields."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Touken Danshi GUI Showcase",
+      "images": [
+        "toukenranbu_mod:textures/gui/touken_danshi.png"
+      ],
+      "border": true,
+      "text": "The four slots to the left of the entity render are the armor slots. The three slots at the very top are the omamori slots."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi Guide",
+      "text": "Touken Danshi can be summoned using their respective summoning items by right-clicking on a block. Their summoning items cannot currently be crafted and can only be found in chests within various naturally generated structures.$(br2)Touken Danshi possess a 25-slot inventory, can wear player armor and benefit from its effects, and can additionally equip mod-exclusive gear: omamori. Different omamori provide varying levels of health and attack damage bonuses.$(br2)For more details, see the following Touken Danshi GUI panel.$(br2)Touken Danshi cannot use or equip shields."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Tantou",
+      "text": "Possesses the lowest health among all blade types, with lower damage, but the fastest movement and attack speed.$(br2)Their detection range and attack power receive a significant bonus at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Wakizashi",
+      "text": "Health is relatively low among all blade types, with average damage, but relatively fast movement and attack speed.$(br2)Detection range and attack power receive a moderate bonus at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Uchigatana",
+      "text": "Health is at a medium level, with average damage, movement speed, and attack speed.$(br2)Detection range and attack power receive a slight night battle bonus."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Tachi",
+      "text": "Higher health and damage, but slower movement and attack speed.$(br2)Tachi are not suited for night battle, as their detection range and attack power are greatly reduced at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Ootachi",
+      "text": "High health and damage, capable of dealing splash area-of-effect damage, but extremely slow movement and attack speed.$(br2)Ootachi are not suited for night battle, as their detection range and attack power are severely reduced at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Naginata",
+      "text": "High health and damage, capable of performing wide-area full damage attacks. Slower movement and attack speed.$(br2)Naginata are not suited for night battle, as their detection range and attack power are greatly reduced at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Yari",
+      "text": "Relatively high health and high damage, capable of dealing true damage that ignores armor and enchantments, with fast movement and attack speed.$(br2)The detection range and attack power of Yari are slightly reduced at night."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi: Tsurugi",
+      "text": "Relatively high health and damage, capable of using unique skills, with average movement and attack speed.$(br2)Certain Tsurugi-type Touken Danshi can effectively counter enemy Kiwame Yari / High-Speed Yari."
+    }
+  ]
+}

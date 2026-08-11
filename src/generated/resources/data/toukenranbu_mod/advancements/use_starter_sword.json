@@ -1,0 +1,30 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "use_starter_sword": {
+      "conditions": {},
+      "trigger": "toukenranbu_mod:use_starter_sword"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.use_starter_sword.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:kashuu_kiyomitsu"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.use_starter_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_starter_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

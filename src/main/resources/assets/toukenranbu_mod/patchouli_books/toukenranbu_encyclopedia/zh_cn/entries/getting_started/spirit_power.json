@@ -1,0 +1,27 @@
+{
+  "name": "什么是灵力?",
+  "icon": "toukenranbu_mod:void_spiritual_energy",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 1,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "灵力与灵力值",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "灵力值是你作为审神者能够召唤刀剑男士的重要能力。$(br2)当灵力值不足的时候，将不能召唤新的刀剑男士。"
+    },
+    {
+      "type": "image",
+      "title": "灵力值的图标显示",
+      "images": [
+        "toukenranbu_mod:textures/gui/spirit_power_bar_empty.png",
+        "toukenranbu_mod:textures/gui/spirit_power_bar_full.png"
+      ],
+      "border": true,
+      "text": "你的灵力值显示在屏幕右下角，请随时留意剩余量。"
+    }
+  ]
+}

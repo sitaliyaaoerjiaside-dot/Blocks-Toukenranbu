@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "textures": {
+    "texture": "toukenranbu_mod:block/wootz_steel_block"
+  }
+}

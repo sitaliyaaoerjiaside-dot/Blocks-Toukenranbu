@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "toukenranbu_mod:block/stripped_charred_log_top",
+    "side": "toukenranbu_mod:block/stripped_charred_log"
+  }
+}

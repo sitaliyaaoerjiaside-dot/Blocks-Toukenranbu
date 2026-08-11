@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:wootz_steel"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "## ",
+    "#| ",
+    " | "
+  ],
+  "result": {
+    "item": "toukenranbu_mod:wootz_steel_axe"
+  },
+  "show_notification": true
+}

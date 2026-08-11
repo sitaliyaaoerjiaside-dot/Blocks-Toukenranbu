@@ -1,0 +1,27 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:soul_sand_valley",
+    "minecraft:basalt_deltas"
+  ],
+  "spawners": [
+    {
+      "type": "toukenranbu_mod:tantou_max",
+      "weight": 20,
+      "minCount": 2,
+      "maxCount": 4
+    },
+    {
+      "type": "toukenranbu_mod:wakizashi_max",
+      "weight": 15,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "toukenranbu_mod:yari_max",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

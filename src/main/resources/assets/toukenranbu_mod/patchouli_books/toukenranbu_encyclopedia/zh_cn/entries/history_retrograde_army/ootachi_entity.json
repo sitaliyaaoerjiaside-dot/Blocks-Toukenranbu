@@ -1,0 +1,33 @@
+{
+  "name": "敌大太刀",
+  "icon": "toukenranbu_mod:ootachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "敌大太刀",
+      "text": "大太刀类怪物。大太刀类怪物攻速和移动速度极慢，使用溅射范围伤害，生成频率一般。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi",
+      "name": "敌大太刀",
+      "scale": 0.8,
+      "text": "时间溯行军中的基础大太刀单位，体型很大，攻速极慢。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi_plus",
+      "name": "敌特化大太刀",
+      "scale": 0.8,
+      "text": "特化后的敌大太刀，攻击力得到小幅度提升，威胁性增加。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ootachi_max",
+      "name": "敌极化大太刀",
+      "scale": 0.8,
+      "text": "极化形态的敌大太刀，拥有更高的溅射范围伤害，威胁指数较高。"
+    }
+  ]
+}

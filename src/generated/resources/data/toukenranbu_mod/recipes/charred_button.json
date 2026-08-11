@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:whetstone"
+    }
+  ],
+  "result": {
+    "item": "toukenranbu_mod:charred_button"
+  }
+}

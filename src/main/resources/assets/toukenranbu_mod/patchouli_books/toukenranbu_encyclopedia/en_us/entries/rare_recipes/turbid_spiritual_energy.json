@@ -1,0 +1,15 @@
+{
+  "name": "turbid_spiritual_energy",
+  "category": "toukenranbu_mod:rare_recipes",
+  "icon": "toukenranbu_mod:turbid_spiritual_energy",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "turbid_spiritual_energy",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:turbid_spiritual_energy",
+      "scale": 1.2,
+      "text": "Turbid Spiritual Energy is also a food item. However, unlike Pure Spiritual Energy, consuming it will inflict three negative effects upon you. To acquire it, defeat any member of the naturally spawning HistoryRetrogradeArmy has a chance to drop it."
+    }
+  ]
+}

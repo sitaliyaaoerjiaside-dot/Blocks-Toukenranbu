@@ -1,0 +1,15 @@
+{
+  "name": "coolant",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:coolant",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "coolant",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:coolant",
+      "scale": 1.2,
+      "text": "coolant is also a new resource added by this mod. Unlike wootz_steel and whetstone, it cannot be used to craft weapons or building materials. It can only be used to repair your Touken Danshi, or traded with villagers for some potentially useful items."
+    }
+  ]
+}

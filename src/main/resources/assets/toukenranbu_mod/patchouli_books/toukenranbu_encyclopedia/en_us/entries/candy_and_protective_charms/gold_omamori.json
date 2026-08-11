@@ -1,0 +1,19 @@
+{
+  "name": "gold omamori",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:gold_omamori",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "gold omamori",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:gold_omamori",
+      "text": "A brilliant golden Omamori that provides substantial bonuses when equipped to your Touken Danshi. Exceedingly rare, though it seems to be widely distributed among large ancient ruins?$(br2)See next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:gold_omamori",
+      "title": "recipe"
+    }
+  ]
+}

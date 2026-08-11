@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "toukenranbu_mod:end_black_coolant_placed",
+  "step": "underground_ores"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "toukenranbu_mod:item/a_string_of_dango"
+  }
+}

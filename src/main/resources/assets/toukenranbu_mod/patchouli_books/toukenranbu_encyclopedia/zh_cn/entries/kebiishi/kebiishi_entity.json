@@ -1,0 +1,57 @@
+{
+  "name": "检非违使",
+  "icon": "toukenranbu_mod:kebiishi_leader_spawn_egg",
+  "category": "toukenranbu_mod:kebiishi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "检非违使",
+      "text": "检非违使（けんぴいし）是负责巡查、纠察违法之徒的执法人员。在本模组中，他们以强大的战斗力著称，是玩家在探索过程中可能遭遇的敌对势力。$(br2)检非违使作为第三方势力，他们与时间溯行军和玩家及其率领的刀剑男士是敌对关系。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "生成机制",
+      "text": "检非违使会在玩家总共击杀数首次超过100之后开始尝试生成，分为五个生成概率等级，当玩家每击杀100个时间溯行军类怪物，都将提升一个生成概率等级。$(br2)检非违使的生成冷却时间为30分钟，当玩家附近存在检非违使的时候，将不会进行下一次生成。$(br2)玩家可以使用 #检非违使关闭 这个命令来禁止检非违使在世界生成。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "战斗特性",
+      "text": "在本模组中，检非违使有着非常强大的机制和实力，他们的强度与玩家身上的护甲是强绑定的，如果想要击败他们，不妨试试换成等级较低的装备。$(br2)如果成功击败检非违使，则有概率获得稀有的刀剑男士和一些物资。$(br2)检非违使常常以小队为形式出现，他们不会使用远程攻击，玩家可以尝试不同的进攻手段挑战他们。$(br2)检非违使自带抗性提升I的效果。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_naginata",
+      "name": "检非违使·薙刀",
+      "scale": 0.8,
+      "text": "检非违使中的基础战斗单位，能够造成范围高额伤害。移动速度和攻击速度较慢。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_yari",
+      "name": "检非违使·枪",
+      "scale": 0.8,
+      "text": "手持长枪的检非违使，攻击范围一般，攻速较快，能够使用真实伤害，同时玩家的护甲仅有最多50％的抗性提升效果能够生效。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_leader",
+      "name": "检非违使·长柄枪",
+      "scale": 0.8,
+      "text": "统领一队检非违使的检非违使队长，长柄枪。拥有更高的生命值与攻击力。长柄枪的攻击能够穿透盾牌，并且使用真实伤害。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_ootachi",
+      "name": "检非违使·大太刀",
+      "scale": 0.8,
+      "text": "检非违使中的大太刀，有着较大的身形，但移动速度和攻击速度较慢，并且能够造成范围溅射伤害。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_tachi",
+      "name": "检非违使·太刀",
+      "scale": 0.8,
+      "text": "检非违使中的太刀，移动速度和攻击速度较慢。"
+    }
+  ]
+}

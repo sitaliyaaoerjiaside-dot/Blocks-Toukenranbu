@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "toast_to_the_moon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:mikazuki_munechika"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.toast_to_the_moon.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:mikazuki_munechika"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.toast_to_the_moon.title"
+    }
+  },
+  "requirements": [
+    [
+      "toast_to_the_moon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

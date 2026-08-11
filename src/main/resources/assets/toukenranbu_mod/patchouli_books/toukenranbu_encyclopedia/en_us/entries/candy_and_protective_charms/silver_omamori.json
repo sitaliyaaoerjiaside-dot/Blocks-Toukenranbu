@@ -1,0 +1,19 @@
+{
+  "name": "silver omamori",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:silver_omamori",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "silver omamori",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:silver_omamori",
+      "text": "A gleaming silver Omamori that provides moderate bonuses when equipped to your Touken Danshi. Rather rare, though it seems to be widely distributed among ancient ruins?$(br2)See next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:silver_omamori",
+      "title": "recipe"
+    }
+  ]
+}

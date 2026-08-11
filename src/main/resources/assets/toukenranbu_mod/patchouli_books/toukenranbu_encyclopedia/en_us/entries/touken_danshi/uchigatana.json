@@ -1,0 +1,47 @@
+{
+  "name": "Uchigatana",
+  "icon": "toukenranbu_mod:kashuu_kiyomitsu",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Uchigatana",
+      "text": "Uchigatana-type Touken Danshi. Touken Danshi of the same blade type share virtually identical attack speed, detection range, attack power, and movement speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kashuu_kiyomitsu",
+      "name": "Kashuu Kiyomitsu",
+      "scale": 0.8,
+      "text": "An uchigatana once used by Okita Souji of the Shinsengumi.Having come from an impoverished background, he believes that dressing up prettily will earn him his master's affection.He and Yamatonokami Yasusada are quarrelsome partners who appear to be complete opposites yet share remarkably similar personalities."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kasen_kanesada",
+      "name": "Kasen Kanesada",
+      "scale": 0.8,
+      "text": "An uchigatana named after the Thirty-Six Poetic Immortals, inspired by his former master Hosokawa Tadaoki's slaying of 36 retainers.He merely claims to be the cultured type."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamanbagiri_kunihiro",
+      "name": "Yamanbagiri Kunihiro",
+      "scale": 0.8,
+      "text": "An uchigatana believed to have been forged in imitation of the sacred blade \"Yamanbagiri.\"He harbors complicated feelings about not being the original.He detests being called beautiful and deliberately dresses himself in shabby attire.Though formidable in strength, he tends to overthink things and get himself tangled up in knots."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:mutsunokami_yoshiyuki",
+      "name": "Mutsunokami Yoshiyuki",
+      "scale": 0.8,
+      "text": "An uchigatana that served as the personal blade of Sakamoto Ryouma.Though his rustic nature is unavoidable, he is quite fond of new things.He is utterly sincere about both his own ambitions and his loyalty to his master."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:hachisuka_kotetsu",
+      "name": "Hachisuka Kotetsu",
+      "scale": 0.8,
+      "text": "An authentic uchigatana crafted by the Edo-period swordsmith Kotetsu.His elder brother Nagasone Kotetsu dotes on their younger brother Urashima Kotetsu, yet harbors a particular disdain for forgeries."
+    }
+  ]
+}

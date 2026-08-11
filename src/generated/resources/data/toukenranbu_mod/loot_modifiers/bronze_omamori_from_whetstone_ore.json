@@ -1,0 +1,16 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "block": "toukenranbu_mod:whetstone_ore",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "chance": 0.1,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "toukenranbu_mod:bronze_omamori",
+  "max_count": 1,
+  "min_count": 1
+}

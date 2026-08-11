@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:amulet"
+    },
+    "|": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "pattern": [
+    "|||",
+    "|#|",
+    "|||"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:supreme_amulet"
+  },
+  "show_notification": true
+}

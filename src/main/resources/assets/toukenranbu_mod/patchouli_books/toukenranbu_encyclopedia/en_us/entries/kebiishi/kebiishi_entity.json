@@ -1,0 +1,57 @@
+{
+  "name": "Kebiishi",
+  "icon": "toukenranbu_mod:kebiishi_leader_spawn_egg",
+  "category": "toukenranbu_mod:kebiishi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Kebiishi",
+      "text": "Kebiishi (けんぴいし) are law enforcement officers responsible for patrolling and apprehending lawbreakers. In this mod, they are known for their formidable combat prowess and serve as a hostile force that players may encounter during exploration.$(br2)As a third-party faction, Kebiishi are hostile to both the Retrograde Army and the player along with their Touken Danshi."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Spawn Mechanics",
+      "text": "Kebiishi will begin attempting to spawn once the player's total kill count exceeds 100 for the first time, divided into five spawn probability tiers. For every 100 Retrograde Army-type monsters slain, the spawn probability tier increases by one.$(br2)The spawn cooldown for Kebiishi is 30 minutes. When Kebiishi are present near the player, the next spawn will not occur.$(br2)Players can use the #kebiishi off command to prevent Kebiishi from spawning in the world."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Combat Traits",
+      "text": "In this mod, Kebiishi possess extremely powerful mechanics and strength. Their power is strongly tied to the armor the player is wearing. If you wish to defeat them, try equipping lower-level gear instead.$(br2)If successfully defeated, Kebiishi have a chance to drop rare Touken Danshi and various supplies.$(br2)Kebiishi often appear in squads and do not use ranged attacks. Players can try different combat strategies to challenge them.$(br2)Kebiishi innately possess Resistance I."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_naginata",
+      "name": "Kebiishi · Naginata",
+      "scale": 0.9,
+      "text": "The basic combat unit among Kebiishi, capable of dealing high area-of-effect damage. Movement and attack speed are relatively slow."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_yari",
+      "name": "Kebiishi · Yari",
+      "scale": 0.9,
+      "text": "A Kebiishi wielding a spear with average attack range but fast attack speed. It can deal true damage, and the player's armor can only provide up to 50% of its resistance bonus."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_leader",
+      "name": "Kebiishi · Long Spear",
+      "scale": 0.85,
+      "text": "The squad leader of a Kebiishi unit, wielding a long spear. Possesses higher health and attack power. Its attacks can pierce through shields and deal true damage."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_ootachi",
+      "name": "Kebiishi · Ootachi",
+      "scale": 0.8,
+      "text": "The Ootachi among Kebiishi, featuring a large physique. Movement and attack speed are relatively slow, and it can deal area-of-effect splash damage."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:kebiishi_tachi",
+      "name": "Kebiishi · Tachi",
+      "scale": 0.8,
+      "text": "The Tachi among Kebiishi. Movement and attack speed are relatively slow."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "parent": "toukenranbu_mod:more_koban",
+  "criteria": {
+    "has_bronze": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:bronze_omamori"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:gold_omamori"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_silver": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:silver_omamori"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.omamori.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:gold_omamori"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.omamori.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze",
+      "has_silver",
+      "has_gold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

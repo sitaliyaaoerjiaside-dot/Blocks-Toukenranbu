@@ -1,0 +1,38 @@
+{
+  "name": "刀剑乱舞：关于维度",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:mutsunokami_yoshiyuki",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "刀剑乱舞：关于维度",
+      "text": "废弃历史维度是目前模组内已实装的一个维度，目前内容较少，未来版本将计划在该维度实装BOSS。$(br2)在废弃历史维度内目前只会刷新两个生物群系：灰烬树林和荒地高原，建筑则会生成大量原版村庄和模组内的特殊建筑物：时之政府分部。$(br2)在分部内能找到大量战利品物资，未来也会加入更多刀剑到奖励箱内。时之政府为长途跋涉的审神者们准备了功能齐全的工具，在时之政府分部的三楼即可找到。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "toukenranbu_mod:dice",
+      "title": "骰子",
+      "text": "要想进入废弃历史维度，审神者需要先制作出进入维度的传送物品：骰子。审神者手持骰子右键方块即可传送到废弃历史维度，再次右键即可传送回主世界维度。$(br2)配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:dice"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "注意事项",
+      "text": "注意事项：$(br2)模组默认可以在审神者进行传送的瞬间将刀剑男士也传送至目标维度，但由于某些原因，在狭窄空间进行跨维度传送（如随机出现的下界传送门）时，服务器容易丢失刀剑男士实体的数据导致实体凭空消失。$(br2)目前本BUG正在尽力修复，如果担心回来的时候找不到刀剑男士，请审神者前往下界的时候尽量不要携带他们。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["toukenranbu_mod:textures/patchouli/history_village.png"],
+      "border": true,
+      "text": "在废弃历史维度大量生成的村庄，这里不会生成村民，但仍然会生成铁傀儡。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "维度难度警告",
+      "text": "维度难度警告：$(br2)本维度默认刷新大量时间溯行军类敌人，在本维度杀死的时间溯行军不会被计入检非违使的生成检测内。"
+    }
+  ]
+}

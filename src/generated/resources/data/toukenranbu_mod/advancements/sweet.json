@@ -1,0 +1,64 @@
+{
+  "parent": "toukenranbu_mod:use_starter_sword",
+  "criteria": {
+    "a_bite_of_dango": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:a_bite_of_dango"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "a_string_of_dango": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:a_string_of_dango"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "immortal_dumplings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:immortal_dumplings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.sweet.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:immortal_dumplings"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.sweet.title"
+    }
+  },
+  "requirements": [
+    [
+      "a_bite_of_dango",
+      "immortal_dumplings",
+      "a_string_of_dango"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

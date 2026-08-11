@@ -1,0 +1,30 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "kebiishi_spawn": {
+      "conditions": {},
+      "trigger": "toukenranbu_mod:kebiishi_spawn"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.three_way_meeting.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:kebiishi_tachi_spawn_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.three_way_meeting.title"
+    }
+  },
+  "requirements": [
+    [
+      "kebiishi_spawn"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "敌太刀",
+  "icon": "toukenranbu_mod:tachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "敌太刀",
+      "text": "太刀类怪物。太刀类怪物攻速一般，伤害一般，生成频率一般。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi",
+      "name": "敌太刀",
+      "scale": 0.8,
+      "text": "时间溯行军中的基础太刀单位，体型与玩家差距较小，攻速较慢。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi_plus",
+      "name": "敌特化太刀",
+      "scale": 0.8,
+      "text": "特化后的敌太刀，攻击力和移动速度得到小幅度提升，威胁性增加。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tachi_max",
+      "name": "敌极化太刀",
+      "scale": 0.8,
+      "text": "极化形态的敌太刀，拥有更高的攻击速度与伤害，威胁指数较高。"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "toukenranbu_mod:block/charred_pressure_plate"
+    },
+    "powered=true": {
+      "model": "toukenranbu_mod:block/charred_pressure_plate_down"
+    }
+  }
+}

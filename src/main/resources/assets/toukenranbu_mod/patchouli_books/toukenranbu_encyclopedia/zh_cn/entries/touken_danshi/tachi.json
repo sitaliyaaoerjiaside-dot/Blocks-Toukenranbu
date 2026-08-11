@@ -1,0 +1,19 @@
+{
+  "name": "太刀类刀剑男士",
+  "icon": "toukenranbu_mod:mikazuki_munechika",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "太刀",
+      "text": "太刀类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:mikazuki_munechika",
+      "name": "三日月宗近",
+      "scale": 0.8,
+      "text": "平安时代的刀匠，三条宗近所打造的太刀。天下五剑之一。更被评为是其中最美的一把。做为刀剑男子其姿态也如同平安的贵族一般优雅。称他是宽宏大度听起来不错，但实际上是究极的我行我素。 "
+    }
+  ]
+}

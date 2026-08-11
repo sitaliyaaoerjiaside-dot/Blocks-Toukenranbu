@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:dice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turbid_spiritual_energy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:turbid_spiritual_energy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_turbid_spiritual_energy",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:dice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

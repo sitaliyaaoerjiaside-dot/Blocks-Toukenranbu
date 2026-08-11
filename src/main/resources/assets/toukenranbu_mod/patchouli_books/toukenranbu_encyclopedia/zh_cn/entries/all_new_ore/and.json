@@ -1,0 +1,15 @@
+{
+  "name": "木炭在刀剑乱舞里的作用",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "minecraft:charcoal",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "木炭在刀剑乱舞里的作用",
+      "link_recipe": true,
+      "item": "minecraft:charcoal",
+      "scale": 1.2,
+      "text": "我的世界原版的木炭在本模组下，能够被用来修复属于你的刀剑男士。以及，这四种资源都可以被用来锻造属于你的刀剑男士！"
+    }
+  ]
+}

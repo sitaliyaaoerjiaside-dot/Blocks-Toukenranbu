@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "toukenranbu_mod:abandoned_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 12345678,
+    "spacing": 10,
+    "separation": 5
+  }
+}

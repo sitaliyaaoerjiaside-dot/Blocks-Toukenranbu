@@ -1,0 +1,15 @@
+{
+  "name": "冷却材",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:coolant",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "冷却材",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:coolant",
+      "scale": 1.2,
+      "text": "冷却材也是本模组的一个新增资源。与玉钢和砥石不同的是，它不能被用来做武器和建材，只能拿来修复属于你的刀剑男士，或者与村民交易一些可能有用的物品。"
+    }
+  ]
+}

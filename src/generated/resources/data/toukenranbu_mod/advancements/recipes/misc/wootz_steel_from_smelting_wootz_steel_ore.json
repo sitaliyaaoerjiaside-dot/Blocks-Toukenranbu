@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:wootz_steel_from_smelting_wootz_steel_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wootz_steel_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:wootz_steel_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wootz_steel_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:wootz_steel_from_smelting_wootz_steel_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

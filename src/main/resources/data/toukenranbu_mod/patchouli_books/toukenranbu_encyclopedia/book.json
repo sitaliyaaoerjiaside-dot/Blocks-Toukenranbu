@@ -1,0 +1,11 @@
+{
+  "name": "toukenranbu.book.name",
+  "landing_text": "toukenranbu.landing_text",
+  "version": 1,
+  "creative_tab": "toukenranbu_mod:toukenranbu_tab",
+  "text_color": "4000FF",
+  "header_color": "000080",
+  "nameplate_color": "D2691E",
+  "progress_bar_color": "00FFFF",
+  "use_resource_pack": true
+}

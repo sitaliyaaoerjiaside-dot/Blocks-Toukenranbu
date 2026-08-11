@@ -1,0 +1,12 @@
+{
+  "name": "时间溯行军",
+  "icon": "toukenranbu_mod:tachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "时间溯行军",
+      "text": "这里是本模组怪物时间溯行军的总条目，通过查阅本条目了解你遇到的是什么刀种的时间溯行军怪物，并了解他们的生成。$(br2)值得注意的是，大部分时间溯行军怪物强度较为可观，但请玩家留意敌极化枪的伤害手段，以及时作出应对。"
+    }
+  ]
+}

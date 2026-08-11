@@ -1,0 +1,12 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_cartographer"
+    }
+  ],
+  "item": "toukenranbu_mod:small_koban",
+  "max_count": 10,
+  "min_count": 5
+}

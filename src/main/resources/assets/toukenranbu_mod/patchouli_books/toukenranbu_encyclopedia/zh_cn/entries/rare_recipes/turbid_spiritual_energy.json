@@ -1,0 +1,15 @@
+{
+  "name": "浑浊灵力",
+  "category": "toukenranbu_mod:rare_recipes",
+  "icon": "toukenranbu_mod:turbid_spiritual_energy",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "turbid_spiritual_energy",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:turbid_spiritual_energy",
+      "scale": 1.2,
+      "text": "浑浊灵力也是一个食品，但与纯净灵力不同的是，当你吃下浑浊灵力，你会获得三种减益效果。想要获得浑浊灵力，可以通过击杀野外自然生成的时间溯行军的任意成员，它们均有概率掉落。"
+    }
+  ]
+}

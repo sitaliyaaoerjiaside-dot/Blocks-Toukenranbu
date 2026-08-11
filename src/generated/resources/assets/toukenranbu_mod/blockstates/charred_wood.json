@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "toukenranbu_mod:block/charred_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "toukenranbu_mod:block/charred_wood"
+    },
+    "axis=z": {
+      "model": "toukenranbu_mod:block/charred_wood_horizontal",
+      "x": 90
+    }
+  }
+}

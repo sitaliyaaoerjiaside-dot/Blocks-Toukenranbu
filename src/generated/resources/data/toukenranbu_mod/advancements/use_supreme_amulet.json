@@ -1,0 +1,30 @@
+{
+  "parent": "toukenranbu_mod:use_amulet",
+  "criteria": {
+    "used_supreme_amulet": {
+      "conditions": {},
+      "trigger": "toukenranbu_mod:use_supreme_amulet"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.use_supreme_amulet.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:supreme_amulet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.use_supreme_amulet.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_supreme_amulet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

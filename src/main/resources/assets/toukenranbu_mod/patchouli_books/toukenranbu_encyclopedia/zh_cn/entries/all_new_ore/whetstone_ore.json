@@ -1,0 +1,15 @@
+{
+  "name": "砥石",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:whetstone",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "砥石",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:whetstone",
+      "scale": 1.2,
+      "text": "砥石也是本模组新增的资源之一。同样的，它可以被用来制造武器和建材，也可以用来修复你的刀剑男士。手持砥石右键刀剑男士即可修复。"
+    }
+  ]
+}

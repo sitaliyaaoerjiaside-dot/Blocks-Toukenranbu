@@ -1,0 +1,17 @@
+{
+  "name": "Sword Forge",
+  "icon": "minecraft:barrier",
+  "category": "toukenranbu_mod:has_been_removed",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Removed: Sword Forge",
+      "text": "$(bold)The Sword Forge$() was once a core functional block of this mod.$(br2)Players needed to feed it $(l)Tamahagane$(), $(l)Coolant$(), $(l)Charcoal$(), and $(l)Whetstone$(), then wait for a period of time to receive a random Touken Danshi.$(br2)However, during testing, its waiting mechanic did not work out as I had envisioned, resulting in frequent item duplication exploits. Unable to find an elegant fix, I had no choice but to remove it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)If you miss this sense of waiting ritual, please let me know through feedback channels — perhaps it will return in a safer form in a future update."
+    }
+  ]
+}

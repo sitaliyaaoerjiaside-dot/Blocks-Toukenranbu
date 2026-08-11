@@ -1,0 +1,19 @@
+{
+  "name": "青铜刀装",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:bronze_omamori",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "青铜色刀装",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:bronze_omamori",
+      "text": "看上去很不错的青铜刀装，当给你的刀剑男士装备时能够提供额外的小幅加成。它并不少见，广泛分布于一些遗迹建筑物中。$(br2)配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:bronze_omamori",
+      "title": "合成配方"
+    }
+  ]
+}

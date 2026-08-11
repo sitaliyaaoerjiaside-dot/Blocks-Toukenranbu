@@ -1,0 +1,18 @@
+{
+  "name": "soldier candy",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:soldier_candy",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "soldier candy",
+      "item": "toukenranbu_mod:soldier_candy",
+      "text": "Soldier candy — can be crafted. Consuming it grants 100 experience instantly.$(br2)See next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:soldier_candy",
+      "title": "合成配方"
+    }
+  ]
+}

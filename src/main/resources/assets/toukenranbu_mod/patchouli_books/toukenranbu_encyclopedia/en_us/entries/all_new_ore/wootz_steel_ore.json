@@ -1,0 +1,15 @@
+{
+  "name": "wootz_steel",
+  "category": "toukenranbu_mod:all_new_ore",
+  "icon": "toukenranbu_mod:wootz_steel",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "wootz_steel",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:wootz_steel",
+      "scale": 1.2,
+      "text": "wootz_steel is a new resource added by this mod. You can find it in almost any ore layer throughout this world. wootz_steel can be used to craft many building materials. When held and right-clicked on your Touken Danshi, it will repair them."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "parent": "toukenranbu_mod:has_supreme_amulet",
+  "criteria": {
+    "wootz_steel_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:wootz_steel_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wootz_steel_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:wootz_steel_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wootz_steel_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:wootz_steel_helmet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wootz_steel_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:wootz_steel_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.wootz_steel.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:wootz_steel_helmet",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.wootz_steel.title"
+    }
+  },
+  "requirements": [
+    [
+      "wootz_steel_helmet"
+    ],
+    [
+      "wootz_steel_chestplate"
+    ],
+    [
+      "wootz_steel_leggings"
+    ],
+    [
+      "wootz_steel_boots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

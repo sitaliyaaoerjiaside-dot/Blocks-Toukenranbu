@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "toukenranbu_mod:block/coolant_ore"
+    }
+  }
+}

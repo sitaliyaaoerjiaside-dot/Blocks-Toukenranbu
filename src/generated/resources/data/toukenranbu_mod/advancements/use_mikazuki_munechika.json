@@ -1,0 +1,30 @@
+{
+  "parent": "toukenranbu_mod:toast_to_the_moon",
+  "criteria": {
+    "use_mikazuki_munechika": {
+      "conditions": {},
+      "trigger": "toukenranbu_mod:use_mikazuki_munechika"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.use_mikazuki_munechika.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:mikazuki_munechika"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.use_mikazuki_munechika.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_mikazuki_munechika"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

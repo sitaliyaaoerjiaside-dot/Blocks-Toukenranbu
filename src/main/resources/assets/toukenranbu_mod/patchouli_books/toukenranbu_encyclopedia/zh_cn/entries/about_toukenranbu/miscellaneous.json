@@ -1,0 +1,17 @@
+{
+  "name": "刀剑乱舞：一些杂项",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:kasen_kanesada",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "刀剑乱舞：一些杂项",
+      "text": "目前模组内加入了许多物品，其中一些尚未实装功能，例如加速符和锻刀符。$(br2)这是因为与它们息息相关的锻刀炉功能目前尚未实现，因此这些物品暂时被搁置，无法使用。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "未来计划",
+      "text": "我们会尽力将原作游戏内的内容加入模组中，大部分功能都已经在计划表中排队，敬请期待后续版本的更新。"
+    }
+  ]
+}

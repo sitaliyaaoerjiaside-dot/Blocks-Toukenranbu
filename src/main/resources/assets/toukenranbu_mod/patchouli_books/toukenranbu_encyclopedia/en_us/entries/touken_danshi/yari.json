@@ -1,0 +1,12 @@
+{
+  "name": "Yari-type Touken Danshi",
+  "icon": "toukenranbu_mod:yari_max_spawn_egg",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Yari",
+      "text": "Coming soon."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:trade_with_bladesmith",
+  "criteria": {
+    "has_amulet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:amulet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.has_amulet.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:amulet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.has_amulet.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_amulet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

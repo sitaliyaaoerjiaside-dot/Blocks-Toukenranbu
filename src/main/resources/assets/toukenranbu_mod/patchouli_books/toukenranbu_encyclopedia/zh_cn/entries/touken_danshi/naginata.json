@@ -1,0 +1,12 @@
+{
+  "name": "薙刀类刀剑男士",
+  "icon": "toukenranbu_mod:naginata_max_spawn_egg",
+  "category": "toukenranbu_mod:touken_danshi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "薙刀",
+      "text": "敬请期待"
+    }
+  ]
+}

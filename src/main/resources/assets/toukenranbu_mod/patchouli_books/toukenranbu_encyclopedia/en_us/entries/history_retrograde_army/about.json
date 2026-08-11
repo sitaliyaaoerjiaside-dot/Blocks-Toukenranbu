@@ -1,0 +1,12 @@
+{
+  "name": "History Retrograde Army",
+  "icon": "toukenranbu_mod:tachi_spawn_egg",
+  "category": "toukenranbu_mod:history_retrograde_army",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "History Retrograde Army",
+      "text": "This is the master entry for Retrograde Army monsters in this mod. Consult it to identify which blade type you are facing and to learn about their spawning mechanics.$(br2)While most Retrograde Army monsters are reasonably strong, players should be especially wary of the enemy Kiwame Yari's attack patterns and react accordingly."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "patchouli:shapeless_book_recipe",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "toukenranbu_mod:void_spiritual_energy"
+    }
+  ],
+  "book": "toukenranbu_mod:toukenranbu_encyclopedia"
+}

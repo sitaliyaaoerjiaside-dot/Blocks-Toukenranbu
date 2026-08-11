@@ -1,0 +1,30 @@
+{
+  "parent": "toukenranbu_mod:defeat_the_enemy_forces",
+  "criteria": {
+    "used_amulet": {
+      "conditions": {},
+      "trigger": "toukenranbu_mod:use_amulet"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.use_amulet.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:amulet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.use_amulet.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_amulet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
