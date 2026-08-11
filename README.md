@@ -11,7 +11,7 @@
 
 ## 开发环境
 - Minecraft 1.20.1
-- Forge 47.2.x
+- Forge 47.4.0
 - GeckoLib 4
 - Patchouli book
 
