@@ -26,6 +26,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.GOLD_OMAMORI.get(), "gold omamori");
         add(ModItems.SILVER_OMAMORI.get(), "silver omamori");
         add(ModItems.BRONZE_OMAMORI.get(), "bronze omamori");
+        add(ModItems.HORSE_KOHIBARI.get(), "Kohibari");
+        add(ModItems.HORSE_MIKUNIGURO.get(), "Mikuni-guro");
+        add(ModItems.HORSE_MATSUKAZE.get(), "Matsukaze");
+        add(ModItems.HORSE_OUTEI.get(), "Outei");
+        add(ModItems.HORSE_TAKADONOGURO.get(), "Takadono-guro");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "Tantou Spawn Egg");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "Wakizashi Spawn Egg");
@@ -65,6 +70,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_KOTETSU.get(), "hachisuka kotetsu");
         add(ModItems.KASEN_KANESADA.get(), "kasen kanesada");
         add(ModItems.MUTSUNOKAMI_YOSHIYUKI.get(), "mutsunokami yoshiyuki");
+
+        add(ModItems.MIKAZUKI_BLADE.get(), "Mikazuki Munechika [Blade]");
+        add(ModItems.YAMANBAGIRI_BLADE.get(), "Yamanbagiri Kunihiro [Blade]");
+        add(ModItems.KASHUU_BLADE.get(), "Kashuu Kiyomitsu [Blade]");
+        add(ModItems.HACHISUKA_BLADE.get(), "Hachisuka Kotetsu [Blade]");
+        add(ModItems.KASEN_BLADE.get(), "Kasen Kanesada [Blade]");
+        add(ModItems.MUTSUNOKAMI_BLADE.get(), "Mutsunokami Yoshiyuki [Blade]");
+        add("gui.toukenranbu.label.blade", "Blade");
 
         add(ModItems.A_BITE_OF_DANGO.get(), "A Bite of Dango");
         add(ModItems.IMMORTAL_DUMPLINGS.get(), "Immortal Dumplings");
@@ -142,6 +155,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.WHETSTONE_BOOTS.get(), "Whetstone Boots");
 
         add(ModItems.DICE.get(),"dice");
+        add(ModItems.CAPTURE_BALL.get(),"Capture Talisman");
 
         add("effect.toukenranbu_mod.spirit_regen", "spirit_regen");
         add("container.sword_forge", "Sword Forge");
@@ -164,6 +178,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.summon_mutsunokami_yoshiyuki",
                 "I'm Mutsunokami Yoshiyuki. We've finally made it to this grand place, so let's seize the world!");
 
+        add("gui.toukenranbu.label.entity_inventory", "Touken Danshi's Inventory");
         add("gui.toukenranbu.touken_danshi.title","touken_danshi");
         add("gui.toukenranbu.button.sit", "Sit");
         add("gui.toukenranbu.button.stand", "Stand");
@@ -173,6 +188,53 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.stop_farm", "Stop Farming");
         add("gui.toukenranbu.button.farm_escaping", "Escaping");
         add("gui.toukenranbu.button.farm_no_seeds", "Farm (No Seeds)");
+        add("gui.toukenranbu.button.mine", "Mine");
+        add("gui.toukenranbu.button.stop_mine", "Stop Mining");
+        add("gui.toukenranbu.button.mine_no_pickaxe", "Mine (No Pickaxe)");
+        add("gui.toukenranbu.status.mining", "[Mining]");
+        add("gui.toukenranbu.button.patrol", "Patrol");
+        add("gui.toukenranbu.button.patrolling", "Patrolling");
+        add("gui.toukenranbu.button.sparrow", "Spar");
+        add("gui.toukenranbu.button.sparring", "Sparring");
+        add("gui.toukenranbu.message.sparrow_no_partner", "No available partner nearby for sparring");
+        add("gui.toukenranbu.button.cave_clear", "Cave Clear");
+        add("gui.toukenranbu.button.cave_clearing", "Stop Clearing");
+        add("gui.toukenranbu.button.cave_clear_no_torches", "No Torches");
+        add("gui.toukenranbu.label.auto_pickup", "Auto Pickup");
+
+        add("gui.toukenranbu.message.auto_seal", "%s is critically injured and has been sealed!");
+        add("gui.toukenranbu.formation.status_with_count", "%s (%d)");
+        add("gui.toukenranbu.message.feed_full", "%s is full and can't eat any more!");
+
+//阵型
+        add("gui.toukenranbu.formation.none", "No Formation");
+        add("gui.toukenranbu.formation.fish_scale", "Fish Scale");
+        add("gui.toukenranbu.formation.crane_wing", "Crane Wing");
+        add("gui.toukenranbu.formation.goose_line", "Goose Line");
+        add("gui.toukenranbu.formation.square", "Square");
+
+
+// Status Panel
+        add("gui.toukenranbu.hp", "HP: %1$s/%2$s");
+        add("gui.toukenranbu.stat.impact", "Impact %1$s");
+        add("gui.toukenranbu.stat.mobility", "Mobility %1$s");
+        add("gui.toukenranbu.stat.killing", "Killing %1$s");
+        add("gui.toukenranbu.stat.scouting", "Scouting %1$s");
+        add("gui.toukenranbu.stat.concealment", "Concealment %1$s");
+        add("gui.toukenranbu.stat.troops", "Troops %1$s");
+        add("gui.toukenranbu.stat.fatigue", "Fatigue");
+// Fatigue States
+        add("gui.toukenranbu.status.sakura", "Sakura Fubuki");
+        add("gui.toukenranbu.status.normal", "Normal");
+        add("gui.toukenranbu.status.tired", "Tired");
+        add("gui.toukenranbu.status.exhausted", "Severely Tired");
+
+//物品栏标签文字
+        add( "gui.toukenranbu.label.armor", "Armor");
+        add("gui.toukenranbu.label.knife", "Knife Equipment");
+        add("gui.toukenranbu.label.mount", "Mount");
+        add("gui.toukenranbu.label.treasure", "Not Implemented");
+        add("gui.toukenranbu.label.inventory", "Inventory");
 
 // entity name
         add("entity.toukenranbu_mod.mikazuki_munechika", "Mikazuki Munechika");
@@ -182,6 +244,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("entity.toukenranbu_mod.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
         add("entity.toukenranbu_mod.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
 
+        add("entity.toukenranbu.touken_danshi.mikazuki_munechika", "Mikazuki Munechika");
+        add("entity.toukenranbu.touken_danshi.yamanbagiri_kunihiro", "Yamanbagiri Kunihiro");
+        add("entity.toukenranbu.touken_danshi.hachisuka_kotetsu", "Hachisuka Kotetsu");
+        add("entity.toukenranbu.touken_danshi.kasen_kanesada", "Kasen Kanesada");
+        add("entity.toukenranbu.touken_danshi.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
+        add("entity.toukenranbu.touken_danshi.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
+
 // GUI titles
         add("gui.toukenranbu.touken_danshi.title.yamanbagiri_kunihiro", "Yamanbagiri Kunihiro");
         add("gui.toukenranbu.touken_danshi.title.hachisuka_kotetsu", "Hachisuka Kotetsu");
@@ -189,6 +258,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
         add("gui.toukenranbu.touken_danshi.title.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
         add("gui.toukenranbu.touken_danshi.title.mikazuki_munechika", "Mikazuki Munechika");
+
+// GUI Tabs
+        add("gui.toukenranbu.tab.status", "Status");
+        add("gui.toukenranbu.tab.items", "Items");
 
         add("entity.toukenranbu_mod.tantou", "Tantou");
         add("entity.toukenranbu_mod.wakizashi", "Wakizashi");
@@ -247,6 +320,19 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.kebiishi.warning", "[Kebiishi Appear] Historical revision force is gathering at %s's location... Arrival in 30 seconds!");
         add("message.toukenranbu_mod.kebiishi.spawned", "[Kebiishi Appear] Historical revision force has arrived!");
         add("message.toukenranbu_mod.kebiishi.nearby", "[Historical Revision] Kebiishi already nearby, halting accumulation.");
+
+        add("item.toukenranbu_mod.capture_ball.prefix.captured", "[Captured] ");
+        add("message.toukenranbu_mod.capture.fail_player", "Cannot capture players!");
+        add("message.toukenranbu_mod.capture.fail_full", "This talisman already contains an entity!");
+        add("message.toukenranbu_mod.capture.success", "Capture successful!");
+        add("message.toukenranbu_mod.release.fail_empty", "This talisman is empty!");
+        add("message.toukenranbu_mod.release.fail_owner", "You are not the owner of this talisman!");
+        add("message.toukenranbu_mod.release.success", "Released: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.entity", "Entity: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.type", "Type: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.owner", "Owner: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.empty", "Empty Capture Talisman");
+        add("tooltip.toukenranbu_mod.capture_ball.usage", "Right-click entity to capture, right-click block to release");
 
 // ========== 成就标题 & 描述 ==========
         add("advancements.toukenranbu_mod.new_start.title", "A New Beginning");

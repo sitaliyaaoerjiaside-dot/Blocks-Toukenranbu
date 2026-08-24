@@ -28,6 +28,7 @@ public class PickupItemsGoal extends Goal {
     public boolean canUse() {
         // 坐下时不捡东西；背包满了也不捡
         if (entity.isOrderedToSit()) return false;
+        if (entity.isFollowing() && !entity.isPickupWhenFollowing()) return false;
         if (isInventoryFull()) return false;
         if (--cooldown > 0) return false;
 

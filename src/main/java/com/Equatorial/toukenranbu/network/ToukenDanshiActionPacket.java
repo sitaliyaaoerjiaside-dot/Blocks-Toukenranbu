@@ -1,7 +1,9 @@
 package com.Equatorial.toukenranbu.network;
 
 import com.Equatorial.toukenranbu.entity.touken.ToukenDanshiEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkEvent;
@@ -49,6 +51,45 @@ public class ToukenDanshiActionPacket {
                         }
                         touken.setFarming(newFarm);
                     }
+                    case 3 -> {
+                        boolean newMine = !touken.isMining();
+                        touken.setMining(newMine);
+                    }
+                    case 4 -> {
+                        boolean newPatrol = !touken.isPatrolling();
+                        if (newPatrol) {
+                            touken.startPatrol();
+                        } else {
+                            touken.setPatrolling(false);
+                        }
+                    }
+                    case 5 -> {
+                        if (touken.isSparring()) {
+                            ToukenDanshiEntity partner = touken.getSparringPartner();
+                            touken.setSparring(false);
+                            if (partner != null) partner.setSparring(false);
+                        } else {
+                            ToukenDanshiEntity partner = touken.findSparringPartner();
+                            if (partner != null) {
+                                touken.startSparring(partner);
+                                partner.startSparring(touken);
+                            } else {
+                                if (player != null) {
+                                    player.displayClientMessage(
+                                            Component.translatable("gui.toukenranbu.message.sparrow_no_partner")
+                                                    .withStyle(ChatFormatting.RED), true);
+                                }
+                            }
+                        }
+                    }
+                    case 6 -> {
+                        boolean newClear = !touken.isCaveClearing();
+                        if (newClear && !touken.hasTorches()) {
+                            return;
+                        }
+                        touken.setCaveClearing(newClear);
+                    }
+                    case 7 -> touken.setPickupWhenFollowing(!touken.isPickupWhenFollowing());
                 }
             }
         });

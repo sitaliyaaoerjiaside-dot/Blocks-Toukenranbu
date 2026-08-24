@@ -214,18 +214,53 @@ public class ModItems {
     public static final RegistryObject<Item> KEBIISHI_LEADER_SPAWN_EGG = ITEMS.register("kebiishi_leader_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.KEBIISHI_LEADER,0x000000,0x002fa7,
                     new Item.Properties()));
-
     public static final RegistryObject<Item> KONNOSUKE_SPAWN_EGG = ITEMS.register("konnosuke_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.KONNOSUKE,0xffff33,0xff3300,
                     new Item.Properties()));
     public static final RegistryObject<Item> OIL_TOFU =
             ITEMS.register("oil_tofu",() -> new Item(new Item.Properties().food(ModFoods.OIL_TOFU)));
-
     public static final RegistryObject<Item> DICE = ITEMS.register("dice",
             () -> new DiceItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> CAPTURE_BALL = ITEMS.register("capture_ball",
+            () -> new CaptureBallItem(new Item.Properties().stacksTo(1)));
+
+    // ===== 马匹 =====
+    // 参数顺序：Properties, 冲力(impact), 机动(mobility), 打击(killing), 侦查(scouting), 隐蔽(concealment), 防御(troops), 移速加成
+    public static final RegistryObject<Item> HORSE_KOHIBARI = ITEMS.register("horse_kohibari",
+            () -> new ToukenHorseItem(new Item.Properties(), 0, 17, 0, 2, 2, 2, 0.0));
+    public static final RegistryObject<Item> HORSE_MIKUNIGURO = ITEMS.register("horse_mikuniguro",
+            () -> new ToukenHorseItem(new Item.Properties(), 3, 10, 0, 0, 0, 3, 0.0));
+    public static final RegistryObject<Item> HORSE_MATSUKAZE = ITEMS.register("horse_matsukaze",
+            () -> new ToukenHorseItem(new Item.Properties(), 0, 13, 2, 0, 0, 2, 0.0));
+    public static final RegistryObject<Item> HORSE_OUTEI = ITEMS.register("horse_outei",
+            () -> new ToukenHorseItem(new Item.Properties(), 0, 7, 3, 0, 0, 0, 0.0));
+    public static final RegistryObject<Item> HORSE_TAKADONOGURO = ITEMS.register("horse_takadonoguro",
+            () -> new ToukenHorseItem(new Item.Properties(), 3, 13, 0, 0, 0, 0, 0.0));
+
+    // ===== 本体刀 =====
+    public static final RegistryObject<Item> MIKAZUKI_BLADE = ITEMS.register("mikazuki_munechika_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 70, -2.4f, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> YAMANBAGIRI_BLADE = ITEMS.register("yamanbagiri_kunihiro_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 56, -2.0f, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> KASHUU_BLADE = ITEMS.register("kashuu_kiyomitsu_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 53, -2.0f, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> HACHISUKA_BLADE = ITEMS.register("hachisuka_kotetsu_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 58, -2.0f, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> KASEN_BLADE = ITEMS.register("kasen_kanesada_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 57, -2.0f, new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MUTSUNOKAMI_BLADE = ITEMS.register("mutsunokami_yoshiyuki_sword",
+            () -> new SwordItem(ModToolTiers.WOOTZ_STEEL, 59, -2.0f, new Item.Properties().rarity(Rarity.EPIC)));
+
+    public static boolean isBlade(Item item) {
+        return item == MIKAZUKI_BLADE.get()
+                || item == YAMANBAGIRI_BLADE.get()
+                || item == KASHUU_BLADE.get()
+                || item == HACHISUKA_BLADE.get()
+                || item == KASEN_BLADE.get()
+                || item == MUTSUNOKAMI_BLADE.get();
+    }
 
     public static void register(IEventBus eventBus){
-
         ITEMS.register(eventBus);
     }
 }

@@ -123,6 +123,14 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         basicItem(com.Equatorial.toukenranbu.item.ModItems.OIL_TOFU.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.DICE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.CAPTURE_BALL.get());
+
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_KOHIBARI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_MATSUKAZE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_MIKUNIGURO.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_OUTEI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_TAKADONOGURO.get());
+
 
     }
 

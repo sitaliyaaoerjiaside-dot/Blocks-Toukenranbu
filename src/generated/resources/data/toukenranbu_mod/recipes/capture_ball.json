@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    },
+    "@": {
+      "item": "toukenranbu_mod:turbid_spiritual_energy"
+    },
+    "|": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    " # ",
+    " | ",
+    " @ "
+  ],
+  "result": {
+    "count": 2,
+    "item": "toukenranbu_mod:capture_ball"
+  },
+  "show_notification": true
+}

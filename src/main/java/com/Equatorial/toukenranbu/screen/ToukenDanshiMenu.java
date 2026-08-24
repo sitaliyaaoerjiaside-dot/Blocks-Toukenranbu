@@ -17,6 +17,7 @@ import net.minecraftforge.items.SlotItemHandler;
 public class ToukenDanshiMenu extends AbstractContainerMenu {
 
     private final ToukenDanshiEntity entity;
+    public int currentTab = 0; // 0=状态页, 1=物品页
 
     public static final int SLOT_ARMOR_HEAD = 0;
     public static final int SLOT_ARMOR_CHEST = 1;
@@ -25,42 +26,63 @@ public class ToukenDanshiMenu extends AbstractContainerMenu {
     public static final int SLOT_KNIFE_1 = 4;
     public static final int SLOT_KNIFE_2 = 5;
     public static final int SLOT_KNIFE_3 = 6;
-    public static final int SLOT_ENTITY_INV_START = 7;
-    public static final int SLOT_ENTITY_INV_END = 31;
-    public static final int SLOT_PLAYER_INV_START = 32;
-    public static final int SLOT_PLAYER_INV_END = 58;
-    public static final int SLOT_PLAYER_HOTBAR_START = 59;
-    public static final int SLOT_PLAYER_HOTBAR_END = 67;
+    public static final int SLOT_MOUNT = 7;
+    public static final int SLOT_ENTITY_INV_START = 8;
+    public static final int SLOT_ENTITY_INV_END = 32;
+    public static final int SLOT_PLAYER_INV_START = 33;
+    public static final int SLOT_PLAYER_INV_END = 59;
+    public static final int SLOT_PLAYER_HOTBAR_START = 60;
+    public static final int SLOT_PLAYER_HOTBAR_END = 68;
+    public static final int SLOT_BLADE = 69;
 
     public ToukenDanshiMenu(MenuType<?> type, int containerId, Inventory playerInventory, ToukenDanshiEntity entity) {
         super(type, containerId);
         this.entity = entity;
 
-        this.addSlot(new ArmorSlot(entity.getArmorHandler(), 0, 101, 8, EquipmentSlot.HEAD));
-        this.addSlot(new ArmorSlot(entity.getArmorHandler(), 1, 101, 26, EquipmentSlot.CHEST));
-        this.addSlot(new ArmorSlot(entity.getArmorHandler(), 2, 101, 44, EquipmentSlot.LEGS));
-        this.addSlot(new ArmorSlot(entity.getArmorHandler(), 3, 101, 62, EquipmentSlot.FEET));
+        // ===== 左上：护甲栏 4格竖排 =====
+        this.addSlot(new TabArmorSlot(entity.getArmorHandler(), 0, 21, 52, EquipmentSlot.HEAD, this));
+        this.addSlot(new TabArmorSlot(entity.getArmorHandler(), 1, 21, 70, EquipmentSlot.CHEST, this));
+        this.addSlot(new TabArmorSlot(entity.getArmorHandler(), 2, 21, 88, EquipmentSlot.LEGS, this));
+        this.addSlot(new TabArmorSlot(entity.getArmorHandler(), 3, 21, 106, EquipmentSlot.FEET, this));
 
-        this.addSlot(new KnifeSlot(entity.getKnifeHandler(), 0, 8, 13));
-        this.addSlot(new KnifeSlot(entity.getKnifeHandler(), 1, 26, 13));
-        this.addSlot(new KnifeSlot(entity.getKnifeHandler(), 2, 44, 13));
+        // ===== 中上：刀装栏 3格横排 =====
+        this.addSlot(new TabKnifeSlot(entity.getKnifeHandler(), 0, 65, 31, this));
+        this.addSlot(new TabKnifeSlot(entity.getKnifeHandler(), 1, 83, 31, this));
+        this.addSlot(new TabKnifeSlot(entity.getKnifeHandler(), 2, 101, 31, this));
 
+        // ===== 刀装下方第1格：马匹栏 =====
+        this.addSlot(new TabMountSlot(entity.getMountHandler(), 0, 65, 63, this));
+
+        // ===== 刀装下方第2格：宝物栏（未实装，先注释）=====
+        // this.addSlot(new TabTreasureSlot(entity.getTreasureHandler(), 0, 80, 86, this));
+
+        // ===== 宝物栏旁边：本体刀栏 =====
+        this.addSlot(new TabBladeSlot(entity.getBladeHandler(), 0, 101, 63, this));
+
+        // ===== 右上：背包栏 25格 (5x5) =====
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 5; ++j) {
-                this.addSlot(new SlotItemHandler(entity.getInventoryHandler(), j + i * 5,
-                        8 + j * 18, 41 + i * 18));
+                this.addSlot(new TabItemSlot(entity.getInventoryHandler(), j + i * 5,
+                        149 + j * 18, 34 + i * 18, this));
             }
         }
 
+        // ===== 底部：玩家背包 3x9 =====
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9,
-                        8 + j * 18, 140 + i * 18));
+                final int idx = j + i * 9 + 9;
+                this.addSlot(new Slot(playerInventory, idx, 48 + j * 18, 140 + i * 18) {
+                    @Override public boolean isActive() { return ToukenDanshiMenu.this.currentTab == 1; }
+                });
             }
         }
 
+        // ===== 底部：快捷栏 =====
         for (int k = 0; k < 9; ++k) {
-            this.addSlot(new Slot(playerInventory, k, 8 + k * 18, 198));
+            final int idx = k;
+            this.addSlot(new Slot(playerInventory, idx, 48 + k * 18, 198) {
+                @Override public boolean isActive() { return ToukenDanshiMenu.this.currentTab == 1; }
+            });
         }
     }
 
@@ -68,7 +90,7 @@ public class ToukenDanshiMenu extends AbstractContainerMenu {
         int entityId = data.readInt();
         Entity entity = inv.player.level().getEntity(entityId);
         if (entity instanceof ToukenDanshiEntity touken) {
-            return new ToukenDanshiMenu(ModMenuTypes.TOUKEN_DANSHI_MENU.get(), windowId, inv, touken);
+            return new ToukenDanshiMenu(com.Equatorial.toukenranbu.screen.ModMenuTypes.TOUKEN_DANSHI_MENU.get(), windowId, inv, touken);
         }
         throw new IllegalStateException("Entity not found or wrong type: " + entityId);
     }
@@ -116,6 +138,14 @@ public class ToukenDanshiMenu extends AbstractContainerMenu {
                     moved = this.moveItemStackTo(stackInSlot, SLOT_KNIFE_1, SLOT_KNIFE_3 + 1, false);
                 }
 
+                if (!moved && ToukenDanshiEntity.isMountItem(stackInSlot)) {
+                    moved = this.moveItemStackTo(stackInSlot, SLOT_MOUNT, SLOT_MOUNT + 1, false);
+                }
+
+                if (!moved && isBladeItem(stackInSlot)) {
+                    moved = this.moveItemStackTo(stackInSlot, SLOT_BLADE, SLOT_BLADE + 1, false);
+                }
+
                 if (!moved) {
                     moved = this.moveItemStackTo(stackInSlot, SLOT_ENTITY_INV_START, SLOT_ENTITY_INV_END + 1, false);
                 }
@@ -145,32 +175,80 @@ public class ToukenDanshiMenu extends AbstractContainerMenu {
         return stack.is(ModItemTags.KNIFE_EQUIPMENT);
     }
 
-    public static class ArmorSlot extends SlotItemHandler {
-        private final EquipmentSlot slotType;
-        public ArmorSlot(net.minecraftforge.items.IItemHandler handler, int index, int x, int y, EquipmentSlot slotType) {
-            super(handler, index, x, y);
-            this.slotType = slotType;
-        }
-        @Override
-        public boolean mayPlace(ItemStack stack) {
-            if (stack.getItem() instanceof ArmorItem armor) {
-                return armor.getEquipmentSlot() == this.slotType;
-            }
-            return false;
-        }
-        @Override
-        public int getMaxStackSize() { return 1; }
+    public static boolean isBladeItem(ItemStack stack) {
+        return com.Equatorial.toukenranbu.item.ModItems.isBlade(stack.getItem());
     }
 
-    public static class KnifeSlot extends SlotItemHandler {
-        public KnifeSlot(net.minecraftforge.items.IItemHandler handler, int index, int x, int y) {
-            super(handler, index, x, y);
+    // ========== 带标签页控制的槽位 ==========
+
+    public static class TabArmorSlot extends SlotItemHandler {
+        private final EquipmentSlot slotType;
+        private final ToukenDanshiMenu menu;
+        public TabArmorSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, EquipmentSlot type, ToukenDanshiMenu menu) {
+            super(h, idx, x, y); this.slotType = type; this.menu = menu;
+        }
+        @Override public boolean mayPlace(ItemStack stack) {
+            if (stack.getItem() instanceof ArmorItem armor) return armor.getEquipmentSlot() == this.slotType;
+            return false;
+        }
+        @Override public int getMaxStackSize() { return 1; }
+        @Override public boolean isActive() { return menu.currentTab == 1; }
+    }
+
+    public static class TabKnifeSlot extends SlotItemHandler {
+        private final ToukenDanshiMenu menu;
+        public TabKnifeSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, ToukenDanshiMenu menu) {
+            super(h, idx, x, y); this.menu = menu;
+        }
+        @Override public boolean mayPlace(ItemStack stack) { return isKnifeItem(stack); }
+        @Override public int getMaxStackSize() { return 1; }
+        @Override public boolean isActive() { return menu.currentTab == 1; }
+    }
+
+    public static class TabMountSlot extends SlotItemHandler {
+        private final ToukenDanshiMenu menu;
+        public TabMountSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, ToukenDanshiMenu menu) {
+            super(h, idx, x, y); this.menu = menu;
+        }
+        @Override public boolean mayPlace(ItemStack stack) { return ToukenDanshiEntity.isMountItem(stack); }
+        @Override public int getMaxStackSize() { return 1; }
+        @Override public boolean isActive() { return menu.currentTab == 1; }
+    }
+
+    public static class TabBladeSlot extends SlotItemHandler {
+        private final ToukenDanshiMenu menu;
+        public TabBladeSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, ToukenDanshiMenu menu) {
+            super(h, idx, x, y); this.menu = menu;
+        }
+        @Override public boolean mayPlace(ItemStack stack) { return isBladeItem(stack); }
+        @Override public int getMaxStackSize() { return 1; }
+        @Override public boolean isActive() { return menu.currentTab == 1; }
+    }
+
+    public static class TabItemSlot extends SlotItemHandler {
+        private final ToukenDanshiMenu menu;
+
+        public TabItemSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, ToukenDanshiMenu menu) {
+            super(h, idx, x, y);this.menu = menu;
         }
         @Override
-        public boolean mayPlace(ItemStack stack) {
-            return isKnifeItem(stack);
+        public boolean isActive() {
+            return menu.currentTab == 1;
         }
-        @Override
-        public int getMaxStackSize() { return 1; }
+        /*
+// 宝物槽（未实装）
+public static class TabTreasureSlot extends SlotItemHandler {
+    private final ToukenDanshiMenu menu;
+    public TabTreasureSlot(net.minecraftforge.items.IItemHandler h, int idx, int x, int y, ToukenDanshiMenu menu) {
+        super(h, idx, x, y); this.menu = menu;
+    }
+    @Override public boolean mayPlace(ItemStack stack) {
+        // TODO: 替换为 ModItemTags.TREASURE
+        return false;
+    }
+    @Override public int getMaxStackSize() { return 1; }
+    @Override public boolean isActive() { return menu.currentTab == 1; }
+}
+*/
     }
 }

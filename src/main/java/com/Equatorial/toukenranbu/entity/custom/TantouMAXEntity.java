@@ -18,7 +18,7 @@ public class TantouMAXEntity extends TantouEntity {
                 .add(Attributes.ATTACK_DAMAGE, 16.0f)
                 .add(Attributes.ATTACK_SPEED, 4.0f)
                 .add(Attributes.ARMOR, 8.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.5f)
+                .add(Attributes.MOVEMENT_SPEED, 0.35f)
                 .add(Attributes.FOLLOW_RANGE, 64.0D)
                 .build();
     }

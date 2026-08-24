@@ -22,6 +22,13 @@ public class KashuuKiyomitsuEntity extends ToukenDanshiEntity {
         this.toukenType = ToukenType.UCHIGATANA;
         this.baseAttackDamage = 28.0;
         this.baseMaxHealth = 53.0;
+        // 六维属性，每个子类自己定
+        this.toukenData.impact = 50;      // 冲力
+        this.toukenData.mobility = 51;     // 机动
+        this.toukenData.killing = 41;     // 必杀
+        this.toukenData.scouting = 46;    // 侦察
+        this.toukenData.concealment = 42;  // 隐蔽
+        this.toukenData.troops = 12;      // 兵力
     }
 
     @Override

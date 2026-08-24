@@ -39,7 +39,7 @@ public class TantouEntity extends Monster implements GeoEntity, JikkoEntity {
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 2.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.FOLLOW_RANGE, 48.0D)
                 .build();
     }

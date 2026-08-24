@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 1000,
+  "experience": 0.5,
+  "group": "pure_spiritual_energy",
+  "ingredient": {
+    "item": "toukenranbu_mod:turbid_spiritual_energy"
+  },
+  "result": "toukenranbu_mod:pure_spiritual_energy"
+}

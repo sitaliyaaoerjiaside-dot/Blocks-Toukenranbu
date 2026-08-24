@@ -18,7 +18,7 @@ public class WakizashiMAXEntity extends WakizashiEntity {
                 .add(Attributes.ATTACK_DAMAGE, 12.0f)
                 .add(Attributes.ATTACK_SPEED, 2.5f)
                 .add(Attributes.ARMOR, 8.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.45f)
+                .add(Attributes.MOVEMENT_SPEED, 0.35f)
                 .add(Attributes.FOLLOW_RANGE, 48.0D)
                 .build();
     }

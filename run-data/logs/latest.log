@@ -1,45 +1,45 @@
-[118月2026 10:55:08.131] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\仟潇\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, toukenranbu_mod, --all, --output, D:\Toukenranbu1.20.1\src\generated\resources, --existing, D:\Toukenranbu1.20.1\src\main\resources]
-[118月2026 10:55:08.140] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.19 by Microsoft; OS Windows 11 arch amd64 version 10.0
-[118月2026 10:55:08.417] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[118月2026 10:55:08.500] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/仟潇/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[118月2026 10:55:09.084] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.0\f0c0b352173d0a378cbdcec9cfc4ba65899a721\javafmllanguage-1.20.1-47.4.0.jar is missing mods.toml file
-[118月2026 10:55:09.109] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.0\e862740d8c84d08dbfedea412bef88fe42e727c5\lowcodelanguage-1.20.1-47.4.0.jar is missing mods.toml file
-[118月2026 10:55:09.127] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.0\5719b3a297a33f877ed5dde4cb4bd75c859096af\mclanguage-1.20.1-47.4.0.jar is missing mods.toml file
-[118月2026 10:55:09.143] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.0\235975dafa4309945b59c56b53f31dc5b65a6051\fmlcore-1.20.1-47.4.0.jar is missing mods.toml file
-[118月2026 10:55:09.440] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[118月2026 10:55:12.332] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[118月2026 10:55:12.341] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\仟潇\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, toukenranbu_mod, --all, --output, D:\Toukenranbu1.20.1\src\generated\resources, --existing, D:\Toukenranbu1.20.1\src\main\resources]
-[118月2026 10:55:13.250] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\Toukenranbu1.20.1\build\createSrgToMcp\output.srg
-[118月2026 10:55:13.251] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using D:\Toukenranbu1.20.1\build\createSrgToMcp\output.srg
-[118月2026 10:55:14.706] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [toukenranbu_mod]
-[118月2026 10:55:24.920] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.0, for MC 1.20.1 with MCP 20230612.114412
-[118月2026 10:55:24.938] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.0 Initialized
-[118月2026 10:55:25.735] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
-[118月2026 10:55:27.691] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/仟潇/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.0_mapped_official_1.20.1/forge-1.20.1-47.4.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[118月2026 10:55:27.692] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/仟潇/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.0_mapped_official_1.20.1/forge-1.20.1-47.4.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[118月2026 10:55:28.697] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[118月2026 10:55:28.782] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 84 ms
-[118月2026 10:55:28.783] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[118月2026 10:55:28.971] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 187 ms
-[118月2026 10:55:28.971] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id toukenranbu_mod
-[118月2026 10:55:29.007] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id toukenranbu_mod finished after 36 ms
-[118月2026 10:55:29.007] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id toukenranbu_mod
-[118月2026 10:55:29.013] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id toukenranbu_mod finished after 4 ms
-[118月2026 10:55:29.013] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id vanilla
-[118月2026 10:55:29.019] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id vanilla finished after 5 ms
-[118月2026 10:55:29.019] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: toukenranbu_mod
-[118月2026 10:55:29.240] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: toukenranbu_mod finished after 220 ms
-[118月2026 10:55:29.240] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: toukenranbu_mod
-[118月2026 10:55:29.261] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: toukenranbu_mod finished after 20 ms
-[118月2026 10:55:29.261] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[118月2026 10:55:29.267] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 6 ms
-[118月2026 10:55:29.267] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_cn
-[118月2026 10:55:29.271] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_cn finished after 3 ms
-[118月2026 10:55:29.271] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[118月2026 10:55:29.343] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 71 ms
-[118月2026 10:55:29.344] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : toukenranbu_mod
-[118月2026 10:55:29.361] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : toukenranbu_mod finished after 16 ms
-[118月2026 10:55:29.361] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[118月2026 10:55:29.413] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 51 ms
-[118月2026 10:55:29.413] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 717 ms
-[118月2026 10:55:29.441] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 652, old count: 652, new count: 653, removed stale: 0, written: 0
+[238月2026 23:34:42.085] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\仟潇\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, toukenranbu_mod, --all, --output, D:\Toukenranbu1.20.1\src\generated\resources, --existing, D:\Toukenranbu1.20.1\src\main\resources]
+[238月2026 23:34:42.103] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.19 by Microsoft; OS Windows 11 arch amd64 version 10.0
+[238月2026 23:34:42.353] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[238月2026 23:34:42.445] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/仟潇/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[238月2026 23:34:42.922] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.0\f0c0b352173d0a378cbdcec9cfc4ba65899a721\javafmllanguage-1.20.1-47.4.0.jar is missing mods.toml file
+[238月2026 23:34:42.934] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.0\e862740d8c84d08dbfedea412bef88fe42e727c5\lowcodelanguage-1.20.1-47.4.0.jar is missing mods.toml file
+[238月2026 23:34:42.949] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.0\5719b3a297a33f877ed5dde4cb4bd75c859096af\mclanguage-1.20.1-47.4.0.jar is missing mods.toml file
+[238月2026 23:34:42.962] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\仟潇\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.0\235975dafa4309945b59c56b53f31dc5b65a6051\fmlcore-1.20.1-47.4.0.jar is missing mods.toml file
+[238月2026 23:34:43.179] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[238月2026 23:34:45.461] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[238月2026 23:34:45.469] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\仟潇\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, toukenranbu_mod, --all, --output, D:\Toukenranbu1.20.1\src\generated\resources, --existing, D:\Toukenranbu1.20.1\src\main\resources]
+[238月2026 23:34:46.108] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\Toukenranbu1.20.1\build\createSrgToMcp\output.srg
+[238月2026 23:34:46.109] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using D:\Toukenranbu1.20.1\build\createSrgToMcp\output.srg
+[238月2026 23:34:47.184] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [toukenranbu_mod]
+[238月2026 23:34:56.297] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.0, for MC 1.20.1 with MCP 20230612.114412
+[238月2026 23:34:56.306] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.0 Initialized
+[238月2026 23:34:56.797] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
+[238月2026 23:34:58.304] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/仟潇/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.0_mapped_official_1.20.1/forge-1.20.1-47.4.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[238月2026 23:34:58.306] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/仟潇/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.0_mapped_official_1.20.1/forge-1.20.1-47.4.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[238月2026 23:34:59.128] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[238月2026 23:34:59.284] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 152 ms
+[238月2026 23:34:59.284] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[238月2026 23:34:59.502] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 217 ms
+[238月2026 23:34:59.502] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id toukenranbu_mod
+[238月2026 23:34:59.552] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id toukenranbu_mod finished after 48 ms
+[238月2026 23:34:59.552] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id toukenranbu_mod
+[238月2026 23:34:59.558] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id toukenranbu_mod finished after 6 ms
+[238月2026 23:34:59.559] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id vanilla
+[238月2026 23:34:59.565] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id vanilla finished after 4 ms
+[238月2026 23:34:59.565] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: toukenranbu_mod
+[238月2026 23:34:59.962] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: toukenranbu_mod finished after 397 ms
+[238月2026 23:34:59.963] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: toukenranbu_mod
+[238月2026 23:34:59.975] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: toukenranbu_mod finished after 11 ms
+[238月2026 23:34:59.975] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[238月2026 23:34:59.982] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 6 ms
+[238月2026 23:34:59.982] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_cn
+[238月2026 23:34:59.987] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_cn finished after 4 ms
+[238月2026 23:34:59.987] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[238月2026 23:35:00.084] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 97 ms
+[238月2026 23:35:00.084] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : toukenranbu_mod
+[238月2026 23:35:00.102] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : toukenranbu_mod finished after 17 ms
+[238月2026 23:35:00.102] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[238月2026 23:35:00.173] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 70 ms
+[238月2026 23:35:00.173] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 1046 ms
+[238月2026 23:35:00.215] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 666, old count: 666, new count: 667, removed stale: 0, written: 0

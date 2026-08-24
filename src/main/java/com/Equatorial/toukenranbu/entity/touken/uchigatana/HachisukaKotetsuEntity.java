@@ -22,6 +22,13 @@ public class HachisukaKotetsuEntity extends ToukenDanshiEntity {
         this.toukenType = ToukenType.UCHIGATANA;
         this.baseAttackDamage = 28.0;
         this.baseMaxHealth = 61.0;
+        // 六维属性，每个子类自己定
+        this.toukenData.impact = 54;      // 冲力
+        this.toukenData.mobility = 52;     // 机动
+        this.toukenData.killing = 31;     // 必杀
+        this.toukenData.scouting = 44;    // 侦察
+        this.toukenData.concealment = 41;  // 隐蔽
+        this.toukenData.troops = 12;      // 兵力
     }
 
     @Override

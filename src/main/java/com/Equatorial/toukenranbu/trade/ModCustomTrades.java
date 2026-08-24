@@ -62,6 +62,16 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.SPEED_UP_POTION.get(), 2),
                     20, 2, 0.5f
             ));
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 10),
+                    new ItemStack(ModItems.SOLDIER_CANDY.get(), 1),
+                    5, 2, 0.1f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.TROOP_CANDY.get(), 2),
+                    5, 2, 0.5f
+            ));
         }
 
         if (event.getType() == ModVillagers.BLADESMITH.get()) {
@@ -140,6 +150,41 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 15),
                     new ItemStack(ModItems.PURE_SPIRITUAL_ENERGY.get(), 1),
                     3, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 20),
+                    new ItemStack(ModItems.CAPTURE_BALL.get(), 1),
+                    3, 10, 0.3f
+            ));
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 25),
+                    new ItemStack(ModItems.CAPTURE_BALL.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_TAKADONOGURO.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_OUTEI.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_MIKUNIGURO.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_KOHIBARI.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_MATSUKAZE.get(), 1),
+                    2, 10, 0.3f
             ));
         }
     }

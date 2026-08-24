@@ -22,7 +22,14 @@ public class MikazukiMunechikaEntity extends ToukenDanshiEntity {
         this.setMaxUpStep(1.0F);
         this.toukenType = ToukenType.TACHI;
         this.baseAttackDamage = 40.0;
-        this.baseMaxHealth = 73.0;
+        this.baseMaxHealth = 63.0;
+        // 六维属性，每个子类自己定
+        this.toukenData.impact = 55;      // 冲力
+        this.toukenData.mobility = 37;     // 机动
+        this.toukenData.killing = 30;     // 必杀
+        this.toukenData.scouting = 38;    // 侦察
+        this.toukenData.concealment = 35;  // 隐蔽
+        this.toukenData.troops = 16;      // 兵力
     }
 
     @Override

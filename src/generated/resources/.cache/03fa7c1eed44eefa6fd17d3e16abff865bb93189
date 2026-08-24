@@ -1,9 +1,10 @@
-// 1.20.1	2026-08-07T23:14:26.1805345	Item Models: toukenranbu_mod
+// 1.20.1	2026-08-22T14:08:47.698199	Item Models: toukenranbu_mod
 7ea9f26e23b5c2af839849f90605c4c78db9e16a assets/toukenranbu_mod/models/item/amulet.json
 2495cd220fc85e5f74f075469878f88085293a4e assets/toukenranbu_mod/models/item/a_bite_of_dango.json
 ccd5a03136e4889e2e7f4066af084fcf6bef471d assets/toukenranbu_mod/models/item/a_set_of_paper_and_pen.json
 42587a9dfe87d5d5a215f53c0247272d5ca9824c assets/toukenranbu_mod/models/item/a_string_of_dango.json
 0ed3dbb43ae1eed7d163ebb2fe64f4cce652666c assets/toukenranbu_mod/models/item/bronze_omamori.json
+118d0331bef006498d476f93aa74adf9051a8e9f assets/toukenranbu_mod/models/item/capture_ball.json
 d8d21727a760c27ca60887cc80116fb5146b0402 assets/toukenranbu_mod/models/item/charred_button.json
 e2d99d85557c17eb4872029e5756a8fd5212f8e3 assets/toukenranbu_mod/models/item/charred_door.json
 0e42b260efeab5b7f56dd3b1637d62b4fbd675cb assets/toukenranbu_mod/models/item/charred_fence.json
@@ -13,6 +14,11 @@ c17ec9d2cebd11069e09f725d5dcf3564395e53c assets/toukenranbu_mod/models/item/char
 d00af278dd6e1f92f552b3981dda9c0e6d1405eb assets/toukenranbu_mod/models/item/dice.json
 99492ccc65acb36cfc8720e3a71e567779e677cf assets/toukenranbu_mod/models/item/gold_omamori.json
 d78e13ec4e2bbe23e88b762fb34a772615a9c595 assets/toukenranbu_mod/models/item/hachisuka_kotetsu.json
+c9f386184471a7b134bb40747480e045af259a06 assets/toukenranbu_mod/models/item/horse_kohibari.json
+5b0ad457f383247f4084ad5649da8393cd855ce4 assets/toukenranbu_mod/models/item/horse_matsukaze.json
+26273ff69bf0a6be311da13d8534c645a8658df8 assets/toukenranbu_mod/models/item/horse_mikuniguro.json
+38fe0347041097531cb7741b8e609ac79bb2c563 assets/toukenranbu_mod/models/item/horse_outei.json
+78e7bdb88eeb7cc1186aa7394b5e675d61a79738 assets/toukenranbu_mod/models/item/horse_takadonoguro.json
 a7af0309bff5f661eb310bb9bdb29fb3bfb409cc assets/toukenranbu_mod/models/item/immortal_dumplings.json
 1df4da8cd8cf233e1a7dfb82cc85eb5543e71453 assets/toukenranbu_mod/models/item/kasen_kanesada.json
 374f66207c67f03a8370b2a546d407c555a26ad6 assets/toukenranbu_mod/models/item/kashuu_kiyomitsu.json

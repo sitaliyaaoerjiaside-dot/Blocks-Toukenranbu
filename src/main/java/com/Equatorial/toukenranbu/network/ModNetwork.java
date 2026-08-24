@@ -34,5 +34,13 @@ public class ModNetwork {
                 ToukenDanshiActionPacket::decode,
                 ToukenDanshiActionPacket::handle
         );
+
+        CHANNEL.registerMessage(
+                packetId++,
+                FormationChangePacket.class,
+                FormationChangePacket::encode,
+                FormationChangePacket::decode,
+                FormationChangePacket::handle
+        );
     }
 }

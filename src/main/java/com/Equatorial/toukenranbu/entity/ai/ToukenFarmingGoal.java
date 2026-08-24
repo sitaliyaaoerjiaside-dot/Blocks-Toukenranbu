@@ -193,6 +193,8 @@ public class ToukenFarmingGoal extends Goal {
             targetPos = null;
             cooldown = 5;
             harvestCounter++; // 【改这里】收割计数+1
+            entity.toukenData.fatigue = Math.max(0, entity.toukenData.fatigue - 1);
+            entity.syncExtraData();
             return;
         }
 
@@ -206,6 +208,8 @@ public class ToukenFarmingGoal extends Goal {
                 targetPos = null;
                 cooldown = 0;
                 harvestCounter++; // 【改这里】收割计数+1
+                entity.toukenData.fatigue = Math.max(0, entity.toukenData.fatigue - 1);
+                entity.syncExtraData();
                 return;
             }
             // 甘蔗不够高，不收，不加计数
@@ -225,6 +229,8 @@ public class ToukenFarmingGoal extends Goal {
                 targetPos = null;
                 cooldown = 0;
                 plantCounter++; // 【改这里】种植计数+1
+                entity.toukenData.fatigue = Math.max(0, entity.toukenData.fatigue - 1);
+                entity.syncExtraData();
                 return;
             } else {
                 entity.setNeedsSeedRefill(true);

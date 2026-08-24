@@ -27,6 +27,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.GOLD_OMAMORI.get(), "金刀装");
         add(ModItems.SILVER_OMAMORI.get(), "银刀装");
         add(ModItems.BRONZE_OMAMORI.get(), "铜刀装");
+        add(ModItems.HORSE_KOHIBARI.get(), "小云雀");
+        add(ModItems.HORSE_MIKUNIGURO.get(), "三国黑");
+        add(ModItems.HORSE_MATSUKAZE.get(), "松风");
+        add(ModItems.HORSE_OUTEI.get(), "王庭");
+        add(ModItems.HORSE_TAKADONOGURO.get(), "高楯黑");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "敌短刀刷怪蛋");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "敌胁差刷怪蛋");
@@ -67,6 +72,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_KOTETSU.get(), "蜂须贺虎彻");
         add(ModItems.KASEN_KANESADA.get(), "歌仙兼定");
         add(ModItems.MUTSUNOKAMI_YOSHIYUKI.get(), "陆奥守吉行");
+
+//刀剑本体
+        add(ModItems.MIKAZUKI_BLADE.get(), "三日月宗近【刀】");
+        add(ModItems.YAMANBAGIRI_BLADE.get(), "山姥切国広【刀】");
+        add(ModItems.KASHUU_BLADE.get(), "加州清光【刀】");
+        add(ModItems.HACHISUKA_BLADE.get(), "蜂須賀虎徹【刀】");
+        add(ModItems.KASEN_BLADE.get(), "歌仙兼定【刀】");
+        add(ModItems.MUTSUNOKAMI_BLADE.get(), "陸奥守吉行【刀】");
+
+        add("gui.toukenranbu.label.blade", "本体刀");
 
 //食物
         add(ModItems.A_BITE_OF_DANGO.get(), "一口团子");
@@ -148,6 +163,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.WHETSTONE_BOOTS.get(), "砥石靴子");
 
         add(ModItems.DICE.get(),"骰子");
+        add(ModItems.CAPTURE_BALL.get(),"收容符");
 
         add("effect.toukenranbu_mod.spirit_regen", "灵力恢复加成");
         add("container.sword_forge", "锻刀炉");
@@ -170,6 +186,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.summon_mutsunokami_yoshiyuki",
                 "我是陆奥守吉行。好不容易来到这么豪华的地方，就抓住世界吧！");
 
+        add("gui.toukenranbu.label.entity_inventory", "刀剑男士的物品栏");
         add("gui.toukenranbu.touken_danshi.title","刀剑男士");
         add("gui.toukenranbu.button.sit", "坐下");
         add("gui.toukenranbu.button.stand", "起身");
@@ -179,6 +196,52 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.stop_farm", "畑当番终止");
         add("gui.toukenranbu.button.farm_escaping", "逃番中");
         add("gui.toukenranbu.button.farm_no_seeds", "畑当番(无种子)");
+        add("gui.toukenranbu.button.mine", "矿石采集");
+        add("gui.toukenranbu.button.stop_mine", "停止矿石采集");
+        add("gui.toukenranbu.button.mine_no_pickaxe", "矿石采集（无镐子）");
+        add("gui.toukenranbu.status.mining", "【采矿中】");
+        add("gui.toukenranbu.button.patrol", "巡逻");
+        add("gui.toukenranbu.button.patrolling", "巡逻中");
+        add("gui.toukenranbu.button.sparrow", "手合");
+        add("gui.toukenranbu.button.sparring", "手合中");
+        add("gui.toukenranbu.message.sparrow_no_partner", "附近没有可手合的刀剑男士");
+        add("gui.toukenranbu.button.cave_clear", "矿洞清缴");
+        add("gui.toukenranbu.button.cave_clearing", "停止清缴");
+        add("gui.toukenranbu.button.cave_clear_no_torches", "没有火把");
+        add("gui.toukenranbu.label.auto_pickup", "跟随捡物");
+
+        add("gui.toukenranbu.message.auto_seal", "%s 重伤，已紧急收回！");
+        add("gui.toukenranbu.formation.status_with_count", "%s (%d振)");
+        add("gui.toukenranbu.message.feed_full", "%s 吃饱了，已经吃不下更多了！");
+
+//阵型
+        add("gui.toukenranbu.formation.none", "无阵型");
+        add("gui.toukenranbu.formation.fish_scale", "鱼鳞阵");
+        add("gui.toukenranbu.formation.crane_wing", "鹤翼阵");
+        add("gui.toukenranbu.formation.goose_line", "雁行阵");
+        add("gui.toukenranbu.formation.square", "方阵");
+
+ // 状态栏
+        add("gui.toukenranbu.hp", "HP: %1$s/%2$s");
+        add("gui.toukenranbu.stat.impact", "冲力 %1$s");
+        add("gui.toukenranbu.stat.mobility", "机动 %1$s");
+        add("gui.toukenranbu.stat.killing", "必杀 %1$s");
+        add("gui.toukenranbu.stat.scouting", "侦察 %1$s");
+        add("gui.toukenranbu.stat.concealment", "隐蔽 %1$s");
+        add("gui.toukenranbu.stat.troops", "兵力 %1$s");
+        add("gui.toukenranbu.stat.fatigue", "疲劳");
+// 疲劳状态
+        add("gui.toukenranbu.status.sakura", "樱吹雪");
+        add("gui.toukenranbu.status.normal", "通常");
+        add("gui.toukenranbu.status.tired", "疲劳");
+        add("gui.toukenranbu.status.exhausted", "严重疲劳");
+
+//物品栏标签文字
+        add( "gui.toukenranbu.label.armor", "护甲");
+        add("gui.toukenranbu.label.knife", "刀装");
+        add("gui.toukenranbu.label.mount", "马匹");
+        add("gui.toukenranbu.label.treasure", "未实装");
+        add("gui.toukenranbu.label.inventory", "刀剑男士的背包");
 
 // 实体
         add("entity.toukenranbu_mod.mikazuki_munechika", "三日月宗近");
@@ -188,6 +251,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("entity.toukenranbu_mod.kashuu_kiyomitsu", "加州清光");
         add("entity.toukenranbu_mod.mutsunokami_yoshiyuki", "陆奥守吉行");
 
+        add("entity.toukenranbu.touken_danshi.mikazuki_munechika", "三日月宗近");
+        add("entity.toukenranbu.touken_danshi.yamanbagiri_kunihiro", "山姥切国广");
+        add("entity.toukenranbu.touken_danshi.hachisuka_kotetsu", "蜂须贺虎彻");
+        add("entity.toukenranbu.touken_danshi.kasen_kanesada", "歌仙兼定");
+        add("entity.toukenranbu.touken_danshi.kashuu_kiyomitsu", "加州清光");
+        add("entity.toukenranbu.touken_danshi.mutsunokami_yoshiyuki", "陆奥守吉行");
+
 // GUI 标题
         add("gui.toukenranbu.touken_danshi.title.mikazuki_munechika", "三日月宗近");
         add("gui.toukenranbu.touken_danshi.title.yamanbagiri_kunihiro", "山姥切国广");
@@ -195,6 +265,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.kasen_kanesada", "歌仙兼定");
         add("gui.toukenranbu.touken_danshi.title.kashuu_kiyomitsu", "加州清光");
         add("gui.toukenranbu.touken_danshi.title.mutsunokami_yoshiyuki", "陆奥守吉行");
+
+        // GUI 标签页
+        add("gui.toukenranbu.tab.status", "状态");
+        add("gui.toukenranbu.tab.items", "物品");
 
         add("entity.toukenranbu_mod.tantou", "敌短刀");
         add("entity.toukenranbu_mod.wakizashi", "敌胁差");
@@ -252,6 +326,19 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.kebiishi.warning", "【检非违使出现】历史修正力正在向 %s 的位置聚集...30秒后降临！");
         add("message.toukenranbu_mod.kebiishi.spawned", "【检非违使出现】历史修正力已降临！");
         add("message.toukenranbu_mod.kebiishi.nearby", "【历史修正力】附近已有检非违使，暂时停止聚集。");
+
+        add("item.toukenranbu_mod.capture_ball.prefix.captured", "[已收容] ");
+        add("message.toukenranbu_mod.capture.fail_player", "不能收容玩家！");
+        add("message.toukenranbu_mod.capture.fail_full", "这个收容符已经装有实体了！");
+        add("message.toukenranbu_mod.capture.success", "收容成功！");
+        add("message.toukenranbu_mod.release.fail_empty", "这个收容符是空的！");
+        add("message.toukenranbu_mod.release.fail_owner", "你不是这个收容符的主人！");
+        add("message.toukenranbu_mod.release.success", "释放成功: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.entity", "收容实体: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.type", "类型: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.owner", "主人: %s");
+        add("tooltip.toukenranbu_mod.capture_ball.empty", "空的收容符");
+        add("tooltip.toukenranbu_mod.capture_ball.usage", "右键生物收容，右键方块释放");
 
 // ========== 成就标题 & 描述 ==========
         add("advancements.toukenranbu_mod.new_start.title", "新的开始");

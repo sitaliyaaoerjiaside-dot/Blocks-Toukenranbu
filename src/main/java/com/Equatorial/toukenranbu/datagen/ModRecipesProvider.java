@@ -35,6 +35,10 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         oreSmelting(pWriter, WHETSTONE, RecipeCategory.MISC, ModItems.WHETSTONE.get(), 0.25f, 200, "whetstone");
         oreBlasting(pWriter, WHETSTONE, RecipeCategory.MISC, ModItems.WHETSTONE.get(), 0.25f, 100, "whetstone");
 
+        oreSmelting(pWriter, List.of(ModItems.TURBID_SPIRITUAL_ENERGY.get()),
+                RecipeCategory.MISC, ModItems.PURE_SPIRITUAL_ENERGY.get(),
+                0.5f, 1000, "pure_spiritual_energy");
+
 //分割线，往下是玉钢类建材
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WOOTZ_STEEL_BLOCK.get())
                 .pattern("###")
@@ -578,6 +582,31 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('#', ModItems.TURBID_SPIRITUAL_ENERGY.get())
                 .define('|', ModItems.PURE_SPIRITUAL_ENERGY.get())
                 .unlockedBy(getHasName(ModItems.TURBID_SPIRITUAL_ENERGY.get()), has(ModItems.TURBID_SPIRITUAL_ENERGY.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CAPTURE_BALL.get(), 2)
+                .pattern(" # ")
+                .pattern(" | ")
+                .pattern(" @ ")
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .define('|', Items.PAPER)
+                .define('@', ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.POWER_OF_ATTORNEY.get(), 2)
+                .pattern(" # ")
+                .pattern(" | ")
+                .pattern(" # ")
+                .define('#', ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                .define('|', Items.PAPER)
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPEED_UP_POTION.get(), 2)
+                .pattern(" @ ")
+                .pattern(" | ")
+                .pattern(" @ ")
+                .define('|', Items.PAPER)
+                .define('@', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
 
     }

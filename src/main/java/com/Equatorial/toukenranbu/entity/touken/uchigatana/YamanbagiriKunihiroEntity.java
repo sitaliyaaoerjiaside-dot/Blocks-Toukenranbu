@@ -22,6 +22,13 @@ public class YamanbagiriKunihiroEntity extends ToukenDanshiEntity {
         this.toukenType = ToukenType.UCHIGATANA;
         this.baseAttackDamage = 28.0;
         this.baseMaxHealth = 54.0;
+        // 六维属性，每个子类自己定
+        this.toukenData.impact = 55;      // 冲力
+        this.toukenData.mobility = 52;     // 机动
+        this.toukenData.killing = 35;     // 必杀
+        this.toukenData.scouting = 45;    // 侦察
+        this.toukenData.concealment = 41;  // 隐蔽
+        this.toukenData.troops = 12;      // 兵力
     }
 
     @Override
