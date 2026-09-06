@@ -9,15 +9,6 @@
       "text": "Touken Danshi can be summoned using their respective summoning items by right-clicking on a block. Their summoning items cannot currently be crafted and can only be found in chests within various naturally generated structures.$(br2)Touken Danshi possess a 25-slot inventory, can wear player armor and benefit from its effects, and can additionally equip mod-exclusive gear: omamori. Different omamori provide varying levels of health and attack damage bonuses.$(br2)For more details, see the following Touken Danshi GUI panel.$(br2)Touken Danshi cannot use or equip shields."
     },
     {
-      "type": "patchouli:image",
-      "title": "Touken Danshi GUI Showcase",
-      "images": [
-        "toukenranbu_mod:textures/gui/touken_danshi.png"
-      ],
-      "border": true,
-      "text": "The four slots to the left of the entity render are the armor slots. The three slots at the very top are the omamori slots."
-    },
-    {
       "type": "patchouli:text",
       "title": "Touken Danshi Guide",
       "text": "Touken Danshi can be summoned using their respective summoning items by right-clicking on a block. Their summoning items cannot currently be crafted and can only be found in chests within various naturally generated structures.$(br2)Touken Danshi possess a 25-slot inventory, can wear player armor and benefit from its effects, and can additionally equip mod-exclusive gear: omamori. Different omamori provide varying levels of health and attack damage bonuses.$(br2)For more details, see the following Touken Danshi GUI panel.$(br2)Touken Danshi cannot use or equip shields."

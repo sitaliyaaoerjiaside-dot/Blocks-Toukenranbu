@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gotou_toushirou": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:gotou_toushirou"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:gotou_toushirou_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gotou_toushirou",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:gotou_toushirou_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

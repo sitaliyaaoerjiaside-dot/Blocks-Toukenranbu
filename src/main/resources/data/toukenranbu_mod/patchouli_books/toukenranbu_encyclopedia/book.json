@@ -1,7 +1,7 @@
 {
   "name": "toukenranbu.book.name",
   "landing_text": "toukenranbu.landing_text",
-  "version": 1,
+  "version": 2,
   "creative_tab": "toukenranbu_mod:toukenranbu_tab",
   "text_color": "4000FF",
   "header_color": "000080",

@@ -1,8 +1,10 @@
 package com.Equatorial.toukenranbu.item.touken.uchigatana;
 
 import com.Equatorial.toukenranbu.advancement.ModAdvancementTriggers;
+import com.Equatorial.toukenranbu.capability.ModCapabilities;
 import com.Equatorial.toukenranbu.entity.ModEntityTypes;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.KashuuKiyomitsuEntity;
+import com.Equatorial.toukenranbu.network.SpiritPowerSyncPacket;
 import com.Equatorial.toukenranbu.util.StarterSwordHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,6 +23,24 @@ public class KashuuKiyomitsuItem extends Item {
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         if (!level.isClientSide && context.getPlayer() != null) {
+
+            ServerPlayer player = (ServerPlayer) context.getPlayer();
+            if (!player.isCreative()) {
+                boolean hasEnough = player.getCapability(ModCapabilities.SPIRIT_POWER).map(cap -> {
+                    if (cap.consumeSpiritPower(30)) {
+                        SpiritPowerSyncPacket.sendToPlayer(player);
+                        return true;
+                    }
+                    return false;
+                }).orElse(false);
+
+                if (!hasEnough) {
+                    player.sendSystemMessage(
+                            Component.translatable("message.toukenranbu_mod.insufficient_spirit")
+                    );
+                    return InteractionResult.FAIL;
+                }
+            }
 
             KashuuKiyomitsuEntity danshi = new KashuuKiyomitsuEntity(ModEntityTypes.KASHUU_KIYOMITSU.get(), level);
             danshi.setTame(true);

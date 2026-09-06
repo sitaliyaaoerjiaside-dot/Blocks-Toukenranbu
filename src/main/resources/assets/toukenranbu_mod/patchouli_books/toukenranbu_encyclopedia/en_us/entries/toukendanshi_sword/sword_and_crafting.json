@@ -1,0 +1,24 @@
+{
+  "name": "Blades of the Sword Warriors",
+  "category": "toukenranbu_mod:toukendanshi_sword",
+  "icon": "toukenranbu_mod:mikazuki_munechika_sword",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Mod-Exclusive Weapons: Blades of the Sword Warriors",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:mikazuki_munechika_sword",
+      "text": "These are the blades of the sword warriors. Players can enchant them with various enchantments. Note: Some blades, when used by the player, do not function the same as when wielded by the sword warrior themselves.$(br2)The recipe is shown on the next page, using Mikazuki Munechika's blade as an example. The recipe is the same for all blades except for the central summoning item, which differs per sword warrior."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:mikazuki_munechika_sword",
+      "title": "Crafting a Blade Requires the Sword Warrior's Summoning Item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:mikazuki_munechika",
+      "title": "Crafting a Sword Warrior's Summoning Item Requires the Blade"
+    }
+  ]
+}

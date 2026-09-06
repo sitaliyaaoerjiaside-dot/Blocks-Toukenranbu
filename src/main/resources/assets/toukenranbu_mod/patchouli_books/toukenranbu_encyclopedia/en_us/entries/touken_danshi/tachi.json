@@ -14,6 +14,27 @@
       "name": "Mikazuki Munechika",
       "scale": 0.8,
       "text": "A tachi forged by Sanjou Munechika, a swordsmith of the Heian period.One of the Five Great Swords of Japan.Regarded as the most beautiful among them.As a Touken Danshi, his bearing is as elegant as that of a Heian noble.Calling him magnanimous sounds nice, but in truth he is the ultimate free spirit."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ichigo_hitofuri",
+      "name": "Ichigo Hitofuri",
+      "scale": 0.8,
+      "text": "A tachi forged by Awataguchi Yoshimitsu, who was famous as a master of tantou-making. Its name means 'a sword forged only once in a lifetime.' He is regarded as the eldest brother by the Toushirou brothers and is affectionately called 'Ichi-ni' by them. He always wears a gentle and peaceful smile, but occasionally, his expression shows a hint of sorrow."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tsurumaru_kuninaga",
+      "name": "Tsurumaru Kuninaga",
+      "scale": 0.8,
+      "text": "A tachi inscribed with the name of the Heian-period smith Gojo Kuninaga. Dressed in white garments reminiscent of a crane, he casually says things like 'I'll get dyed red in battle.' His lighthearted and intoxicating demeanor, even amidst combat, is unforgettable."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:shokudaikiri_mitsutada",
+      "name": "Shokudaikiri Mitsutada",
+      "scale": 0.8,
+      "text": "A work of Mitsutada, the de facto founder of the Bizen Osafune school. Its name comes from an incident where Date Masamune cut down a retainer with this tachi and incidentally sliced through a candlestand. Like other blades of the Date clan, he has a strong concern for appearance. He and Date clan's Daitokuji Sadamune call each other 'Mitsu' and 'Sada.'"
     }
   ]
 }

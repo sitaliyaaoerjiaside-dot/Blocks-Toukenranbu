@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_heshikiri_hasebe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:heshikiri_hasebe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:heshikiri_hasebe_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_heshikiri_hasebe",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:heshikiri_hasebe_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

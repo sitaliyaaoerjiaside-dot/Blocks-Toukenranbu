@@ -1,0 +1,12 @@
+{
+  "name": "Friendly Fire Toggle",
+  "icon": "toukenranbu_mod:whetstone_sword",
+  "category": "toukenranbu_mod:all_new_ore",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Damage Mechanics Between Players and Sword Warriors",
+      "text": "To ensure gameplay integrity, friendly fire between players and sword warriors is enabled by default in this mod.$(br2)To disable the friendly fire mechanic, use the command in the chat box in the lower-left corner.$(br2)Players can use /tr ff or /toukenranbu friendlyfire to toggle friendly fire on or off."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hachisuka_kotetsu_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:hachisuka_kotetsu_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:hachisuka_kotetsu"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_hachisuka_kotetsu_sword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:hachisuka_kotetsu"
+    ]
+  },
+  "sends_telemetry_event": false
+}

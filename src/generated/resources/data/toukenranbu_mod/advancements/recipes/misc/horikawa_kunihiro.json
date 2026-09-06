@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_horikawa_kunihiro_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:horikawa_kunihiro_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:horikawa_kunihiro"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_horikawa_kunihiro_sword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:horikawa_kunihiro"
+    ]
+  },
+  "sends_telemetry_event": false
+}

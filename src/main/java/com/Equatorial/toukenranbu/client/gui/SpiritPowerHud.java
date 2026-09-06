@@ -49,7 +49,7 @@ public class SpiritPowerHud {
         int maxSpiritPower = ClientSpiritPowerData.getMaxSpiritPower();
 
         int x = screenWidth / 2 + 10;
-        int y = screenHeight - 52;
+        int y = screenHeight - 59;
 
         int barWidth = 81;
         int barHeight = 9;

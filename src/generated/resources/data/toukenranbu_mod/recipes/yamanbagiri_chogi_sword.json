@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:wootz_steel_block"
+    },
+    "$": {
+      "item": "toukenranbu_mod:coolant_block"
+    },
+    "%": {
+      "item": "minecraft:coal_block"
+    },
+    "@": {
+      "item": "toukenranbu_mod:whetstone_block"
+    },
+    "|": {
+      "item": "toukenranbu_mod:yamanbagiri_chogi"
+    }
+  },
+  "pattern": [
+    " @ ",
+    "$|%",
+    " # "
+  ],
+  "result": {
+    "item": "toukenranbu_mod:yamanbagiri_chogi_sword"
+  },
+  "show_notification": true
+}

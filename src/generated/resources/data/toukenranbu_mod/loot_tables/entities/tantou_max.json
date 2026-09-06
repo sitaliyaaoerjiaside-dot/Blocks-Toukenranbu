@@ -89,6 +89,26 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:imanotsurugi"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:gotou_toushirou"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "toukenranbu_mod:entities/tantou_max"

@@ -1,0 +1,19 @@
+{
+  "name": "收容符",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:capture_ball",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "可以收容任何生物",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:capture_ball",
+      "text": "理论上可以收容任何生物的收容符，只要你手速够快，什么都能带走！$(br2)当刀剑男士的生命值降低至1或以下的时候将立刻触发一次重伤收容效果，会直接将一个收容符给予到玩家背包中。$(br2)但是请注意：这个效果有内置冷却时间，重复触发无效。$(br2)配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:capture_ball",
+      "title": "合成配方"
+    }
+  ]
+}

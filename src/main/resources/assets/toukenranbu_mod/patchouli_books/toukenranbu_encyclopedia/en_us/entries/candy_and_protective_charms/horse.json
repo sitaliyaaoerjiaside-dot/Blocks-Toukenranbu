@@ -1,0 +1,14 @@
+{
+  "name": "Horses and How to Obtain Them",
+  "category": "toukenranbu_mod:sweets_and_protective_charms",
+  "icon": "toukenranbu_mod:horse_mochizuki",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Horses and How to Obtain Them",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:horse_mochizuki",
+      "text": "Horses are not limited to Mochizuki—this is just an example. Different horses provide varying degrees of stat bonuses to sword warriors.$(br2)Horses can only be obtained from the swordsmith in exchange for koban."
+    }
+  ]
+}

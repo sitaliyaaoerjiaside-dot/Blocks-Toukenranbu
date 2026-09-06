@@ -186,6 +186,41 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.HORSE_MATSUKAZE.get(), 1),
                     2, 10, 0.3f
             ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_KAKOJI.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_SEIHAKU.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_MOCHIZUKI.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_AOGE.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_KAGE.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_SHIROGE.get(), 1),
+                    2, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
+                    new ItemStack(ModItems.HORSE_UMAGOU.get(), 1),
+                    2, 10, 0.3f
+            ));
         }
     }
 }

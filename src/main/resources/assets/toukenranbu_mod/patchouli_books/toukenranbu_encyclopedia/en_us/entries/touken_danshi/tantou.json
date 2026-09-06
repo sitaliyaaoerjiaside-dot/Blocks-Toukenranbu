@@ -1,12 +1,26 @@
 {
   "name": "Tantou-type Touken Danshi",
-  "icon": "toukenranbu_mod:tantou_max_spawn_egg",
+  "icon": "toukenranbu_mod:imanotsurugi",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Tantou",
-      "text": "Coming soon."
+      "text": "Tantou-type sword warriors. Sword warriors of the same type have basically no difference in attack speed, search range, attack power, and movement speed. Tantou are the fastest sword warrior entities in this mod."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:imanotsurugi",
+      "name": "Imanotsurugi",
+      "scale": 0.8,
+      "text": "A sword forged by the Heian-period smith Sanjo Munechika. It served as both a protective charm and a suicide blade for Minamoto no Yoshitsune, though the actual blade is now lost. A spirited little tengu of Kurama, with superb balance—able to hop about in single-toothed geta. He is weak to stories of brotherly bonds."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:gotou_toushirou",
+      "name": "Gotou Toushirou",
+      "scale": 0.8,
+      "text": "A tantou made by Awataguchi Yoshimitsu. One of the Toushirou brothers. Named after its former owner, Goto Sanzaburo Mitsutsugu, and later passed down through the Owari Tokugawa family. He is on the taller side among the Toushirou brothers, at an age where he wishes he could grow even taller."
     }
   ]
 }

@@ -71,6 +71,21 @@ public class SpiritPowerEvents {
                 }
             }
 
+            // ===== 灵力 → 反隐效果 =====
+            if (event.player.tickCount % 20 == 0) {
+                event.player.getCapability(ModCapabilities.SPIRIT_POWER).ifPresent(cap -> {
+                    boolean hasAntiInvis = event.player.hasEffect(ModEffects.TOUKEN_ANTI_INVIS.get());
+                    if (cap.getSpiritPower() >= 50 && !hasAntiInvis) {
+                        event.player.addEffect(new net.minecraft.world.effect.MobEffectInstance(
+                                ModEffects.TOUKEN_ANTI_INVIS.get(),
+                                400, 0, false, false, true));
+                    } else if (cap.getSpiritPower() < 50 && hasAntiInvis) {
+                        event.player.removeEffect(ModEffects.TOUKEN_ANTI_INVIS.get());
+                    }
+                });
+            }
+            // ===== 灵力转效果结束 =====
+
             boolean hasRegenBonus = event.player.hasEffect(ModEffects.SPIRIT_REGEN.get());
 
             int interval = hasRegenBonus ? 20 : 100;
@@ -85,6 +100,21 @@ public class SpiritPowerEvents {
                     }
                 });
             }
+
+            // ===== 灵力 → 混合伤害效果 =====
+            if (event.player.tickCount % 20 == 0) {
+                event.player.getCapability(ModCapabilities.SPIRIT_POWER).ifPresent(cap -> {
+                    boolean hasMixed = event.player.hasEffect(ModEffects.TOUKEN_MIXED_DAMAGE.get());
+                    if (cap.getSpiritPower() >= 70 && !hasMixed) {
+                        event.player.addEffect(new net.minecraft.world.effect.MobEffectInstance(
+                                ModEffects.TOUKEN_MIXED_DAMAGE.get(),
+                                400, 0, false, false, true));
+                    } else if (cap.getSpiritPower() < 70 && hasMixed) {
+                        event.player.removeEffect(ModEffects.TOUKEN_MIXED_DAMAGE.get());
+                    }
+                });
+            }
+            // ===== 灵力转混合伤害结束 =====
         }
     }
 }

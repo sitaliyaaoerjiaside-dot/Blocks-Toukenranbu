@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kasen_kanesada_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:kasen_kanesada_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:kasen_kanesada"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_kasen_kanesada_sword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:kasen_kanesada"
+    ]
+  },
+  "sends_telemetry_event": false
+}

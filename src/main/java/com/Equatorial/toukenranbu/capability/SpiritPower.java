@@ -4,11 +4,10 @@ package com.Equatorial.toukenranbu.capability;
 public class SpiritPower implements ISpiritPower {
     private int spiritPower = 50;
     private static final int MAX_SPIRIT_POWER = 100;
+    private boolean friendlyFire = true; // 默认开启友伤
 
     @Override
-    public int getSpiritPower() {
-        return spiritPower;
-    }
+    public int getSpiritPower() { return spiritPower; }
 
     @Override
     public void setSpiritPower(int amount) {
@@ -32,5 +31,16 @@ public class SpiritPower implements ISpiritPower {
     @Override
     public int getMaxSpiritPower() {
         return MAX_SPIRIT_POWER;
+    }
+
+    // 新增
+    @Override
+    public boolean isFriendlyFireEnabled() {
+        return friendlyFire;
+    }
+
+    @Override
+    public void setFriendlyFireEnabled(boolean enabled) {
+        this.friendlyFire = enabled;
     }
 }

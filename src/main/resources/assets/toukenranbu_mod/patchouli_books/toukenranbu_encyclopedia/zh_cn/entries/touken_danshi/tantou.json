@@ -1,12 +1,26 @@
 {
   "name": "短刀类刀剑男士",
-  "icon": "toukenranbu_mod:tantou_max_spawn_egg",
+  "icon": "toukenranbu_mod:imanotsurugi",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "短刀",
-      "text": "敬请期待"
+      "text": "胁差类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。短刀是本模组内移动速度最快的刀种实体。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:imanotsurugi",
+      "name": "今剑",
+      "scale": 0.8,
+      "text": "平安时代的刀匠、三条宗近所作的锻刀。源义经的护身刀，同时也是自刃刀，实物下落不明。神气的鞍马小天狗。平衡感拔群，能够穿着单齿木屐蹦蹦跳跳。对兄弟情的故事缺乏抵抗力。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:gotou_toushirou",
+      "name": "后藤藤四郎",
+      "scale": 0.8,
+      "text": "粟田口吉光所作的短刀。藤四郎兄弟中的一人。因后藤庄三郎光次所持而得名，其后为尾张德川家代代相传。在藤四郎兄弟中属于高个子的类型，约处于想要长得更高大的年纪。"
     }
   ]
 }

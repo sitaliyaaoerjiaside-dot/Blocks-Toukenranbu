@@ -1,0 +1,12 @@
+{
+  "name": "友伤机制开关",
+  "icon": "toukenranbu_mod:whetstone_sword",
+  "category": "toukenranbu_mod:all_new_ore",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "玩家与刀剑男士的伤害机制",
+      "text": "为了保证游戏性，本模组中玩家与刀剑男士的友伤默认是开启的。$(br2)想要关闭友伤机制，需要在左下角的文本聊天框使用命令。$(br2)玩家可以使用 /tr ff或者/toukenranbu friendlyfire这个命令来开启或者关闭友伤机制。"
+    }
+  ]
+}

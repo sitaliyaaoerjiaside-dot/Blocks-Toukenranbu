@@ -4,8 +4,18 @@ import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.entity.custom.KonnosukeEntity;
 import com.Equatorial.toukenranbu.entity.custom.*;
 import com.Equatorial.toukenranbu.entity.custom.kebiishi.*;
+import com.Equatorial.toukenranbu.entity.touken.naginata.TomoegataNaginataEntity;
+import com.Equatorial.toukenranbu.entity.touken.ootachi.IshikirimaruEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.MikazukiMunechikaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.ShokudaikiriMitsutadaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.TsurumaruKuninagaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tantou.GotouToushirouEntity;
+import com.Equatorial.toukenranbu.entity.touken.tantou.ImanotsurugiEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.*;
+import com.Equatorial.toukenranbu.entity.touken.wakizashi.HorikawaKunihiroEntity;
+import com.Equatorial.toukenranbu.entity.touken.wakizashi.NikkariAoeEntity;
+import com.Equatorial.toukenranbu.entity.touken.yari.TonbokiriEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -189,6 +199,77 @@ public class ModEntityTypes {
             ENTITY_TYPES.register("konnosuke",
                     () -> EntityType.Builder.of(KonnosukeEntity::new, MobCategory.CREATURE)
                             .sized(0.6F, 0.7F).build("konnosuke"));
+
+    public static final RegistryObject<EntityType<IchigoHitofuriEntity>> ICHIGO_HITOFURI =
+            ENTITY_TYPES.register("ichigo_hitofuri",
+                    () -> EntityType.Builder.of(IchigoHitofuriEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.9F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ichigo_hitofuri").toString()));
+    public static final RegistryObject<EntityType<TsurumaruKuninagaEntity>> TSURUMARU_KUNINAGA =
+            ENTITY_TYPES.register("tsurumaru_kuninaga",
+                    () -> EntityType.Builder.of(TsurumaruKuninagaEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.9F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tsurumaru_kuninaga").toString()));
+    public static final RegistryObject<EntityType<ShokudaikiriMitsutadaEntity>> SHOKUDAIKIRI_MITSUTADA =
+            ENTITY_TYPES.register("shokudaikiri_mitsutada",
+                    () -> EntityType.Builder.of(ShokudaikiriMitsutadaEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.9F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "shokudaikiri_mitsutada").toString()));
+    public static final RegistryObject<EntityType<IshikirimaruEntity>> ISHIKIRIMARU =
+            ENTITY_TYPES.register("ishikirimaru",
+                    () -> EntityType.Builder.of(IshikirimaruEntity::new, MobCategory.CREATURE)
+                            .sized(0.9F, 2.2F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ishikirimaru").toString()));
+    public static final RegistryObject<EntityType<HeshikiriHasebeEntity>> HESHIKIRI_HASEBE =
+            ENTITY_TYPES.register("heshikiri_hasebe",
+                    () -> EntityType.Builder.of(HeshikiriHasebeEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 2.0F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "heshikiri_hasebe").toString()));
+    public static final RegistryObject<EntityType<YamatonokamiYasusadaEntity>> YAMATONOKAMI_YASUSADA =
+            ENTITY_TYPES.register("yamatonokami_yasusada",
+                    () -> EntityType.Builder.of(YamatonokamiYasusadaEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.8F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "yamatonokami_yasusada").toString()));
+    public static final RegistryObject<EntityType<YamanbagiriChogiEntity>> YAMANBAGIRI_CHOGI =
+            ENTITY_TYPES.register("yamanbagiri_chogi",
+                    () -> EntityType.Builder.of(YamanbagiriChogiEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.8F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "yamanbagiri_chogi").toString()));
+    public static final RegistryObject<EntityType<OokurikaraEntity>> OOKURIKARA =
+            ENTITY_TYPES.register("ookurikara",
+                    () -> EntityType.Builder.of(OokurikaraEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 2.0F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ookurikara").toString()));
+    public static final RegistryObject<EntityType<TonbokiriEntity>> TONBOKIRI =
+            ENTITY_TYPES.register("tonbokiri",
+                    () -> EntityType.Builder.of(TonbokiriEntity::new, MobCategory.CREATURE)
+                            .sized(0.9F, 2.3F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tonbokiri").toString()));
+    public static final RegistryObject<EntityType<TomoegataNaginataEntity>> TOMOEGATA_NAGINATA =
+            ENTITY_TYPES.register("tomoegata_naginata",
+                    () -> EntityType.Builder.of(TomoegataNaginataEntity::new, MobCategory.CREATURE)
+                            .sized(0.9F, 2.3F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tomoegata_naginata").toString()));
+    public static final RegistryObject<EntityType<NikkariAoeEntity>> NIKKARI_AOE =
+            ENTITY_TYPES.register("nikkari_aoe",
+                    () -> EntityType.Builder.of(NikkariAoeEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.9F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "nikkari_aoe").toString()));
+    public static final RegistryObject<EntityType<HorikawaKunihiroEntity>> HORIKAWA_KUNIHIRO =
+            ENTITY_TYPES.register("horikawa_kunihiro",
+                    () -> EntityType.Builder.of(HorikawaKunihiroEntity::new, MobCategory.CREATURE)
+                            .sized(0.5F, 1.6F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "horikawa_kunihiro").toString()));
+    public static final RegistryObject<EntityType<ImanotsurugiEntity>> IMANOTSURUGI =
+            ENTITY_TYPES.register("imanotsurugi",
+                    () -> EntityType.Builder.of(ImanotsurugiEntity::new, MobCategory.CREATURE)
+                            .sized(0.4F, 1.4F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "imanotsurugi").toString()));
+    public static final RegistryObject<EntityType<GotouToushirouEntity>> GOTOU_TOUSHIROU =
+            ENTITY_TYPES.register("gotou_toushirou",
+                    () -> EntityType.Builder.of(GotouToushirouEntity::new, MobCategory.CREATURE)
+                            .sized(0.4F, 1.4F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "gotou_toushirou").toString()));
 
 
     public static void register(IEventBus eventBus) { ENTITY_TYPES.register(eventBus); }

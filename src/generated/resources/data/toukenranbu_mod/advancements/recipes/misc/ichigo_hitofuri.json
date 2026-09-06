@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ichigo_hitofuri_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:ichigo_hitofuri_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:ichigo_hitofuri"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_ichigo_hitofuri_sword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:ichigo_hitofuri"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -120,6 +120,20 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(com.Equatorial.toukenranbu.item.ModItems.KASEN_KANESADA.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HACHISUKA_KOTETSU.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.MUTSUNOKAMI_YOSHIYUKI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.ICHIGO_HITOFURI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.TSURUMARU_KUNINAGA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.SHOKUDAIKIRI_MITSUTADA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.ISHIKIRIMARU.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HESHIKIRI_HASEBE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.YAMATONOKAMI_YASUSADA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.YAMANBAGIRI_CHOGI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.OOKURIKARA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.TONBOKIRI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.TOMOEGATA_NAGINATA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.NIKKARI_AOE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORIKAWA_KUNIHIRO.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.IMANOTSURUGI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.GOTOU_TOUSHIROU.get());
 
         basicItem(com.Equatorial.toukenranbu.item.ModItems.OIL_TOFU.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.DICE.get());
@@ -130,7 +144,13 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_MIKUNIGURO.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_OUTEI.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_TAKADONOGURO.get());
-
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_KAKOJI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_SEIHAKU.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_MOCHIZUKI.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_AOGE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_KAGE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_SHIROGE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_UMAGOU.get());
 
     }
 

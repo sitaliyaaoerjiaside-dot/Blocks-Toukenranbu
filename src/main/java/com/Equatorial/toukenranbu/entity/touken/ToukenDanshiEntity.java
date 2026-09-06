@@ -1,5 +1,6 @@
 package com.Equatorial.toukenranbu.entity.touken;
 
+import com.Equatorial.toukenranbu.capability.ModCapabilities;
 import com.Equatorial.toukenranbu.entity.ai.*;
 import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.item.ToukenHorseItem;
@@ -21,6 +22,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -53,6 +55,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
+import net.minecraftforge.registries.ForgeRegistries;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -66,8 +69,13 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     protected final ItemStackHandler armorHandler = new ItemStackHandler(4) {
-        @Override protected void onContentsChanged(int slot) { ToukenDanshiEntity.this.updateArmorAttributes(); }
-        @Override public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            ToukenDanshiEntity.this.updateArmorAttributes();
+        }
+
+        @Override
+        public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
             if (stack.isEmpty()) return false;
             if (stack.getItem() instanceof net.minecraft.world.item.ArmorItem armor) {
                 return switch (slot) {
@@ -83,8 +91,13 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     };
 
     protected final ItemStackHandler knifeHandler = new ItemStackHandler(3) {
-        @Override protected void onContentsChanged(int slot) { ToukenDanshiEntity.this.updateKnifeBonuses(); }
-        @Override public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            ToukenDanshiEntity.this.updateKnifeBonuses();
+        }
+
+        @Override
+        public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
             return com.Equatorial.toukenranbu.screen.ToukenDanshiMenu.isKnifeItem(stack);
         }
     };
@@ -93,19 +106,25 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     public final ToukenEntityData toukenData = new ToukenEntityData();
 
     protected final ItemStackHandler mountHandler = new ItemStackHandler(1) {
-        @Override protected void onContentsChanged(int slot) {
+        @Override
+        protected void onContentsChanged(int slot) {
             ToukenDanshiEntity.this.updateMountSpeed();
             ToukenDanshiEntity.this.updateMountBonuses();
         }
-        @Override public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
+
+        @Override
+        public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
             return ToukenDanshiEntity.isMountItem(stack);
         }
     };
     protected final ItemStackHandler bladeHandler = new ItemStackHandler(1) {
-        @Override protected void onContentsChanged(int slot) {
+        @Override
+        protected void onContentsChanged(int slot) {
             ToukenDanshiEntity.this.updateBladeBonuses();
         }
-        @Override public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
+
+        @Override
+        public boolean isItemValid(int slot, net.minecraft.world.item.ItemStack stack) {
             return ModItems.isBlade(stack.getItem());
         }
     };
@@ -165,6 +184,8 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
 
     private static final EntityDataAccessor<CompoundTag> DATA_EXTRA_DATA =
             SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.COMPOUND_TAG);
+    private int teleportCooldown = 0;
+    private static final int TELEPORT_COOLDOWN = 100;
 
     protected ToukenDanshiEntity(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
@@ -188,19 +209,21 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(3, new PickupItemsGoal(this));
-        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false) {
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2D, true));
+        this.goalSelector.addGoal(4, new PickupItemsGoal(this));
+        this.goalSelector.addGoal(5, new ToukenFollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
+        this.goalSelector.addGoal(6, new ToukenDepositGoal(this) {
             @Override
             public boolean canUse() {
                 return ToukenDanshiEntity.this.isFollowing() && super.canUse();
             }
+
             @Override
             public boolean canContinueToUse() {
                 return ToukenDanshiEntity.this.isFollowing() && super.canContinueToUse();
             }
         });
-        this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2D, true));
-        this.goalSelector.addGoal(6, new ToukenDepositGoal(this));
+
         // ===== 工作类 AI 区域（优先级 7，互斥运行）=====
         // 以后加新工作 AI（远征、演练、采集等）都往这里放，保持优先级 7
         this.farmingGoal = new ToukenFarmingGoal(this);
@@ -218,7 +241,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, new ToukenHurtByTargetGoal(this));
 
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<Mob>(this, Mob.class, 10, true, false,
+        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<Mob>(this, Mob.class, 10, false, false,
                 target -> {
                     if (target == this) return false;
                     if (target instanceof Player) return false;
@@ -226,21 +249,43 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                     if (target instanceof TamableAnimal t && t.isTame()) return false;
                     if (target instanceof OwnableEntity o && this.getOwner() != null
                             && this.getOwner().equals(o.getOwner())) return false;
+                    if (target instanceof net.minecraft.world.entity.monster.piglin.AbstractPiglin) return false;
                     return target instanceof Monster;
                 }) {
             @Override
             public boolean canUse() {
                 if (ToukenDanshiEntity.this.isOrderedToSit()) return false;
                 if (ToukenDanshiEntity.this.isFarming()) return false;
-                return super.canUse();
+                boolean result = super.canUse();
+                if (!result) return false;
+                if (!ToukenDanshiEntity.this.hasEnoughSpiritualEnergy()) {
+                    if (this.targetMob != null && !ToukenDanshiEntity.this.hasLineOfSight(this.targetMob)) {
+                        this.targetMob = null;
+                        return false;
+                    }
+                }
+                return true;
             }
+
             @Override
             public boolean canContinueToUse() {
                 if (ToukenDanshiEntity.this.isOrderedToSit()) return false;
                 if (ToukenDanshiEntity.this.isFarming()) return false;
+                if (this.targetMob != null && this.targetMob.isAlive()
+                        && !ToukenDanshiEntity.this.hasEnoughSpiritualEnergy()
+                        && !ToukenDanshiEntity.this.hasLineOfSight(this.targetMob)) {
+                    return false;
+                }
                 return super.canContinueToUse();
             }
         });
+    }
+
+    private boolean hasEnoughSpiritualEnergy() {
+        if (!this.isTame()) return false;
+        LivingEntity owner = this.getOwner();
+        if (!(owner instanceof Player player)) return false;
+        return player.hasEffect(com.Equatorial.toukenranbu.effect.ModEffects.TOUKEN_ANTI_INVIS.get());
     }
 
     public static Map<UUID, Set<ToukenDanshiEntity>> getOwnedDanshi() {
@@ -417,38 +462,52 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     public void tick() {
         super.tick();
 
+        // ===== 跟随传送（严格限制：只有纯跟随状态才传送）=====
         if (!this.level().isClientSide && this.tickCount % 5 == 0) {
-            syncExtraData();
-        }
+            if (teleportCooldown > 0) {
+                teleportCooldown--;
+            }
 
-        if (!this.level().isClientSide
-                && this.isFollowing()
-                && !this.isOrderedToSit()
-                && !this.isMining()
-                && !this.isPatrolling()
-                && this.tickCount % 5 == 0) {
+            if (this.isFollowing()
+                    && !this.isOrderedToSit()
+                    && !this.isFarming()
+                    && !this.isMining()
+                    && !this.isPatrolling()
+                    && !this.isSparring()
+                    && !this.isCaveClearing()
+                    && teleportCooldown <= 0) {
 
-            UUID ownerUUID = this.getOwnerUUID();
-            if (ownerUUID != null && this.level() instanceof ServerLevel currentLevel) {
-                MinecraftServer server = currentLevel.getServer();
-                if (server != null) {
-                    ServerPlayer owner = server.getPlayerList().getPlayer(ownerUUID);
-                    if (owner != null) {
-                        if (owner.level().dimension() != this.level().dimension()) {
-                            Entity newEntity = this.changeDimension((ServerLevel) owner.level());
-                            if (newEntity != null) {
-                                Vec3 safePos = findSafePosNear((ServerLevel) owner.level(), owner.getX(), owner.getY(), owner.getZ());
-                                newEntity.teleportTo(safePos.x, safePos.y, safePos.z);
+                UUID ownerUUID = this.getOwnerUUID();
+                if (ownerUUID != null && this.level() instanceof ServerLevel currentLevel) {
+                    MinecraftServer server = currentLevel.getServer();
+                    if (server != null) {
+                        ServerPlayer owner = server.getPlayerList().getPlayer(ownerUUID);
+                        if (owner != null) {
+                            // 跨维度
+                            if (owner.level().dimension() != this.level().dimension()) {
+                                Entity newEntity = this.changeDimension((ServerLevel) owner.level());
+                                if (newEntity instanceof ToukenDanshiEntity danshi) {
+                                    Vec3 safePos = findSafePosNear((ServerLevel) owner.level(), owner.getX(), owner.getY(), owner.getZ());
+                                    danshi.teleportTo(safePos.x, safePos.y, safePos.z);
+                                    danshi.setTarget(null);
+                                    danshi.navigation.stop();
+                                    danshi.teleportCooldown = TELEPORT_COOLDOWN;
+                                }
                             }
-                        }
-                        else if (this.distanceToSqr(owner) > 4096.0D) {
-                            Vec3 safePos = findSafePosNear((ServerLevel) owner.level(), owner.getX(), owner.getY(), owner.getZ());
-                            this.teleportTo(safePos.x, safePos.y, safePos.z);
+                            // 同维度超距（>64格）
+                            else if (this.distanceToSqr(owner) > 4096.0D) {
+                                Vec3 safePos = findSafePosNear((ServerLevel) owner.level(), owner.getX(), owner.getY(), owner.getZ());
+                                this.teleportTo(safePos.x, safePos.y, safePos.z);
+                                this.setTarget(null);
+                                this.navigation.stop();
+                                this.teleportCooldown = TELEPORT_COOLDOWN;
+                            }
                         }
                     }
                 }
             }
         }
+        // ===== 跟随传送结束 =====
 
         if (!this.level().isClientSide && this.tickCount % 5 == 0) {
             if (this.tickCount % 20 == 0) updateFormationStatus();
@@ -581,6 +640,33 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
             }
         }
         // ===== 疲劳度自然恢复结束 =====
+
+        // ===== 被墙挡住就换目标 =====
+        LivingEntity target = this.getTarget();
+        if (target != null && target.isAlive() && this.tickCount % 20 == 0) {
+            // 距离超过 3 格且没有视线（被墙挡住）
+            if (this.distanceToSqr(target) > 9.0 && !this.hasLineOfSight(target)) {
+                // 导航也走不通（没有路径或路径已结束）
+                if (this.navigation.getPath() == null || this.navigation.getPath().isDone()) {
+                    this.setTarget(null); // 放弃当前目标，换下一个
+                }
+            }
+        }
+        // ===== 换目标结束 =====
+
+        // ===== 农夫乐事效果实际生效 =====
+        if (!this.level().isClientSide && this.tickCount % 20 == 0) {
+            var comfort = net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS
+                    .getValue(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("farmersdelight", "comfort"));
+            var nourishment = net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS
+                    .getValue(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("farmersdelight", "nourishment"));
+
+            if (comfort != null && this.hasEffect(comfort)) {
+                this.heal(1.0f);
+            }
+        }
+        // ===== 农夫乐事效果实际生效结束 =====
+
     }
 
     @Override
@@ -600,6 +686,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     @Override
     public void onAddedToWorld() {
         super.onAddedToWorld();
+        this.setPersistenceRequired();
         updateMountSpeed();
         var speedAttr = this.getAttribute(Attributes.MOVEMENT_SPEED);
         if (speedAttr != null && speedAttr.getBaseValue() < 0.2) {
@@ -893,6 +980,13 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (this.isInvulnerableTo(source)) return false;
+        // 友伤检查：主人打刀男
+        if (source.getEntity() instanceof Player player && this.isOwnedBy(player)) {
+            if (!player.getCapability(ModCapabilities.SPIRIT_POWER)
+                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
+                return false;
+            }
+        }
 
         float newHealth = this.getHealth() - amount;
         if (newHealth <= 1.0f
@@ -915,9 +1009,31 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     }
     @Override
     public boolean doHurtTarget(Entity target) {
+        // 友伤检查：刀男打主人
+        if (target instanceof Player player && this.isOwnedBy(player)) {
+            if (!player.getCapability(ModCapabilities.SPIRIT_POWER)
+                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
+                return false;
+            }
+        }
         boolean hit = super.doHurtTarget(target);
         if (hit && !this.level().isClientSide) {
-            this.toukenData.fatigue = Math.max(0, this.toukenData.fatigue - 2);
+            var nourishment = ForgeRegistries.MOB_EFFECTS.getValue(
+                    ResourceLocation.fromNamespaceAndPath("farmersdelight", "nourishment"));
+            if (nourishment == null || !this.hasEffect(nourishment)) {
+                this.toukenData.fatigue = Math.max(0, this.toukenData.fatigue - 2);
+            }
+            // ===== 混合伤害 =====
+            if (this.isTame() && this.getOwner() instanceof Player player) {
+                if (player.hasEffect(com.Equatorial.toukenranbu.effect.ModEffects.TOUKEN_MIXED_DAMAGE.get())) {
+                    // 额外魔法伤害
+                    target.hurt(this.level().damageSources().indirectMagic(this, this), 2.0f);
+                    // 点燃2秒
+                    target.setSecondsOnFire(2);
+                }
+            }
+            // ===== 混合伤害结束 =====
+
             syncExtraData();
         }
         return hit;
@@ -1310,6 +1426,35 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
             }
             this.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
             this.toukenData.fatigue = Math.min(100, this.toukenData.fatigue + 5);
+            // ===== 农夫乐事兼容：手动给刀男加 Comfort / Nourishment =====
+            // 软依赖：不装农夫乐事也不会崩
+            if (!this.level().isClientSide) {
+                net.minecraft.resources.ResourceLocation comfortId =
+                        net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("farmersdelight", "comfort");
+                net.minecraft.resources.ResourceLocation nourishmentId =
+                        net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("farmersdelight", "nourishment");
+
+                var mobEffectRegistry = net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
+
+                var comfort = mobEffectRegistry.getValue(comfortId);
+                var nourishment = mobEffectRegistry.getValue(nourishmentId);
+
+                // 判断食物是不是农夫乐事的（通过modid）
+                String modId = net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace();
+                if ("farmersdelight".equals(modId)) {
+                    if (comfort != null) {
+                        this.addEffect(new net.minecraft.world.effect.MobEffectInstance(comfort, 6000, 0));
+                    }
+                    if (nourishment != null) {
+                        this.addEffect(new net.minecraft.world.effect.MobEffectInstance(nourishment, 6000, 0));
+                        // 滋养额外多回10点疲劳
+                        this.toukenData.fatigue = Math.min(100, this.toukenData.fatigue + 10);
+                    }
+                }
+            }
+            // ===== 农夫乐事兼容结束 =====
+
+            syncExtraData();
             syncExtraData();
             return;
         }
@@ -1368,6 +1513,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         tag.put("ToukenData", toukenData.serialize());
         tag.put("MountItem", mountHandler.serializeNBT());
         tag.put("BladeItem", bladeHandler.serializeNBT());
+        tag.putInt("TeleportCooldown", teleportCooldown);
 
         ListTag territoryList = new ListTag();
         for (BlockPos pos : myFarmlandTerritory) {
@@ -1490,6 +1636,9 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         if (tag.contains("BladeItem")) {
             bladeHandler.deserializeNBT(tag.getCompound("BladeItem"));
             updateBladeBonuses();
+        }
+        if (tag.contains("TeleportCooldown")) {
+            teleportCooldown = tag.getInt("TeleportCooldown");
         }
     }
 

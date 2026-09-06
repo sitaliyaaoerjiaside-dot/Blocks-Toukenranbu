@@ -609,6 +609,480 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
 
+        // ========== 三日月宗近 ==========
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MIKAZUKI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.MIKAZUKI_MUNECHIKA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.MIKAZUKI_MUNECHIKA.get()), has(ModItems.MIKAZUKI_MUNECHIKA.get()))
+                .save(pWriter);
+
+        // ========== 太刀 ==========
+// 一期一振
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ICHIGO_HITOFURI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.ICHIGO_HITOFURI.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.ICHIGO_HITOFURI.get()), has(ModItems.ICHIGO_HITOFURI.get()))
+                .save(pWriter);
+
+// 鹤丸国永
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TSURUMARU_KUNINAGA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.TSURUMARU_KUNINAGA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.TSURUMARU_KUNINAGA.get()), has(ModItems.TSURUMARU_KUNINAGA.get()))
+                .save(pWriter);
+
+// 烛台切光忠
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.SHOKUDAIKIRI_MITSUTADA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.SHOKUDAIKIRI_MITSUTADA.get()), has(ModItems.SHOKUDAIKIRI_MITSUTADA.get()))
+                .save(pWriter);
+
+// ========== 大太刀 ==========
+// 石切丸
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ISHIKIRIMARU_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.ISHIKIRIMARU.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.ISHIKIRIMARU.get()), has(ModItems.ISHIKIRIMARU.get()))
+                .save(pWriter);
+
+// ========== 打刀 ==========
+// 压切长谷部
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HESHIKIRI_HASEBE_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.HESHIKIRI_HASEBE.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.HESHIKIRI_HASEBE.get()), has(ModItems.HESHIKIRI_HASEBE.get()))
+                .save(pWriter);
+
+// 大和守安定
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMATONOKAMI_YASUSADA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.YAMATONOKAMI_YASUSADA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.YAMATONOKAMI_YASUSADA.get()), has(ModItems.YAMATONOKAMI_YASUSADA.get()))
+                .save(pWriter);
+
+// 山姥切长义
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMANBAGIRI_CHOGI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.YAMANBAGIRI_CHOGI.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_CHOGI.get()), has(ModItems.YAMANBAGIRI_CHOGI.get()))
+                .save(pWriter);
+
+// 大俱利伽罗
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OOKURIKARA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.OOKURIKARA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.OOKURIKARA.get()), has(ModItems.OOKURIKARA.get()))
+                .save(pWriter);
+
+// 加州清光
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KASHUU_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.KASHUU_KIYOMITSU.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.KASHUU_KIYOMITSU.get()), has(ModItems.KASHUU_KIYOMITSU.get()))
+                .save(pWriter);
+
+// 蜂须贺虎彻
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HACHISUKA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.HACHISUKA_KOTETSU.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.HACHISUKA_KOTETSU.get()), has(ModItems.HACHISUKA_KOTETSU.get()))
+                .save(pWriter);
+
+// 山姥切国广
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMANBAGIRI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.YAMANBAGIRI_KUNIHIRO.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_KUNIHIRO.get()), has(ModItems.YAMANBAGIRI_KUNIHIRO.get()))
+                .save(pWriter);
+
+// 歌仙兼定
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KASEN_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.KASEN_KANESADA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.KASEN_KANESADA.get()), has(ModItems.KASEN_KANESADA.get()))
+                .save(pWriter);
+
+// 陆奥守吉行
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MUTSUNOKAMI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.MUTSUNOKAMI_YOSHIYUKI.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()), has(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()))
+                .save(pWriter);
+
+// ========== 枪 ==========
+// 蜻蛉切
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TONBOKIRI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.TONBOKIRI.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.TONBOKIRI.get()), has(ModItems.TONBOKIRI.get()))
+                .save(pWriter);
+
+// ========== 薙刀 ==========
+// 巴形薙刀
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TOMOEGATA_NAGINATA_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.TOMOEGATA_NAGINATA.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.TOMOEGATA_NAGINATA.get()), has(ModItems.TOMOEGATA_NAGINATA.get()))
+                .save(pWriter);
+
+// ========== 胁差 ==========
+// 笑面青江
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NIKKARI_AOE_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.NIKKARI_AOE.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.NIKKARI_AOE.get()), has(ModItems.NIKKARI_AOE.get()))
+                .save(pWriter);
+
+// 堀川国广
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HORIKAWA_KUNIHIRO_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.HORIKAWA_KUNIHIRO.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.HORIKAWA_KUNIHIRO.get()), has(ModItems.HORIKAWA_KUNIHIRO.get()))
+                .save(pWriter);
+
+// ========== 短刀 ==========
+// 今剑
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IMANOTSURUGI_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.IMANOTSURUGI.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.IMANOTSURUGI.get()), has(ModItems.IMANOTSURUGI.get()))
+                .save(pWriter);
+
+// 后藤藤四郎
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOTOU_TOUSHIROU_BLADE.get(), 1)
+                .pattern(" @ ")
+                .pattern("$|%")
+                .pattern(" # ")
+                .define('|', ModItems.GOTOU_TOUSHIROU.get())
+                .define('@', ModBlocks.WHETSTONE_BLOCK.get())
+                .define('$', ModBlocks.COOLANT_BLOCK.get())
+                .define('#', ModBlocks.WOOTZ_STEEL_BLOCK.get())
+                .define('%', Blocks.COAL_BLOCK)
+                .unlockedBy(getHasName(ModItems.GOTOU_TOUSHIROU.get()), has(ModItems.GOTOU_TOUSHIROU.get()))
+                .save(pWriter);
+
+        // ========== 三日月宗近 ==========
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MIKAZUKI_MUNECHIKA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.MIKAZUKI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.MIKAZUKI_BLADE.get()), has(ModItems.MIKAZUKI_BLADE.get()))
+                .save(pWriter);
+
+        // ========== 太刀 ==========
+// 一期一振
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ICHIGO_HITOFURI.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.ICHIGO_HITOFURI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.ICHIGO_HITOFURI_BLADE.get()), has(ModItems.ICHIGO_HITOFURI_BLADE.get()))
+                .save(pWriter);
+
+// 鹤丸国永
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TSURUMARU_KUNINAGA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.TSURUMARU_KUNINAGA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.TSURUMARU_KUNINAGA_BLADE.get()), has(ModItems.TSURUMARU_KUNINAGA_BLADE.get()))
+                .save(pWriter);
+
+// 烛台切光忠
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHOKUDAIKIRI_MITSUTADA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get()), has(ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get()))
+                .save(pWriter);
+
+// ========== 大太刀 ==========
+// 石切丸
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ISHIKIRIMARU.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.ISHIKIRIMARU_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.ISHIKIRIMARU_BLADE.get()), has(ModItems.ISHIKIRIMARU_BLADE.get()))
+                .save(pWriter);
+
+// ========== 打刀 ==========
+// 压切长谷部
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HESHIKIRI_HASEBE.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.HESHIKIRI_HASEBE_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.HESHIKIRI_HASEBE_BLADE.get()), has(ModItems.HESHIKIRI_HASEBE_BLADE.get()))
+                .save(pWriter);
+
+// 大和守安定
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMATONOKAMI_YASUSADA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.YAMATONOKAMI_YASUSADA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.YAMATONOKAMI_YASUSADA_BLADE.get()), has(ModItems.YAMATONOKAMI_YASUSADA_BLADE.get()))
+                .save(pWriter);
+
+// 山姥切长义
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMANBAGIRI_CHOGI.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.YAMANBAGIRI_CHOGI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_CHOGI_BLADE.get()), has(ModItems.YAMANBAGIRI_CHOGI_BLADE.get()))
+                .save(pWriter);
+
+// 大俱利伽罗
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OOKURIKARA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.OOKURIKARA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.OOKURIKARA_BLADE.get()), has(ModItems.OOKURIKARA_BLADE.get()))
+                .save(pWriter);
+
+// 加州清光
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KASHUU_KIYOMITSU.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.KASHUU_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.KASHUU_BLADE.get()), has(ModItems.KASHUU_BLADE.get()))
+                .save(pWriter);
+
+// 蜂须贺虎彻
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HACHISUKA_KOTETSU.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.HACHISUKA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.HACHISUKA_BLADE.get()), has(ModItems.HACHISUKA_BLADE.get()))
+                .save(pWriter);
+
+// 山姥切国广
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YAMANBAGIRI_KUNIHIRO.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.YAMANBAGIRI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_BLADE.get()), has(ModItems.YAMANBAGIRI_BLADE.get()))
+                .save(pWriter);
+
+// 歌仙兼定
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KASEN_KANESADA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.KASEN_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.KASEN_BLADE.get()), has(ModItems.KASEN_BLADE.get()))
+                .save(pWriter);
+
+// 陆奥守吉行
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MUTSUNOKAMI_YOSHIYUKI.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.MUTSUNOKAMI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.MUTSUNOKAMI_BLADE.get()), has(ModItems.MUTSUNOKAMI_BLADE.get()))
+                .save(pWriter);
+
+// ========== 枪 ==========
+// 蜻蛉切
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TONBOKIRI.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.TONBOKIRI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.TONBOKIRI_BLADE.get()), has(ModItems.TONBOKIRI_BLADE.get()))
+                .save(pWriter);
+
+// ========== 薙刀 ==========
+// 巴形薙刀
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TOMOEGATA_NAGINATA.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.TOMOEGATA_NAGINATA_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.TOMOEGATA_NAGINATA_BLADE.get()), has(ModItems.TOMOEGATA_NAGINATA_BLADE.get()))
+                .save(pWriter);
+
+// ========== 胁差 ==========
+// 笑面青江
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NIKKARI_AOE.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.NIKKARI_AOE_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.NIKKARI_AOE_BLADE.get()), has(ModItems.NIKKARI_AOE_BLADE.get()))
+                .save(pWriter);
+
+// 堀川国广
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HORIKAWA_KUNIHIRO.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.HORIKAWA_KUNIHIRO_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.HORIKAWA_KUNIHIRO_BLADE.get()), has(ModItems.HORIKAWA_KUNIHIRO_BLADE.get()))
+                .save(pWriter);
+
+// ========== 短刀 ==========
+// 今剑
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IMANOTSURUGI.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.IMANOTSURUGI_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.IMANOTSURUGI_BLADE.get()), has(ModItems.IMANOTSURUGI_BLADE.get()))
+                .save(pWriter);
+
+// 后藤藤四郎
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOTOU_TOUSHIROU.get(), 1)
+                .pattern("###")
+                .pattern("#|#")
+                .pattern("###")
+                .define('|', ModItems.GOTOU_TOUSHIROU_BLADE.get())
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.GOTOU_TOUSHIROU_BLADE.get()), has(ModItems.GOTOU_TOUSHIROU_BLADE.get()))
+                .save(pWriter);
+
     }
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");

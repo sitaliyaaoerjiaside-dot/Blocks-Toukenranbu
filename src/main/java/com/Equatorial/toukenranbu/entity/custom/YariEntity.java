@@ -89,7 +89,8 @@ public class YariEntity extends Monster implements GeoEntity, JikkoEntity {
         }
 
         Registry<DamageType> registry = this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);
-        ResourceKey<DamageType> key = ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "yari_true"));
+        ResourceKey<DamageType> key = ResourceKey.create(Registries.DAMAGE_TYPE,
+                ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "yari"));
         DamageSource source = new DamageSource(registry.getHolderOrThrow(key), this, this);
 
         boolean hurt = livingTarget.hurt(source, finalDamage);

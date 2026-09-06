@@ -1,0 +1,19 @@
+{
+  "name": "Capture Talisman",
+  "category": "toukenranbu_mod:sweets_and_protective_charms",
+  "icon": "toukenranbu_mod:capture_ball",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Can Capture Any Mob",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:capture_ball",
+      "text": "In theory, this Capture Talisman can capture any mob — as long as you are quick enough, you can take anything with you!$(br2)When a sword warrior's health drops to 1 or below, a severe injury capture effect will trigger immediately, giving one Capture Talisman directly into the player's inventory.$(br2)But beware: this effect has a built-in cooldown; repeated triggers within the cooldown will not work.$(br2)See the next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:capture_ball",
+      "title": "Crafting Recipe"
+    }
+  ]
+}

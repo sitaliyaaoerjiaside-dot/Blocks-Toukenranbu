@@ -59,6 +59,50 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:heshikiri_hasebe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:yamatonokami_yasusada"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:ookurikara"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:yamanbagiri_kunihiro"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:kasen_kanesada"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:mutsunokami_yoshiyuki"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:kashuu_kiyomitsu"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:hachisuka_kotetsu"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "toukenranbu_mod:entities/uchigatana"

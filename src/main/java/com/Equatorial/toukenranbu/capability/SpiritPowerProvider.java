@@ -25,6 +25,7 @@ public class SpiritPowerProvider implements ICapabilitySerializable<Tag> {
     public Tag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putInt("spirit_power", instance.getSpiritPower());
+        tag.putBoolean("friendly_fire", instance.isFriendlyFireEnabled());
         return tag;
     }
 
@@ -32,6 +33,7 @@ public class SpiritPowerProvider implements ICapabilitySerializable<Tag> {
     public void deserializeNBT(Tag tag) {
         if (tag instanceof CompoundTag compoundTag) {
             instance.setSpiritPower(compoundTag.getInt("spirit_power"));
+            instance.setFriendlyFireEnabled(compoundTag.getBoolean("friendly_fire"));
         }
     }
 }

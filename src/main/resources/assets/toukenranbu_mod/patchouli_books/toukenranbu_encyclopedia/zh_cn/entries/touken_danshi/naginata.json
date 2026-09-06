@@ -1,12 +1,19 @@
 {
   "name": "薙刀类刀剑男士",
-  "icon": "toukenranbu_mod:naginata_max_spawn_egg",
+  "icon": "toukenranbu_mod:tomoegata_naginata",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "薙刀",
-      "text": "敬请期待"
+      "text": "薙刀类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。薙刀能够使用范围攻击，与大太刀不同的是，薙刀的范围攻击是全伤害的。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tomoegata_naginata",
+      "name": "巴形薙刀",
+      "scale": 0.8,
+      "text": "刀身宽广弯曲度大，被视为典礼用的薙刀。神格很高相对之下作为人的意识更薄弱。他有时会过分保护主人。总是站在审神者一边，喜欢照顾他们。"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    },
+    "|": {
+      "item": "toukenranbu_mod:horikawa_kunihiro_sword"
+    }
+  },
+  "pattern": [
+    "###",
+    "#|#",
+    "###"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:horikawa_kunihiro"
+  },
+  "show_notification": true
+}

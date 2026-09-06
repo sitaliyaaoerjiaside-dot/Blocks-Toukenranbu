@@ -1,0 +1,14 @@
+{
+  "name": "马匹及其获取方式",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:horse_mochizuki",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "马匹的作用及其获取方式",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:horse_mochizuki",
+      "text": "马匹不只有望月，这里仅作为举例。不同的马匹对刀剑男士有不同程度的属性加成。$(br2)马匹仅能从刀剑师手中使用小判进行换取。"
+    }
+  ]
+}

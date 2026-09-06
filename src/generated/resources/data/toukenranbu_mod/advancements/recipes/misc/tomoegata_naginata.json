@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:tomoegata_naginata"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomoegata_naginata_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:tomoegata_naginata_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tomoegata_naginata_sword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:tomoegata_naginata"
+    ]
+  },
+  "sends_telemetry_event": false
+}

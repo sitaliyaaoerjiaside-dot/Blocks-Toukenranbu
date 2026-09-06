@@ -32,6 +32,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.HORSE_MATSUKAZE.get(), "松风");
         add(ModItems.HORSE_OUTEI.get(), "王庭");
         add(ModItems.HORSE_TAKADONOGURO.get(), "高楯黑");
+        add(ModItems.HORSE_KAKOJI.get(), "花柑子");
+        add(ModItems.HORSE_SEIHAKU.get(), "青海波");
+        add(ModItems.HORSE_MOCHIZUKI.get(), "望月");
+        add(ModItems.HORSE_AOGE.get(), "青毛");
+        add(ModItems.HORSE_KAGE.get(), "鹿毛");
+        add(ModItems.HORSE_SHIROGE.get(), "白毛");
+        add(ModItems.HORSE_UMAGOU.get(), "午年号");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "敌短刀刷怪蛋");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "敌胁差刷怪蛋");
@@ -72,6 +79,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_KOTETSU.get(), "蜂须贺虎彻");
         add(ModItems.KASEN_KANESADA.get(), "歌仙兼定");
         add(ModItems.MUTSUNOKAMI_YOSHIYUKI.get(), "陆奥守吉行");
+        add(ModItems.ICHIGO_HITOFURI.get(), "一期一振");
+        add(ModItems.TSURUMARU_KUNINAGA.get(), "鹤丸国永");
+        add(ModItems.SHOKUDAIKIRI_MITSUTADA.get(), "烛台切光忠");
+        add(ModItems.ISHIKIRIMARU.get(), "石切丸");
+        add(ModItems.HESHIKIRI_HASEBE.get(), "压切长谷部");
+        add(ModItems.YAMATONOKAMI_YASUSADA.get(), "大和守安定");
+        add(ModItems.YAMANBAGIRI_CHOGI.get(), "山姥切长义");
+        add(ModItems.OOKURIKARA.get(), "大俱利伽罗");
+        add(ModItems.TONBOKIRI.get(), "蜻蛉切");
+        add(ModItems.TOMOEGATA_NAGINATA.get(), "巴形薙刀");
+        add(ModItems.NIKKARI_AOE.get(), "笑面青江");
+        add(ModItems.HORIKAWA_KUNIHIRO.get(), "堀川国广");
+        add(ModItems.IMANOTSURUGI.get(), "今剑");
+        add(ModItems.GOTOU_TOUSHIROU.get(), "后藤藤四郎");
 
 //刀剑本体
         add(ModItems.MIKAZUKI_BLADE.get(), "三日月宗近【刀】");
@@ -80,6 +101,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_BLADE.get(), "蜂須賀虎徹【刀】");
         add(ModItems.KASEN_BLADE.get(), "歌仙兼定【刀】");
         add(ModItems.MUTSUNOKAMI_BLADE.get(), "陸奥守吉行【刀】");
+        add(ModItems.ICHIGO_HITOFURI_BLADE.get(), "一期一振【刀】");
+        add(ModItems.TSURUMARU_KUNINAGA_BLADE.get(), "鹤丸国永【刀】");
+        add(ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get(), "烛台切光忠【刀】");
+        add(ModItems.ISHIKIRIMARU_BLADE.get(), "石切丸【刀】");
+        add(ModItems.HESHIKIRI_HASEBE_BLADE.get(), "压切长谷部【刀】");
+        add(ModItems.YAMATONOKAMI_YASUSADA_BLADE.get(), "大和守安定【刀】");
+        add(ModItems.YAMANBAGIRI_CHOGI_BLADE.get(), "山姥切长义【刀】");
+        add(ModItems.OOKURIKARA_BLADE.get(), "大俱利伽罗【刀】");
+        add(ModItems.TONBOKIRI_BLADE.get(), "蜻蛉切【刀】");
+        add(ModItems.TOMOEGATA_NAGINATA_BLADE.get(), "巴形薙刀【刀】");
+        add(ModItems.NIKKARI_AOE_BLADE.get(), "笑面青江【刀】");
+        add(ModItems.HORIKAWA_KUNIHIRO_BLADE.get(), "堀川国广【刀】");
+        add(ModItems.IMANOTSURUGI_BLADE.get(), "今剑【刀】");
+        add(ModItems.GOTOU_TOUSHIROU_BLADE.get(), "后藤藤四郎【刀】");
 
         add("gui.toukenranbu.label.blade", "本体刀");
 
@@ -166,6 +201,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CAPTURE_BALL.get(),"收容符");
 
         add("effect.toukenranbu_mod.spirit_regen", "灵力恢复加成");
+        add("effect.toukenranbu_mod.touken_anti_invis", "刀剑男士：反隐");
+        add("effect.toukenranbu_mod.touken_mixed_damage", "刀剑男士：混合伤害");
+        add("command.toukenranbu_mod.friendlyfire.on", "§e[刀剑乱舞] §f友伤已§a开启§f，刀剑男士与主人之间可以互相伤害");
+        add("command.toukenranbu_mod.friendlyfire.off", "§e[刀剑乱舞] §f友伤已§c关闭§f，刀剑男士与主人之间不会互相伤害");
+
         add("container.sword_forge", "锻刀炉");
         //add(ModBlocks.SWORD_FORGE.get(), "锻刀炉");
 
@@ -185,6 +225,34 @@ public class ModZhCnLangProvider extends LanguageProvider {
                 "啊－我是川下之子，加州清光。虽然不好上手，但性能很不错的喔。");
         add("message.toukenranbu_mod.summon_mutsunokami_yoshiyuki",
                 "我是陆奥守吉行。好不容易来到这么豪华的地方，就抓住世界吧！");
+        add("message.toukenranbu_mod.summon_yamanbagiri_chogi",
+                "我就是长义锻造的本歌，山姥切。在聚乐第的作战中，这个本丸的实力取得了高评价，因此我被分配到这里……那么。");
+        add("message.toukenranbu_mod.summon_heshikiri_hasebe",
+                "我名为压切长谷部。只要是主的命令，无论什么都为您完成。");
+        add("message.toukenranbu_mod.summon_ookurikara",
+                "……我是大俱利伽罗。没什么可说的。没有和你们搞好关系的意思。");
+        add("message.toukenranbu_mod.summon_ishikirimaru",
+                "我叫石切丸。你希望治愈疾病吗？……哦呀，不是参拜者啊。");
+        add("message.toukenranbu_mod.summon_horikawa_kunihiro",
+                "不好意思——、兼先生……和泉守兼定来了吗？我是堀川国广。请多关照。");
+        add("message.toukenranbu_mod.summon_gotou_toushirou",
+                "我是后藤藤四郎。正在长得更大哦！");
+        add("message.toukenranbu_mod.summon_tomoegata_naginata",
+                "薙刀，巴形。没有铭和传说，没有故事的巴形的集合体。这就是我。");
+        add("message.toukenranbu_mod.summon_nikkari_aoe",
+                "我是笑面青江。嗯嗯，你也觉得是个奇怪的名字吧？");
+        add("message.toukenranbu_mod.summon_tonbokiri",
+                "现在火速而来。我叫蜻蛉切。无论何时都做好出阵的准备。");
+        add("message.toukenranbu_mod.summon_shokudaikiri_mitsutada",
+                "我是烛台切光忠，能够斩断青铜烛台的刀哦。……嗯——，果然还是不够帅啊。");
+        add("message.toukenranbu_mod.summon_yamatonokami_yasusada",
+                "大和守安定。不好上手但我想是把好剑。");
+        add("message.toukenranbu_mod.summon_tsurumaru_kuninaga",
+                "哟。我是鹤丸国永。我这样突然降临是不是很惊讶？");
+        add("message.toukenranbu_mod.summon_imanotsurugi",
+                "我是今剑！义经公的护身刀哦！怎么样，很厉害对吧！");
+        add("message.toukenranbu_mod.summon_ichigo_hitofuri",
+                "我是一期一振。粟田口吉光手中锻造的唯一一把太刀。藤四郎是我的弟弟们。");
 
         add("gui.toukenranbu.label.entity_inventory", "刀剑男士的物品栏");
         add("gui.toukenranbu.touken_danshi.title","刀剑男士");
@@ -250,6 +318,21 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("entity.toukenranbu_mod.kasen_kanesada", "歌仙兼定");
         add("entity.toukenranbu_mod.kashuu_kiyomitsu", "加州清光");
         add("entity.toukenranbu_mod.mutsunokami_yoshiyuki", "陆奥守吉行");
+        add("entity.toukenranbu_mod.ichigo_hitofuri", "一期一振");
+        add("entity.toukenranbu_mod.tsurumaru_kuninaga", "鹤丸国永");
+        add("entity.toukenranbu_mod.shokudaikiri_mitsutada", "烛台切光忠");
+        add("entity.toukenranbu_mod.ishikirimaru", "石切丸");
+        add("entity.toukenranbu_mod.heshikiri_hasebe", "压切长谷部");
+        add("entity.toukenranbu_mod.yamatonokami_yasusada", "大和守安定");
+        add("entity.toukenranbu_mod.yamanbagiri_chogi", "山姥切长义");
+        add("entity.toukenranbu_mod.ookurikara", "大俱利伽罗");
+        add("entity.toukenranbu_mod.tonbokiri", "蜻蛉切");
+        add("entity.toukenranbu_mod.tomoegata_naginata", "巴形薙刀");
+        add("entity.toukenranbu_mod.nikkari_aoe", "笑面青江");
+        add("entity.toukenranbu_mod.horikawa_kunihiro", "堀川国广");
+        add("entity.toukenranbu_mod.imanotsurugi", "今剑");
+        add("entity.toukenranbu_mod.gotou_toushirou", "后藤藤四郎");
+
 
         add("entity.toukenranbu.touken_danshi.mikazuki_munechika", "三日月宗近");
         add("entity.toukenranbu.touken_danshi.yamanbagiri_kunihiro", "山姥切国广");
@@ -257,6 +340,21 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("entity.toukenranbu.touken_danshi.kasen_kanesada", "歌仙兼定");
         add("entity.toukenranbu.touken_danshi.kashuu_kiyomitsu", "加州清光");
         add("entity.toukenranbu.touken_danshi.mutsunokami_yoshiyuki", "陆奥守吉行");
+        add("entity.toukenranbu.touken_danshi.ichigo_hitofuri", "一期一振");
+        add("entity.toukenranbu.touken_danshi.tsurumaru_kuninaga", "鹤丸国永");
+        add("entity.toukenranbu.touken_danshi.shokudaikiri_mitsutada", "烛台切光忠");
+        add("entity.toukenranbu.touken_danshi.ishikirimaru", "石切丸");
+        add("entity.toukenranbu.touken_danshi.heshikiri_hasebe", "压切长谷部");
+        add("entity.toukenranbu.touken_danshi.yamatonokami_yasusada", "大和守安定");
+        add("entity.toukenranbu.touken_danshi.yamanbagiri_chogi", "山姥切长义");
+        add("entity.toukenranbu.touken_danshi.ookurikara", "大俱利伽罗");
+        add("entity.toukenranbu.touken_danshi.tonbokiri", "蜻蛉切");
+        add("entity.toukenranbu.touken_danshi.tomoegata_naginata", "巴形薙刀");
+        add("entity.toukenranbu.touken_danshi.nikkari_aoe", "笑面青江");
+        add("entity.toukenranbu.touken_danshi.horikawa_kunihiro", "堀川国广");
+        add("entity.toukenranbu.touken_danshi.imanotsurugi", "今剑");
+        add("entity.toukenranbu.touken_danshi.gotou_toushirou", "后藤藤四郎");
+
 
 // GUI 标题
         add("gui.toukenranbu.touken_danshi.title.mikazuki_munechika", "三日月宗近");
@@ -265,6 +363,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.kasen_kanesada", "歌仙兼定");
         add("gui.toukenranbu.touken_danshi.title.kashuu_kiyomitsu", "加州清光");
         add("gui.toukenranbu.touken_danshi.title.mutsunokami_yoshiyuki", "陆奥守吉行");
+        add("gui.toukenranbu.touken_danshi.title.ichigo_hitofuri", "一期一振");
+        add("gui.toukenranbu.touken_danshi.title.tsurumaru_kuninaga", "鹤丸国永");
+        add("gui.toukenranbu.touken_danshi.title.shokudaikiri_mitsutada", "烛台切光忠");
+        add("gui.toukenranbu.touken_danshi.title.ishikirimaru", "石切丸");
+        add("gui.toukenranbu.touken_danshi.title.heshikiri_hasebe", "压切长谷部");
+        add("gui.toukenranbu.touken_danshi.title.yamatonokami_yasusada", "大和守安定");
+        add("gui.toukenranbu.touken_danshi.title.yamanbagiri_chogi", "山姥切长义");
+        add("gui.toukenranbu.touken_danshi.title.ookurikara", "大俱利伽罗");
+        add("gui.toukenranbu.touken_danshi.title.tonbokiri", "蜻蛉切");
+        add("gui.toukenranbu.touken_danshi.title.tomoegata_naginata", "巴形薙刀");
+        add("gui.toukenranbu.touken_danshi.title.nikkari_aoe", "笑面青江");
+        add("gui.toukenranbu.touken_danshi.title.horikawa_kunihiro", "堀川国广");
+        add("gui.toukenranbu.touken_danshi.title.imanotsurugi", "今剑");
+        add("gui.toukenranbu.touken_danshi.title.gotou_toushirou", "后藤藤四郎");
 
         // GUI 标签页
         add("gui.toukenranbu.tab.status", "状态");
@@ -310,6 +422,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("death.toukenranbu_mod.kasen_kanesada", "啊啊……这就是彼岸吗。可得吟诵一首……谁能，把我的笔……");
         add("death.toukenranbu_mod.kashuu_kiyomitsu", "我……一直到最后都被爱着吗……？");
         add("death.toukenranbu_mod.mutsunokami_yoshiyuki", "什么啊……咱就到此为止了吗……新时代……见不到了……");
+        add("death.toukenranbu_mod.yamanbagiri_chogi", "可……恶……可恶……可恶可恶可恶……！为什么……我……！");
+        add("death.toukenranbu_mod.horikawa_kunihiro", "…不好…我要是不在的话…兼先生……。");
+        add("death.toukenranbu_mod.gotou_toushirou", "小不点儿们……就拜托了……");
+        add("death.toukenranbu_mod.tomoegata_naginata", "作为无名薙刀来说……我也，做得不错了吧……");
+        add("death.toukenranbu_mod.nikkari_aoe", "一路厮杀走来，这种事情也是有的啊。");
+        add("death.toukenranbu_mod.tonbokiri", "所谓……无伤、常胜……做不到吗。我先走一步，请您原谅我吧……");
+        add("death.toukenranbu_mod.shokudaikiri_mitsutada", "在战斗中倒下是常事。虽说如此……这样就没法保持形象了。");
+        add("death.toukenranbu_mod.yamatonokami_yasusada", "冲田君……终于……到你身旁……");
+        add("death.toukenranbu_mod.tsurumaru_kuninaga", "伤脑筋…这样一身都被染红的衣服…看起来一点都不像鹤了呢…");
+        add("death.toukenranbu_mod.imanotsurugi", "天空……好漂亮……紫色的、云……");
+        add("death.toukenranbu_mod.ichigo_hitofuri", "啊啊……世界，在燃烧……又要回到，那火焰之中了……");
+        add("death.toukenranbu_mod.ookurikara", "独自战斗……独自死去……我这样就足够了……");
+        add("death.toukenranbu_mod.ishikirimaru", "作为神刀活了这么久，忘记了武器的本分吗……既然如此……这也是必定的结局了……");
+        add("death.toukenranbu_mod.heshikiri_hasebe", "这里就是终结了吗……！主人的命令……就算我不在，也可以实现吧……");
 
         add("toukenranbu.book.name", "刀剑乱舞百科全书");
         add("toukenranbu.landing_text", "欢迎来到刀剑乱舞的世界。《刀剑乱舞百科全书》涵盖刀剑乱舞模组的一切具体数据（不包括建筑方块等），" +
@@ -326,6 +452,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.kebiishi.warning", "【检非违使出现】历史修正力正在向 %s 的位置聚集...30秒后降临！");
         add("message.toukenranbu_mod.kebiishi.spawned", "【检非违使出现】历史修正力已降临！");
         add("message.toukenranbu_mod.kebiishi.nearby", "【历史修正力】附近已有检非违使，暂时停止聚集。");
+
+        add("message.toukenranbu_mod.insufficient_spirit", "灵力不足！");
 
         add("item.toukenranbu_mod.capture_ball.prefix.captured", "[已收容] ");
         add("message.toukenranbu_mod.capture.fail_player", "不能收容玩家！");

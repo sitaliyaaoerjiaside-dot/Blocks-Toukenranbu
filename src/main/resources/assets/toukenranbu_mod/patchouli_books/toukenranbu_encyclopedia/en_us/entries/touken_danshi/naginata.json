@@ -1,12 +1,19 @@
 {
   "name": "Naginata-type Touken Danshi",
-  "icon": "toukenranbu_mod:naginata_max_spawn_egg",
+  "icon": "toukenranbu_mod:tomoegata_naginata",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Naginata",
-      "text": "Coming soon."
+      "text": "Naginata-type sword warriors. Sword warriors of the same type have basically no difference in attack speed, search range, attack power, and movement speed. Naginata can perform area-of-effect attacks. Unlike odachi, the area-of-effect attacks of naginata deal full damage."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tomoegata_naginata",
+      "name": "Tomoegata Naginata",
+      "scale": 0.8,
+      "text": "A naginata with a wide, deeply curved blade, considered to be used for ceremonial purposes. Possessing a high divine nature, his awareness as a human is relatively weak. He can sometimes be overly protective of his master. He always stands on the side of the saniwa and enjoys taking care of them."
     }
   ]
 }

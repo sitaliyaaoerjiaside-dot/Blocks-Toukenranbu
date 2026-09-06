@@ -31,6 +31,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.HORSE_MATSUKAZE.get(), "Matsukaze");
         add(ModItems.HORSE_OUTEI.get(), "Outei");
         add(ModItems.HORSE_TAKADONOGURO.get(), "Takadono-guro");
+        add(ModItems.HORSE_KAKOJI.get(), "Kakoji");
+        add(ModItems.HORSE_SEIHAKU.get(), "Seihaku");
+        add(ModItems.HORSE_MOCHIZUKI.get(), "Mochizuki");
+        add(ModItems.HORSE_AOGE.get(), "Aoge");
+        add(ModItems.HORSE_KAGE.get(), "Kage");
+        add(ModItems.HORSE_SHIROGE.get(), "Shiroge");
+        add(ModItems.HORSE_UMAGOU.get(), "Umagou");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "Tantou Spawn Egg");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "Wakizashi Spawn Egg");
@@ -70,6 +77,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_KOTETSU.get(), "hachisuka kotetsu");
         add(ModItems.KASEN_KANESADA.get(), "kasen kanesada");
         add(ModItems.MUTSUNOKAMI_YOSHIYUKI.get(), "mutsunokami yoshiyuki");
+        add(ModItems.ICHIGO_HITOFURI.get(), "Ichigo Hitofuri");
+        add(ModItems.TSURUMARU_KUNINAGA.get(), "Tsurumaru Kuninaga");
+        add(ModItems.SHOKUDAIKIRI_MITSUTADA.get(), "Shokudaikiri Mitsutada");
+        add(ModItems.ISHIKIRIMARU.get(), "Ishikirimaru");
+        add(ModItems.HESHIKIRI_HASEBE.get(), "Heshikiri Hasebe");
+        add(ModItems.YAMATONOKAMI_YASUSADA.get(), "Yamatonokami Yasusada");
+        add(ModItems.YAMANBAGIRI_CHOGI.get(), "Yamanbagiri Chogi");
+        add(ModItems.OOKURIKARA.get(), "Ookurikara");
+        add(ModItems.TONBOKIRI.get(), "Tonbokiri");
+        add(ModItems.TOMOEGATA_NAGINATA.get(), "Tomoegata Naginata");
+        add(ModItems.NIKKARI_AOE.get(), "Nikkari Aoe");
+        add(ModItems.HORIKAWA_KUNIHIRO.get(), "Horikawa Kunihiro");
+        add(ModItems.IMANOTSURUGI.get(), "Imanotsurugi");
+        add(ModItems.GOTOU_TOUSHIROU.get(), "Gotou Toushirou");
 
         add(ModItems.MIKAZUKI_BLADE.get(), "Mikazuki Munechika [Blade]");
         add(ModItems.YAMANBAGIRI_BLADE.get(), "Yamanbagiri Kunihiro [Blade]");
@@ -77,6 +98,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.HACHISUKA_BLADE.get(), "Hachisuka Kotetsu [Blade]");
         add(ModItems.KASEN_BLADE.get(), "Kasen Kanesada [Blade]");
         add(ModItems.MUTSUNOKAMI_BLADE.get(), "Mutsunokami Yoshiyuki [Blade]");
+        add(ModItems.ICHIGO_HITOFURI_BLADE.get(), "Ichigo Hitofuri [Blade]");
+        add(ModItems.TSURUMARU_KUNINAGA_BLADE.get(), "Tsurumaru Kuninaga [Blade]");
+        add(ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get(), "Shokudaikiri Mitsutada [Blade]");
+        add(ModItems.ISHIKIRIMARU_BLADE.get(), "Ishikirimaru [Blade]");
+        add(ModItems.HESHIKIRI_HASEBE_BLADE.get(), "Heshikiri Hasebe [Blade]");
+        add(ModItems.YAMATONOKAMI_YASUSADA_BLADE.get(), "Yamatonokami Yasusada [Blade]");
+        add(ModItems.YAMANBAGIRI_CHOGI_BLADE.get(), "Yamanbagiri Chogi [Blade]");
+        add(ModItems.OOKURIKARA_BLADE.get(), "Ookurikara [Blade]");
+        add(ModItems.TONBOKIRI_BLADE.get(), "Tonbokiri [Blade]");
+        add(ModItems.TOMOEGATA_NAGINATA_BLADE.get(), "Tomoegata Naginata [Blade]");
+        add(ModItems.NIKKARI_AOE_BLADE.get(), "Nikkari Aoe [Blade]");
+        add(ModItems.HORIKAWA_KUNIHIRO_BLADE.get(), "Horikawa Kunihiro [Blade]");
+        add(ModItems.IMANOTSURUGI_BLADE.get(), "Imanotsurugi [Blade]");
+        add(ModItems.GOTOU_TOUSHIROU_BLADE.get(), "Gotou Toushirou [Blade]");
         add("gui.toukenranbu.label.blade", "Blade");
 
         add(ModItems.A_BITE_OF_DANGO.get(), "A Bite of Dango");
@@ -158,6 +193,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.CAPTURE_BALL.get(),"Capture Talisman");
 
         add("effect.toukenranbu_mod.spirit_regen", "spirit_regen");
+        add("effect.toukenranbu_mod.touken_anti_invis", "Touken Danshi: Anti-Invisibility");
+        add("effect.toukenranbu_mod.touken_mixed_damage", "Touken Danshi: Mixed Damage");
+        add("command.toukenranbu_mod.friendlyfire.on", "§e[Touken Ranbu] §fFriendly fire §aenabled§f, you and your danshi can hurt each other");
+        add("command.toukenranbu_mod.friendlyfire.off", "§e[Touken Ranbu] §fFriendly fire §cdisabled§f, you and your danshi cannot hurt each other");
+
         add("container.sword_forge", "Sword Forge");
         //add(ModBlocks.SWORD_FORGE.get(), "Sword Forge");
 
@@ -177,6 +217,34 @@ public class ModEnUsLangProvider extends LanguageProvider {
                 "Ah—I'm Kashuu Kiyomitsu, child of the river. I may be difficult to handle, but my performance is excellent.");
         add("message.toukenranbu_mod.summon_mutsunokami_yoshiyuki",
                 "I'm Mutsunokami Yoshiyuki. We've finally made it to this grand place, so let's seize the world!");
+        add("message.toukenranbu_mod.summon_yamanbagiri_chogi",
+                "I am the original Uchigatana forged by Nagakuni, Yamanbagiri. The combat performance at Jurakudai earned high praise, so I was assigned here... Well then.");
+        add("message.toukenranbu_mod.summon_heshikiri_hasebe",
+                "My name is Heshikiri Hasebe. If it is my master's command, I shall accomplish anything for you.");
+        add("message.toukenranbu_mod.summon_ookurikara",
+                "...I'm Ookurikara. Nothing to say. I don't intend to get along with any of you.");
+        add("message.toukenranbu_mod.summon_ishikirimaru",
+                "I am Ishikirimaru. Do you wish to cure an illness? ...Oh my, you're not a worshipper.");
+        add("message.toukenranbu_mod.summon_horikawa_kunihiro",
+                "Excuse me—, Kane-san... Has Izuminokami Kanesada arrived yet? I'm Horikawa Kunihiro. Pleased to meet you.");
+        add("message.toukenranbu_mod.summon_gotou_toushirou",
+                "I'm Gotou Toushirou. I'm growing bigger and bigger!");
+        add("message.toukenranbu_mod.summon_tomoegata_naginata",
+                "Naginata, Tomoegata. A collective of nameless, legendless, storyless Tomoegata. That is me.");
+        add("message.toukenranbu_mod.summon_nikkari_aoe",
+                "I'm Nikkari Aoe. Mm-hmm, you think it's a strange name too, don't you?");
+        add("message.toukenranbu_mod.summon_tonbokiri",
+                "Arriving at full speed. I am Tonbokiri. Always ready to deploy at any moment.");
+        add("message.toukenranbu_mod.summon_shokudaikiri_mitsutada",
+                "I'm Shokudaikiri Mitsutada, the blade that can slice through bronze candlesticks. ...Mmm, still not cool enough, huh.");
+        add("message.toukenranbu_mod.summon_yamatonokami_yasusada",
+                "Yamatonokami Yasusada. Difficult to handle, but I believe I'm a fine sword.");
+        add("message.toukenranbu_mod.summon_tsurumaru_kuninaga",
+                "Yo. I'm Tsurumaru Kuninaga. Surprised by my sudden arrival?");
+        add("message.toukenranbu_mod.summon_imanotsurugi",
+                "I'm Imanotsurugi! Lord Yoshitsune's protective blade! Pretty amazing, right!");
+        add("message.toukenranbu_mod.summon_ichigo_hitofuri",
+                "I am Ichigo Hitofuri. The only tachi ever forged by Awataguchi Yoshimitsu. The Toushirou brothers are my younger siblings.");
 
         add("gui.toukenranbu.label.entity_inventory", "Touken Danshi's Inventory");
         add("gui.toukenranbu.touken_danshi.title","touken_danshi");
@@ -243,6 +311,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("entity.toukenranbu_mod.kasen_kanesada", "Kasen Kanesada");
         add("entity.toukenranbu_mod.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
         add("entity.toukenranbu_mod.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
+        add("entity.toukenranbu_mod.ichigo_hitofuri", "Ichigo Hitofuri");
+        add("entity.toukenranbu_mod.tsurumaru_kuninaga", "Tsurumaru Kuninaga");
+        add("entity.toukenranbu_mod.shokudaikiri_mitsutada", "Shokudaikiri Mitsutada");
+        add("entity.toukenranbu_mod.ishikirimaru", "Ishikirimaru");
+        add("entity.toukenranbu_mod.heshikiri_hasebe", "Heshikiri Hasebe");
+        add("entity.toukenranbu_mod.yamatonokami_yasusada", "Yamatonokami Yasusada");
+        add("entity.toukenranbu_mod.yamanbagiri_chogi", "Yamanbagiri Chogi");
+        add("entity.toukenranbu_mod.ookurikara", "Ookurikara");
+        add("entity.toukenranbu_mod.tonbokiri", "Tonbokiri");
+        add("entity.toukenranbu_mod.tomoegata_naginata", "Tomoegata Naginata");
+        add("entity.toukenranbu_mod.nikkari_aoe", "Nikkari Aoe");
+        add("entity.toukenranbu_mod.horikawa_kunihiro", "Horikawa Kunihiro");
+        add("entity.toukenranbu_mod.imanotsurugi", "Imanotsurugi");
+        add("entity.toukenranbu_mod.gotou_toushirou", "Gotou Toushirou");
 
         add("entity.toukenranbu.touken_danshi.mikazuki_munechika", "Mikazuki Munechika");
         add("entity.toukenranbu.touken_danshi.yamanbagiri_kunihiro", "Yamanbagiri Kunihiro");
@@ -250,6 +332,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("entity.toukenranbu.touken_danshi.kasen_kanesada", "Kasen Kanesada");
         add("entity.toukenranbu.touken_danshi.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
         add("entity.toukenranbu.touken_danshi.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
+        add("entity.toukenranbu.touken_danshi.ichigo_hitofuri", "Ichigo Hitofuri");
+        add("entity.toukenranbu.touken_danshi.tsurumaru_kuninaga", "Tsurumaru Kuninaga");
+        add("entity.toukenranbu.touken_danshi.shokudaikiri_mitsutada", "Shokudaikiri Mitsutada");
+        add("entity.toukenranbu.touken_danshi.ishikirimaru", "Ishikirimaru");
+        add("entity.toukenranbu.touken_danshi.heshikiri_hasebe", "Heshikiri Hasebe");
+        add("entity.toukenranbu.touken_danshi.yamatonokami_yasusada", "Yamatonokami Yasusada");
+        add("entity.toukenranbu.touken_danshi.yamanbagiri_chogi", "Yamanbagiri Chogi");
+        add("entity.toukenranbu.touken_danshi.ookurikara", "Ookurikara");
+        add("entity.toukenranbu.touken_danshi.tonbokiri", "Tonbokiri");
+        add("entity.toukenranbu.touken_danshi.tomoegata_naginata", "Tomoegata Naginata");
+        add("entity.toukenranbu.touken_danshi.nikkari_aoe", "Nikkari Aoe");
+        add("entity.toukenranbu.touken_danshi.horikawa_kunihiro", "Horikawa Kunihiro");
+        add("entity.toukenranbu.touken_danshi.imanotsurugi", "Imanotsurugi");
+        add("entity.toukenranbu.touken_danshi.gotou_toushirou", "Gotou Toushirou");
 
 // GUI titles
         add("gui.toukenranbu.touken_danshi.title.yamanbagiri_kunihiro", "Yamanbagiri Kunihiro");
@@ -258,6 +354,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.kashuu_kiyomitsu", "Kashuu Kiyomitsu");
         add("gui.toukenranbu.touken_danshi.title.mutsunokami_yoshiyuki", "Mutsunokami Yoshiyuki");
         add("gui.toukenranbu.touken_danshi.title.mikazuki_munechika", "Mikazuki Munechika");
+        add("gui.toukenranbu.touken_danshi.title.ichigo_hitofuri", "Ichigo Hitofuri");
+        add("gui.toukenranbu.touken_danshi.title.tsurumaru_kuninaga", "Tsurumaru Kuninaga");
+        add("gui.toukenranbu.touken_danshi.title.shokudaikiri_mitsutada", "Shokudaikiri Mitsutada");
+        add("gui.toukenranbu.touken_danshi.title.ishikirimaru", "Ishikirimaru");
+        add("gui.toukenranbu.touken_danshi.title.heshikiri_hasebe", "Heshikiri Hasebe");
+        add("gui.toukenranbu.touken_danshi.title.yamatonokami_yasusada", "Yamatonokami Yasusada");
+        add("gui.toukenranbu.touken_danshi.title.yamanbagiri_chogi", "Yamanbagiri Chogi");
+        add("gui.toukenranbu.touken_danshi.title.ookurikara", "Ookurikara");
+        add("gui.toukenranbu.touken_danshi.title.tonbokiri", "Tonbokiri");
+        add("gui.toukenranbu.touken_danshi.title.tomoegata_naginata", "Tomoegata Naginata");
+        add("gui.toukenranbu.touken_danshi.title.nikkari_aoe", "Nikkari Aoe");
+        add("gui.toukenranbu.touken_danshi.title.horikawa_kunihiro", "Horikawa Kunihiro");
+        add("gui.toukenranbu.touken_danshi.title.imanotsurugi", "Imanotsurugi");
+        add("gui.toukenranbu.touken_danshi.title.gotou_toushirou", "Gotou Toushirou");
 
 // GUI Tabs
         add("gui.toukenranbu.tab.status", "Status");
@@ -303,6 +413,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("death.toukenranbu_mod.kasen_kanesada", "Ahh... so this is the far shore... I ought to compose a poem... Who... will bring me my brush...");
         add("death.toukenranbu_mod.kashuu_kiyomitsu", "Was I... loved... until the very end...?");
         add("death.toukenranbu_mod.mutsunokami_yoshiyuki", "What... so this is where I end? ...The new era... I won't get to see it...");
+        add("death.toukenranbu_mod.yamanbagiri_chogi", "Damn... damn... damndamndamn...! Why... me...!");
+        add("death.toukenranbu_mod.horikawa_kunihiro", "...No good... If I'm not here... Kane-san......");
+        add("death.toukenranbu_mod.gotou_toushirou", "The little ones... I'm leaving them... in your care......");
+        add("death.toukenranbu_mod.tomoegata_naginata", "As a nameless naginata... I did... pretty well, didn't I......");
+        add("death.toukenranbu_mod.nikkari_aoe", "After fighting all this way... these things happen.");
+        add("death.toukenranbu_mod.tonbokiri", "So... flawless victory... is impossible after all. I shall go first... please forgive me......");
+        add("death.toukenranbu_mod.shokudaikiri_mitsutada", "Falling in battle is a common thing. Even so... this ruins my image.");
+        add("death.toukenranbu_mod.yamatonokami_yasusada", "Okita-kun... finally... by your side......");
+        add("death.toukenranbu_mod.tsurumaru_kuninaga", "How troublesome... clothes dyed completely red like this... don't look like a crane at all...");
+        add("death.toukenranbu_mod.imanotsurugi", "The sky... so beautiful... purple... clouds......");
+        add("death.toukenranbu_mod.ichigo_hitofuri", "Ahh... the world... is burning... back into... those flames......");
+        add("death.toukenranbu_mod.ookurikara", "Fighting alone... dying alone... this is enough for me......");
+        add("death.toukenranbu_mod.ishikirimaru", "Living so long as a divine blade... have I forgotten the duty of a weapon? ...If so... this was an inevitable end......");
+        add("death.toukenranbu_mod.heshikiri_hasebe", "Is this... the end...! My master's orders... can they be fulfilled... even without me......");
 
         add("toukenranbu.book.name", "Touken Ranbu Encyclopedia");
         add("toukenranbu.landing_text", "Welcome to the world of Touken Ranbu." +
@@ -320,6 +444,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.kebiishi.warning", "[Kebiishi Appear] Historical revision force is gathering at %s's location... Arrival in 30 seconds!");
         add("message.toukenranbu_mod.kebiishi.spawned", "[Kebiishi Appear] Historical revision force has arrived!");
         add("message.toukenranbu_mod.kebiishi.nearby", "[Historical Revision] Kebiishi already nearby, halting accumulation.");
+
+        add("message.toukenranbu_mod.insufficient_spirit", "Insufficient spirit!");
 
         add("item.toukenranbu_mod.capture_ball.prefix.captured", "[Captured] ");
         add("message.toukenranbu_mod.capture.fail_player", "Cannot capture players!");

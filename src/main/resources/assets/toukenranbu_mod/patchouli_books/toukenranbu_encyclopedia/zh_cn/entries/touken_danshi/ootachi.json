@@ -1,12 +1,19 @@
 {
   "name": "大太刀类刀剑男士",
-  "icon": "toukenranbu_mod:ootachi_max_spawn_egg",
+  "icon": "toukenranbu_mod:ishikirimaru",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "大太刀",
-      "text": "敬请期待"
+      "text": "大太刀类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。大太刀能够使用范围溅射攻击。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ishikirimaru",
+      "name": "石切丸",
+      "scale": 0.8,
+      "text": "石切剑箭神社的御神刀。在神社度过了很长时间，对外界不太了解。比起刀刃锋利程度，更受期待的是治疗肿物和治愈疾病等力量。用温柔的目光守护着大家。"
     }
   ]
 }

@@ -42,6 +42,34 @@
       "name": "蜂须贺虎彻",
       "scale": 0.8,
       "text": "活跃于江户时代的刀匠，虎彻作的真作的打刀。与宠爱弟弟浦岛虎彻相反，特别排斥赝品的兄长长曾祢虎彻。 "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:heshikiri_hasebe",
+      "name": "压切长谷部",
+      "scale": 0.8,
+      "text": "长谷部国重所作的打刀。名字来源于信长用此刀将藏在膳棚下的茶坊主连同膳棚一并切断的故事。对主人很忠诚，渴望成为主人的第一家臣，却不说出口。即使是肮脏的任务也能平静地执行。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamatonokami_yasusada",
+      "name": "大和守安定",
+      "scale": 0.8,
+      "text": "被认为是新撰组冲田总司使用的打刀。和加州清光一样难以上手，是挑人的刀。也有因此而价格低廉的说法。尽管看上去乖巧成熟，但战斗时就……"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamanbagiri_chogi",
+      "name": "山姥切长义",
+      "scale": 0.8,
+      "text": "备前长船长义所作的打刀。长义是与长船派主流风格不同、自成一系的刀工。与仿品山姥切国广被称作伯仲之间。美丽而高慢。更确切而言，是对自身拥有自信而无所畏惧。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ookurikara",
+      "name": "大俱利伽罗",
+      "scale": 0.8,
+      "text": "相州传刀匠广光所作的打刀。因为由伊达家家传的关系，和烛台切光忠、太鼓钟贞宗与鹤丸国永是老朋友。然而，他是个孤僻的人，不喜欢和别人交往。他有一个俱利伽罗龙王的雕刻，那是不动明王的化身。"
     }
   ]
 }

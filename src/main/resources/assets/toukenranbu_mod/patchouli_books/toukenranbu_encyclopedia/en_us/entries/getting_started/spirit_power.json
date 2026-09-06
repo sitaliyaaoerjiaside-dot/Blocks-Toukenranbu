@@ -22,6 +22,22 @@
       ],
       "border": true,
       "text": "Your spirit power is displayed in the bottom-right corner of the screen. Please keep an eye on the remaining amount."
+    },
+    {
+      "type": "spotlight",
+      "title": "Spirit Power Mechanic: Mass Anti-Invisibility for Sword Warriors",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "When the player's Spirit Power exceeds 50, all summoned sword warriors will be granted the 'Sword Warrior: Anti-Invisibility' effect.$(br2)This effect, carried by the Spirit Power, allows sword warriors to detect invisible hostile mobs, giving them the ability to see through invisibility.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
+    },
+    {
+      "type": "spotlight",
+      "title": "Spirit Power Mechanic: Hybrid Physical and Magic Damage",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "When the player's Spirit Power exceeds 70, all summoned sword warriors will be granted the 'Sword Warrior: Hybrid Damage' effect.$(br2)This effect, carried by the Spirit Power, allows sword warriors to deal both physical and magic damage to monsters with different damage capabilities.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
     }
   ]
 }

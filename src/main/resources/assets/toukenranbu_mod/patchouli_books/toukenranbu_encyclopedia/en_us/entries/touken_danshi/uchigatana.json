@@ -42,6 +42,34 @@
       "name": "Hachisuka Kotetsu",
       "scale": 0.8,
       "text": "An authentic uchigatana crafted by the Edo-period swordsmith Kotetsu.His elder brother Nagasone Kotetsu dotes on their younger brother Urashima Kotetsu, yet harbors a particular disdain for forgeries."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:heshikiri_hasebe",
+      "name": "Heshikiri Hasebe",
+      "scale": 0.8,
+      "text": "An uchigatana made by Hasebe Kunishige. Its name comes from the story of Nobunaga using this blade to cut down a tea master hiding under a serving table, along with the table itself. He is loyal to his master and longs to be the first retainer, though he never says it aloud. Even foul tasks are carried out calmly."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamatonokami_yasusada",
+      "name": "Yamatonokami Yasusada",
+      "scale": 0.8,
+      "text": "An uchigatana said to have been used by Okita Souji of the Shinsengumi. Like Kashuu Kiyomitsu, it is difficult to handle and picks its wielder. It is said to have been cheap for that reason. Though he appears gentle and mature, when it comes to battle..."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:yamanbagiri_chogi",
+      "name": "Yamanbagiri Chogi",
+      "scale": 0.8,
+      "text": "An uchigatana made by Chogi of Bizen Osafune. Chogi was a smith who differed from the mainstream Osafune school, developing his own style. He is said to be on par with the imitation Yamanbagiri Kunihiro. Beautiful and proud—more precisely, he has confidence in himself and fears nothing."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:ookurikara",
+      "name": "Ookurikara",
+      "scale": 0.8,
+      "text": "An uchigatana forged by Hiromitsu of the Soshu-den tradition. Because it was passed down in the Date clan, he is an old friend of Shokudaikiri Mitsutada, Daitokuji Sadamune, and Tsurumaru Kuninaga. However, he is a loner who dislikes interacting with others. He bears a carving of Kurikara, the dragon king, which is the manifestation of Fudo Myoo."
     }
   ]
 }

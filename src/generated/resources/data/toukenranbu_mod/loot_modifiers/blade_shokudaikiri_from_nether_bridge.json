@@ -1,0 +1,16 @@
+{
+  "type": "toukenranbu_mod:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/nether_bridge"
+    },
+    {
+      "chance": 0.05,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "toukenranbu_mod:shokudaikiri_mitsutada_sword",
+  "max_count": 1,
+  "min_count": 1
+}

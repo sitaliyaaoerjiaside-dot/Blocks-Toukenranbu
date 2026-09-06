@@ -5,8 +5,18 @@ import com.Equatorial.toukenranbu.entity.ModEntityTypes;
 import com.Equatorial.toukenranbu.entity.custom.KonnosukeEntity;
 import com.Equatorial.toukenranbu.entity.custom.*;
 import com.Equatorial.toukenranbu.entity.custom.kebiishi.*;
+import com.Equatorial.toukenranbu.entity.touken.naginata.TomoegataNaginataEntity;
+import com.Equatorial.toukenranbu.entity.touken.ootachi.IshikirimaruEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.MikazukiMunechikaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.ShokudaikiriMitsutadaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tachi.TsurumaruKuninagaEntity;
+import com.Equatorial.toukenranbu.entity.touken.tantou.GotouToushirouEntity;
+import com.Equatorial.toukenranbu.entity.touken.tantou.ImanotsurugiEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.*;
+import com.Equatorial.toukenranbu.entity.touken.wakizashi.HorikawaKunihiroEntity;
+import com.Equatorial.toukenranbu.entity.touken.wakizashi.NikkariAoeEntity;
+import com.Equatorial.toukenranbu.entity.touken.yari.TonbokiriEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -55,5 +65,21 @@ public class ModEvents {
         event.put(ModEntityTypes.KEBIISHI_LEADER.get(), KebiishiLeaderEntity.setAttributes());
 
         event.put(ModEntityTypes.KONNOSUKE.get(), KonnosukeEntity.createAttributes().build());
+
+        event.put(ModEntityTypes.ICHIGO_HITOFURI.get(), IchigoHitofuriEntity.setAttributes());
+        event.put(ModEntityTypes.TSURUMARU_KUNINAGA.get(), TsurumaruKuninagaEntity.setAttributes());
+        event.put(ModEntityTypes.SHOKUDAIKIRI_MITSUTADA.get(), ShokudaikiriMitsutadaEntity.setAttributes());
+        event.put(ModEntityTypes.ISHIKIRIMARU.get(), IshikirimaruEntity.setAttributes());
+        event.put(ModEntityTypes.HESHIKIRI_HASEBE.get(), HeshikiriHasebeEntity.setAttributes());
+        event.put(ModEntityTypes.YAMATONOKAMI_YASUSADA.get(), YamatonokamiYasusadaEntity.setAttributes());
+        event.put(ModEntityTypes.YAMANBAGIRI_CHOGI.get(), YamanbagiriChogiEntity.setAttributes());
+        event.put(ModEntityTypes.OOKURIKARA.get(), OokurikaraEntity.setAttributes());
+        event.put(ModEntityTypes.TONBOKIRI.get(), TonbokiriEntity.setAttributes());
+        event.put(ModEntityTypes.TOMOEGATA_NAGINATA.get(), TomoegataNaginataEntity.setAttributes());
+        event.put(ModEntityTypes.NIKKARI_AOE.get(), NikkariAoeEntity.setAttributes());
+        event.put(ModEntityTypes.HORIKAWA_KUNIHIRO.get(), HorikawaKunihiroEntity.setAttributes());
+        event.put(ModEntityTypes.IMANOTSURUGI.get(), ImanotsurugiEntity.setAttributes());
+        event.put(ModEntityTypes.GOTOU_TOUSHIROU.get(), GotouToushirouEntity.setAttributes());
+
     }
 }

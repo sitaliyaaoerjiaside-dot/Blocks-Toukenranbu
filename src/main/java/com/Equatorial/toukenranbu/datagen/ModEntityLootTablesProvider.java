@@ -24,48 +24,45 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
 
     @Override
     public void generate() {
-        // ===== 普通时间溯行军 =====
+        // 普通
         addTantouLoot();
         addWakizashiLoot();
-        addJikkoBaseLoot(ModEntityTypes.UCHIGATANA.get(), 1, 3);
-        addJikkoBaseLoot(ModEntityTypes.TACHI.get(), 2, 3);
-        addJikkoBaseLoot(ModEntityTypes.OOTACHI.get(), 2, 4);
-        addJikkoBaseLoot(ModEntityTypes.YARI.get(), 1, 3);
-        addJikkoBaseLoot(ModEntityTypes.NAGINATA.get(), 2, 4);
+        addUchigatanaLoot();
+        addTachiLoot();
+        addOotachiLoot();
+        addYariLoot();
+        addNaginataLoot();
 
-        // ===== 特化时间溯行军 =====
-        addJikkoPlusLoot(ModEntityTypes.TANTOU_PLUS.get(), 2, 4);
-        addJikkoPlusLoot(ModEntityTypes.WAKIZASHI_PLUS.get(), 2, 4);
-        addJikkoPlusLoot(ModEntityTypes.UCHIGATANA_PLUS.get(), 2, 5);
-        addJikkoPlusLoot(ModEntityTypes.TACHI_PLUS.get(), 3, 5);
-        addJikkoPlusLoot(ModEntityTypes.OOTACHI_PLUS.get(), 3, 6);
-        addJikkoPlusLoot(ModEntityTypes.YARI_PLUS.get(), 2, 5);
-        addJikkoPlusLoot(ModEntityTypes.NAGINATA_PLUS.get(), 3, 6);
+        // 特化
+        addTantouPlusLoot();
+        addWakizashiPlusLoot();
+        addUchigatanaPlusLoot();
+        addTachiPlusLoot();
+        addOotachiPlusLoot();
+        addYariPlusLoot();
+        addNaginataPlusLoot();
 
-        // ===== 极化时间溯行军 =====
-        addJikkoMaxLoot(ModEntityTypes.TANTOU_MAX.get(), 3, 5);
-        addJikkoMaxLoot(ModEntityTypes.WAKIZASHI_MAX.get(), 3, 5);
-        addJikkoMaxLoot(ModEntityTypes.UCHIGATANA_MAX.get(), 3, 6);
-        addJikkoMaxLoot(ModEntityTypes.TACHI_MAX.get(), 4, 6);
-        addJikkoMaxLoot(ModEntityTypes.OOTACHI_MAX.get(), 4, 7);
-        addJikkoMaxLoot(ModEntityTypes.YARI_MAX.get(), 3, 6);
-        addJikkoMaxLoot(ModEntityTypes.NAGINATA_MAX.get(), 4, 7);
+        // 极化
+        addTantouMaxLoot();
+        addWakizashiMaxLoot();
+        addUchigatanaMaxLoot();
+        addTachiMaxLoot();
+        addOotachiMaxLoot();
+        addYariMaxLoot();
+        addNaginataMaxLoot();
 
-        // ===== 检非违使队员 =====
+        // 检非违使
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_TACHI.get());
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_OOTACHI.get());
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_YARI.get());
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_NAGINATA.get());
-
-        // ===== 检非违使队长 =====
         addKebiishiLeaderLoot(ModEntityTypes.KEBIISHI_LEADER.get());
     }
 
-    // 短刀专属：骨头 + 10%浑浊灵力
+    // ==================== 短刀 ====================
     private void addTantouLoot() {
         add(ModEntityTypes.TANTOU.get(), LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(Items.IRON_NUGGET)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                         .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
@@ -73,81 +70,45 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(Items.BONE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .when(LootItemRandomChanceCondition.randomChance(0.1f))
                 )
-        );
-    }
-
-    // 胁差专属：蜘蛛眼 + 10%浑浊灵力
-    private void addWakizashiLoot() {
-        add(ModEntityTypes.WAKIZASHI.get(), LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
-                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
-                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.IMANOTSURUGI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.GOTOU_TOUSHIROU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
                 )
         );
     }
 
-    // 其他普通溯行军基础掉落
-    private void addJikkoBaseLoot(EntityType<?> type, int ironMin, int ironMax) {
-        add(type, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+    private void addTantouPlusLoot() {
+        add(ModEntityTypes.TANTOU_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(Items.IRON_NUGGET)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(ironMin, ironMax))))
-                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
-                )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
-                )
-        );
-    }
-
-    // 特化溯行军
-    private void addJikkoPlusLoot(EntityType<?> type, int ironMin, int ironMax) {
-        add(type, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(ironMin, ironMax))))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                         .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
                 )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .when(LootItemRandomChanceCondition.randomChance(0.1f))
                 )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.IMANOTSURUGI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.GOTOU_TOUSHIROU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
         );
     }
 
-    // 极化溯行军
-    private void addJikkoMaxLoot(EntityType<?> type, int ironMin, int ironMax) {
-        add(type, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+    private void addTantouMaxLoot() {
+        add(ModEntityTypes.TANTOU_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(Items.IRON_NUGGET)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(ironMin, ironMax))))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 5))))
                         .add(LootItem.lootTableItem(ModItems.COOLANT.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
                         .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
@@ -155,20 +116,445 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
                 )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.IMANOTSURUGI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.GOTOU_TOUSHIROU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    // ==================== 胁差 ====================
+    private void addWakizashiLoot() {
+        add(ModEntityTypes.WAKIZASHI.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.NIKKARI_AOE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HORIKAWA_KUNIHIRO.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    private void addWakizashiPlusLoot() {
+        add(ModEntityTypes.WAKIZASHI_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.NIKKARI_AOE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HORIKAWA_KUNIHIRO.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    private void addWakizashiMaxLoot() {
+        add(ModEntityTypes.WAKIZASHI_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 5))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.NIKKARI_AOE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HORIKAWA_KUNIHIRO.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    // ==================== 打刀 ====================
+    private void addUchigatanaLoot() {
+        add(ModEntityTypes.UCHIGATANA.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.HESHIKIRI_HASEBE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMATONOKAMI_YASUSADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.OOKURIKARA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_KUNIHIRO.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASEN_KANESADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASHUU_KIYOMITSU.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HACHISUKA_KOTETSU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    private void addUchigatanaPlusLoot() {
+        add(ModEntityTypes.UCHIGATANA_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.HESHIKIRI_HASEBE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMATONOKAMI_YASUSADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.OOKURIKARA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_KUNIHIRO.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASEN_KANESADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASHUU_KIYOMITSU.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HACHISUKA_KOTETSU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    private void addUchigatanaMaxLoot() {
+        add(ModEntityTypes.UCHIGATANA_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.HESHIKIRI_HASEBE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMATONOKAMI_YASUSADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.OOKURIKARA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_KUNIHIRO.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASEN_KANESADA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.KASHUU_KIYOMITSU.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.HACHISUKA_KOTETSU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2f))
+                )
+        );
+    }
+
+    // ==================== 太刀 ====================
+    private void addTachiLoot() {
+        add(ModEntityTypes.TACHI.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ICHIGO_HITOFURI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.TSURUMARU_KUNINAGA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.SHOKUDAIKIRI_MITSUTADA.get()).setWeight(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.1f))
                 )
         );
     }
 
-    // 检非违使普通队员
+    private void addTachiPlusLoot() {
+        add(ModEntityTypes.TACHI_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 5))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ICHIGO_HITOFURI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.TSURUMARU_KUNINAGA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.SHOKUDAIKIRI_MITSUTADA.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addTachiMaxLoot() {
+        add(ModEntityTypes.TACHI_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 6))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ICHIGO_HITOFURI.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.TSURUMARU_KUNINAGA.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.SHOKUDAIKIRI_MITSUTADA.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    // ==================== 大太刀 ====================
+    private void addOotachiLoot() {
+        add(ModEntityTypes.OOTACHI.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ISHIKIRIMARU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addOotachiPlusLoot() {
+        add(ModEntityTypes.OOTACHI_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))  // 修复：原为 loot_pool
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ISHIKIRIMARU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addOotachiMaxLoot() {
+        add(ModEntityTypes.OOTACHI_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 7))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.ISHIKIRIMARU.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    // ==================== 枪 ====================
+    private void addYariLoot() {
+        add(ModEntityTypes.YARI.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TONBOKIRI.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addYariPlusLoot() {
+        add(ModEntityTypes.YARI_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TONBOKIRI.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addYariMaxLoot() {
+        add(ModEntityTypes.YARI_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TONBOKIRI.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    // ==================== 薙刀 ====================
+    private void addNaginataLoot() {
+        add(ModEntityTypes.NAGINATA.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TOMOEGATA_NAGINATA.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addNaginataPlusLoot() {
+        add(ModEntityTypes.NAGINATA_PLUS.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TOMOEGATA_NAGINATA.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    private void addNaginataMaxLoot() {
+        add(ModEntityTypes.NAGINATA_MAX.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 7))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.TOMOEGATA_NAGINATA.get()).setWeight(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                )
+        );
+    }
+
+    // ==================== 检非违使 ====================
     private void addKebiishiCommonLoot(EntityType<?> type) {
         add(type, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(ModItems.GOLD_OMAMORI.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                         .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
@@ -177,20 +563,17 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
         );
     }
 
-    // 检非违使队长：金苹果 + 经验瓶 + 5%三日月宗近
     private void addKebiishiLeaderLoot(EntityType<?> type) {
         add(type, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(2))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(2))
                         .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 )
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(ModItems.MIKAZUKI_MUNECHIKA.get())
-                                .setWeight(5))
+                                .setWeight(20))
                         .add(LootItem.lootTableItem(ModItems.GOLD_OMAMORI.get())
                                 .setWeight(95)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))

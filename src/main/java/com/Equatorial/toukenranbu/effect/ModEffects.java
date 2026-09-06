@@ -12,4 +12,10 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> SPIRIT_REGEN =
             EFFECTS.register("spirit_regen", SpiritRegenEffect::new);
+
+    public static final RegistryObject<MobEffect> TOUKEN_ANTI_INVIS =
+            EFFECTS.register("touken_anti_invis", ToukenAntiInvisEffect::new);
+
+    public static final RegistryObject<MobEffect> TOUKEN_MIXED_DAMAGE =
+            EFFECTS.register("touken_mixed_damage", ToukenMixedDamageEffect::new);
 }

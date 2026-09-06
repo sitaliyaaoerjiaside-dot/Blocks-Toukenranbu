@@ -1,12 +1,26 @@
 {
   "name": "Wakizashi-type Touken Danshi",
-  "icon": "toukenranbu_mod:wakizashi_max_spawn_egg",
+  "icon": "toukenranbu_mod:horikawa_kunihiro",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Wakizashi",
-      "text": "Coming soon."
+      "text": "Wakizashi-type sword warriors. Sword warriors of the same type have basically no difference in attack speed, search range, attack power, and movement speed."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:nikkari_aoe",
+      "name": "Nikkari Aoe",
+      "scale": 0.8,
+      "text": "A large wakizashi made by the Aoe school of Bitchu province. It was originally an odachi but was shortened to its current form. This famous blade is said to have a history of slaying ghosts, and it always carries an aura of mystery."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:horikawa_kunihiro",
+      "name": "Horikawa Kunihiro",
+      "scale": 0.8,
+      "text": "A wakizashi said to have been forged by the swordsmith Horikawa Kunihiro, who was active during the Azuchi-Momoyama period. It is said to have been the beloved blade of Vice-Commander Hijikata Toshizo of the Shinsengumi. He is the partner and assistant of Izuminokami Kanesada. Beneath his polite and considerate demeanor lies a burning fighting spirit."
     }
   ]
 }

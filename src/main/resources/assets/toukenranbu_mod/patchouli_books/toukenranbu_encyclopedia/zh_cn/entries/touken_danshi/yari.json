@@ -1,12 +1,19 @@
 {
   "name": "枪类刀剑男士",
-  "icon": "toukenranbu_mod:yari_max_spawn_egg",
+  "icon": "toukenranbu_mod:tonbokiri",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "枪",
-      "text": "敬请期待"
+      "text": "枪类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。枪能够使用无视护甲、防御、附魔的真实伤害攻击，但会被抗性提升抵消。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tonbokiri",
+      "name": "蜻蛉切",
+      "scale": 0.8,
+      "text": "天下三名枪之一，村正一派的藤原正真所作的枪。笹穗的枪身，樋口饰有美丽的梵字和三钴剑纹饰。名字来源于切断了停在枪尖的蜻蜓的逸闻。虽然身材高大，但性格质朴诚实。是千子村正唯一的理解者。"
     }
   ]
 }

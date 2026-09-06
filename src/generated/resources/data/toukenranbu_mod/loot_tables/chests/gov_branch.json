@@ -91,6 +91,74 @@
           "type": "minecraft:item",
           "name": "toukenranbu_mod:kasen_kanesada",
           "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:yamanbagiri_chogi",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:ichigo_hitofuri"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:tsurumaru_kuninaga"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:shokudaikiri_mitsutada",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:ishikirimaru",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:heshikiri_hasebe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:yamatonokami_yasusada",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:ookurikara",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:tonbokiri",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:tomoegata_naginata",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:nikkari_aoe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:horikawa_kunihiro",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:imanotsurugi",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:gotou_toushirou",
+          "weight": 4
         }
       ],
       "rolls": {

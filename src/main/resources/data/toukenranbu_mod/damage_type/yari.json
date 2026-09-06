@@ -1,0 +1,9 @@
+{
+  "message_id": "yari",
+  "exhaustion": 0.1,
+  "scaling": "never",
+  "effects": "hurt",
+  "death_message_type": "default",
+  "bypasses_armor": true,
+  "bypasses_magic": true
+}

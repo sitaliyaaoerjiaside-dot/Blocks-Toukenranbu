@@ -1,12 +1,19 @@
 {
   "name": "Yari-type Touken Danshi",
-  "icon": "toukenranbu_mod:yari_max_spawn_egg",
+  "icon": "toukenranbu_mod:tonbokiri",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
-      "title": "Yari",
-      "text": "Coming soon."
+      "title": "Spear",
+      "text": "Spear-type sword warriors. Sword warriors of the same type have basically no difference in attack speed, search range, attack power, and movement speed. Spears can deal true damage that ignores armor, defense, and enchantments, but this can be mitigated by Resistance."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:tonbokiri",
+      "name": "Tonbokiri",
+      "scale": 0.8,
+      "text": "One of the Three Great Spears of Japan, forged by Fujiwara Masazane of the Muramasa school. The spear has a sasa-ho blade, and its hi is decorated with beautiful Sanskrit characters and vajra motifs. Its name comes from the anecdote of cutting a dragonfly that landed on its blade tip. Though tall in stature, he is simple and honest in nature. He is the only one who truly understands Muramasa Senji."
     }
   ]
 }

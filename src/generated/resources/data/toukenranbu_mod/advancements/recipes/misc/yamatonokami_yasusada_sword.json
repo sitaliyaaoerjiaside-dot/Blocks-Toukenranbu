@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:yamatonokami_yasusada_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yamatonokami_yasusada": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:yamatonokami_yasusada"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yamatonokami_yasusada",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:yamatonokami_yasusada_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -7,4 +7,8 @@ public interface ISpiritPower {
     void addSpiritPower(int amount);
     boolean consumeSpiritPower(int amount);
     int getMaxSpiritPower();
+
+    boolean isFriendlyFireEnabled();
+    void setFriendlyFireEnabled(boolean enabled);
+
 }

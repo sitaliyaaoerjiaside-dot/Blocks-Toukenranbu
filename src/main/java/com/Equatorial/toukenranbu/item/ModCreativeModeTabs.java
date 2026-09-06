@@ -135,6 +135,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HORSE_MATSUKAZE.get());
                         pOutput.accept(ModItems.HORSE_OUTEI.get());
                         pOutput.accept(ModItems.HORSE_TAKADONOGURO.get());
+                        pOutput.accept(ModItems.HORSE_KAKOJI.get());
+                        pOutput.accept(ModItems.HORSE_SEIHAKU.get());
+                        pOutput.accept(ModItems.HORSE_MOCHIZUKI.get());
+                        pOutput.accept(ModItems.HORSE_AOGE.get());
+                        pOutput.accept(ModItems.HORSE_KAGE.get());
+                        pOutput.accept(ModItems.HORSE_SHIROGE.get());
+                        pOutput.accept(ModItems.HORSE_UMAGOU.get());
 
                         // ========== 刀剑男士 ==========
                         pOutput.accept(ModItems.MIKAZUKI_MUNECHIKA.get());
@@ -143,6 +150,20 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HACHISUKA_KOTETSU.get());
                         pOutput.accept(ModItems.KASEN_KANESADA.get());
                         pOutput.accept(ModItems.MUTSUNOKAMI_YOSHIYUKI.get());
+                        pOutput.accept(ModItems.ICHIGO_HITOFURI.get());
+                        pOutput.accept(ModItems.TSURUMARU_KUNINAGA.get());
+                        pOutput.accept(ModItems.SHOKUDAIKIRI_MITSUTADA.get());
+                        pOutput.accept(ModItems.ISHIKIRIMARU.get());
+                        pOutput.accept(ModItems.HESHIKIRI_HASEBE.get());
+                        pOutput.accept(ModItems.YAMATONOKAMI_YASUSADA.get());
+                        pOutput.accept(ModItems.YAMANBAGIRI_CHOGI.get());
+                        pOutput.accept(ModItems.OOKURIKARA.get());
+                        pOutput.accept(ModItems.TONBOKIRI.get());
+                        pOutput.accept(ModItems.TOMOEGATA_NAGINATA.get());
+                        pOutput.accept(ModItems.NIKKARI_AOE.get());
+                        pOutput.accept(ModItems.HORIKAWA_KUNIHIRO.get());
+                        pOutput.accept(ModItems.IMANOTSURUGI.get());
+                        pOutput.accept(ModItems.GOTOU_TOUSHIROU.get());
 
                         pOutput.accept(ModItems.MIKAZUKI_BLADE.get());
                         pOutput.accept(ModItems.YAMANBAGIRI_BLADE.get());
@@ -150,6 +171,20 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HACHISUKA_BLADE.get());
                         pOutput.accept(ModItems.KASEN_BLADE.get());
                         pOutput.accept(ModItems.MUTSUNOKAMI_BLADE.get());
+                        pOutput.accept(ModItems.ICHIGO_HITOFURI_BLADE.get());
+                        pOutput.accept(ModItems.TSURUMARU_KUNINAGA_BLADE.get());
+                        pOutput.accept(ModItems.SHOKUDAIKIRI_MITSUTADA_BLADE.get());
+                        pOutput.accept(ModItems.ISHIKIRIMARU_BLADE.get());
+                        pOutput.accept(ModItems.HESHIKIRI_HASEBE_BLADE.get());
+                        pOutput.accept(ModItems.YAMATONOKAMI_YASUSADA_BLADE.get());
+                        pOutput.accept(ModItems.YAMANBAGIRI_CHOGI_BLADE.get());
+                        pOutput.accept(ModItems.OOKURIKARA_BLADE.get());
+                        pOutput.accept(ModItems.TONBOKIRI_BLADE.get());
+                        pOutput.accept(ModItems.TOMOEGATA_NAGINATA_BLADE.get());
+                        pOutput.accept(ModItems.NIKKARI_AOE_BLADE.get());
+                        pOutput.accept(ModItems.HORIKAWA_KUNIHIRO_BLADE.get());
+                        pOutput.accept(ModItems.IMANOTSURUGI_BLADE.get());
+                        pOutput.accept(ModItems.GOTOU_TOUSHIROU_BLADE.get());
 
                         // ========== 刷怪蛋 ==========
                         pOutput.accept(ModItems.KONNOSUKE_SPAWN_EGG.get());

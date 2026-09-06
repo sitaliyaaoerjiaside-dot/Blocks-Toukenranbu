@@ -1,0 +1,24 @@
+{
+  "name": "刀剑男士的本体刀",
+  "category": "toukenranbu_mod:toukendanshi_sword",
+  "icon": "toukenranbu_mod:mikazuki_munechika_sword",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "模组限定武器：刀剑男士的本体刀",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:mikazuki_munechika_sword",
+      "text": "刀剑男士的本体刀，玩家可以赋予其各种各样的附魔属性。注意：部分本体刀剑在被玩家使用的时候，并不能发挥出它们在刀剑男士本刀身上的功能。$(br2)配方见下一页，仅使用三日月宗近的本体刀作为演示，配方除了中间的刀剑男士召唤物品不同之外，其他需求材料均相同。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:mikazuki_munechika_sword",
+      "title": "合成本体刀需要刀剑男士的召唤物品"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:mikazuki_munechika",
+      "title": "合成刀剑男士的召唤物品需要本体刀"
+    }
+  ]
+}

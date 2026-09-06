@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mikazuki_munechika": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:mikazuki_munechika"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:mikazuki_munechika_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mikazuki_munechika",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:mikazuki_munechika_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

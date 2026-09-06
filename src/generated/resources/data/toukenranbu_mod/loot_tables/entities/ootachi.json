@@ -59,6 +59,22 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.1,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "toukenranbu_mod:ishikirimaru"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "toukenranbu_mod:entities/ootachi"

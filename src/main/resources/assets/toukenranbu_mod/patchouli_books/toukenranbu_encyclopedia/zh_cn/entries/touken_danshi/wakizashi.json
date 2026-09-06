@@ -1,12 +1,26 @@
 {
   "name": "胁差类刀剑男士",
-  "icon": "toukenranbu_mod:wakizashi_max_spawn_egg",
+  "icon": "toukenranbu_mod:horikawa_kunihiro",
   "category": "toukenranbu_mod:touken_danshi",
   "pages": [
     {
       "type": "patchouli:text",
       "title": "胁差",
-      "text": "敬请期待"
+      "text": "胁差类刀剑男士。同个刀种的刀剑男士，他们的攻击速度、索敌范围、攻击力、移速基本没有区别。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:nikkari_aoe",
+      "name": "笑面青江",
+      "scale": 0.8,
+      "text": "备中青江派所作的大胁差。经由大太刀被磨短后变成了现在的样子。实体是具有斩杀过幽灵传说的名刀，身边总是有种被妖气笼罩的感觉。"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:horikawa_kunihiro",
+      "name": "堀川国广",
+      "scale": 0.8,
+      "text": "（据传）由活跃于安土桃山时代的刀匠堀川国广所作的胁差。据说曾是新选组副长土方岁三的爱刀。是和泉守兼定的搭档兼助手。彬彬有礼、待人体贴的举止之下，内心隐藏着炽热的斗志。"
     }
   ]
 }
