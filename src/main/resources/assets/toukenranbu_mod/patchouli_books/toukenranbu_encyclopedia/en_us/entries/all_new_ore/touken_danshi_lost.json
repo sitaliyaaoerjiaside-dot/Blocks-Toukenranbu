@@ -1,0 +1,22 @@
+{
+  "name": "Touken Danshi Location Query",
+  "icon": "toukenranbu_mod:moon_phase",
+  "category": "toukenranbu_mod:all_new_ore",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Finding Lost Touken Danshi",
+      "text": "The Citadel has grown and there are more Touken Danshi, so a few may wander off without notice.$(br2)To help Saniwa find their Touken Danshi, the mod provides a location query command that lists the name, dimension, coordinates, and distance of all Touken Danshi under your name."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Usage",
+      "text": "Enter the following in the chat box at the bottom left:$(br2)$(li)/tr locate$(br)$(li)/toukenranbu locate$(br2)Both have the same effect and are functionally identical.$(br2)A list will be displayed; green indicates within 64 blocks, white indicates same dimension but farther away, and cross-dimension entries will show the dimension name and coordinates."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Count Only",
+      "text": "If you just want to know how many summoned Touken Danshi you have in total, use:$(br2)$(li)/tr count$(br)$(li)/toukenranbu count$(br2)It will only tell you the number, without listing specific locations.$(br2)Note that Touken Danshi stored in Capture Talismans are not counted, as they have been removed from the world."
+    }
+  ]
+}

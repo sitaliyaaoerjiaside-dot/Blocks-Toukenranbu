@@ -61,6 +61,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent("kebiishi_naginata_spawn_egg", ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_spawn_egg"));
         withExistingParent("kebiishi_yari_spawn_egg", ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_spawn_egg"));
         withExistingParent("konnosuke_spawn_egg", ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_spawn_egg"));
+        withExistingParent("white_mikazuki_munechika_egg", ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_spawn_egg"));
 
         basicItem(com.Equatorial.toukenranbu.item.ModItems.A_BITE_OF_DANGO.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.IMMORTAL_DUMPLINGS.get());
@@ -83,6 +84,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
         buttonItem(ModBlocks.CHARRED_BUTTON, ModBlocks.CHARRED_PLANKS);
         fenceItem(ModBlocks.CHARRED_FENCE, ModBlocks.CHARRED_PLANKS);
         basicItem(ModBlocks.CHARRED_DOOR.get().asItem());
+
+        buttonItem(ModBlocks.BLUE_CHERRY_BUTTON, ModBlocks.BLUE_CHERRY_PLANKS);
+        fenceItem(ModBlocks.BLUE_CHERRY_FENCE, ModBlocks.BLUE_CHERRY_PLANKS);
+        basicItem(ModBlocks.BLUE_CHERRY_DOOR.get().asItem());
 
         basicItem(ModBlocks.WHETSTONE_DOOR.get().asItem());
 
@@ -107,6 +112,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(com.Equatorial.toukenranbu.item.ModItems.WHETSTONE_BOOTS.get());
 
         saplingItem(ModBlocks.CHARRED_SAPLING);
+        saplingItem(ModBlocks.BLUE_CHERRY_SAPLING);
 
         basicItem(com.Equatorial.toukenranbu.item.ModItems.TROOP_CANDY.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.SOLDIER_CANDY.get());
@@ -152,6 +158,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_SHIROGE.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.HORSE_UMAGOU.get());
 
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.CAPTAIN_BADGE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.TOUKENRANBU_ENCYCLOPEDIA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.EMA.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.MOON_PHASE.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.GROUP_CAPTURE_BALL.get());
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

@@ -1,0 +1,38 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "has_moon_phase": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:moon_phase"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.white_night_garden.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:moon_phase"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.white_night_garden.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_moon_phase"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ldlib2-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="ldlib2-ui.xsd">
+    <stylesheet location="ldlib2:lss/modern.lss"/>
+    <style>
+        label { text-color: #000000; }
+        text { text-color: #000000; }
+        button { text-color: #000000; }
+        tab { text-color: #000000; }
+    </style>
+    <root class="panel_bg" style="width: 190; height: 250">
+
+        <!-- TabView：占满面板 -->
+        <tab-view id="main_tabs" style="position: absolute; left: 2; top: 2; width: 186; height: 246">
+
+            <!-- ===== Tab 1：状态 ===== -->
+            <tab text="状态">
+                <tab-content>
+                    <!-- 下面元素的 left/top 都相对 content 左上角，content 自带 5px padding -->
+
+                    <label id="stat_impact"      style="position: absolute; left: 66; top: 2;  width: 100; height: 12"/>
+                    <label id="stat_mobility"    style="position: absolute; left: 66; top: 16; width: 100; height: 12"/>
+                    <label id="stat_killing"     style="position: absolute; left: 66; top: 30; width: 100; height: 12"/>
+                    <label id="stat_scouting"    style="position: absolute; left: 66; top: 44; width: 100; height: 12"/>
+                    <label id="stat_concealment" style="position: absolute; left: 66; top: 58; width: 100; height: 12"/>
+                    <label id="stat_troops"      style="position: absolute; left: 66; top: 72; width: 100; height: 12"/>
+
+                    <label id="name_label" style="position: absolute; left: 0; top: 80; width: 166; height: 12"/>
+
+                    <label id="hp_text" class="stats_page" style="position: absolute; left: 0; top: 101; width: 22; height: 12"/>
+                    <progress-bar id="hp_bar" style="position: absolute; left: 22; top: 100; width: 100; height: 12"/>
+                    <label id="hp_value" style="position: absolute; left: 126; top: 101; width: 50; height: 12"/>
+
+                    <label id="fatigue_text" style="position: absolute; left: 0; top: 117; width: 22; height: 12"/>
+                    <progress-bar id="fatigue_bar" style="position: absolute; left: 22; top: 116; width: 100; height: 12"/>
+                    <label id="fatigue_value" style="position: absolute; left: 126; top: 117; width: 50; height: 12"/>
+
+                    <button id="pickup_toggle" style="position: absolute; left: 0; top: 136; width: 80; height: 18"/>
+
+                    <label id="effects_text" style="position: absolute; left: 0; top: 164; width: 28; height: 12"/>
+                    <element id="effects_container" style="position: absolute; left: 0; top: 178; width: 166; height: 20"/>
+                </tab-content>
+            </tab>
+
+            <!-- ===== Tab 2：物品 ===== -->
+            <tab text="物品">
+                <tab-content>
+                    <scroller-view id="item_scroll" style="position: absolute; left: -5; top: 0; width: 186; height: 214">
+
+                        <label id="label_armor" style="position: absolute; left: 80; top: 2; width: 30; height: 12"/>
+                        <item-slot id="armor_0" style="position: absolute; left: 80; top: 14; width: 18; height: 18"/>
+                        <item-slot id="armor_1" style="position: absolute; left: 80; top: 32; width: 18; height: 18"/>
+                        <item-slot id="armor_2" style="position: absolute; left: 80; top: 50; width: 18; height: 18"/>
+                        <item-slot id="armor_3" style="position: absolute; left: 80; top: 68; width: 18; height: 18"/>
+
+                        <label id="label_knife" style="position: absolute; left: 110; top: 2; width: 60; height: 12"/>
+                        <item-slot id="knife_0" style="position: absolute; left: 110; top: 14; width: 18; height: 18"/>
+                        <item-slot id="knife_1" style="position: absolute; left: 128; top: 14; width: 18; height: 18"/>
+                        <item-slot id="knife_2" style="position: absolute; left: 146; top: 14; width: 18; height: 18"/>
+
+                        <label id="label_mount" style="position: absolute; left: 110; top: 46; width: 30; height: 12"/>
+                        <item-slot id="mount" style="position: absolute; left: 110; top: 58; width: 18; height: 18"/>
+                        <label id="label_blade" style="position: absolute; left: 146; top: 46; width: 38; height: 12"/>
+                        <item-slot id="blade" style="position: absolute; left: 146; top: 58; width: 18; height: 18"/>
+
+                        <label id="label_touken_inv" style="position: absolute; left: 6; top: 92; width: 140; height: 12"/>
+
+                        <item-slot id="inv_0"  style="position: absolute; left: 6;   top: 104; width: 18; height: 18"/>
+                        <item-slot id="inv_1"  style="position: absolute; left: 24;  top: 104; width: 18; height: 18"/>
+                        <item-slot id="inv_2"  style="position: absolute; left: 42;  top: 104; width: 18; height: 18"/>
+                        <item-slot id="inv_3"  style="position: absolute; left: 60;  top: 104; width: 18; height: 18"/>
+                        <item-slot id="inv_4"  style="position: absolute; left: 78;  top: 104; width: 18; height: 18"/>
+
+                        <item-slot id="inv_5"  style="position: absolute; left: 6;   top: 122; width: 18; height: 18"/>
+                        <item-slot id="inv_6"  style="position: absolute; left: 24;  top: 122; width: 18; height: 18"/>
+                        <item-slot id="inv_7"  style="position: absolute; left: 42;  top: 122; width: 18; height: 18"/>
+                        <item-slot id="inv_8"  style="position: absolute; left: 60;  top: 122; width: 18; height: 18"/>
+                        <item-slot id="inv_9"  style="position: absolute; left: 78;  top: 122; width: 18; height: 18"/>
+
+                        <item-slot id="inv_10" style="position: absolute; left: 6;   top: 140; width: 18; height: 18"/>
+                        <item-slot id="inv_11" style="position: absolute; left: 24;  top: 140; width: 18; height: 18"/>
+                        <item-slot id="inv_12" style="position: absolute; left: 42;  top: 140; width: 18; height: 18"/>
+                        <item-slot id="inv_13" style="position: absolute; left: 60;  top: 140; width: 18; height: 18"/>
+                        <item-slot id="inv_14" style="position: absolute; left: 78;  top: 140; width: 18; height: 18"/>
+
+                        <item-slot id="inv_15" style="position: absolute; left: 6;   top: 158; width: 18; height: 18"/>
+                        <item-slot id="inv_16" style="position: absolute; left: 24;  top: 158; width: 18; height: 18"/>
+                        <item-slot id="inv_17" style="position: absolute; left: 42;  top: 158; width: 18; height: 18"/>
+                        <item-slot id="inv_18" style="position: absolute; left: 60;  top: 158; width: 18; height: 18"/>
+                        <item-slot id="inv_19" style="position: absolute; left: 78;  top: 158; width: 18; height: 18"/>
+
+                        <item-slot id="inv_20" style="position: absolute; left: 6;   top: 176; width: 18; height: 18"/>
+                        <item-slot id="inv_21" style="position: absolute; left: 24;  top: 176; width: 18; height: 18"/>
+                        <item-slot id="inv_22" style="position: absolute; left: 42;  top: 176; width: 18; height: 18"/>
+                        <item-slot id="inv_23" style="position: absolute; left: 60;  top: 176; width: 18; height: 18"/>
+                        <item-slot id="inv_24" style="position: absolute; left: 78;  top: 176; width: 18; height: 18"/>
+
+                        <label id="label_player_inv" style="position: absolute; left: 6; top: 206; width: 100; height: 12"/>
+
+                        <item-slot id="p_main_0" style="position: absolute; left: 6;   top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_1" style="position: absolute; left: 24;  top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_2" style="position: absolute; left: 42;  top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_3" style="position: absolute; left: 60;  top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_4" style="position: absolute; left: 78;  top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_5" style="position: absolute; left: 96;  top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_6" style="position: absolute; left: 114; top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_7" style="position: absolute; left: 132; top: 220; width: 18; height: 18"/>
+                        <item-slot id="p_main_8" style="position: absolute; left: 150; top: 220; width: 18; height: 18"/>
+
+                        <item-slot id="p_main_9"  style="position: absolute; left: 6;   top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_10" style="position: absolute; left: 24;  top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_11" style="position: absolute; left: 42;  top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_12" style="position: absolute; left: 60;  top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_13" style="position: absolute; left: 78;  top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_14" style="position: absolute; left: 96;  top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_15" style="position: absolute; left: 114; top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_16" style="position: absolute; left: 132; top: 238; width: 18; height: 18"/>
+                        <item-slot id="p_main_17" style="position: absolute; left: 150; top: 238; width: 18; height: 18"/>
+
+                        <item-slot id="p_main_18" style="position: absolute; left: 6;   top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_19" style="position: absolute; left: 24;  top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_20" style="position: absolute; left: 42;  top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_21" style="position: absolute; left: 60;  top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_22" style="position: absolute; left: 78;  top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_23" style="position: absolute; left: 96;  top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_24" style="position: absolute; left: 114; top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_25" style="position: absolute; left: 132; top: 256; width: 18; height: 18"/>
+                        <item-slot id="p_main_26" style="position: absolute; left: 150; top: 256; width: 18; height: 18"/>
+
+                        <item-slot id="p_hotbar_0" style="position: absolute; left: 6;   top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_1" style="position: absolute; left: 24;  top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_2" style="position: absolute; left: 42;  top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_3" style="position: absolute; left: 60;  top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_4" style="position: absolute; left: 78;  top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_5" style="position: absolute; left: 96;  top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_6" style="position: absolute; left: 114; top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_7" style="position: absolute; left: 132; top: 280; width: 18; height: 18"/>
+                        <item-slot id="p_hotbar_8" style="position: absolute; left: 150; top: 280; width: 18; height: 18"/>
+
+                    </scroller-view>
+                </tab-content>
+            </tab>
+
+            <!-- ===== Tab 3：成长 ===== -->
+            <tab text="成长">
+                <tab-content>
+                    <label id="level_label" style="position: absolute; left: 0; top: 6; width: 176; height: 14"/>
+
+                    <label id="exp_text"  style="position: absolute; left: 0; top: 32; width: 20; height: 12"/>
+                    <progress-bar id="exp_bar" style="position: absolute; left: 24; top: 30; width: 100; height: 12"/>
+                    <label id="exp_value" style="position: absolute; left: 128; top: 32; width: 54; height: 12"/>
+
+                    <label id="level_bonus_title" style="position: absolute; left: 0; top: 56; width: 176; height: 14"/>
+
+                    <label id="lb_impact"      style="position: absolute; left: 0;  top: 76; width: 84; height: 12"/>
+                    <label id="lb_mobility"    style="position: absolute; left: 0;  top: 90; width: 84; height: 12"/>
+                    <label id="lb_killing"     style="position: absolute; left: 0;  top: 104; width: 84; height: 12"/>
+                    <label id="lb_scouting"    style="position: absolute; left: 88; top: 76; width: 84; height: 12"/>
+                    <label id="lb_concealment" style="position: absolute; left: 88; top: 90; width: 84; height: 12"/>
+                    <label id="lb_troops"      style="position: absolute; left: 88; top: 104; width: 84; height: 12"/>
+                </tab-content>
+            </tab>
+
+            <!-- ===== Tab 4：阵型 ===== -->
+            <tab text="阵型">
+                <tab-content>
+                    <label id="formation_title" style="position: absolute; left: 0; top: 6; width: 176; height: 12"/>
+                    <label id="formation_name"  style="position: absolute; left: 0; top: 22; width: 176; height: 14"/>
+
+                    <label id="formation_level" style="position: absolute; left: 0;  top: 46; width: 88; height: 12"/>
+                    <label id="formation_count" style="position: absolute; left: 88; top: 46; width: 88; height: 12"/>
+
+                    <label id="formation_atk" style="position: absolute; left: 0;  top: 68; width: 88; height: 12"/>
+                    <label id="formation_def" style="position: absolute; left: 88; top: 68; width: 88; height: 12"/>
+                    <label id="formation_spd" style="position: absolute; left: 0;  top: 82; width: 88; height: 12"/>
+                    <label id="formation_rng" style="position: absolute; left: 88; top: 82; width: 88; height: 12"/>
+
+                    <button id="formation_cycle" style="position: absolute; left: 58; top: 108; width: 60; height: 18"/>
+                </tab-content>
+            </tab>
+        </tab-view>
+
+        <!-- AI 按钮：浮在 TabView 头部右侧 -->
+        <button id="tab_ai" text="AI"
+                style="position: absolute; left: 144; top: 6; width: 36; height: 16; z-index: 10"/>
+
+        <!-- ========== AI 弹窗（默认隐藏） ========== -->
+        <element id="ai_mask" class="ai_popup" style="position: absolute; left: 0; top: 0; width: 190; height: 250"/>
+        <element id="ai_dialog" class="ai_popup" style="position: absolute; left: 20; top: 36; width: 150; height: 184"/>
+        <label id="ai_title" class="ai_popup" style="position: absolute; left: 20; top: 44; width: 150; height: 14"/>
+
+        <button id="btn_follow"     class="ai_popup" style="position: absolute; left: 30; top: 66;  width: 130; height: 18"/>
+        <button id="btn_sit"        class="ai_popup" style="position: absolute; left: 30; top: 88;  width: 130; height: 18"/>
+        <button id="btn_farm"       class="ai_popup" style="position: absolute; left: 30; top: 110; width: 130; height: 18"/>
+        <button id="btn_mine"       class="ai_popup" style="position: absolute; left: 30; top: 132; width: 130; height: 18"/>
+        <button id="btn_patrol"     class="ai_popup" style="position: absolute; left: 30; top: 154; width: 130; height: 18"/>
+        <button id="btn_spar"       class="ai_popup" style="position: absolute; left: 30; top: 176; width: 130; height: 18"/>
+        <button id="btn_cave_clear" class="ai_popup" style="position: absolute; left: 30; top: 198; width: 130; height: 18"/>
+
+    </root>
+</ldlib2-ui>

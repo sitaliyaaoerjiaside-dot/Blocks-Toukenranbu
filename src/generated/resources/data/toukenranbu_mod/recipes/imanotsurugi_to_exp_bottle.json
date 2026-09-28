@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:imanotsurugi"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:experience_bottle"
+  }
+}

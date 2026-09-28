@@ -44,6 +44,14 @@ public class CaptureBallItem extends Item {
             return InteractionResult.SUCCESS;
         }
 
+        if (target instanceof com.Equatorial.toukenranbu.entity.util.CannotBeCaptured) {
+            player.displayClientMessage(
+                    net.minecraft.network.chat.Component.translatable(
+                                    "message.toukenranbu_mod.capture.fail_boss")
+                            .withStyle(net.minecraft.ChatFormatting.RED), true);
+            return net.minecraft.world.InteractionResult.FAIL;
+        }
+
         // 禁止收容玩家
         if (target instanceof Player) {
             player.displayClientMessage(

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:tsurumaru_kuninaga"
+    }
+  ],
+  "result": {
+    "count": 18,
+    "item": "minecraft:experience_bottle"
+  }
+}

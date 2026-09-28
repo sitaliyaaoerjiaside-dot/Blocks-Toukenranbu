@@ -26,6 +26,7 @@ public class SpiritPowerProvider implements ICapabilitySerializable<Tag> {
         CompoundTag tag = new CompoundTag();
         tag.putInt("spirit_power", instance.getSpiritPower());
         tag.putBoolean("friendly_fire", instance.isFriendlyFireEnabled());
+        tag.putBoolean("danshi_xp", instance.isDanshiXpEnabled());
         return tag;
     }
 
@@ -34,6 +35,7 @@ public class SpiritPowerProvider implements ICapabilitySerializable<Tag> {
         if (tag instanceof CompoundTag compoundTag) {
             instance.setSpiritPower(compoundTag.getInt("spirit_power"));
             instance.setFriendlyFireEnabled(compoundTag.getBoolean("friendly_fire"));
+            instance.setDanshiXpEnabled(compoundTag.getBoolean("danshi_xp"));
         }
     }
 }

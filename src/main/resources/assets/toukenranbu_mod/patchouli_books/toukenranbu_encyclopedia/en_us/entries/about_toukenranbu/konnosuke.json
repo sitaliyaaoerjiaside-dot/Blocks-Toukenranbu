@@ -13,6 +13,11 @@
       "type": "patchouli:crafting",
       "recipe": "toukenranbu_mod:oil_tofu",
       "text": "Aburaage can be used to tame Konnosuke."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:oil_tofu",
+      "text": "Since version 1.3.0, compatibility with Senra Monogatari: Kitchen has been added. Konnosuke is currently the fastest creature in the Touken Ranbu mod and can quickly pull the millstone."
     }
   ]
 }

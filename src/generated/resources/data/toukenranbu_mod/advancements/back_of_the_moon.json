@@ -1,0 +1,34 @@
+{
+  "parent": "toukenranbu_mod:new_start",
+  "criteria": {
+    "moon_reflection": {
+      "conditions": {
+        "effects": {
+          "toukenranbu_mod:moon_reflection": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.back_of_the_moon.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:moon_phase"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.back_of_the_moon.title"
+    }
+  },
+  "requirements": [
+    [
+      "moon_reflection"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

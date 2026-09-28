@@ -641,9 +641,9 @@
 					]
 				},
 				{
-					"name": "bone11",
+					"name": "head",
 					"parent": "bone3",
-					"pivot": [-2.09629, 62.74751, -5.43217],
+					"pivot": [0.15371, 50.99751, -0.18217],
 					"cubes": [
 						{
 							"origin": [-1.75, 69.75, 5.5],
@@ -1211,7 +1211,7 @@
 				},
 				{
 					"name": "bone6",
-					"parent": "bone11",
+					"parent": "head",
 					"pivot": [3, 56.5, -8],
 					"cubes": [
 						{
@@ -1242,7 +1242,7 @@
 				},
 				{
 					"name": "bone10",
-					"parent": "bone11",
+					"parent": "head",
 					"pivot": [-2, 59.5, -8],
 					"cubes": [
 						{
@@ -1273,7 +1273,7 @@
 				},
 				{
 					"name": "bone5",
-					"parent": "bone11",
+					"parent": "head",
 					"pivot": [1.66667, 57.5, -7.93333],
 					"cubes": [
 						{
@@ -1304,7 +1304,7 @@
 				},
 				{
 					"name": "bone8",
-					"parent": "bone11",
+					"parent": "head",
 					"pivot": [-4, 57.75, -8],
 					"cubes": [
 						{

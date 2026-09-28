@@ -12,10 +12,11 @@ import com.Equatorial.toukenranbu.event.JikkoKillHandler;
 import com.Equatorial.toukenranbu.item.ModCreativeModeTabs;
 import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.loot.ModLootModifiers;
-import com.Equatorial.toukenranbu.screen.ModMenuTypes;
 import com.Equatorial.toukenranbu.network.ModNetwork;
 import com.Equatorial.toukenranbu.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
@@ -50,6 +51,7 @@ public class ToukenRanbuMod
 
         modEventBus.addListener(this::commonSetup);
 
+        com.Equatorial.toukenranbu.screen.EntityUIMenuType.MENUS.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -57,8 +59,8 @@ public class ToukenRanbuMod
         ModEffects.EFFECTS.register(modEventBus);
         // ModBlockEntities.register(modEventBus);
         ModVillagers.register(modEventBus);
-        ModMenuTypes.MENUS.register(modEventBus);
         ModEntityTypes.register(modEventBus);
+        com.Equatorial.toukenranbu.particle.ModParticleTypes.register(modEventBus);
         GeckoLib.initialize();
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(AmuletDeathHandler.class);
@@ -149,6 +151,63 @@ public class ToukenRanbuMod
             SpawnPlacements.register(ModEntityTypes.KONNOSUKE.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Animal::checkAnimalSpawnRules);
+
+            // ========== 白夜之庭：无主刀男地面生成规则 ==========
+            // 注意：这里不包含三日月宗近和山姥切长义
+            SpawnPlacements.register(ModEntityTypes.YAMANBAGIRI_KUNIHIRO.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.KASHUU_KIYOMITSU.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.HACHISUKA_KOTETSU.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.KASEN_KANESADA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.MUTSUNOKAMI_YOSHIYUKI.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.ICHIGO_HITOFURI.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.TSURUMARU_KUNINAGA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.SHOKUDAIKIRI_MITSUTADA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.ISHIKIRIMARU.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.HESHIKIRI_HASEBE.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.YAMATONOKAMI_YASUSADA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.OOKURIKARA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.TONBOKIRI.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.TOMOEGATA_NAGINATA.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.NIKKARI_AOE.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.HORIKAWA_KUNIHIRO.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.IMANOTSURUGI.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.GOTOU_TOUSHIROU.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
         });
 
         LOGGER.info("HELLO FROM COMMON SETUP");
@@ -159,6 +218,14 @@ public class ToukenRanbuMod
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get())
+                .lightWithItem(ModItems.MOON_PHASE.get())
+                .forcedSize(2,3)
+                .destDimID(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID,"white_night_garden"))
+                .tintColor(0xFFFFFF)
+                .registerPortal();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
@@ -175,5 +242,70 @@ public class ToukenRanbuMod
     {
 
         LOGGER.info("HELLO from server starting");
+    }
+
+    @SubscribeEvent
+    public void onMobSpawn(net.minecraftforge.event.entity.living.MobSpawnEvent.PositionCheck event) {
+
+        if (!(event.getLevel() instanceof net.minecraft.server.level.ServerLevel serverLevel)) return;
+        if (!serverLevel.dimension().equals(
+                com.Equatorial.toukenranbu.world.registry.ModDimensions.WHITE_NIGHT_GARDEN_LEVEL)) {
+            // 其他维度：只拦模组的刀男
+            net.minecraft.resources.ResourceLocation id =
+                    event.getEntity().getType().builtInRegistryHolder().key().location();
+            if (id.getNamespace().equals(ToukenRanbuMod.MOD_ID)
+                    && event.getEntity().getType().getCategory() == net.minecraft.world.entity.MobCategory.CREATURE
+                    && !event.getEntity().getType().equals(
+                    com.Equatorial.toukenranbu.entity.ModEntityTypes.KONNOSUKE.get())) {
+                event.setResult(net.minecraftforge.eventbus.api.Event.Result.DENY);
+            }
+            return;
+        }
+
+        // 白夜之庭：白名单制
+        net.minecraft.world.entity.MobCategory cat = event.getEntity().getType().getCategory();
+
+        boolean isWhiteMikazuki = event.getEntity().getType().equals(
+                com.Equatorial.toukenranbu.entity.ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get());
+
+        boolean isMinion = event.getEntity().getPersistentData().getBoolean("touken_boss_minion");
+
+        boolean allowed = cat == net.minecraft.world.entity.MobCategory.CREATURE
+                || cat == net.minecraft.world.entity.MobCategory.AMBIENT
+                || cat == net.minecraft.world.entity.MobCategory.WATER_CREATURE
+                || cat == net.minecraft.world.entity.MobCategory.WATER_AMBIENT
+                || isWhiteMikazuki
+                || isMinion;
+
+        if (!allowed) {
+            event.setResult(net.minecraftforge.eventbus.api.Event.Result.DENY);
+        }
+    }
+
+    @SubscribeEvent
+    public void onEntityJoin(net.minecraftforge.event.entity.EntityJoinLevelEvent event) {
+        if (!(event.getLevel() instanceof net.minecraft.server.level.ServerLevel serverLevel)) return;
+        if (!serverLevel.dimension().equals(
+                com.Equatorial.toukenranbu.world.registry.ModDimensions.WHITE_NIGHT_GARDEN_LEVEL)) return;
+        if (event.getEntity() instanceof net.minecraft.world.entity.player.Player) return;
+
+        net.minecraft.world.entity.MobCategory cat = event.getEntity().getType().getCategory();
+
+        boolean isWhiteMikazuki = event.getEntity().getType().equals(
+                com.Equatorial.toukenranbu.entity.ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get());
+
+        boolean isMinion = event.getEntity().getPersistentData().getBoolean("touken_boss_minion");
+
+        boolean allowed = cat == net.minecraft.world.entity.MobCategory.CREATURE
+                || cat == net.minecraft.world.entity.MobCategory.AMBIENT
+                || cat == net.minecraft.world.entity.MobCategory.WATER_CREATURE
+                || cat == net.minecraft.world.entity.MobCategory.WATER_AMBIENT
+                || cat == net.minecraft.world.entity.MobCategory.MISC
+                || isWhiteMikazuki
+                || isMinion;
+
+        if (!allowed) {
+            event.setCanceled(true);
+        }
     }
 }

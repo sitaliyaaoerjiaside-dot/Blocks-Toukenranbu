@@ -3,12 +3,16 @@ package com.Equatorial.toukenranbu.block;
 import com.Equatorial.toukenranbu.block.custom.ModFlammableRotatedPillarBlock;
 import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.particle.ModParticleTypes;
+import com.Equatorial.toukenranbu.world.tree.BlueCherryTreeGrower;
 import com.Equatorial.toukenranbu.world.tree.CharredTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -131,19 +135,11 @@ public class ModBlocks {
             registerBlock("charred_leaves",
                     () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
                         @Override
-                        public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                            return true;
-                        }
-
+                        public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}
                         @Override
-                        public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                            return 60;
-                        }
-
+                        public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 60;}
                         @Override
-                        public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                            return 30;
-                        }
+                        public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 30;}
                     });
     public static final RegistryObject<StairBlock> CHARRED_STAIRS = registerBlock("charred_stairs",
                     () -> new StairBlock(() -> CHARRED_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHARRED_PLANKS.get())));
@@ -174,6 +170,90 @@ public class ModBlocks {
             registerBlock("charred_dirt", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
     public static final RegistryObject<Block> CHARRED_GRASS_BLOCK =
             registerBlock("charred_grass_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+
+    // ========== 蓝色樱花 ==========
+    public static final RegistryObject<Block> BLUE_CHERRY_LOG =
+            registerBlock("blue_cherry_log",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG)));
+    public static final RegistryObject<Block> BLUE_CHERRY_WOOD =
+            registerBlock("blue_cherry_wood",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_BLUE_CHERRY_LOG =
+            registerBlock("stripped_blue_cherry_log",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG)));
+    public static final RegistryObject<Block> STRIPPED_BLUE_CHERRY_WOOD =
+            registerBlock("stripped_blue_cherry_wood",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_WOOD)));
+    public static final RegistryObject<Block> BLUE_CHERRY_PLANKS =
+            registerBlock("blue_cherry_planks",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS)) {
+                        @Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return true; }
+                        @Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return 20; }
+                        @Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return 5; }
+                    });
+    public static final RegistryObject<Block> BLUE_CHERRY_LEAVES =
+            registerBlock("blue_cherry_leaves",
+                    () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LEAVES)) {
+                        @Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return true; }
+                        @Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return 60; }
+                        @Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return 30; }
+
+                        @Override
+                        public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                            if (random.nextInt(25) != 0) return;
+                            if (level.getBlockState(pos.below()).isAir()) {
+                                double x = pos.getX() + random.nextDouble();
+                                double y = pos.getY() + 0.05;
+                                double z = pos.getZ() + random.nextDouble();
+                                level.addParticle(
+                                        ModParticleTypes.BLUE_CHERRY.get(),
+                                        x, y, z,
+                                        (random.nextDouble() - 0.5) * 0.005,
+                                        -0.02,
+                                        (random.nextDouble() - 0.5) * 0.005
+                                );
+                            }
+                        }
+                    });
+    public static final RegistryObject<Block> BLUE_CHERRY_SAPLING =
+            registerBlock("blue_cherry_sapling",
+                    () -> new SaplingBlock(new BlueCherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.CHERRY_SAPLING)));
+    public static final RegistryObject<StairBlock> BLUE_CHERRY_STAIRS =
+            registerBlock("blue_cherry_stairs",
+                    () -> new StairBlock(() -> BLUE_CHERRY_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get())));
+    public static final RegistryObject<SlabBlock> BLUE_CHERRY_SLAB =
+            registerBlock("blue_cherry_slab",
+                    () -> new SlabBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get())));
+    public static final RegistryObject<FenceBlock> BLUE_CHERRY_FENCE =
+            registerBlock("blue_cherry_fence",
+                    () -> new FenceBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get())));
+    public static final RegistryObject<FenceGateBlock> BLUE_CHERRY_FENCE_GATE =
+            registerBlock("blue_cherry_fence_gate",
+                    () -> new FenceGateBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get()), WoodType.CHERRY));
+    public static final RegistryObject<ButtonBlock> BLUE_CHERRY_BUTTON =
+            registerBlock("blue_cherry_button",
+                    () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get()),
+                            BlockSetType.OAK, 30, true));
+    public static final RegistryObject<PressurePlateBlock> BLUE_CHERRY_PRESSURE_PLATE =
+            registerBlock("blue_cherry_pressure_plate",
+                    () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                            BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get()), BlockSetType.OAK));
+    public static final RegistryObject<DoorBlock> BLUE_CHERRY_DOOR =
+            registerBlock("blue_cherry_door",
+                    () -> new DoorBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get())
+                            .noOcclusion().strength(3.0F), BlockSetType.OAK));
+    public static final RegistryObject<TrapDoorBlock> BLUE_CHERRY_TRAPDOOR =
+            registerBlock("blue_cherry_trapdoor",
+                    () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(BLUE_CHERRY_PLANKS.get())
+                            .noOcclusion(), BlockSetType.OAK));
+
+    // ========== 白夜之庭传送门框架方块 ==========
+    public static final RegistryObject<Block> WHITE_NIGHT_PORTAL_FRAME =
+            registerBlock("white_night_portal_frame",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                            .strength(3.0F, 6.0F).lightLevel(state -> 10)
+                            .requiresCorrectToolForDrops()));
+
     //public static final RegistryObject<Block> SWORD_FORGE = registerBlock("sword_forge",
             //() -> new SwordForgeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 

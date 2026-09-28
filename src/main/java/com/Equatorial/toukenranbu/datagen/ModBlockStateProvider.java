@@ -27,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.COOLANT_ORE.get(), cubeAll(ModBlocks.COOLANT_ORE.get()));
         simpleBlockWithItem(ModBlocks.WHETSTONE_ORE.get(), cubeAll(ModBlocks.WHETSTONE_ORE.get()));
         simpleBlockWithItem(ModBlocks.WOOTZ_STEEL_ORE.get(), cubeAll(ModBlocks.WOOTZ_STEEL_ORE.get()));
+        simpleBlockWithItem(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get(), cubeAll(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get()));
 
         logBlock(((RotatedPillarBlock) ModBlocks.CHARRED_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.CHARRED_WOOD.get()), blockTexture(ModBlocks.CHARRED_LOG.get()), blockTexture(ModBlocks.CHARRED_LOG.get()));
@@ -104,6 +105,44 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("top", modLoc("block/charred_grass_block_top"))
                 .texture("side", modLoc("block/charred_grass_block_side"));
         simpleBlockWithItem(ModBlocks.CHARRED_GRASS_BLOCK.get(), ashenGrassModel);
+
+        // ========== 蓝色樱花 ==========
+        logBlock((RotatedPillarBlock) ModBlocks.BLUE_CHERRY_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.BLUE_CHERRY_WOOD.get(),
+                blockTexture(ModBlocks.BLUE_CHERRY_LOG.get()), blockTexture(ModBlocks.BLUE_CHERRY_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get(),
+                blockTexture(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get()),
+                ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "block/stripped_blue_cherry_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get(),
+                blockTexture(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get()));
+
+        blockItem(ModBlocks.BLUE_CHERRY_LOG);
+        blockItem(ModBlocks.BLUE_CHERRY_WOOD);
+        blockItem(ModBlocks.STRIPPED_BLUE_CHERRY_LOG);
+        blockItem(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD);
+
+        simpleBlockWithItem(ModBlocks.BLUE_CHERRY_PLANKS.get(), cubeAll(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+        leavesBlock(ModBlocks.BLUE_CHERRY_LEAVES);
+
+        stairsBlock(ModBlocks.BLUE_CHERRY_STAIRS.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+        slabBlock(ModBlocks.BLUE_CHERRY_SLAB.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+        fenceBlock(ModBlocks.BLUE_CHERRY_FENCE.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+        fenceGateBlock(ModBlocks.BLUE_CHERRY_FENCE_GATE.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+
+        blockItem(ModBlocks.BLUE_CHERRY_STAIRS);
+        blockItem(ModBlocks.BLUE_CHERRY_SLAB);
+        blockItem(ModBlocks.BLUE_CHERRY_FENCE_GATE);
+        pressurePlateBlock(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+        buttonBlock(ModBlocks.BLUE_CHERRY_BUTTON.get(), blockTexture(ModBlocks.BLUE_CHERRY_PLANKS.get()));
+
+        doorBlockWithRenderType(ModBlocks.BLUE_CHERRY_DOOR.get(), modLoc("block/blue_cherry_door_bottom"), modLoc("block/blue_cherry_door_top"), "cutout");
+        trapdoorBlockWithRenderType(ModBlocks.BLUE_CHERRY_TRAPDOOR.get(), modLoc("block/blue_cherry_trapdoor"), true, "cutout");
+
+        blockItem(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE);
+        blockItem(ModBlocks.BLUE_CHERRY_TRAPDOOR, "_bottom");
+        SaplingBlock(ModBlocks.BLUE_CHERRY_SAPLING);
+
         //simpleBlockWithItem(ModBlocks.SWORD_FORGE.get(),
                //models().cubeAll("sword_forge", modLoc("block/sword_forge")));
         //simpleBlockWithoutBlockModel(ModBlocks.SWORD_FORGE);

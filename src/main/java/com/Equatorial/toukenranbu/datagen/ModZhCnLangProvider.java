@@ -39,6 +39,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.HORSE_KAGE.get(), "鹿毛");
         add(ModItems.HORSE_SHIROGE.get(), "白毛");
         add(ModItems.HORSE_UMAGOU.get(), "午年号");
+        add(ModItems.CAPTAIN_BADGE.get(), "队长卷轴");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "敌短刀刷怪蛋");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "敌胁差刷怪蛋");
@@ -71,6 +72,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.KEBIISHI_YARI_SPAWN_EGG.get(), "检非违使：枪刷怪蛋");
 
         add(ModItems.KONNOSUKE_SPAWN_EGG.get(), "狐之助刷怪蛋");
+        add(ModItems.WHITE_MIKAZUKI_MUNECHIKA_EGG.get(),"白·三日月宗近刷怪蛋");
 
 //刀剑男士
         add(ModItems.MIKAZUKI_MUNECHIKA.get(), "三日月宗近");
@@ -176,6 +178,25 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.CHARRED_GRASS_BLOCK.get(),"灰烬草方块");
         add(ModBlocks.CHARRED_DIRT.get(),"灰烬泥土");
 
+        // ========== 月见樱 ==========
+        add(ModBlocks.BLUE_CHERRY_LOG.get(),"月见樱原木");
+        add(ModBlocks.BLUE_CHERRY_WOOD.get(),"月见樱木");
+        add(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get(),"去皮月见樱原木");
+        add(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get(),"去皮月见樱木");
+        add(ModBlocks.BLUE_CHERRY_PLANKS.get(),"月见樱木板");
+        add(ModBlocks.BLUE_CHERRY_LEAVES.get(),"月见樱树叶");
+        add(ModBlocks.BLUE_CHERRY_SAPLING.get(),"月见樱树苗");
+        add(ModBlocks.BLUE_CHERRY_STAIRS.get(),"月见樱楼梯");
+        add(ModBlocks.BLUE_CHERRY_SLAB.get(),"月见樱台阶");
+        add(ModBlocks.BLUE_CHERRY_FENCE.get(),"月见樱栅栏");
+        add(ModBlocks.BLUE_CHERRY_FENCE_GATE.get(),"月见樱栅栏门");
+        add(ModBlocks.BLUE_CHERRY_BUTTON.get(),"月见樱按钮");
+        add(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get(),"月见樱压力板");
+        add(ModBlocks.BLUE_CHERRY_DOOR.get(),"月见樱门");
+        add(ModBlocks.BLUE_CHERRY_TRAPDOOR.get(),"月见樱活板门");
+
+        add(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get(),"月白石");
+
 //武器、工具等
         add(ModItems.WOOTZ_STEEL_SWORD.get(), "玉钢剑");
         add(ModItems.WOOTZ_STEEL_PICKAXE.get(), "玉钢镐");
@@ -199,12 +220,66 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add(ModItems.DICE.get(),"骰子");
         add(ModItems.CAPTURE_BALL.get(),"收容符");
+        add(ModItems.GROUP_CAPTURE_BALL.get(),"群体收容符");
+        add(ModItems.TOUKENRANBU_ENCYCLOPEDIA.get(), "刀剑乱舞百科全书");
+        add(ModItems.EMA.get(), "绘马");
+        add(ModItems.MOON_PHASE.get(),"月相");
+        add(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(), "白三日月宗近");
+
+        add("tooltip.toukenranbu_mod.white_mikazuki.line1", "击败濒死的白三日月宗近之后，掉落的武器。");
+        add("tooltip.toukenranbu_mod.white_mikazuki.line2", "挥出这一刀能够对实体造成2147483646点无视护甲、附魔以及抗性提升的真实伤害，在此之后它便会彻底碎裂，无法修复。");
+        add("death.attack.white_mikazuki", "%1$s 被白三日月宗近的最后一击贯穿了");
+
+        add("item.toukenranbu_mod.ema.bound", "绘马 · %s");
+        add("message.toukenranbu_mod.ema.already_bound", "这枚绘马已经绑定了一位刀剑男士。");
+        add("message.toukenranbu_mod.ema.target_already_bound", "这个刀剑男士已被其他绘马绑定。");
+        add("message.toukenranbu_mod.ema.not_yours", "这是别人的刀剑男士，无法绑定。");
+        add("message.toukenranbu_mod.ema.claim_and_bind", "已认领并绑定 %s。");
+        add("message.toukenranbu_mod.ema.bind_success", "已绑定 %s。");
+        add("message.toukenranbu_mod.ema.unbound", "已解除绘马的绑定。");
+        add("message.toukenranbu_mod.ema.not_bound", "这位刀剑男士没有被任何绘马绑定。");
+        add("message.toukenranbu_mod.ema.summon_success", "已将 %s 召唤到身边。");
+        add("message.toukenranbu_mod.ema.summon_fail", "召唤失败，找不到绑定的刀剑男士。");
+
+        add("item.toukenranbu_mod.group_capture_ball.prefix", "群体收容符 · %s 振");
+        add("tooltip.toukenranbu_mod.group_capture_ball.count", "已收容：%s 振");
+        add("tooltip.toukenranbu_mod.group_capture_ball.empty", "空符");
+        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "右键方块收容 32 格内所有属于自己的刀男，潜行右键全部释放");
+        add("message.toukenranbu_mod.group_capture.fail_owner", "这不是你的收容符！");
+        add("message.toukenranbu_mod.group_capture.none", "附近没有属于你的刀男");
+        add("message.toukenranbu_mod.group_capture.captured", "已收容 %s 振刀男");
+        add("message.toukenranbu_mod.group_capture.released", "已释放 %s 振刀男");
+
+        add("command.toukenranbu_mod.touken.locate.empty", "[刀剑乱舞] 你目前没有任何已召唤的刀剑男士。");
+        add("command.toukenranbu_mod.touken.locate.header", "[刀剑乱舞] 你共有 %s 振刀剑男士：");
+        add("command.toukenranbu_mod.touken.locate.entry", "  %1$s. %2$s [%3$s] %4$s, %5$s, %6$s");
+        add("command.toukenranbu_mod.touken.locate.entry_with_distance", "  %1$s. %2$s [%3$s] %4$s, %5$s, %6$s (距离 %7$s 格)");
+        add("command.toukenranbu_mod.touken.locate.cross_dim_hint", "提示：部分刀男在其他维度，需要自行前往。");
+        add("command.toukenranbu_mod.touken.count", "[刀剑乱舞] 你当前有 %s 振已召唤的刀剑男士。");
+
+        add("gui.toukenranbu.message.captain_exists", "附近已经有队长了");
+        add("gui.toukenranbu.message.bag_full", "背包已满");
+        add("gui.toukenranbu.formation.title", "当前阵型");
+        add("gui.toukenranbu.formation.level", "等级 %s");
+        add("gui.toukenranbu.formation.atk", "攻击 ×%s");
+        add("gui.toukenranbu.formation.def", "防御 ×%s");
+        add("gui.toukenranbu.formation.spd", "速度 ×%s");
+        add("gui.toukenranbu.formation.rng", "索敌 ×%s");
+        add("gui.toukenranbu.formation.follow_captain", "跟随队长");
 
         add("effect.toukenranbu_mod.spirit_regen", "灵力恢复加成");
-        add("effect.toukenranbu_mod.touken_anti_invis", "刀剑男士：反隐");
-        add("effect.toukenranbu_mod.touken_mixed_damage", "刀剑男士：混合伤害");
+        add("effect.toukenranbu_mod.touken_anti_invis", "反隐");
+        add("effect.toukenranbu_mod.touken_mixed_damage", "混合伤害");
         add("command.toukenranbu_mod.friendlyfire.on", "§e[刀剑乱舞] §f友伤已§a开启§f，刀剑男士与主人之间可以互相伤害");
         add("command.toukenranbu_mod.friendlyfire.off", "§e[刀剑乱舞] §f友伤已§c关闭§f，刀剑男士与主人之间不会互相伤害");
+        add("tooltip.toukenranbu_mod.moon_phase.line1", "一轮月相凝于指尖，清冷而寂静。");
+        add("tooltip.toukenranbu_mod.moon_phase.line2", "似乎能与白夜之庭深处的某样存在产生共鸣……");
+
+        add("entity.toukenranbu_mod.white_mikazuki_munechika", "白三日月宗近");
+        add("entity.toukenranbu_mod.white_mikazuki_munechika.bossbar", "[轮回中的囚徒，将死之月] 白·三日月宗近");
+        add("effect.toukenranbu_mod.moon_reflection", "月影");
+        add("death.attack.boss_instant_death", "%1$s 被纯白的月之倒影吞噬了");
+        add("message.toukenranbu_mod.capture.fail_boss", "强大的存在无法被收容。");
 
         add("container.sword_forge", "锻刀炉");
         //add(ModBlocks.SWORD_FORGE.get(), "锻刀炉");
@@ -276,7 +351,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.cave_clear", "矿洞清缴");
         add("gui.toukenranbu.button.cave_clearing", "停止清缴");
         add("gui.toukenranbu.button.cave_clear_no_torches", "没有火把");
-        add("gui.toukenranbu.label.auto_pickup", "跟随捡物");
+        add("gui.toukenranbu.label.auto_pickup.on", "跟随捡物：开");
+        add("gui.toukenranbu.label.auto_pickup.off", "跟随捡物：关");
+        add("effect.toukenranbu_mod.touken_anti_invis.description", "灵力充足，可感知隐身敌人");
+        add("effect.toukenranbu_mod.touken_mixed_damage.description", "攻击附带额外魔法与火焰伤害");
+
 
         add("gui.toukenranbu.message.auto_seal", "%s 重伤，已紧急收回！");
         add("gui.toukenranbu.formation.status_with_count", "%s (%d振)");
@@ -288,6 +367,22 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.crane_wing", "鹤翼阵");
         add("gui.toukenranbu.formation.goose_line", "雁行阵");
         add("gui.toukenranbu.formation.square", "方阵");
+        add("gui.toukenranbu.tab.formation", "阵型");
+        add("gui.toukenranbu.label.health", "生命");
+        add("gui.toukenranbu.label.player_inventory", "玩家背包");
+        add("gui.toukenranbu.label.effects", "效果");
+        add("gui.toukenranbu.ai.title", "AI操作");
+        add("gui.toukenranbu.formation.count", "同伴 %1$s");
+        add("gui.toukenranbu.tab.stats", "状态");
+        add("gui.toukenranbu.tab.items", "物品");
+        add("gui.toukenranbu.tab.growth", "成长");
+        add("gui.toukenranbu.label.level", "等级");
+        add("gui.toukenranbu.label.level_value", "等级 %s / 99");
+        add("gui.toukenranbu.label.experience", "经验");
+        add("gui.toukenranbu.label.level_bonus", "升级加成");
+        add("gui.toukenranbu.message.level_up", "%s 升到了 %s 级！");
+        add("command.toukenranbu_mod.danshi_xp.on", "§e[刀剑乱舞] §f刀剑男士经验获取已§a开启");
+        add("command.toukenranbu_mod.danshi_xp.off", "§e[刀剑乱舞] §f刀剑男士经验获取已§c关闭");
 
  // 状态栏
         add("gui.toukenranbu.hp", "HP: %1$s/%2$s");
@@ -308,7 +403,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add( "gui.toukenranbu.label.armor", "护甲");
         add("gui.toukenranbu.label.knife", "刀装");
         add("gui.toukenranbu.label.mount", "马匹");
-        add("gui.toukenranbu.label.treasure", "未实装");
         add("gui.toukenranbu.label.inventory", "刀剑男士的背包");
 
 // 实体
@@ -377,10 +471,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.horikawa_kunihiro", "堀川国广");
         add("gui.toukenranbu.touken_danshi.title.imanotsurugi", "今剑");
         add("gui.toukenranbu.touken_danshi.title.gotou_toushirou", "后藤藤四郎");
-
-        // GUI 标签页
-        add("gui.toukenranbu.tab.status", "状态");
-        add("gui.toukenranbu.tab.items", "物品");
 
         add("entity.toukenranbu_mod.tantou", "敌短刀");
         add("entity.toukenranbu_mod.wakizashi", "敌胁差");
@@ -469,7 +559,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.toukenranbu_mod.capture_ball.usage", "右键生物收容，右键方块释放");
 
 // ========== 成就标题 & 描述 ==========
-        add("advancements.toukenranbu_mod.new_start.title", "新的开始");
+        add("advancements.toukenranbu_mod.new_start.title", "刀剑乱舞");
         add("advancements.toukenranbu_mod.new_start.description", "从物品栏自选一把初始刀开始你新的冒险。");
 
         add("advancements.toukenranbu_mod.use_starter_sword.title", "初阵");
@@ -522,6 +612,21 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("advancements.toukenranbu_mod.three_way_meeting.title", "三方会晤");
         add("advancements.toukenranbu_mod.three_way_meeting.description", "历史修正力已至，审神者、刀剑男士与检非违使的宿命交锋即将开始。");
+
+        add("advancements.toukenranbu_mod.white_night_garden.title", "白夜之庭");
+        add("advancements.toukenranbu_mod.white_night_garden.description", "获得一枚通往白夜之庭的月相。");
+
+        add("advancements.toukenranbu_mod.moon_and_gensokyo.title", "月亮与幻想乡");
+        add("advancements.toukenranbu_mod.moon_and_gensokyo.description", "踏入永夜与白昼交替的庭园。");
+
+        add("advancements.toukenranbu_mod.cuckoo_of_knot.title", "结点的杜鹃鸟");
+        add("advancements.toukenranbu_mod.cuckoo_of_knot.description", "击败白三日月宗近。");
+
+        add("advancements.toukenranbu_mod.in_the_loop.title", "...于回环中");
+        add("advancements.toukenranbu_mod.in_the_loop.description", "收下那振苍白之刃。它只能陪你走一程。");
+
+        add("advancements.toukenranbu_mod.back_of_the_moon.title", "月之背面");
+        add("advancements.toukenranbu_mod.back_of_the_moon.description", "未知的月影在试图吞噬你。");
 
     }
 }

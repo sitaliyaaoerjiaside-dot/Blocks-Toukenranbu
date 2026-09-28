@@ -2,12 +2,12 @@ package com.Equatorial.toukenranbu.data;
 
 import com.Equatorial.toukenranbu.advancement.ModCriteriaTriggers;
 import com.Equatorial.toukenranbu.advancement.UseAmuletTrigger;
+import com.Equatorial.toukenranbu.block.ModBlocks;
+import com.Equatorial.toukenranbu.effect.ModEffects;
 import com.Equatorial.toukenranbu.item.ModItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
-import net.minecraft.advancements.critereon.ContextAwarePredicate;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -16,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 public class ModAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
@@ -23,7 +24,7 @@ public class ModAdvancements implements ForgeAdvancementProvider.AdvancementGene
     @Override
     public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
 
-        // ==================== 根成就：新的开始 ====================
+        // ==================== 根成就：刀剑乱舞 ====================
         Advancement root = Advancement.Builder.advancement()
                 .display(
                         ModItems.MIKAZUKI_MUNECHIKA.get(),
@@ -304,6 +305,84 @@ public class ModAdvancements implements ForgeAdvancementProvider.AdvancementGene
                 .addCriterion("enter_abandoned_history", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(
                 ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "abandoned_history"))))
                 .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "enter_abandoned_history"), existingFileHelper);
+
+        // ==================== 白夜之庭：拥有月相 ====================
+        Advancement whiteNightGarden = Advancement.Builder.advancement()
+                .parent(root)
+                .display(
+                        ModItems.MOON_PHASE.get(),
+                        Component.translatable("advancements.toukenranbu_mod.white_night_garden.title"),
+                        Component.translatable("advancements.toukenranbu_mod.white_night_garden.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false
+                )
+                .addCriterion("has_moon_phase",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MOON_PHASE.get()))
+                .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "white_night_garden"), existingFileHelper);
+
+        // ==================== 月亮与幻想乡：进入白夜之庭 ====================
+        Advancement moonAndGensokyo = Advancement.Builder.advancement()
+                .parent(whiteNightGarden)
+                .display(
+                        ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get(),
+                        Component.translatable("advancements.toukenranbu_mod.moon_and_gensokyo.title"),
+                        Component.translatable("advancements.toukenranbu_mod.moon_and_gensokyo.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false
+                )
+                .addCriterion("enter_white_night_garden",
+                        ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(
+                                ResourceKey.create(Registries.DIMENSION,
+                                        ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "white_night_garden"))))
+                .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "moon_and_gensokyo"), existingFileHelper);
+
+        // ==================== 结点的杜鹃鸟：击杀 BOSS ====================
+        Advancement cuckooOfKnot = Advancement.Builder.advancement()
+                .parent(moonAndGensokyo)
+                .display(
+                        ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(),
+                        Component.translatable("advancements.toukenranbu_mod.cuckoo_of_knot.title"),
+                        Component.translatable("advancements.toukenranbu_mod.cuckoo_of_knot.description"),
+                        null,
+                        FrameType.CHALLENGE,
+                        true, true, false
+                )
+                .addCriterion("kill_white_mikazuki",
+                        KilledTrigger.TriggerInstance.playerKilledEntity(
+                                EntityPredicate.Builder.entity().of(
+                                        com.Equatorial.toukenranbu.entity.ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get())))
+                .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "cuckoo_of_knot"), existingFileHelper);
+
+        // ==================== ...于回环中：获得白三日月宗近武器 ====================
+        Advancement inTheLoop = Advancement.Builder.advancement()
+                .parent(cuckooOfKnot)
+                .display(
+                        ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(),
+                        Component.translatable("advancements.toukenranbu_mod.in_the_loop.title"),
+                        Component.translatable("advancements.toukenranbu_mod.in_the_loop.description"),
+                        null,
+                        FrameType.GOAL,
+                        true, true, false
+                )
+                .addCriterion("has_white_mikazuki_blade",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get()))
+                .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "in_the_loop"), existingFileHelper);
+
+        // ==================== 月之背面：获得月影效果 ====================
+        Advancement backOfTheMoon = Advancement.Builder.advancement()
+                .parent(root)
+                .display(
+                        ModItems.MOON_PHASE.get(),
+                        Component.translatable("advancements.toukenranbu_mod.back_of_the_moon.title"),
+                        Component.translatable("advancements.toukenranbu_mod.back_of_the_moon.description"),
+                        null,
+                        FrameType.CHALLENGE,
+                        true, true, false)
+                .addCriterion("moon_reflection", EffectsChangedTrigger.TriggerInstance.hasEffects(
+                        MobEffectsPredicate.effects().and(ModEffects.MOON_REFLECTION.get())))
+                .save(saver, ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "back_of_the_moon"), existingFileHelper);
 
     }
 }

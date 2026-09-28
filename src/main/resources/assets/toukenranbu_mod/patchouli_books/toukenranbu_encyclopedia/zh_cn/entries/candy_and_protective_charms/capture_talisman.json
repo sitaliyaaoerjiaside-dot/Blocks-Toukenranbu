@@ -14,6 +14,18 @@
       "type": "patchouli:crafting",
       "recipe": "toukenranbu_mod:capture_ball",
       "title": "合成配方"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "只能收容刀剑男士",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:group_capture_ball",
+      "text": "作用范围仅限属于玩家的刀剑男士。$(br2)使用群体收容符能够一次性收容玩家周边32格内的所有属于玩家的刀剑男士。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:group_capture_ball",
+      "title": "合成配方"
     }
   ]
 }

@@ -42,7 +42,7 @@ public class KebiishiYariEntity extends Monster implements GeoEntity, KebiishiEn
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 135.0D)      // 基础血量（会被动态成长放大）
+                .add(Attributes.MAX_HEALTH, 235.0D)      // 基础血量（会被动态成长放大）
                 .add(Attributes.ATTACK_DAMAGE, 48.0D)    // 基础攻击（会被动态成长放大）
                 .add(Attributes.ATTACK_SPEED, 1.8D)
                 .add(Attributes.MOVEMENT_SPEED, 0.33D)

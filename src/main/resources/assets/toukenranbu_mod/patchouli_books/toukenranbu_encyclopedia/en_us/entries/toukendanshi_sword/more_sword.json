@@ -1,0 +1,14 @@
+{
+  "name": "White Mikazuki Munechika",
+  "category": "toukenranbu_mod:toukendanshi_sword",
+  "icon": "toukenranbu_mod:white_mikazuki_munechika",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Exception: White Mikazuki Munechika",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:white_mikazuki_munechika",
+      "text": "$(br2)$(#ff0000)$(bold)White Mikazuki Munechika can deal up to 2147483646 points of true damage that ignores enchantments, armor, and resistances. It can only be dropped by defeating the White Mikazuki Munechika boss, has a durability of 1, and cannot be repaired or enchanted.$()"
+    }
+  ]
+}

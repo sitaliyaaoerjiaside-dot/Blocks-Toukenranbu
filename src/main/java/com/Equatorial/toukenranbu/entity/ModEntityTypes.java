@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.entity.boss.WhiteMikazukiEntity;
 import com.Equatorial.toukenranbu.entity.custom.KonnosukeEntity;
 import com.Equatorial.toukenranbu.entity.custom.*;
 import com.Equatorial.toukenranbu.entity.custom.kebiishi.*;
@@ -271,6 +272,11 @@ public class ModEntityTypes {
                             .sized(0.4F, 1.4F)
                             .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "gotou_toushirou").toString()));
 
+    public static final RegistryObject<EntityType<WhiteMikazukiEntity>> WHITE_MIKAZUKI_MUNECHIKA =
+            ENTITY_TYPES.register("white_mikazuki_munechika",
+                    () -> EntityType.Builder.of(WhiteMikazukiEntity::new, MobCategory.MONSTER)
+                            .sized(0.6F, 1.8F)
+                            .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "white_mikazuki_munechika").toString()));
 
     public static void register(IEventBus eventBus) { ENTITY_TYPES.register(eventBus); }
 }

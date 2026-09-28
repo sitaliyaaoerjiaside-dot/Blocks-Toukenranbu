@@ -11,4 +11,7 @@ public interface ISpiritPower {
     boolean isFriendlyFireEnabled();
     void setFriendlyFireEnabled(boolean enabled);
 
+    boolean isDanshiXpEnabled();
+    void setDanshiXpEnabled(boolean enabled);
+
 }

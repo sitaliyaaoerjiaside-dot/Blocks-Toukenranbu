@@ -25,12 +25,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.WOOTZ_STEEL_BLOCK.get())
                 .add(ModBlocks.COOLANT_ORE.get())
                 .add(ModBlocks.WHETSTONE_ORE.get())
-                .add(ModBlocks.WOOTZ_STEEL_ORE.get());
+                .add(ModBlocks.WOOTZ_STEEL_ORE.get())
+                .add(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.COOLANT_ORE.get())
                 .add(ModBlocks.WHETSTONE_ORE.get())
-                .add(ModBlocks.WOOTZ_STEEL_ORE.get());
+                .add(ModBlocks.WOOTZ_STEEL_ORE.get())
+                .add(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get());
 
         tag(ModBlockTags.ORE_TAGS)
                 .add(ModBlocks.COOLANT_ORE.get())
@@ -67,6 +69,42 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHARRED_DIRT.get())
                 .add(ModBlocks.CHARRED_GRASS_BLOCK.get());
 
+        // ========== 蓝色樱花 ==========
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BLUE_CHERRY_LOG.get())
+                .add(ModBlocks.BLUE_CHERRY_WOOD.get())
+                .add(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get())
+                .add(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get());
+        tag(BlockTags.PLANKS)
+                .add(ModBlocks.BLUE_CHERRY_PLANKS.get());
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.BLUE_CHERRY_FENCE.get());
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.BLUE_CHERRY_FENCE_GATE.get());
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.BLUE_CHERRY_LEAVES.get());
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.BLUE_CHERRY_LOG.get())
+                .add(ModBlocks.BLUE_CHERRY_WOOD.get())
+                .add(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get())
+                .add(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get())
+                .add(ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .add(ModBlocks.BLUE_CHERRY_STAIRS.get())
+                .add(ModBlocks.BLUE_CHERRY_SLAB.get())
+                .add(ModBlocks.BLUE_CHERRY_FENCE.get())
+                .add(ModBlocks.BLUE_CHERRY_FENCE_GATE.get())
+                .add(ModBlocks.BLUE_CHERRY_BUTTON.get())
+                .add(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get())
+                .add(ModBlocks.BLUE_CHERRY_DOOR.get())
+                .add(ModBlocks.BLUE_CHERRY_TRAPDOOR.get());
+        tag(BlockTags.BUTTONS)
+                .add(ModBlocks.BLUE_CHERRY_BUTTON.get());
+        tag(BlockTags.PRESSURE_PLATES)
+                .add(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get());
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.BLUE_CHERRY_DOOR.get());
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.BLUE_CHERRY_TRAPDOOR.get());
     }
 
 }

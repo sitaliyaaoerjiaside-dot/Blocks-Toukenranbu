@@ -1,0 +1,81 @@
+{
+  "minecraft:mule": {
+    "rot_speed_tick": 120,
+    "lift_angle": -3
+  },
+  "minecraft:villager": {
+    "rot_speed_tick": 150,
+    "lift_angle": -5,
+    "offset": [-0.1, 0, 0]
+  },
+  "minecraft:donkey": {
+    "rot_speed_tick": 200,
+    "lift_angle": -5
+  },
+  "minecraft:horse": {
+    "rot_speed_tick": 500,
+    "lift_angle": 10
+  },
+  "minecraft:zombie_horse": {
+    "rot_speed_tick": 500,
+    "lift_angle": 7
+  },
+  "minecraft:skeleton_horse": {
+    "rot_speed_tick": 500,
+    "lift_angle": 7
+  },
+  "minecraft:llama": {
+    "rot_speed_tick": 600,
+    "lift_angle": 8
+  },
+  "minecraft:trader_llama": {
+    "rot_speed_tick": 600,
+    "lift_angle": 8
+  },
+  "minecraft:cow": {
+    "rot_speed_tick": 800,
+    "lift_angle": 7,
+    "offset": [0.1, 0, 0]
+  },
+  "minecraft:mooshroom": {
+    "rot_speed_tick": 800,
+    "lift_angle": 7,
+    "offset": [0.1, 0, 0]
+  },
+  "minecraft:sheep": {
+    "rot_speed_tick": 1000,
+    "lift_angle": 0
+  },
+  "minecraft:goat": {
+    "rot_speed_tick": 1000,
+    "lift_angle": -5
+  },
+  "toukenranbu_mod:konnosuke": { "rot_speed_tick": 25, "lift_angle": -3 },
+  "toukenranbu_mod:ishikirimaru": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:tonbokiri": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:tomoegata_naginata": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:gotou_toushirou": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:imanotsurugi": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:tantou": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:wakizashi": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:tantou_plus": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:wakizashi_plus": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:tantou_max": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:wakizashi_max": { "rot_speed_tick": 200, "lift_angle": -5 },
+  "toukenranbu_mod:uchigatana": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:tachi": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:uchigatana_plus": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:tachi_plus": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:uchigatana_max": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:tachi_max": { "rot_speed_tick": 150, "lift_angle": -5 },
+  "toukenranbu_mod:ootachi": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:naginata": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:yari": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:ootachi_plus": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:naginata_plus": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:yari_plus": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:ootachi_max": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:naginata_max": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:yari_max": { "rot_speed_tick": 100, "lift_angle": -5 },
+  "toukenranbu_mod:white_mikazuki_munechika": { "rot_speed_tick": 500, "lift_angle": -5 }
+}

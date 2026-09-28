@@ -1,0 +1,32 @@
+{
+  "parent": "toukenranbu_mod:white_night_garden",
+  "criteria": {
+    "enter_white_night_garden": {
+      "conditions": {
+        "to": "toukenranbu_mod:white_night_garden"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.moon_and_gensokyo.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:white_night_portal_frame"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.moon_and_gensokyo.title"
+    }
+  },
+  "requirements": [
+    [
+      "enter_white_night_garden"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

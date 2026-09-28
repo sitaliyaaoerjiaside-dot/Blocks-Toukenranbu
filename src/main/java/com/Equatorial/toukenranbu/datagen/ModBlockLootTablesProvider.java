@@ -26,6 +26,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WHETSTONE_BLOCK.get());
         dropSelf(ModBlocks.COOLANT_BLOCK.get());
         dropSelf(ModBlocks.WOOTZ_STEEL_BLOCK.get());
+        dropSelf(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get());
         add(ModBlocks.COOLANT_ORE.get(), block -> createCopperOreLikeDrops(ModBlocks.COOLANT_ORE.get(), ModItems.COOLANT.get()));
         add(ModBlocks.WHETSTONE_ORE.get(), block -> createCopperOreLikeDrops(ModBlocks.WHETSTONE_ORE.get(), ModItems.WHETSTONE.get()));
         add(ModBlocks.WOOTZ_STEEL_ORE.get(), block -> createCopperOreLikeDrops(ModBlocks.WOOTZ_STEEL_ORE.get(), ModItems.WOOTZ_STEEL.get()));
@@ -76,6 +77,28 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.CHARRED_DIRT.get());
         dropSelf(ModBlocks.CHARRED_GRASS_BLOCK.get());
+
+        // ========== 蓝色樱花 ==========
+        dropSelf(ModBlocks.BLUE_CHERRY_LOG.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_WOOD.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_PLANKS.get());
+        dropSelf(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_SAPLING.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_STAIRS.get());
+        add(ModBlocks.BLUE_CHERRY_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.BLUE_CHERRY_SLAB.get()));
+        dropSelf(ModBlocks.BLUE_CHERRY_FENCE.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_FENCE_GATE.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_BUTTON.get());
+        dropSelf(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get());
+        add(ModBlocks.BLUE_CHERRY_DOOR.get(),
+                block -> createDoorTable(ModBlocks.BLUE_CHERRY_DOOR.get()));
+        dropSelf(ModBlocks.BLUE_CHERRY_TRAPDOOR.get());
+
+        add(ModBlocks.BLUE_CHERRY_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.BLUE_CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
         //dropSelf(ModBlocks.SWORD_FORGE.get());
     }
         protected LootTable.Builder createCopperOreLikeDrops(Block pBlock, Item item) {

@@ -16,6 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.Animation;
@@ -84,6 +85,14 @@ public class TonbokiriEntity extends ToukenDanshiEntity {
             return false;
         }
 
+        // 友伤检查
+        if (target instanceof net.minecraft.world.entity.player.Player player && this.isOwnedBy(player)) {
+            if (!player.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
+                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
+                return false;
+            }
+        }
+
         float damage = (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
 
         MobEffectInstance resistance = livingTarget.getEffect(MobEffects.DAMAGE_RESISTANCE);
@@ -115,6 +124,23 @@ public class TonbokiriEntity extends ToukenDanshiEntity {
             double dz = target.getZ() - this.getZ();
             livingTarget.knockback(0.4D, dx, dz);
             this.setLastHurtMob(target);
+
+            // ===== 补父类逻辑 =====
+            if (!this.level().isClientSide) {
+                var nourishment = net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS.getValue(
+                        ResourceLocation.fromNamespaceAndPath("farmersdelight", "nourishment"));
+                if (nourishment == null || !this.hasEffect(nourishment)) {
+                    this.toukenData.fatigue = Math.max(0, this.toukenData.fatigue - 2);
+                }
+                if (this.isTame() && this.getOwner() instanceof Player player) {
+                    if (player.hasEffect(com.Equatorial.toukenranbu.effect.ModEffects.TOUKEN_MIXED_DAMAGE.get())) {
+                        livingTarget.hurt(this.level().damageSources().indirectMagic(this, this), 2.0f);
+                        livingTarget.setSecondsOnFire(2);
+                    }
+                }
+                syncExtraData();
+            }
+            // ===== 补父类逻辑结束 =====
         }
 
         return hurt;

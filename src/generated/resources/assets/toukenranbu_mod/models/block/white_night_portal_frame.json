@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "toukenranbu_mod:block/white_night_portal_frame"
+  }
+}

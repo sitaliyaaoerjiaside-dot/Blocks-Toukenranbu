@@ -1,0 +1,31 @@
+{
+  "temperature": 0.5,
+  "downfall": 0.8,
+  "has_precipitation": true,
+  "effects": {
+    "sky_color": 7907327,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "foliage_color": 9162239,
+    "grass_color": 9162239
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [
+      "minecraft:flower_cherry",
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_sugar_cane",
+      "minecraft:forest_flowers"
+    ],
+    [],
+    [
+      "toukenranbu_mod:blue_cherry_tree_placed"
+    ],
+    []
+  ]
+}

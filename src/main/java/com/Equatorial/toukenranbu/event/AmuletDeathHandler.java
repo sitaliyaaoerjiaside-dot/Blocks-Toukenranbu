@@ -2,6 +2,7 @@ package com.Equatorial.toukenranbu.event;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.advancement.ModAdvancementTriggers;
+import com.Equatorial.toukenranbu.damage.ModDamageTypes;
 import com.Equatorial.toukenranbu.item.ModItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -39,7 +40,6 @@ public class AmuletDeathHandler {
     //事件监听
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onLivingDeath(LivingDeathEvent event) {
-        // 如果其他模组已经处理了死亡，不再干预
         if (event.isCanceled()) return;
 
         if (!(event.getEntity() instanceof ServerPlayer player)) {
@@ -51,8 +51,16 @@ public class AmuletDeathHandler {
             return;
         }
 
+        boolean isBossInstantDeath = event.getSource().is(ModDamageTypes.BOSS_INSTANT_DEATH);
+
         event.setCanceled(true);
         performResurrection(player, slot.stack);
+
+        if (isBossInstantDeath) {
+            int layersToRemove = isSupremeAmulet(slot.stack) ? 3 : 2;
+            com.Equatorial.toukenranbu.util.InstantDeathHelper.removeLayers(player, layersToRemove);
+        }
+
         consumeTotem(slot);
     }
 

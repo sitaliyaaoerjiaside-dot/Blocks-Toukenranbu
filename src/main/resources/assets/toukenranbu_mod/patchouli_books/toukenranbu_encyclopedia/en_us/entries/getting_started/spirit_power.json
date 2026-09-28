@@ -1,43 +1,59 @@
 {
   "name": "What is Spirit Power?",
-  "icon": "toukenranbu_mod:pure_spiritual_energy",
+  "icon": "toukenranbu_mod:void_spiritual_energy",
   "category": "toukenranbu_mod:getting_started",
   "sortnum": 1,
   "read_by_default": false,
   "pages": [
     {
       "type": "spotlight",
-      "title": "Spirit Power",
+      "title": "Spirit Power and Its Value",
       "link_recipe": false,
       "item": "toukenranbu_mod:pure_spiritual_energy",
       "scale": 1.2,
-      "text": "Spirit power is your essential ability as a Saniwa to summon Touken Danshi.$(br)When your spirit power is insufficient, you will be unable to summon new blades."
+      "text": "Spirit Power is the essential ability that allows you, as a Saniwa, to summon Touken Danshi.$(br2)When Spirit Power is insufficient, you cannot summon new Touken Danshi."
     },
     {
       "type": "image",
-      "title": "Spirit Power UI",
+      "title": "Spirit Power Icon Display",
       "images": [
         "toukenranbu_mod:textures/gui/spirit_power_bar_empty.png",
         "toukenranbu_mod:textures/gui/spirit_power_bar_full.png"
       ],
       "border": true,
-      "text": "Your spirit power is displayed in the bottom-right corner of the screen. Please keep an eye on the remaining amount."
+      "text": "Your Spirit Power is displayed in the bottom-right corner of the screen. Keep an eye on the remaining amount."
     },
     {
       "type": "spotlight",
-      "title": "Spirit Power Mechanic: Mass Anti-Invisibility for Sword Warriors",
+      "title": "Spirit Power Mechanic: Penalty System",
       "link_recipe": false,
       "item": "toukenranbu_mod:pure_spiritual_energy",
       "scale": 1.2,
-      "text": "When the player's Spirit Power exceeds 50, all summoned sword warriors will be granted the 'Sword Warrior: Anti-Invisibility' effect.$(br2)This effect, carried by the Spirit Power, allows sword warriors to detect invisible hostile mobs, giving them the ability to see through invisibility.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
+      "text": "Note that Spirit Power is consumed when the player is attacked by monsters.$(br2)Dying triggers a high penalty of 70 Spirit Power deduction, so please act with caution."
     },
     {
       "type": "spotlight",
-      "title": "Spirit Power Mechanic: Hybrid Physical and Magic Damage",
+      "title": "Spirit Power Mechanic: Saniwa",
       "link_recipe": false,
       "item": "toukenranbu_mod:pure_spiritual_energy",
       "scale": 1.2,
-      "text": "When the player's Spirit Power exceeds 70, all summoned sword warriors will be granted the 'Sword Warrior: Hybrid Damage' effect.$(br2)This effect, carried by the Spirit Power, allows sword warriors to deal both physical and magic damage to monsters with different damage capabilities.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
+      "text": "When the player's Spirit Power exceeds 30, the player gains Resistance II, Absorption I, and +8 Armor Toughness.$(br2)When Spirit Power is insufficient, these effects disappear until Spirit Power is restored."
+    },
+    {
+      "type": "spotlight",
+      "title": "Spirit Power Mechanic: Group Anti-Invisibility for Touken Danshi",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "When the player's Spirit Power exceeds 50, the effect [Touken Danshi: Anti-Invisibility] is applied to all Touken Danshi summoned by the player.$(br2)This effect, carried by Spirit Power, grants Touken Danshi the ability to see invisible hostile creatures, allowing them to detect monsters that are invisible.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
+    },
+    {
+      "type": "spotlight",
+      "title": "Spirit Power Mechanic: Mixed Physical and Magic Damage",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "When the player's Spirit Power exceeds 70, the effect [Touken Danshi: Mixed Damage] is applied to all Touken Danshi summoned by the player.$(br2)This effect, carried by Spirit Power, grants Touken Danshi the ability to deal different types of damage to monsters, dealing both physical and magic damage.$(br2)When Spirit Power is insufficient, this effect disappears until Spirit Power is restored."
     }
   ]
 }

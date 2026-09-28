@@ -18,4 +18,7 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> TOUKEN_MIXED_DAMAGE =
             EFFECTS.register("touken_mixed_damage", ToukenMixedDamageEffect::new);
+
+    public static final RegistryObject<MobEffect> MOON_REFLECTION =
+            EFFECTS.register("moon_reflection", MoonReflectionEffect::new);
 }

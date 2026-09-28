@@ -45,6 +45,9 @@ public class EntityCaptureHelper {
         itemTag.putString(TAG_ENTITY_TYPE, entityId.toString());
         itemTag.put(TAG_ENTITY_DATA, entityTag);
 
+        if (target instanceof TamableAnimal tamable && tamable.getOwnerUUID() != null) {
+            itemTag.putUUID("CapturedEntityOwner", tamable.getOwnerUUID());
+        }
         if (capturer != null) {
             itemTag.putUUID(TAG_ITEM_OWNER, capturer.getUUID());
         }
@@ -113,9 +116,14 @@ public class EntityCaptureHelper {
             living.setItemSlot(EquipmentSlot.HEAD, ItemStack.of(armorItems.getCompound(3)));
         }
 
-        // 保险：手动恢复主人
-        if (entityData.contains("OwnerUUID") && living instanceof TamableAnimal tamable) {
-            tamable.setOwnerUUID(entityData.getUUID("OwnerUUID"));
+        if (itemTag.hasUUID("CapturedEntityOwner")) {
+            UUID ownerId = itemTag.getUUID("CapturedEntityOwner");
+            if (living instanceof TamableAnimal tamable) {
+                tamable.setOwnerUUID(ownerId);
+                tamable.setTame(true);
+            }
+        } else {
+            // 原实体本来就没主人，正常
         }
 
         level.addFreshEntity(living);
@@ -125,6 +133,7 @@ public class EntityCaptureHelper {
         itemTag.remove(TAG_ENTITY_DATA);
         itemTag.remove(TAG_ITEM_OWNER);
         itemTag.remove(TAG_ENTITY_NAME);
+        itemTag.remove("CapturedEntityOwner");
         item.resetHoverName();
 
         return living;

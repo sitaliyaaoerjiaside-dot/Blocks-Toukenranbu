@@ -1,0 +1,55 @@
+{
+  "name": "White Night Garden",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:white_night_portal_frame",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "A Dimension That Seems Unobservable by the Time Government",
+      "text": "The White Night Garden does not naturally spawn any hostile mobs; it only spawns large numbers of ownerless Touken Danshi and animals.$(br2)Tsukimi-zakura petals fall year-round within the dimension, and dimension-exclusive Tsukimi-zakura trees also generate here."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "toukenranbu_mod:moon_phase",
+      "title": "Moon Phase",
+      "text": "The White Night Garden must be entered by building a portal yourself and using the Moon Phase item on the Moon White Stone frame to open the portal."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Portal Frame",
+      "multiblock_id": "toukenranbu_mod:white_night_portal",
+      "multiblock": {
+        "pattern": [
+          [ "FFFF" ],
+          [ "F  F" ],
+          [ "F0 F" ],
+          [ "F  F" ],
+          [ "FFFF" ]
+        ],
+        "mapping": {
+          "F": "toukenranbu_mod:white_night_portal_frame",
+          "0": "minecraft:air"
+        }
+      },
+      "text": "Build this portal, then use the Moon Phase item on the frame to open the portal passage."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:white_night_portal_frame"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:moon_phase"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "By default, no hostile mob entities naturally spawn in this dimension, though it cannot be ruled out that other mods may bypass this mechanic."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Dimension Difficulty",
+      "text": "The dimension's difficulty depends on the player's choices. When you choose to challenge this dimension's boss, White Mikazuki Munechika, the dimension's difficulty will increase."
+    }
+  ]
+}

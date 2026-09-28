@@ -1,0 +1,55 @@
+{
+  "name": "白夜之庭",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:white_night_portal_frame",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "似乎不会被时之政府观测到的维度",
+      "text": "白夜之庭不会自然刷新任何敌对生物，仅会刷新大量无主刀剑男士与动物。$(br2)维度内终年飘落月见樱花瓣，也会生成维度特有的月见樱树。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "toukenranbu_mod:moon_phase",
+      "title": "月相",
+      "text": "白夜之庭需要通过自行搭建传送门、并且使用月相点击月白石框架打开传送门进入。"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "白夜之庭传送门",
+      "multiblock_id": "toukenranbu_mod:white_night_portal",
+      "multiblock": {
+        "pattern": [
+          [ "FFFF" ],
+          [ "F  F" ],
+          [ "F0 F" ],
+          [ "F  F" ],
+          [ "FFFF" ]
+        ],
+        "mapping": {
+          "F": "toukenranbu_mod:white_night_portal_frame",
+          "0": "minecraft:air"
+        }
+      },
+      "text": "建造此传送门，并且使用月相点击框架以打开传送门通路。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:white_night_portal_frame"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:moon_phase"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "注意事项",
+      "text": "本维度中默认不会自然生成任何敌对生物实体，并不排除有其他模组可能绕过机制的可能性。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "维度难度",
+      "text": "维度难度视玩家的选择而定，当您选择挑战本维度的BOSS：白三日月宗近的时候，维度难度将会提升。"
+    }
+  ]
+}

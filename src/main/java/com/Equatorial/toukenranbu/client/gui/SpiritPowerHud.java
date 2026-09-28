@@ -4,7 +4,6 @@ import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.network.ClientSpiritPowerData;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.GameType;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;

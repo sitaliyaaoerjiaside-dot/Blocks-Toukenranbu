@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:yamatonokami_yasusada"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "item": "minecraft:experience_bottle"
+  }
+}

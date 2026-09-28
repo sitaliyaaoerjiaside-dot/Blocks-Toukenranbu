@@ -2,6 +2,7 @@ package com.Equatorial.toukenranbu.event;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.entity.ModEntityTypes;
+import com.Equatorial.toukenranbu.entity.boss.WhiteMikazukiEntity;
 import com.Equatorial.toukenranbu.entity.custom.KonnosukeEntity;
 import com.Equatorial.toukenranbu.entity.custom.*;
 import com.Equatorial.toukenranbu.entity.custom.kebiishi.*;
@@ -80,6 +81,8 @@ public class ModEvents {
         event.put(ModEntityTypes.HORIKAWA_KUNIHIRO.get(), HorikawaKunihiroEntity.setAttributes());
         event.put(ModEntityTypes.IMANOTSURUGI.get(), ImanotsurugiEntity.setAttributes());
         event.put(ModEntityTypes.GOTOU_TOUSHIROU.get(), GotouToushirouEntity.setAttributes());
+
+        event.put(ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get(), WhiteMikazukiEntity.setAttributes());
 
     }
 }

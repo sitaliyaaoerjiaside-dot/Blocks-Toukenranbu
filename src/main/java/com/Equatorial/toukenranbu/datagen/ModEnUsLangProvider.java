@@ -38,6 +38,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.HORSE_KAGE.get(), "Kage");
         add(ModItems.HORSE_SHIROGE.get(), "Shiroge");
         add(ModItems.HORSE_UMAGOU.get(), "Umagou");
+        add(ModItems.CAPTAIN_BADGE.get(), "Captain Scroll");
 
         add(ModItems.TANTOU_SPAWN_EGG.get(), "Tantou Spawn Egg");
         add(ModItems.WAKIZASHI_SPAWN_EGG.get(), "Wakizashi Spawn Egg");
@@ -70,6 +71,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.KEBIISHI_YARI_SPAWN_EGG.get(), "Kebiishi Yari Spawn Egg");
 
         add(ModItems.KONNOSUKE_SPAWN_EGG.get(), "Konnosuke Spawn Egg");
+        add(ModItems.WHITE_MIKAZUKI_MUNECHIKA_EGG.get(),"White Mikazuki Munechika Egg");
 
         add(ModItems.MIKAZUKI_MUNECHIKA.get(), "mikazuki munechika");
         add(ModItems.YAMANBAGIRI_KUNIHIRO.get(), "yamanbagiri kunihiro");
@@ -169,6 +171,24 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.CHARRED_GRASS_BLOCK.get(),"charred grass block");
         add(ModBlocks.CHARRED_DIRT.get(),"charred dirt");
 
+        add(ModBlocks.BLUE_CHERRY_LOG.get(),"Tsukimi Cherry Log");
+        add(ModBlocks.BLUE_CHERRY_WOOD.get(),"Tsukimi Cherry Wood");
+        add(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get(),"Stripped Tsukimi Cherry Log");
+        add(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get(),"Stripped Tsukimi Cherry Wood");
+        add(ModBlocks.BLUE_CHERRY_PLANKS.get(),"Tsukimi Cherry Planks");
+        add(ModBlocks.BLUE_CHERRY_LEAVES.get(),"Tsukimi Cherry Leaves");
+        add(ModBlocks.BLUE_CHERRY_SAPLING.get(),"Tsukimi Cherry Sapling");
+        add(ModBlocks.BLUE_CHERRY_STAIRS.get(),"Tsukimi Cherry Stairs");
+        add(ModBlocks.BLUE_CHERRY_SLAB.get(),"Tsukimi Cherry Slab");
+        add(ModBlocks.BLUE_CHERRY_FENCE.get(),"Tsukimi Cherry Fence");
+        add(ModBlocks.BLUE_CHERRY_FENCE_GATE.get(),"Tsukimi Cherry Fence Gate");
+        add(ModBlocks.BLUE_CHERRY_BUTTON.get(),"Tsukimi Cherry Button");
+        add(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get(),"Tsukimi Cherry Pressure Plate");
+        add(ModBlocks.BLUE_CHERRY_DOOR.get(),"Tsukimi Cherry Door");
+        add(ModBlocks.BLUE_CHERRY_TRAPDOOR.get(),"Tsukimi Cherry Trapdoor");
+
+        add(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get(), "Moonstone");
+
         add(ModItems.WOOTZ_STEEL_SWORD.get(), "Wootz Steel Sword");
         add(ModItems.WOOTZ_STEEL_PICKAXE.get(), "Wootz Steel Pickaxe");
         add(ModItems.WOOTZ_STEEL_AXE.get(), "Wootz Steel Axe");
@@ -191,12 +211,66 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.DICE.get(),"dice");
         add(ModItems.CAPTURE_BALL.get(),"Capture Talisman");
+        add(ModItems.GROUP_CAPTURE_BALL.get(), "Group Capture Talisman");
+        add(ModItems.TOUKENRANBU_ENCYCLOPEDIA.get(), "Touken Ranbu Encyclopedia");
+        add(ModItems.EMA.get(), "Ema");
+        add(ModItems.MOON_PHASE.get(),"Moon_Phase");
+        add(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(), "White Mikazuki Munechika");
+
+        add("tooltip.toukenranbu_mod.white_mikazuki.line1", "A weapon dropped after defeating the dying White Mikazuki Munechika.");
+        add("tooltip.toukenranbu_mod.white_mikazuki.line2", "A single swing deals 2147483646 true damage to the target, bypassing armor, enchantments, and resistance effects. Afterward, it shatters completely and cannot be repaired.");
+        add("death.attack.white_mikazuki", "%1$s was pierced by the final strike of White Mikazuki Munechika");
+
+        add("item.toukenranbu_mod.ema.bound", "Ema · %s");
+        add("message.toukenranbu_mod.ema.already_bound", "This ema is already bound to a Touken Danshi.");
+        add("message.toukenranbu_mod.ema.target_already_bound", "This Touken Danshi is already bound to another ema.");
+        add("message.toukenranbu_mod.ema.not_yours", "This Touken Danshi belongs to someone else.");
+        add("message.toukenranbu_mod.ema.claim_and_bind", "Claimed and bound %s.");
+        add("message.toukenranbu_mod.ema.bind_success", "Bound to %s.");
+        add("message.toukenranbu_mod.ema.unbound", "Ema unbound.");
+        add("message.toukenranbu_mod.ema.not_bound", "This Touken Danshi is not bound to any ema.");
+        add("message.toukenranbu_mod.ema.summon_success", "Summoned %s to your side.");
+        add("message.toukenranbu_mod.ema.summon_fail", "Summon failed, bound Touken Danshi not found.");
+
+        add("item.toukenranbu_mod.group_capture_ball.prefix", "Group Capture Talisman · %s");
+        add("tooltip.toukenranbu_mod.group_capture_ball.count", "Captured: %s");
+        add("tooltip.toukenranbu_mod.group_capture_ball.empty", "Empty");
+        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "Right-click block to capture all owned Touken Danshi within 32 blocks. Sneak + right-click to release all.");
+        add("message.toukenranbu_mod.group_capture.fail_owner", "This is not your talisman!");
+        add("message.toukenranbu_mod.group_capture.none", "No owned Touken Danshi nearby");
+        add("message.toukenranbu_mod.group_capture.captured", "Captured %s Touken Danshi");
+        add("message.toukenranbu_mod.group_capture.released", "Released %s Touken Danshi");
+
+        add("command.toukenranbu_mod.touken.locate.empty", "[Touken Ranbu] You have no summoned Touken Danshi.");
+        add("command.toukenranbu_mod.touken.locate.header", "[Touken Ranbu] You have %s Touken Danshi:");
+        add("command.toukenranbu_mod.touken.locate.entry", "  %1$s. %2$s [%3$s] %4$s, %5$s, %6$s");
+        add("command.toukenranbu_mod.touken.locate.entry_with_distance", "  %1$s. %2$s [%3$s] %4$s, %5$s, %6$s (%7$s blocks away)");
+        add("command.toukenranbu_mod.touken.locate.cross_dim_hint", "Note: Some Danshi are in other dimensions.");
+        add("command.toukenranbu_mod.touken.count", "[Touken Ranbu] You currently have %s summoned Touken Danshi.");
+
+        add("gui.toukenranbu.message.captain_exists", "A captain is already nearby");
+        add("gui.toukenranbu.message.bag_full", "Bag is full");
+        add("gui.toukenranbu.formation.title", "Current Formation");
+        add("gui.toukenranbu.formation.level", "Level %s");
+        add("gui.toukenranbu.formation.atk", "ATK ×%s");
+        add("gui.toukenranbu.formation.def", "DEF ×%s");
+        add("gui.toukenranbu.formation.spd", "SPD ×%s");
+        add("gui.toukenranbu.formation.rng", "RNG ×%s");
+        add("gui.toukenranbu.formation.follow_captain", "Following Captain");
 
         add("effect.toukenranbu_mod.spirit_regen", "spirit_regen");
-        add("effect.toukenranbu_mod.touken_anti_invis", "Touken Danshi: Anti-Invisibility");
-        add("effect.toukenranbu_mod.touken_mixed_damage", "Touken Danshi: Mixed Damage");
+        add("effect.toukenranbu_mod.touken_anti_invis", "Anti-Invisibility");
+        add("effect.toukenranbu_mod.touken_mixed_damage", "Mixed Damage");
         add("command.toukenranbu_mod.friendlyfire.on", "§e[Touken Ranbu] §fFriendly fire §aenabled§f, you and your danshi can hurt each other");
         add("command.toukenranbu_mod.friendlyfire.off", "§e[Touken Ranbu] §fFriendly fire §cdisabled§f, you and your danshi cannot hurt each other");
+        add("tooltip.toukenranbu_mod.moon_phase.line1", "A moon phase rests quietly in your hand, cold and silent.");
+        add("tooltip.toukenranbu_mod.moon_phase.line2", "It seems to resonate with something deep within the White Night Garden...");
+
+        add("entity.toukenranbu_mod.white_mikazuki_munechika", "White Mikazuki Munechika");
+        add("entity.toukenranbu_mod.white_mikazuki_munechika.bossbar", "[Prisoner of the Cycle, the Dying Moon] White Mikazuki Munechika");
+        add("effect.toukenranbu_mod.moon_reflection", "Moon Reflection");
+        add("death.attack.boss_instant_death", "%1$s was consumed by the pure white moon's reflection");
+        add("message.toukenranbu_mod.capture.fail_boss", "This powerful being cannot be captured.");
 
         add("container.sword_forge", "Sword Forge");
         //add(ModBlocks.SWORD_FORGE.get(), "Sword Forge");
@@ -268,7 +342,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.cave_clear", "Cave Clear");
         add("gui.toukenranbu.button.cave_clearing", "Stop Clearing");
         add("gui.toukenranbu.button.cave_clear_no_torches", "No Torches");
-        add("gui.toukenranbu.label.auto_pickup", "Auto Pickup");
+        add("gui.toukenranbu.label.auto_pickup.on", "Auto Pickup: ON");
+        add("gui.toukenranbu.label.auto_pickup.off", "Auto Pickup: OFF");
 
         add("gui.toukenranbu.message.auto_seal", "%s is critically injured and has been sealed!");
         add("gui.toukenranbu.formation.status_with_count", "%s (%d)");
@@ -280,7 +355,24 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.crane_wing", "Crane Wing");
         add("gui.toukenranbu.formation.goose_line", "Goose Line");
         add("gui.toukenranbu.formation.square", "Square");
-
+        add("gui.toukenranbu.tab.formation", "Formation");
+        add("gui.toukenranbu.label.health", "Health");
+        add("gui.toukenranbu.label.player_inventory", "Player Inventory");
+        add("gui.toukenranbu.label.effects", "Effects");
+        add("gui.toukenranbu.ai.title", "AI");
+        add("gui.toukenranbu.formation.count", "Allies %1$s");
+        add("gui.toukenranbu.tab.stats", "Stats");
+        add("gui.toukenranbu.tab.items", "Items");
+        add("gui.toukenranbu.tab.growth", "Growth");
+        add("gui.toukenranbu.label.level", "Level");
+        add("gui.toukenranbu.label.level_value", "Level %s / 99");
+        add("gui.toukenranbu.label.experience", "EXP");
+        add("gui.toukenranbu.label.level_bonus", "Level Bonus");
+        add("gui.toukenranbu.message.level_up", "%s reached level %s!");
+        add("command.toukenranbu_mod.danshi_xp.on", "§e[Touken Ranbu] §fDanshi XP gain §aenabled");
+        add("command.toukenranbu_mod.danshi_xp.off", "§e[Touken Ranbu] §fDanshi XP gain §cdisabled");
+        add("effect.toukenranbu_mod.touken_anti_invis.description", "Sense invisible enemies");
+        add("effect.toukenranbu_mod.touken_mixed_damage.description", "Attacks deal bonus magic and fire damage");
 
 // Status Panel
         add("gui.toukenranbu.hp", "HP: %1$s/%2$s");
@@ -368,10 +460,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.touken_danshi.title.horikawa_kunihiro", "Horikawa Kunihiro");
         add("gui.toukenranbu.touken_danshi.title.imanotsurugi", "Imanotsurugi");
         add("gui.toukenranbu.touken_danshi.title.gotou_toushirou", "Gotou Toushirou");
-
-// GUI Tabs
-        add("gui.toukenranbu.tab.status", "Status");
-        add("gui.toukenranbu.tab.items", "Items");
 
         add("entity.toukenranbu_mod.tantou", "Tantou");
         add("entity.toukenranbu_mod.wakizashi", "Wakizashi");
@@ -461,7 +549,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.toukenranbu_mod.capture_ball.usage", "Right-click entity to capture, right-click block to release");
 
 // ========== 成就标题 & 描述 ==========
-        add("advancements.toukenranbu_mod.new_start.title", "A New Beginning");
+        add("advancements.toukenranbu_mod.new_start.title", "Touken Ranbu");
         add("advancements.toukenranbu_mod.new_start.description", "Choose your starter blade from the inventory and begin your new adventure.");
 
         add("advancements.toukenranbu_mod.use_starter_sword.title", "first_sortie");
@@ -514,6 +602,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("advancements.toukenranbu_mod.three_way_meeting.title", "Three-Way Meeting");
         add("advancements.toukenranbu_mod.three_way_meeting.description", "The force of historical revision has arrived. The fateful confrontation between the Saniwa, the Touken Danshi, and the Kebiishi is about to begin.");
+
+        add("advancements.toukenranbu_mod.white_night_garden.title", "White Night Garden");
+        add("advancements.toukenranbu_mod.white_night_garden.description", "Obtain a Moon Phase leading to the White Night Garden.");
+
+        add("advancements.toukenranbu_mod.moon_and_gensokyo.title", "Moon and Gensokyo");
+        add("advancements.toukenranbu_mod.moon_and_gensokyo.description", "Step into the garden of eternal night and day.");
+
+        add("advancements.toukenranbu_mod.cuckoo_of_knot.title", "Cuckoo of the Knot");
+        add("advancements.toukenranbu_mod.cuckoo_of_knot.description", "Defeat White Mikazuki Munechika.");
+
+        add("advancements.toukenranbu_mod.in_the_loop.title", "...In the Loop");
+        add("advancements.toukenranbu_mod.in_the_loop.description", "Accept the pale blade. It walks with you only once.");
+
+        add("advancements.toukenranbu_mod.back_of_the_moon.title", "Back of the Moon");
+        add("advancements.toukenranbu_mod.back_of_the_moon.description", "An unknown moon shadow is trying to devour you.");
 
     }
 }

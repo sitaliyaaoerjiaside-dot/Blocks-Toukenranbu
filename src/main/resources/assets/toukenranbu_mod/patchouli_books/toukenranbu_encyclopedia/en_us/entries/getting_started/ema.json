@@ -1,0 +1,19 @@
+{
+  "name": "The Function of Ema",
+  "icon": "toukenranbu_mod:ema",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 0,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ema allows you to bind data to your Touken Danshi and summon them to your side at any time. $(#ff0000)$(bold)Note: In the current version, there is no way to summon a Touken Danshi back from an unloaded chunk!$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:ema",
+      "title": "Ema",
+      "text": "The data of Ema is updated in real time, and it can be crafted."
+    }
+  ]
+}

@@ -82,7 +82,18 @@ public class TomoegataNaginataEntity extends ToukenDanshiEntity {
             AABB sweepRange = target.getBoundingBox().inflate(3.5D);
             List<LivingEntity> nearby = this.level().getEntitiesOfClass(
                     LivingEntity.class, sweepRange,
-                    entity -> entity != this && entity != target && entity.isAlive()
+                    entity -> {
+                        if (entity == this || entity == target || !entity.isAlive()) return false;
+
+                        // 友伤关闭时，横扫不伤主人
+                        if (entity instanceof net.minecraft.world.entity.player.Player player
+                                && this.isOwnedBy(player)) {
+                            return player.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
+                                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true);
+                        }
+
+                        return true;
+                    }
             );
             float sweepDamage = (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
             for (LivingEntity entity : nearby) {

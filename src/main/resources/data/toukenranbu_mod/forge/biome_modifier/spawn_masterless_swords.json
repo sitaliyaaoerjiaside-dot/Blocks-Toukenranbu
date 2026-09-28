@@ -1,0 +1,30 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:bamboo_jungle",
+    "toukenranbu_mod:blue_cherry_grove",
+    "toukenranbu_mod:pink_cherry_grove"
+  ],
+  "spawners": [
+    { "type": "toukenranbu_mod:yamanbagiri_kunihiro", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:kashuu_kiyomitsu", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:hachisuka_kotetsu", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:kasen_kanesada", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:mutsunokami_yoshiyuki", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:ichigo_hitofuri", "weight": 12, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:tsurumaru_kuninaga", "weight": 12, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:shokudaikiri_mitsutada", "weight": 12, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:ishikirimaru", "weight": 8, "minCount": 1, "maxCount": 1 },
+    { "type": "toukenranbu_mod:heshikiri_hasebe", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:yamatonokami_yasusada", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:ookurikara", "weight": 12, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:tonbokiri", "weight": 8, "minCount": 1, "maxCount": 1 },
+    { "type": "toukenranbu_mod:tomoegata_naginata", "weight": 8, "minCount": 1, "maxCount": 1 },
+    { "type": "toukenranbu_mod:nikkari_aoe", "weight": 12, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:horikawa_kunihiro", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:imanotsurugi", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:gotou_toushirou", "weight": 15, "minCount": 1, "maxCount": 2 },
+    { "type": "toukenranbu_mod:konnosuke", "weight": 20, "minCount": 1, "maxCount": 3 }
+  ]
+}

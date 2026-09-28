@@ -1,0 +1,17 @@
+{
+  "name": "刀剑乱舞：等级",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "minecraft:experience_bottle",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "刀剑男士的独立经验值",
+      "text": "目前模组内已加入刀剑男士的独立经验值和等级计算。等级最高为99，超过99将会进行经验累积，上限9999999。$(br2)对经验/数值机制有疑问请查阅源代码或反编译，作者不回答此类问题。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "默认关闭的等级计算规则",
+      "text": "刀剑男士默认不会获取经验球，需要使用额外命令控制开关。$(br2)使用/tr xp命令，能够让刀剑男士获取经验球。"
+    }
+  ]
+}

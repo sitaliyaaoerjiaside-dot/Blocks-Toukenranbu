@@ -3,6 +3,10 @@
     "toukenranbu_mod:charred_log",
     "toukenranbu_mod:charred_wood",
     "toukenranbu_mod:stripped_charred_log",
-    "toukenranbu_mod:stripped_charred_wood"
+    "toukenranbu_mod:stripped_charred_wood",
+    "toukenranbu_mod:blue_cherry_log",
+    "toukenranbu_mod:blue_cherry_wood",
+    "toukenranbu_mod:stripped_blue_cherry_log",
+    "toukenranbu_mod:stripped_blue_cherry_wood"
   ]
 }

@@ -48,6 +48,7 @@ public class ModItemModelGen extends ModItemModelsProvider{
         basicItem(ModItems.KEBIISHI_LEADER_SPAWN_EGG.get());
 
         basicItem(ModItems.KONNOSUKE_SPAWN_EGG.get());
+        basicItem(ModItems.WHITE_MIKAZUKI_MUNECHIKA_EGG.get());
     }
 
     private void eggItem(Item item) {

@@ -24,13 +24,15 @@ public class GiveStarterSwordsOnLogin {
         var persisted = root.getCompound(Player.PERSISTED_NBT_TAG);
         if (persisted.getBoolean(KEY)) return;
 
-        // ===== 第一次进入世界的时候会发五把初始刀【为了跟游戏对轴】玩家只能选其中一把 =====
+        // ===== 五把初始刀 =====
         give(player, new ItemStack(ModItems.KASHUU_KIYOMITSU.get()));
         give(player, new ItemStack(ModItems.YAMANBAGIRI_KUNIHIRO.get()));
         give(player, new ItemStack(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()));
         give(player, new ItemStack(ModItems.KASEN_KANESADA.get()));
         give(player, new ItemStack(ModItems.HACHISUKA_KOTETSU.get()));
-        // ============================================
+
+        // ===== 绘马：不标记，避免被 clearOtherStarterSwords 清掉 =====
+        givePlain(player, new ItemStack(ModItems.EMA.get()));
 
         persisted.putBoolean(KEY, true);
         root.put(Player.PERSISTED_NBT_TAG, persisted);
@@ -41,6 +43,14 @@ public class GiveStarterSwordsOnLogin {
         StarterSwordHelper.markAsStarter(stack);
         if (!player.getInventory().add(stack)) {
             player.drop(stack, false);
+        }
+    }
+
+    private static void givePlain(Player player, ItemStack stack) {
+        if (stack.isEmpty()) return;
+        if (!player.getInventory().add(stack)) {
+            var drop = player.drop(stack, false);
+            if (drop != null) drop.setNoPickUpDelay();
         }
     }
 }

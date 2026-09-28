@@ -13,6 +13,11 @@
       "type": "patchouli:crafting",
       "recipe": "toukenranbu_mod:oil_tofu",
       "text": "油豆腐可用于驯服狐之助。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:oil_tofu",
+      "text": "自1.3.0版本起加入了对森罗物语：厨房的联动，狐之助是目前刀剑乱舞模组内速度最快的生物，能够快速拉动石磨。"
     }
   ]
 }

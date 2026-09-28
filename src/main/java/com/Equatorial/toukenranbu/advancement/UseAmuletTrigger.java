@@ -25,7 +25,7 @@ public class UseAmuletTrigger extends SimpleCriterionTrigger<UseAmuletTrigger.In
         return new Instance(id, player);
     }
 
-    // 这个方法你在御守生效代码里调用
+    // 这个方法在御守生效代码里调用
     public void trigger(ServerPlayer player) {
         this.trigger(player, instance -> true);
     }

@@ -1,6 +1,6 @@
 {
   "name": "Capture Talisman",
-  "category": "toukenranbu_mod:sweets_and_protective_charms",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
   "icon": "toukenranbu_mod:capture_ball",
   "pages": [
     {
@@ -13,6 +13,18 @@
     {
       "type": "patchouli:crafting",
       "recipe": "toukenranbu_mod:capture_ball",
+      "title": "Crafting Recipe"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Only Captures Touken Danshi",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:group_capture_ball",
+      "text": "The effect is limited to Touken Danshi that belong to the player.$(br2)Using the Group Capture Talisman allows you to capture all of the player's own Touken Danshi within 32 blocks in one go."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:group_capture_ball",
       "title": "Crafting Recipe"
     }
   ]

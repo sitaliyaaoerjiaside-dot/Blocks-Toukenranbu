@@ -1,0 +1,39 @@
+{
+  "parent": "toukenranbu_mod:cuckoo_of_knot",
+  "criteria": {
+    "has_white_mikazuki_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:white_mikazuki_munechika"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.in_the_loop.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:white_mikazuki_munechika",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.in_the_loop.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_mikazuki_blade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

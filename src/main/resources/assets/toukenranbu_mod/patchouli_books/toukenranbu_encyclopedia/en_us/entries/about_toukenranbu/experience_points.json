@@ -1,0 +1,17 @@
+{
+  "name": "Touken Ranbu: Leveling",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "minecraft:experience_bottle",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Touken Danshi's Independent Experience",
+      "text": "The mod adds an independent experience and level system for Touken Danshi. The maximum level is 99. After reaching level 99, experience continues to accumulate, up to a cap of 9,999,999.$(br2)If you have questions about experience or stat mechanics, please read the source code or decompile the mod. The author does not answer such questions."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Leveling Disabled by Default",
+      "text": "Touken Danshi do not collect experience orbs by default. A command is required to toggle this on or off.$(br2)Use the /tr xp command to allow Touken Danshi to collect experience orbs."
+    }
+  ]
+}

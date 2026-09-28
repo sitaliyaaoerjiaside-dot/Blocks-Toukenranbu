@@ -1,0 +1,19 @@
+{
+  "name": "About Sword Smith",
+  "icon": "toukenranbu_mod:mikazuki_munechika",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 2,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Sword Smiths do not spawn naturally.$(br2)Place a Coolant Block near a villager to give them the Sword Smith profession.$(br2)Despite being called a Sword Smith, they are surprisingly stingy and sell things for very high prices."
+    },
+    {
+      "type": "spotlight",
+      "item": "toukenranbu_mod:wootz_steel_sword",
+      "title": "What do Sword Smiths sell",
+      "text": "Sword Smiths sell many things.$(br2)You can trade various supplies from Sword Smiths, though some things are outrageously expensive."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "The Mikazuki Munechika Named [Oboro]",
+  "icon": "toukenranbu_mod:moon_phase",
+  "category": "toukenranbu_mod:has_been_removed",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Removed: mikazuki munechika · oboro",
+      "text": "$(#00008B)$(bold)...Why do you think He never appeared at all?$()"
+    }
+  ]
+}

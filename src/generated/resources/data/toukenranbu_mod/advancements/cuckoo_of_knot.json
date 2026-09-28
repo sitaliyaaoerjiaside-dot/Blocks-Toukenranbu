@@ -1,0 +1,41 @@
+{
+  "parent": "toukenranbu_mod:moon_and_gensokyo",
+  "criteria": {
+    "kill_white_mikazuki": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "toukenranbu_mod:white_mikazuki_munechika"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.toukenranbu_mod.cuckoo_of_knot.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "toukenranbu_mod:white_mikazuki_munechika",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.toukenranbu_mod.cuckoo_of_knot.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_white_mikazuki"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

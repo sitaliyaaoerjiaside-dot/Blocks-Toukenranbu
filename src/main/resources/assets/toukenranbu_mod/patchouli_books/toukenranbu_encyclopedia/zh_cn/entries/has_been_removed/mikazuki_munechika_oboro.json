@@ -1,0 +1,13 @@
+{
+  "name": "名为【胧】的三日月宗近",
+  "icon": "toukenranbu_mod:moon_phase",
+  "category": "toukenranbu_mod:has_been_removed",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "已移除：三日月宗近·胧",
+      "text": "$(#00008B)$(bold)......你为什么会觉得祂从来没有出现过？$()"
+    }
+  ]
+}

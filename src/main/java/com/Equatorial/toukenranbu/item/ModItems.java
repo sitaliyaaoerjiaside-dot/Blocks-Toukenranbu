@@ -336,6 +336,27 @@ public class ModItems {
     public static final RegistryObject<Item> HORSE_UMAGOU = ITEMS.register("horse_umagou",
             () -> new ToukenHorseItem(new Item.Properties(), 2, 15, 2, 0, 0, 0, 0.0));
 
+    public static final RegistryObject<Item> CAPTAIN_BADGE = ITEMS.register("captain_badge",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> TOUKENRANBU_ENCYCLOPEDIA = ITEMS.register("toukenranbu_encyclopedia",
+                    () -> new ToukenEncyclopediaItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> EMA = ITEMS.register("ema",
+                    () -> new EmaItem(new Item.Properties().stacksTo(1)));
+    // 月相 - 白夜之庭传送门钥匙
+    public static final RegistryObject<Item> MOON_PHASE = ITEMS.register("moon_phase",
+                    () -> new MoonPhaseItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> GROUP_CAPTURE_BALL =
+            ITEMS.register("group_capture_ball",
+                    () -> new GroupCaptureBallItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> WHITE_MIKAZUKI_MUNECHIKA_EGG = ITEMS.register("white_mikazuki_munechika_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA,0xe8e8e8,0x191970,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_MIKAZUKI_MUNECHIKA = ITEMS.register("white_mikazuki_munechika",
+                    () -> new WhiteMikazukiMunechikaItem(new Item.Properties().stacksTo(1)
+                            .durability(1).setNoRepair().rarity(Rarity.EPIC)));
+
     public static boolean isBlade(Item item) {
         return item == MIKAZUKI_BLADE.get()
                 || item == YAMANBAGIRI_BLADE.get()

@@ -102,12 +102,12 @@ public class ModCustomTrades {
                     3, 35, 0.3f
             ));
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(Items.DIAMOND, 24),
+                    new ItemStack(Items.DIAMOND, 18),
                     new ItemStack(ModItems.SUPREME_AMULET.get(), 1),
                     3, 35, 0.3f
             ));
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(Items.DIAMOND, 36),
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.DIAMOND, 24),
                     new ItemStack(ModItems.SUPREME_AMULET.get(), 1),
                     5, 35, 0.3f
             ));
@@ -152,6 +152,16 @@ public class ModCustomTrades {
                     3, 10, 0.3f
             ));
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 15),
+                    new ItemStack(ModItems.PURE_SPIRITUAL_ENERGY.get(), 1),
+                    3, 10, 0.3f
+            ));
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 15),
+                    new ItemStack(ModItems.PURE_SPIRITUAL_ENERGY.get(), 1),
+                    3, 10, 0.3f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 20),
                     new ItemStack(ModItems.CAPTURE_BALL.get(), 1),
                     3, 10, 0.3f
@@ -166,17 +176,17 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.HORSE_TAKADONOGURO.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_OUTEI.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_MIKUNIGURO.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_KOHIBARI.get(), 1),
                     2, 10, 0.3f
@@ -196,7 +206,7 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.HORSE_SEIHAKU.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_MOCHIZUKI.get(), 1),
                     2, 10, 0.3f
@@ -206,12 +216,12 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.HORSE_AOGE.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_KAGE.get(), 1),
                     2, 10, 0.3f
             ));
-            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_SHIROGE.get(), 1),
                     2, 10, 0.3f
@@ -220,6 +230,22 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 30),
                     new ItemStack(ModItems.HORSE_UMAGOU.get(), 1),
                     2, 10, 0.3f
+            ));
+            // ===== 附魔之瓶兑换 =====
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 8),
+                    new ItemStack(Items.EXPERIENCE_BOTTLE, 3),
+                    16, 2, 0.15f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 16),
+                    new ItemStack(Items.EXPERIENCE_BOTTLE, 5),
+                    12, 5, 0.15f
+            ));
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 28),
+                    new ItemStack(Items.EXPERIENCE_BOTTLE, 8),
+                    8, 10, 0.15f
             ));
         }
     }

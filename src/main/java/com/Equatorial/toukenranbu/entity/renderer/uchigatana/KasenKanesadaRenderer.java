@@ -1,14 +1,18 @@
 package com.Equatorial.toukenranbu.entity.renderer.uchigatana;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.KasenKanesadaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
+import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class KasenKanesadaRenderer extends GeoEntityRenderer<KasenKanesadaEntity> {
@@ -35,5 +39,29 @@ public class KasenKanesadaRenderer extends GeoEntityRenderer<KasenKanesadaEntity
         poseStack.scale(scale, scale, scale);
         super.scaleModelForRender(widthScale, heightScale, poseStack, animatable, model,
                 isReRender, partialTick, packedLight, packedOverlay);
+    }
+
+    @Override
+    public void renderRecursively(PoseStack poseStack, KasenKanesadaEntity animatable, GeoBone bone,
+                                  RenderType renderType, MultiBufferSource bufferSource,
+                                  VertexConsumer buffer, boolean isReRender, float partialTick,
+                                  int packedLight, int packedOverlay,
+                                  float red, float green, float blue, float alpha) {
+
+        if (bone.getName().equals("head")) {
+            float bodyYaw = Mth.rotLerp(partialTick, animatable.yBodyRotO, animatable.yBodyRot);
+            float headYawAbs = Mth.rotLerp(partialTick, animatable.yHeadRotO, animatable.yHeadRot);
+            float pitch = Mth.lerp(partialTick, animatable.xRotO, animatable.getXRot());
+
+            float headYaw = (float) Math.toRadians(headYawAbs - bodyYaw);
+            float headPitch = (float) Math.toRadians(pitch);
+
+            bone.setRotY(-headYaw);
+            bone.setRotX(headPitch);
+        }
+
+        super.renderRecursively(poseStack, animatable, bone, renderType, bufferSource,
+                buffer, isReRender, partialTick, packedLight, packedOverlay,
+                red, green, blue, alpha);
     }
 }

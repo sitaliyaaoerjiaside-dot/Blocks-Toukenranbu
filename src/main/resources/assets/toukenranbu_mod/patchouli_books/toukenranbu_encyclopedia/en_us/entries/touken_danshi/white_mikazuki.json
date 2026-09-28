@@ -1,0 +1,40 @@
+{
+  "name": "Special Touken Danshi",
+  "icon": "toukenranbu_mod:white_mikazuki_munechika",
+  "category": "toukenranbu_mod:touken_danshi",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "???",
+      "text": "The pure-white Mikazuki Munechika. ...Just who is He, now?"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:white_mikazuki_munechika",
+      "name": "White Mikazuki Munechika",
+      "scale": 0.8,
+      "text": "The boss of the White Night Garden dimension. A white Mikazuki Munechika who, for unknown reasons, fell into a loop. After a series of events, he chose to leave his Saniwa — a special blade."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "???",
+      "text": "Defeating White Mikazuki Munechika drops a large amount of Bottles o' Enchanting, Gold Omamori, Supreme Amulets, and one White Mikazuki Munechika. Normally, after defeating him once, he cannot be summoned a second time."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Current Mechanics [Incomplete]",
+      "text": "White Mikazuki Munechika has up to 100,000 HP. His normal attack is only 55, but still lethal enough: when he attacks a player, he applies one stack of [Moon Shadow]. When the stacks reach 5, the player dies instantly."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Current Mechanics [Incomplete]",
+      "text": "Using an Amulet can clear the stacks and prevent death. White Mikazuki Munechika has a blocking and damage-reflection mechanic. While blocking, he is immune to non-true damage and reflects it back. When a player flees from him, he teleports to the player's side to attack."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Current Mechanics [Incomplete]",
+      "text": "When White Mikazuki Munechika enters a phase transition, he summons eight History Retrograde Army monsters. In the current version, his summon method in Survival Mode has not been implemented — he can only be summoned via commands."
+    }
+  ]
+}

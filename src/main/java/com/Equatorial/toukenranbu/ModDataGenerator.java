@@ -46,7 +46,7 @@ public class ModDataGenerator {
         generator.addProvider(event.includeServer(), new ModWorldGen(packOutput, lookupProvider));
 
         generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
-
+        generator.addProvider(event.includeServer(), new TagEntity(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(packOutput, lookupProvider, existingFileHelper, List.of(new ModAdvancements())));
 
     }

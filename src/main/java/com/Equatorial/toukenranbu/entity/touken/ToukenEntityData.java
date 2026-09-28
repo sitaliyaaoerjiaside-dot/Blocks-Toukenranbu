@@ -37,6 +37,21 @@ public class ToukenEntityData {
     public int bladeConcealmentBonus = 0;
     public int bladeTroopsBonus = 0;
 
+    // ===== 等级系统 =====
+    public static final int MAX_LEVEL = 99;
+    public static final long MAX_EXPERIENCE = 9999999L;
+
+    public int level = 1;
+    public long experience = 0L;
+    public int lastLevelUpStat = -1;
+
+    public int levelImpact = 0;
+    public int levelMobility = 0;
+    public int levelKilling = 0;
+    public int levelScouting = 0;
+    public int levelConcealment = 0;
+    public int levelTroops = 0;
+
     // ===== 疲劳度倍率：原作机制 =====
     // 50~100 樱吹雪(+20%) | 49~40 通常(x1.0) | 39~20 疲劳(-20%) | 19~0 严重疲劳(-40%)
     public double getFatigueMultiplier() {
@@ -48,12 +63,12 @@ public class ToukenEntityData {
 
     // ===== 有效属性 = (基础值 + 刀装加成) × 疲劳度倍率 =====
     // UI 和实际战斗都读这些值
-    public int getEffectiveImpact()      { return (int) Math.round((impact + knifeImpactBonus + mountImpactBonus + bladeImpactBonus) * getFatigueMultiplier()); }
-    public int getEffectiveMobility()    { return (int) Math.round((mobility + knifeMobilityBonus + mountMobilityBonus + bladeMobilityBonus) * getFatigueMultiplier()); }
-    public int getEffectiveKilling()     { return (int) Math.round((killing + knifeKillingBonus + mountKillingBonus + bladeKillingBonus) * getFatigueMultiplier()); }
-    public int getEffectiveScouting()    { return (int) Math.round((scouting + knifeScoutingBonus + mountScoutingBonus + bladeScoutingBonus) * getFatigueMultiplier()); }
-    public int getEffectiveConcealment() { return (int) Math.round((concealment + knifeConcealmentBonus + mountConcealmentBonus + bladeConcealmentBonus) * getFatigueMultiplier()); }
-    public int getEffectiveTroops()      { return (int) Math.round((troops + knifeTroopsBonus + mountTroopsBonus + bladeTroopsBonus) * getFatigueMultiplier()); }
+    public int getEffectiveImpact()      { return (int) Math.round((impact + levelImpact + knifeImpactBonus + mountImpactBonus + bladeImpactBonus) * getFatigueMultiplier()); }
+    public int getEffectiveMobility()    { return (int) Math.round((mobility + levelMobility + knifeMobilityBonus + mountMobilityBonus + bladeMobilityBonus) * getFatigueMultiplier()); }
+    public int getEffectiveKilling()     { return (int) Math.round((killing + levelKilling + knifeKillingBonus + mountKillingBonus + bladeKillingBonus) * getFatigueMultiplier()); }
+    public int getEffectiveScouting()    { return (int) Math.round((scouting + levelScouting + knifeScoutingBonus + mountScoutingBonus + bladeScoutingBonus) * getFatigueMultiplier()); }
+    public int getEffectiveConcealment() { return (int) Math.round((concealment + levelConcealment + knifeConcealmentBonus + mountConcealmentBonus + bladeConcealmentBonus) * getFatigueMultiplier()); }
+    public int getEffectiveTroops()      { return (int) Math.round((troops + levelTroops + knifeTroopsBonus + mountTroopsBonus + bladeTroopsBonus) * getFatigueMultiplier()); }
 
     // 状态文本键
     public String getFatigueStatusKey() {
@@ -75,6 +90,30 @@ public class ToukenEntityData {
         return fatigue / 100f;
     }
 
+
+    // ===== 等级曲线 =====
+    public static long totalExpForLevel(int targetLevel) {
+        if (targetLevel <= 1) return 0;
+        return (long) (100 * (Math.pow(1.075, targetLevel - 1) - 1) / 0.075);
+    }
+
+    public long getCurrentLevelExp() {
+        return totalExpForLevel(level);
+    }
+
+    public long getNextLevelExp() {
+        if (level >= MAX_LEVEL) return totalExpForLevel(MAX_LEVEL);
+        return totalExpForLevel(level + 1);
+    }
+
+    public float getLevelProgress() {
+        if (level >= MAX_LEVEL) return 1.0f;
+        long cur = getCurrentLevelExp();
+        long next = getNextLevelExp();
+        if (next <= cur) return 0.0f;
+        return Math.max(0f, Math.min(1f, (float)(experience - cur) / (next - cur)));
+    }
+
     public CompoundTag serialize() {
         CompoundTag tag = new CompoundTag();
         tag.putInt("impact", impact);
@@ -86,6 +125,17 @@ public class ToukenEntityData {
         tag.putInt("fatigue", fatigue);
         tag.putInt("FormationLevel", formationLevel);
         tag.putInt("FormationCount", formationCount);
+
+        // 等级系统
+        tag.putInt("Level", level);
+        tag.putLong("Experience", experience);
+        tag.putInt("LastLevelUpStat", lastLevelUpStat);
+        tag.putInt("LevelImpact", levelImpact);
+        tag.putInt("LevelMobility", levelMobility);
+        tag.putInt("LevelKilling", levelKilling);
+        tag.putInt("LevelScouting", levelScouting);
+        tag.putInt("LevelConcealment", levelConcealment);
+        tag.putInt("LevelTroops", levelTroops);
 
         // 刀装加成也要存，否则退出重进显示不对
         tag.putInt("knifeImpactBonus", knifeImpactBonus);
@@ -123,6 +173,16 @@ public class ToukenEntityData {
         fatigue = tag.getInt("fatigue");
         formationLevel = tag.getInt("FormationLevel");
         formationCount = tag.getInt("FormationCount");
+
+        level = tag.contains("Level") ? tag.getInt("Level") : 1;
+        experience = tag.contains("Experience") ? tag.getLong("Experience") : 0L;
+        lastLevelUpStat = tag.contains("LastLevelUpStat") ? tag.getInt("LastLevelUpStat") : -1;
+        levelImpact = tag.getInt("LevelImpact");
+        levelMobility = tag.getInt("LevelMobility");
+        levelKilling = tag.getInt("LevelKilling");
+        levelScouting = tag.getInt("LevelScouting");
+        levelConcealment = tag.getInt("LevelConcealment");
+        levelTroops = tag.getInt("LevelTroops");
 
         knifeImpactBonus = tag.getInt("knifeImpactBonus");
         knifeMobilityBonus = tag.getInt("knifeMobilityBonus");

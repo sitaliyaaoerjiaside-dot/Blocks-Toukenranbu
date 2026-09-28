@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kashuu_kiyomitsu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:kashuu_kiyomitsu"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:kashuu_kiyomitsu_to_exp_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_kashuu_kiyomitsu",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:kashuu_kiyomitsu_to_exp_bottle"
+    ]
+  },
+  "sends_telemetry_event": false
+}

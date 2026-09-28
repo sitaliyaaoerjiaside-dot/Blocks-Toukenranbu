@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:yamanbagiri_kunihiro_to_exp_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yamanbagiri_kunihiro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:yamanbagiri_kunihiro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yamanbagiri_kunihiro",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:yamanbagiri_kunihiro_to_exp_bottle"
+    ]
+  },
+  "sends_telemetry_event": false
+}

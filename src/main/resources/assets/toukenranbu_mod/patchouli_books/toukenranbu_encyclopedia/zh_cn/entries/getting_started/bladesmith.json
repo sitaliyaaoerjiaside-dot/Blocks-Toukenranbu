@@ -1,0 +1,19 @@
+{
+  "name": "关于刀剑师",
+  "icon": "toukenranbu_mod:mikazuki_munechika",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 2,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "刀剑师不会自然生成。$(br2)给村民放置一个冷却材方块，让他们获得刀剑师职业。$(br2)虽然叫刀剑师，但出乎意料的抠门，并且卖的东西很贵。"
+    },
+    {
+      "type": "spotlight",
+      "item": "toukenranbu_mod:wootz_steel_sword",
+      "title": "刀剑师卖什么",
+      "text": "刀剑师会出售很多东西。$(br2)可以从刀剑师处换到各种各样的物资，尽管有些东西贵得出奇。"
+    }
+  ]
+}

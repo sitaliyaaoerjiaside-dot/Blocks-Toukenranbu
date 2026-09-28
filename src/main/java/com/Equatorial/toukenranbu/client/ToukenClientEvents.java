@@ -51,6 +51,29 @@ public class ToukenClientEvents {
                 emote = ResourceLocation.fromNamespaceAndPath("toukenranbu_mod", "textures/emote/exhausted.png");
             }
 
+            if (danshi.isCaptainSynced()) {
+                ResourceLocation captainIcon = ResourceLocation.fromNamespaceAndPath(
+                        "toukenranbu_mod", "textures/emote/captain.png");
+
+                pose.pushPose();
+                pose.translate(x - camPos.x,
+                        y - camPos.y + entity.getBbHeight() + 1.3,
+                        z - camPos.z);
+                pose.mulPose(mc.getEntityRenderDispatcher().cameraOrientation());
+                pose.mulPose(Axis.YP.rotationDegrees(180));
+                pose.scale(-0.02f, 0.02f, 0.02f);
+
+                VertexConsumer cb = buffer.getBuffer(RenderType.entityCutoutNoCull(captainIcon));
+                Matrix4f cm = pose.last().pose();
+                float cs = 8f;
+                cb.vertex(cm, -cs, -cs, 0).color(255,255,255,255).uv(0,1).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(15728880).normal(0,1,0).endVertex();
+                cb.vertex(cm,  cs, -cs, 0).color(255,255,255,255).uv(1,1).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(15728880).normal(0,1,0).endVertex();
+                cb.vertex(cm,  cs,  cs, 0).color(255,255,255,255).uv(1,0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(15728880).normal(0,1,0).endVertex();
+                cb.vertex(cm, -cs,  cs, 0).color(255,255,255,255).uv(0,0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(15728880).normal(0,1,0).endVertex();
+
+                pose.popPose();
+            }
+
             pose.pushPose();
             pose.translate(x - camPos.x, y - camPos.y + entity.getBbHeight() + 0.8, z - camPos.z);
             pose.mulPose(mc.getEntityRenderDispatcher().cameraOrientation());

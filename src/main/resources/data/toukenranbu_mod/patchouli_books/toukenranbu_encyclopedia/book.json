@@ -1,8 +1,8 @@
 {
   "name": "toukenranbu.book.name",
   "landing_text": "toukenranbu.landing_text",
-  "version": 2,
-  "creative_tab": "toukenranbu_mod:toukenranbu_tab",
+  "version": 3,
+  "book_texture": "patchouli:textures/gui/book_blue.png",
   "text_color": "4000FF",
   "header_color": "000080",
   "nameplate_color": "D2691E",

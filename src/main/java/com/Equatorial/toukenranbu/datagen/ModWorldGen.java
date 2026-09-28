@@ -3,6 +3,7 @@ package com.Equatorial.toukenranbu.datagen;
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.world.feature.ModConfigureFeature;
 import com.Equatorial.toukenranbu.world.feature.ModPlacedFeature;
+import com.Equatorial.toukenranbu.world.registry.ModDimensions;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -16,7 +17,8 @@ public class ModWorldGen extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfigureFeature::bootstrap)
-            .add(Registries.PLACED_FEATURE, ModPlacedFeature::bootstrap);
+            .add(Registries.PLACED_FEATURE, ModPlacedFeature::bootstrap)
+            .add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType);
 
     public ModWorldGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(ToukenRanbuMod.MOD_ID));

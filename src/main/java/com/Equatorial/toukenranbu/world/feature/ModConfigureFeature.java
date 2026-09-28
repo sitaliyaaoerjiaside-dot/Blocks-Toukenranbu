@@ -8,15 +8,17 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -40,6 +42,7 @@ public class ModConfigureFeature {
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_BLACK_COOLANT_ORE_KEY = registerkey("nether_black_coolant_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CHARRED_KEY = registerkey("charred");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_CHERRY_KEY = registerkey("blue_cherry");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stonereplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -73,7 +76,7 @@ public class ModConfigureFeature {
         register(context, NETHER_BLACK_COOLANT_ORE_KEY, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 ModBlocks.COOLANT_ORE.get().defaultBlockState(), 9)));
         register(context, END_BLACK_COOLANT_ORE_KEY, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(endstoneReplaceables,
-                ModBlocks.COOLANT_ORE.get().defaultBlockState(),9)));
+                ModBlocks.COOLANT_ORE.get().defaultBlockState(), 9)));
 
         register(context, CHARRED_KEY, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.CHARRED_LOG.get().defaultBlockState()),
@@ -83,6 +86,29 @@ public class ModConfigureFeature {
                 Optional.empty(),
                 new TwoLayersFeatureSize(1, 0, 2)).build()));
 
+        register(context, BLUE_CHERRY_KEY, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.BLUE_CHERRY_LOG.get().defaultBlockState()),
+                new CherryTrunkPlacer(
+                        4,
+                        2,
+                        1,
+                        UniformInt.of(1, 3),
+                        UniformInt.of(2, 4),
+                        UniformInt.of(-4, -2),
+                        UniformInt.of(0, 1)
+                ),
+                BlockStateProvider.simple(ModBlocks.BLUE_CHERRY_LEAVES.get().defaultBlockState()),
+                new CherryFoliagePlacer(
+                        ConstantInt.of(3),
+                        ConstantInt.of(0),
+                        ConstantInt.of(4),
+                        0.25F,
+                        0.5F,
+                        0.5F,
+                        0.25F
+                ),
+                new TwoLayersFeatureSize(1, 0, 2)
+        ).ignoreVines().build()));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerkey(String name) {

@@ -22,6 +22,9 @@ public class ModCreativeModeTabs {
 
                         //pOutput.accept(ModBlocks.SWORD_FORGE.get());
 
+                        // ========== 手册 ==========
+                        pOutput.accept(ModItems.TOUKENRANBU_ENCYCLOPEDIA.get());
+
                         // ========== 建筑方块 ==========
                         // 烧焦木系列
                         pOutput.accept(ModBlocks.CHARRED_GRASS_BLOCK.get());
@@ -41,6 +44,22 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CHARRED_BUTTON.get());
                         pOutput.accept(ModBlocks.CHARRED_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.CHARRED_LEAVES.get());
+                        // 蓝色樱花系列
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_LOG.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_WOOD.get());
+                        pOutput.accept(ModBlocks.STRIPPED_BLUE_CHERRY_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_BLUE_CHERRY_WOOD.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_PLANKS.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_STAIRS.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_SLAB.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_FENCE.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_LEAVES.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_SAPLING.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_BUTTON.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_DOOR.get());
+                        pOutput.accept(ModBlocks.BLUE_CHERRY_TRAPDOOR.get());
 
                         // 磨刀石系列
                         pOutput.accept(ModBlocks.WHETSTONE_ORE.get());
@@ -55,7 +74,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.WHETSTONE_DOOR.get());
                         pOutput.accept(ModBlocks.WHETSTONE_TRAPDOOR.get());
 
-                        // 乌兹钢系列
+                        // 玉钢系列
                         pOutput.accept(ModBlocks.WOOTZ_STEEL_ORE.get());
                         pOutput.accept(ModBlocks.WOOTZ_STEEL_BLOCK.get());
                         pOutput.accept(ModBlocks.WOOTZ_STEEL_STAIRS.get());
@@ -68,9 +87,10 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.WOOTZ_STEEL_DOOR.get());
                         pOutput.accept(ModBlocks.WOOTZ_STEEL_TRAPDOOR.get());
 
-                        // 冷却剂系列
+                        // 冷却材系列
                         pOutput.accept(ModBlocks.COOLANT_ORE.get());
                         pOutput.accept(ModBlocks.COOLANT_BLOCK.get());
+                        pOutput.accept(ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get());
 
                         // ========== 原材料 ==========
                         pOutput.accept(ModItems.WOOTZ_STEEL.get());
@@ -93,20 +113,20 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.WOOTZ_STEEL_SHOVEL.get());
                         pOutput.accept(ModItems.WOOTZ_STEEL_HOE.get());
 
-                        // ========== 工具（磨刀石） ==========
+                        // ========== 工具（砥石） ==========
                         pOutput.accept(ModItems.WHETSTONE_SWORD.get());
                         pOutput.accept(ModItems.WHETSTONE_PICKAXE.get());
                         pOutput.accept(ModItems.WHETSTONE_AXE.get());
                         pOutput.accept(ModItems.WHETSTONE_SHOVEL.get());
                         pOutput.accept(ModItems.WHETSTONE_HOE.get());
 
-                        // ========== 盔甲（乌兹钢） ==========
+                        // ========== 盔甲（玉钢） ==========
                         pOutput.accept(ModItems.WOOTZ_STEEL_HELMET.get());
                         pOutput.accept(ModItems.WOOTZ_STEEL_CHESTPLATE.get());
                         pOutput.accept(ModItems.WOOTZ_STEEL_LEGGINGS.get());
                         pOutput.accept(ModItems.WOOTZ_STEEL_BOOTS.get());
 
-                        // ========== 盔甲（磨刀石） ==========
+                        // ========== 盔甲（砥石） ==========
                         pOutput.accept(ModItems.WHETSTONE_HELMET.get());
                         pOutput.accept(ModItems.WHETSTONE_CHESTPLATE.get());
                         pOutput.accept(ModItems.WHETSTONE_LEGGINGS.get());
@@ -124,8 +144,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.TROOP_CANDY.get());
 
                         // ========== 功能性物品（刀装 + 马匹 + 杂项） ==========
+                        pOutput.accept(ModItems.EMA.get());
+                        pOutput.accept(ModItems.MOON_PHASE.get());
                         pOutput.accept(ModItems.DICE.get());
                         pOutput.accept(ModItems.CAPTURE_BALL.get());
+                        pOutput.accept(ModItems.GROUP_CAPTURE_BALL.get());
+                        pOutput.accept(ModItems.CAPTAIN_BADGE.get());
                         pOutput.accept(ModItems.BRONZE_OMAMORI.get());
                         pOutput.accept(ModItems.SILVER_OMAMORI.get());
                         pOutput.accept(ModItems.GOLD_OMAMORI.get());
@@ -165,6 +189,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.IMANOTSURUGI.get());
                         pOutput.accept(ModItems.GOTOU_TOUSHIROU.get());
 
+                        pOutput.accept(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get());
                         pOutput.accept(ModItems.MIKAZUKI_BLADE.get());
                         pOutput.accept(ModItems.YAMANBAGIRI_BLADE.get());
                         pOutput.accept(ModItems.KASHUU_BLADE.get());
@@ -218,6 +243,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.KEBIISHI_YARI_SPAWN_EGG.get());
                         pOutput.accept(ModItems.KEBIISHI_NAGINATA_SPAWN_EGG.get());
                         pOutput.accept(ModItems.KEBIISHI_LEADER_SPAWN_EGG.get());
+
+                        pOutput.accept(ModItems.WHITE_MIKAZUKI_MUNECHIKA_EGG.get());
 
                     }).build());
 

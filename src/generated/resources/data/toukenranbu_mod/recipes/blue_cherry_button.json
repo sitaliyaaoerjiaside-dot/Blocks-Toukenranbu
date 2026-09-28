@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:blue_cherry_planks"
+    }
+  ],
+  "result": {
+    "item": "toukenranbu_mod:blue_cherry_button"
+  }
+}

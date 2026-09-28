@@ -10,7 +10,7 @@
     },
     {
       "type": "crafting",
-      "recipe": "toukenranbu:void_spiritual_energy"
+      "recipe": "toukenranbu_mod:void_spiritual_energy"
     }
   ]
 }

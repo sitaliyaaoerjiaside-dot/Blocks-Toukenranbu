@@ -6,6 +6,7 @@ import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.tag.ModItemTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -330,7 +331,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.WHETSTONE.get()), has(ModItems.WHETSTONE.get()))
                 .save(pWriter);
 
-//极御守的制造方式，需要工作台
+//需要工作台
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUPREME_AMULET.get())
                 .pattern("|||")
                 .pattern("|#|")
@@ -338,6 +339,23 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('#', ModItems.AMULET.get())
                 .define('|', Blocks.GOLD_BLOCK)
                 .unlockedBy(getHasName(ModItems.AMULET.get()), has(ModItems.AMULET.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModItems.CAPTAIN_BADGE.get())
+                .pattern("###")
+                .pattern("|@|")
+                .pattern("$$$")
+                .define('#', ModItems.A_SET_OF_PAPER_AND_PEN.get())
+                .define('|', Items.STICK)
+                .define('@', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .define('$', Items.PAPER)
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModItems.A_SET_OF_PAPER_AND_PEN.get())
+                .pattern("##|")
+                .pattern("##|")
+                .define('#', Items.PAPER)
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
 
 //空白灵力燃料的合成方式
@@ -385,7 +403,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModBlocks.CHARRED_PLANKS.get()), has(ModBlocks.CHARRED_PLANKS.get()))
                 .save(pWriter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.CHARRED_BUTTON.get())
-                .requires(ModItems.WHETSTONE.get())
+                .requires(ModBlocks.CHARRED_PLANKS.get())
                 .unlockedBy(getHasName(ModBlocks.CHARRED_PLANKS.get()), has(ModBlocks.CHARRED_PLANKS.get()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CHARRED_PRESSURE_PLATE.get())
@@ -396,7 +414,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHARRED_FENCE.get(), 3)
                 .pattern("#|#")
                 .pattern("#|#")
-                .define('#', ModItems.WHETSTONE.get())
+                .define('#', ModBlocks.CHARRED_PLANKS.get())
                 .define('|', Items.STICK)
                 .unlockedBy(getHasName(ModBlocks.CHARRED_PLANKS.get()), has(ModBlocks.CHARRED_PLANKS.get()))
                 .save(pWriter);
@@ -502,6 +520,145 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModBlocks.CHARRED_PLANKS.get()), has(ModBlocks.CHARRED_PLANKS.get()))
                 .save(pWriter, "toukenranbu_mod:wooden_hoe_from_charred_planks");
 
+        //分割线————————————————————————
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.BLUE_CHERRY_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_LOG.get()), has(ModBlocks.BLUE_CHERRY_LOG.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_STAIRS.get(), 4)
+                .pattern("  #")
+                .pattern(" ##")
+                .pattern("###")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_SLAB.get(), 6)
+                .pattern("###")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.BLUE_CHERRY_BUTTON.get())
+                .requires(ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.BLUE_CHERRY_PRESSURE_PLATE.get())
+                .pattern("##")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_FENCE.get(), 3)
+                .pattern("#|#")
+                .pattern("#|#")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_FENCE_GATE.get())
+                .pattern("|#|")
+                .pattern("|#|")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.BLUE_CHERRY_DOOR.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.BLUE_CHERRY_TRAPDOOR.get(), 2)
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CHERRY_PLANKS.get(), 4)
+                .requires(ModBlocks.BLUE_CHERRY_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_LOG.get()), has(ModBlocks.BLUE_CHERRY_LOG.get()))
+                .save(pWriter);
+
+        // 用月见樱木板合成原版物品（带独立 save 名，不覆盖原版配方）
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.CHEST)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:chest_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Items.STICK, 4)
+                .pattern("#")
+                .pattern("#")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:stick_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.BOOKSHELF)
+                .pattern("###")
+                .pattern("|||")
+                .pattern("###")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.BOOK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:bookshelf_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.LECTERN)
+                .pattern("###")
+                .pattern(" | ")
+                .pattern(" # ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Blocks.BOOKSHELF)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:lectern_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CRAFTING_TABLE)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:crafting_table_from_blue_cherry_planks");
+
+        // 用月见樱木板合成木制工具（带独立 save 名，不覆盖原版配方）
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.WOODEN_SWORD)
+                .pattern(" # ")
+                .pattern(" # ")
+                .pattern(" | ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:wooden_sword_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_AXE)
+                .pattern("## ")
+                .pattern("#| ")
+                .pattern(" | ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:wooden_axe_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_PICKAXE)
+                .pattern("###")
+                .pattern(" | ")
+                .pattern(" | ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:wooden_pickaxe_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_SHOVEL)
+                .pattern(" # ")
+                .pattern(" | ")
+                .pattern(" | ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:wooden_shovel_from_blue_cherry_planks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_HOE)
+                .pattern("## ")
+                .pattern(" | ")
+                .pattern(" | ")
+                .define('#', ModBlocks.BLUE_CHERRY_PLANKS.get())
+                .define('|', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.BLUE_CHERRY_PLANKS.get()), has(ModBlocks.BLUE_CHERRY_PLANKS.get()))
+                .save(pWriter, "toukenranbu_mod:wooden_hoe_from_blue_cherry_planks");
+
 //食物——————————
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.A_BITE_OF_DANGO.get())
                 .requires(Items.SUGAR)
@@ -592,6 +749,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('@', ModItems.TURBID_SPIRITUAL_ENERGY.get())
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GROUP_CAPTURE_BALL.get(), 1)
+                .pattern("#|@")
+                .pattern("#|@")
+                .pattern("#|@")
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .define('|', Items.PAPER)
+                .define('@', ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.POWER_OF_ATTORNEY.get(), 2)
                 .pattern(" # ")
                 .pattern(" | ")
@@ -608,8 +774,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('@', ModItems.PURE_SPIRITUAL_ENERGY.get())
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOON_PHASE.get(), 1)
+                .pattern(" | ")
+                .pattern(" @ ")
+                .pattern(" | ")
+                .define('|', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .define('@', ModItems.DICE.get())
+                .unlockedBy(getHasName(ModItems.DICE.get()), has(ModItems.DICE.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_NIGHT_PORTAL_FRAME.get(), 1)
+                .pattern(" @ ")
+                .pattern("|||")
+                .pattern(" @ ")
+                .define('|', ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                .define('@', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.TURBID_SPIRITUAL_ENERGY.get()), has(ModItems.TURBID_SPIRITUAL_ENERGY.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMA.get(), 1)
+                .pattern("@|@")
+                .define('|', Items.PAPER)
+                .define('@', ModItems.A_SET_OF_PAPER_AND_PEN.get())
+                .unlockedBy(getHasName(ModItems.A_SET_OF_PAPER_AND_PEN.get()), has(ModItems.A_SET_OF_PAPER_AND_PEN.get()))
+                .save(pWriter);
 
-        // ========== 三日月宗近 ==========
+// ========== 三日月宗近 ==========
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MIKAZUKI_BLADE.get(), 1)
                 .pattern(" @ ")
                 .pattern("$|%")
@@ -1082,6 +1270,108 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
                 .unlockedBy(getHasName(ModItems.GOTOU_TOUSHIROU_BLADE.get()), has(ModItems.GOTOU_TOUSHIROU_BLADE.get()))
                 .save(pWriter);
+
+        // ========== 刀男召唤物品 → 附魔之瓶 ==========
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 36)
+                .requires(ModItems.MIKAZUKI_MUNECHIKA.get())
+                .unlockedBy(getHasName(ModItems.MIKAZUKI_MUNECHIKA.get()), has(ModItems.MIKAZUKI_MUNECHIKA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "mikazuki_munechika_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.YAMANBAGIRI_KUNIHIRO.get())
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_KUNIHIRO.get()), has(ModItems.YAMANBAGIRI_KUNIHIRO.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "yamanbagiri_kunihiro_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.KASHUU_KIYOMITSU.get())
+                .unlockedBy(getHasName(ModItems.KASHUU_KIYOMITSU.get()), has(ModItems.KASHUU_KIYOMITSU.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "kashuu_kiyomitsu_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.HACHISUKA_KOTETSU.get())
+                .unlockedBy(getHasName(ModItems.HACHISUKA_KOTETSU.get()), has(ModItems.HACHISUKA_KOTETSU.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "hachisuka_kotetsu_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.KASEN_KANESADA.get())
+                .unlockedBy(getHasName(ModItems.KASEN_KANESADA.get()), has(ModItems.KASEN_KANESADA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "kasen_kanesada_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.MUTSUNOKAMI_YOSHIYUKI.get())
+                .unlockedBy(getHasName(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()), has(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "mutsunokami_yoshiyuki_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 18)
+                .requires(ModItems.ICHIGO_HITOFURI.get())
+                .unlockedBy(getHasName(ModItems.ICHIGO_HITOFURI.get()), has(ModItems.ICHIGO_HITOFURI.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ichigo_hitofuri_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 18)
+                .requires(ModItems.TSURUMARU_KUNINAGA.get())
+                .unlockedBy(getHasName(ModItems.TSURUMARU_KUNINAGA.get()), has(ModItems.TSURUMARU_KUNINAGA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tsurumaru_kuninaga_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.SHOKUDAIKIRI_MITSUTADA.get())
+                .unlockedBy(getHasName(ModItems.SHOKUDAIKIRI_MITSUTADA.get()), has(ModItems.SHOKUDAIKIRI_MITSUTADA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "shokudaikiri_mitsutada_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.ISHIKIRIMARU.get())
+                .unlockedBy(getHasName(ModItems.ISHIKIRIMARU.get()), has(ModItems.ISHIKIRIMARU.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ishikirimaru_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.HESHIKIRI_HASEBE.get())
+                .unlockedBy(getHasName(ModItems.HESHIKIRI_HASEBE.get()), has(ModItems.HESHIKIRI_HASEBE.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "heshikiri_hasebe_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.YAMATONOKAMI_YASUSADA.get())
+                .unlockedBy(getHasName(ModItems.YAMATONOKAMI_YASUSADA.get()), has(ModItems.YAMATONOKAMI_YASUSADA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "yamatonokami_yasusada_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.YAMANBAGIRI_CHOGI.get())
+                .unlockedBy(getHasName(ModItems.YAMANBAGIRI_CHOGI.get()), has(ModItems.YAMANBAGIRI_CHOGI.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "yamanbagiri_chogi_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 12)
+                .requires(ModItems.OOKURIKARA.get())
+                .unlockedBy(getHasName(ModItems.OOKURIKARA.get()), has(ModItems.OOKURIKARA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "ookurikara_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 16)
+                .requires(ModItems.TONBOKIRI.get())
+                .unlockedBy(getHasName(ModItems.TONBOKIRI.get()), has(ModItems.TONBOKIRI.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tonbokiri_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 16)
+                .requires(ModItems.TOMOEGATA_NAGINATA.get())
+                .unlockedBy(getHasName(ModItems.TOMOEGATA_NAGINATA.get()), has(ModItems.TOMOEGATA_NAGINATA.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "tomoegata_naginata_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 8)
+                .requires(ModItems.NIKKARI_AOE.get())
+                .unlockedBy(getHasName(ModItems.NIKKARI_AOE.get()), has(ModItems.NIKKARI_AOE.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "nikkari_aoe_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 8)
+                .requires(ModItems.HORIKAWA_KUNIHIRO.get())
+                .unlockedBy(getHasName(ModItems.HORIKAWA_KUNIHIRO.get()), has(ModItems.HORIKAWA_KUNIHIRO.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "horikawa_kunihiro_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 4)
+                .requires(ModItems.IMANOTSURUGI.get())
+                .unlockedBy(getHasName(ModItems.IMANOTSURUGI.get()), has(ModItems.IMANOTSURUGI.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "imanotsurugi_to_exp_bottle"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.EXPERIENCE_BOTTLE, 4)
+                .requires(ModItems.GOTOU_TOUSHIROU.get())
+                .unlockedBy(getHasName(ModItems.GOTOU_TOUSHIROU.get()), has(ModItems.GOTOU_TOUSHIROU.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "gotou_toushirou_to_exp_bottle"));
 
     }
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "@": {
+      "item": "toukenranbu_mod:a_set_of_paper_and_pen"
+    },
+    "|": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "@|@"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:ema"
+  },
+  "show_notification": true
+}

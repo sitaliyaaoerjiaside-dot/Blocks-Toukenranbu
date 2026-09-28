@@ -1,0 +1,20 @@
+{
+  "name": "绘马的作用",
+  "icon": "toukenranbu_mod:ema",
+  "category": "toukenranbu_mod:getting_started",
+  "sortnum": 0,
+  "read_by_default": false,
+  "pages": [
+    {
+      "type": "text",
+      "text": "绘马能够对你的刀剑男士进行数据绑定，并随时将他们召唤到你身边。$(#ff0000)$(bold)注意，目前版本没有任何方式能够将刀剑男士从已卸载的区块上召唤回来！$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:ema",
+      "title": "绘马",
+      "text": "绘马的数据是实时更新的，并且它能够被合成。"
+    }
+
+  ]
+}

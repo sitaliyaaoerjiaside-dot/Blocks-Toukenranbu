@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "@": {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    },
+    "|": {
+      "item": "toukenranbu_mod:turbid_spiritual_energy"
+    }
+  },
+  "pattern": [
+    " @ ",
+    "|||",
+    " @ "
+  ],
+  "result": {
+    "item": "toukenranbu_mod:white_night_portal_frame"
+  },
+  "show_notification": true
+}

@@ -42,7 +42,7 @@ public class KebiishiNaginataEntity extends Monster implements GeoEntity, Kebiis
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 295.0D)      // 基础血量（会被动态成长放大）
+                .add(Attributes.MAX_HEALTH, 395.0D)      // 基础血量（会被动态成长放大）
                 .add(Attributes.ATTACK_DAMAGE, 50.0D)    // 基础攻击（会被动态成长放大）
                 .add(Attributes.ATTACK_SPEED, 1.2D)
                 .add(Attributes.MOVEMENT_SPEED, 0.20D)

@@ -9,11 +9,8 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.UUID;
 
-/**
- * 刀剑男士拾取掉落物AI
- * 只要不是坐下状态，且背包未满，就会主动拾取周围8格内的所有掉落物。
- */
 public class PickupItemsGoal extends Goal {
     private final ToukenDanshiEntity entity;
     private ItemEntity targetItem;
@@ -26,19 +23,22 @@ public class PickupItemsGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        // 坐下时不捡东西；背包满了也不捡
+        // 无主刀男不捡东西
+        if (!entity.isTame()) return false;
+        // 坐下时不捡东西
         if (entity.isOrderedToSit()) return false;
+        // 跟随时没开捡物开关，不捡
         if (entity.isFollowing() && !entity.isPickupWhenFollowing()) return false;
         if (isInventoryFull()) return false;
         if (--cooldown > 0) return false;
 
         AABB box = entity.getBoundingBox().inflate(8.0);
         List<ItemEntity> items = entity.level().getEntitiesOfClass(ItemEntity.class, box,
-                e -> !e.isRemoved() && isWantedItem(e.getItem()) && e.getAge() > 10);
+                e -> !e.isRemoved() && isWantedItem(e.getItem(), e) && e.getAge() > 10);
 
         if (items.isEmpty()) return false;
 
-        // 找最近的掉落物
+        // 找最近的
         targetItem = items.get(0);
         double bestDist = entity.distanceToSqr(targetItem);
         for (int i = 1; i < items.size(); i++) {
@@ -48,12 +48,12 @@ public class PickupItemsGoal extends Goal {
                 targetItem = items.get(i);
             }
         }
-
         return true;
     }
 
     @Override
     public boolean canContinueToUse() {
+        if (!entity.isTame()) return false;
         return targetItem != null
                 && !targetItem.isRemoved()
                 && !entity.isOrderedToSit()
@@ -68,9 +68,7 @@ public class PickupItemsGoal extends Goal {
 
     @Override
     public void tick() {
-        if (targetItem == null || targetItem.isRemoved()) {
-            return;
-        }
+        if (targetItem == null || targetItem.isRemoved()) return;
 
         double dist = entity.distanceToSqr(targetItem);
         if (dist > 1.5D) {
@@ -87,48 +85,31 @@ public class PickupItemsGoal extends Goal {
         } else {
             targetItem.setItem(remainder);
         }
-
         targetItem = null;
     }
 
     /**
-     * 判断是否是想要的物品
-     * 现在改为：只要不是空物品，全都要。
-     * 如果你以后想过滤垃圾（如泥土、圆石、木棍），把下面的 return 改成过滤逻辑即可。
+     * 是否是想要的物品：
+     * - 队长徽章：必须是自己主人掉的才捡（NBT 里 touken_captain_owner 要和自己的 owner 相同）
+     * - 其他物品：全捡
      */
-    private boolean isWantedItem(ItemStack stack) {
-        return !stack.isEmpty();
-
-        /* === 如果以后背包被垃圾塞满，换成下面这段过滤版 ===
+    private boolean isWantedItem(ItemStack stack, ItemEntity itemEntity) {
         if (stack.isEmpty()) return false;
 
-        // 始终保留：种地相关
-        if (ToukenFarmingGoal.isSeed(stack)) return true;
-        if (ToukenDanshiEntity.isCropProduce(stack)) return true;
+        if (stack.is(com.Equatorial.toukenranbu.item.ModItems.CAPTAIN_BADGE.get())) {
+            UUID selfOwner = entity.getOwnerUUID();
+            if (selfOwner == null) return false;  // 没主人，不捡队长徽章
 
-        // 始终保留：回血相关
-        if (entity.evaluateHealItem(stack).heal > 0) return true;
+            var tag = itemEntity.getPersistentData();
+            if (!tag.hasUUID("touken_captain_owner")) return false;  // 没标记来源，不捡
 
-        // 过滤常见垃圾
-        if (stack.is(Items.DIRT)) return false;
-        if (stack.is(Items.COBBLESTONE)) return false;
-        if (stack.is(Items.GRANITE)) return false;
-        if (stack.is(Items.DIORITE)) return false;
-        if (stack.is(Items.ANDESITE)) return false;
-        if (stack.is(Items.COBBLED_DEEPSLATE)) return false;
-        if (stack.is(Items.STICK)) return false;
-        if (stack.is(Items.SAND)) return false;
-        if (stack.is(Items.GRAVEL)) return false;
-        if (stack.is(Items.NETHERRACK)) return false;
-        if (stack.is(Items.TORCH)) return false;  // 火把通常很多
+            UUID itemOwner = tag.getUUID("touken_captain_owner");
+            return selfOwner.equals(itemOwner);  // 只捡自己主人的
+        }
 
         return true;
-        */
     }
 
-    /**
-     * 检查25格通用背包是否已满（没有空格子且现有堆叠都到上限）
-     */
     private boolean isInventoryFull() {
         var handler = entity.getInventoryHandler();
         for (int i = 0; i < handler.getSlots(); i++) {

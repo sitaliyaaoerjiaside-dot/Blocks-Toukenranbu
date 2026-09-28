@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:yamanbagiri_chogi_to_exp_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yamanbagiri_chogi": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:yamanbagiri_chogi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yamanbagiri_chogi",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:yamanbagiri_chogi_to_exp_bottle"
+    ]
+  },
+  "sends_telemetry_event": false
+}

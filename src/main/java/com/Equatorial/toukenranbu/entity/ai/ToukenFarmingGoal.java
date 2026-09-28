@@ -469,15 +469,15 @@ public class ToukenFarmingGoal extends Goal {
             if (groundState.getBlock() instanceof FarmBlock) {
                 if (aboveBlock instanceof CropBlock crop && crop.isMaxAge(above)) {
                     if (dist < bestHarvestDist && !isBlocked(groundPos)
-                            && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
-                        /* && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID()) */) {
+                         && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
+                         && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID())) {
                         bestHarvestDist = dist;
                         bestHarvest = groundPos;
                     }
                 } else if (above.isAir()) {
                     if (dist < bestEmptyDist && !isBlocked(groundPos)
-                            && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
-                        /* && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID()) */) {
+                        && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
+                        && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID())) {
                         bestEmptyDist = dist;
                         bestEmpty = groundPos;
                     }
@@ -487,8 +487,8 @@ public class ToukenFarmingGoal extends Goal {
             if (aboveBlock instanceof SugarCaneBlock) {
                 BlockPos top = findSugarCaneTop(level, groundPos.above());
                 if (top.getY() > groundPos.above().getY() && dist < bestHarvestDist && !isBlocked(groundPos)
-                        && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
-                    /* && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID()) */) {
+                    && !ToukenDanshiEntity.isFarmTargetLockedByOther(level, groundPos, entity.getUUID())
+                    && !ToukenDanshiEntity.isPosInOtherTerritory(level, groundPos, entity.getUUID())) {
                     bestHarvestDist = dist;
                     bestHarvest = groundPos;
                 }

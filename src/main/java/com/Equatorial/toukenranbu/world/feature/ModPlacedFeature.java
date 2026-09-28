@@ -10,6 +10,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -32,6 +33,7 @@ public class ModPlacedFeature {
     public static final ResourceKey<PlacedFeature> END_BLACK_COOLANT_PLACED_KEY = createKey("end_black_coolant_placed");
 
     public static final ResourceKey<PlacedFeature> CHARRED_TREE_PLACED_KEY = createKey("charred_tree_placed");
+    public static final ResourceKey<PlacedFeature> BLUE_CHERRY_TREE_PLACED_KEY = createKey("blue_cherry_tree_placed");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -74,6 +76,15 @@ public class ModPlacedFeature {
                 BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0),
                 ModBlocks.CHARRED_DIRT.get(), ModBlocks.CHARRED_GRASS_BLOCK.get())),
                 BiomeFilter.biome()));
+
+        // 蓝色樱花树 - 只在月见樱花林群系自然生成
+        register(context, BLUE_CHERRY_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfigureFeature.BLUE_CHERRY_KEY), List.of(
+                        PlacementUtils.countExtra(3, 1.0f, 2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        PlacementUtils.filteredByBlockSurvival(ModBlocks.BLUE_CHERRY_SAPLING.get()),
+                        BiomeFilter.biome()));
 
     }
 

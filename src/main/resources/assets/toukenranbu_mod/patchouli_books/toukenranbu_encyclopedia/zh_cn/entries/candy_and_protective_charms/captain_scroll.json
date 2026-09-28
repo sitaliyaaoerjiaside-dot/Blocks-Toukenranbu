@@ -1,0 +1,22 @@
+{
+  "name": "队长卷轴",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:captain_badge",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "象征队长的卷轴",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:captain_badge",
+      "text": "能够合成的象征队长的卷轴.通过将队长卷轴给予刀剑男士，玩家能够指定一个刀剑男士成为队长。通过队长，玩家能够统一控制附近刀剑男士的展开阵型。$(br2)16格内不能有多个队长。$(br2)不同玩家的刀剑男士不会捡起非己方刀剑男士掉落的卷轴。$(br2)配方见下一页。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:a_set_of_paper_and_pen"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:captain_badge"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "toukenranbu_mod:a_set_of_paper_and_pen"
+    },
+    "$": {
+      "item": "minecraft:paper"
+    },
+    "@": {
+      "item": "toukenranbu_mod:pure_spiritual_energy"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "|@|",
+    "$$$"
+  ],
+  "result": {
+    "item": "toukenranbu_mod:captain_badge"
+  },
+  "show_notification": true
+}

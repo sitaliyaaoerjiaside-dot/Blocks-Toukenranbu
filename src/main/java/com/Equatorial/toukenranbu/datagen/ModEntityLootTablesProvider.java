@@ -57,6 +57,9 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_YARI.get());
         addKebiishiCommonLoot(ModEntityTypes.KEBIISHI_NAGINATA.get());
         addKebiishiLeaderLoot(ModEntityTypes.KEBIISHI_LEADER.get());
+
+        // BOSS
+        addWhiteMikazukiMunechikaLoot();
     }
 
     // ==================== 短刀 ====================
@@ -581,6 +584,46 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
         );
     }
 
+    // ==================== 白三日月宗近 BOSS ====================
+    private void addWhiteMikazukiMunechikaLoot() {
+        add(ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get(), LootTable.lootTable()
+                // 池 1：必掉武器，100%
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                )
+                // 池 2：大量经验瓶
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(32, 64))))
+                )
+                // 池 3：极御守，必掉 3 个
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.SUPREME_AMULET.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                )
+                // 池 4：珍稀材料，各概率掉落
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.PURE_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(12, 16))))
+                        .add(LootItem.lootTableItem(ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(8, 16))))
+                        .add(LootItem.lootTableItem(ModItems.WOOTZ_STEEL.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 12))))
+                        .add(LootItem.lootTableItem(ModItems.WHETSTONE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 12))))
+                        .add(LootItem.lootTableItem(ModItems.COOLANT.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 12))))
+                )
+                // 池 5：金刀装，概率掉落 3~8 个
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.GOLD_OMAMORI.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.5f))
+                )
+        );
+    }
+
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
         return Stream.of(
@@ -593,7 +636,8 @@ public class ModEntityLootTablesProvider extends EntityLootSubProvider {
                 ModEntityTypes.NAGINATA.get(), ModEntityTypes.NAGINATA_PLUS.get(), ModEntityTypes.NAGINATA_MAX.get(),
                 ModEntityTypes.KEBIISHI_TACHI.get(), ModEntityTypes.KEBIISHI_OOTACHI.get(),
                 ModEntityTypes.KEBIISHI_YARI.get(), ModEntityTypes.KEBIISHI_NAGINATA.get(),
-                ModEntityTypes.KEBIISHI_LEADER.get()
+                ModEntityTypes.KEBIISHI_LEADER.get(),
+                ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get()
         );
     }
 }

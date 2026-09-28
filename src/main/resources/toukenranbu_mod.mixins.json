@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.Equatorial.toukenranbu.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "toukenranbu_mod.refmap.json",
+  "mixins": [
+    "RangedAttributeMixin",
+    "MillstoneBindMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

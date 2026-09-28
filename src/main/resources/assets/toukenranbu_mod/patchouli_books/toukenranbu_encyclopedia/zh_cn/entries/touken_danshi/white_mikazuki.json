@@ -1,0 +1,40 @@
+{
+  "name": "特殊的刀剑男士",
+  "icon": "toukenranbu_mod:white_mikazuki_munechika",
+  "category": "toukenranbu_mod:touken_danshi",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "？？？",
+      "text": "纯白的三日月宗近。......现在的祂，到底是谁？"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "toukenranbu_mod:white_mikazuki_munechika",
+      "name": "白·三日月宗近",
+      "scale": 0.8,
+      "text": "白夜之庭维度的BOSS。白色的三日月宗近，因为未知原因陷入轮回，在发生了一系列事件之后选择离开他的审神者的、特殊的刀剑。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "？？？",
+      "text": "击败白三日月宗近能够掉落大量附魔之瓶、金刀装、极御守以及一把白三日月宗近。通常情况下，在战胜一次白三日月宗近之后将不能进行第二次召唤。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "现有机制【未做完】",
+      "text": "白三日月宗近拥有高达100000点的生命值，常态下他的攻击力只有55点，但仍然足以致命：当白三日月宗近攻击玩家的时候，会给玩家携带一层【月影】效果，当它的层数达到5层时，玩家将会立刻死亡。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "现有机制【未做完】",
+      "text": "使用御守能够清除层数抵挡死亡；白三日月宗近拥有格挡反伤机制。在格挡状态下，白三日月宗近免疫非真实伤害并且反弹；当玩家逃离白三日月宗近的时候，白三日月宗近将会瞬移至玩家身边进行攻击。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "现有机制【未做完】",
+      "text": "当白三日月宗近进入转阶段状态下的时候将会召唤八只时间溯行军类怪物。目前版本未实装白三日月宗近在生存模式下的召唤方式，仅能通过命令进行召唤。"
+    }
+  ]
+}

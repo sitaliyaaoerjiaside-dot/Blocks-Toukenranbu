@@ -1,0 +1,22 @@
+{
+  "name": "Captain Scroll",
+  "category": "toukenranbu_mod:candy_and_protective_charms",
+  "icon": "toukenranbu_mod:captain_badge",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Scroll Symbolizing a Captain",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:captain_badge",
+      "text": "A craftable scroll that symbolizes a captain.By giving the Captain Scroll to a Touken Danshi, the player can designate a Touken Danshi as a captain. Through the captain, the player can uniformly control the formation deployment of nearby Touken Danshi.$(br2)There cannot be more than one captain within 16 blocks.$(br2)Touken Danshi of different players will not pick up scrolls dropped by Touken Danshi that are not on their own side.$(br2)See the next page for the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:a_set_of_paper_and_pen"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "toukenranbu_mod:captain_badge"
+    }
+  ]
+}

@@ -25,6 +25,22 @@
     },
     {
       "type": "spotlight",
+      "title": "灵力值机制：惩罚机制",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "需要注意的是，当玩家受到怪物攻击的时候会触发灵力值-2。$(br2)死亡的时候会触发灵力值扣除70的高额惩罚机制，请务必小心行事。"
+    },
+    {
+      "type": "spotlight",
+      "title": "灵力值机制：审神者",
+      "link_recipe": false,
+      "item": "toukenranbu_mod:pure_spiritual_energy",
+      "scale": 1.2,
+      "text": "当玩家灵力值超过30的时候，玩家能够获得抗性提升II、伤害吸收I以及护甲韧性+8的效果。$(br2)当灵力值不足的时候该效果消失，直到灵力值恢复。"
+    },
+    {
+      "type": "spotlight",
       "title": "灵力值机制：刀剑男士群体反隐身",
       "link_recipe": false,
       "item": "toukenranbu_mod:pure_spiritual_energy",

@@ -17,30 +17,12 @@ public class ModNetwork {
     private static int packetId = 0;
 
     public static void register() {
-        // 你原来就有的
         CHANNEL.registerMessage(
                 packetId++,
                 SpiritPowerSyncPacket.class,
                 SpiritPowerSyncPacket::encode,
                 SpiritPowerSyncPacket::decode,
                 SpiritPowerSyncPacket::handle
-        );
-
-        // ===== 新增：刀剑男士按钮动作包 =====
-        CHANNEL.registerMessage(
-                packetId++,
-                ToukenDanshiActionPacket.class,
-                ToukenDanshiActionPacket::encode,
-                ToukenDanshiActionPacket::decode,
-                ToukenDanshiActionPacket::handle
-        );
-
-        CHANNEL.registerMessage(
-                packetId++,
-                FormationChangePacket.class,
-                FormationChangePacket::encode,
-                FormationChangePacket::decode,
-                FormationChangePacket::handle
         );
     }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "刀剑男士位置查询",
+  "icon": "toukenranbu_mod:moon_phase",
+  "category": "toukenranbu_mod:all_new_ore",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "找回走散的刀剑男士",
+      "text": "本丸大了，刀剑男士多了，总有那么几振会不知不觉走丢。$(br2)为了方便审神者找回自己的刀剑男士，模组提供了位置查询命令，会列出你名下所有刀剑男士的名字、所在维度、坐标以及距离。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "使用方法",
+      "text": "在左下角的文本聊天框中输入：$(br2)$(li)/tr locate$(br)$(li)/toukenranbu locate$(br2)两者效果相同，功能完全一致。$(br2)输入后会显示一份列表，绿色代表距离 64 格以内，白色代表同维度但较远，跨维度的则会显示该维度名称和坐标。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "只看数量",
+      "text": "如果只是想知道自己一共有多少振已召唤的刀剑男士，可以用：$(br2)$(li)/tr count$(br)$(li)/toukenranbu count$(br2)它只会告诉你数量，不列出具体位置。$(br2)需要注意的是，被收进收容符的刀剑男士不会被统计，因为它们已经从世界中移除。"
+    }
+  ]
+}

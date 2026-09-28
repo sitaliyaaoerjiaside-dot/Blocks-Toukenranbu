@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "toukenranbu_mod:blue_cherry_grove",
+    "toukenranbu_mod:pink_cherry_grove"
+  ],
+  "spawners": [
+    { "type": "minecraft:sheep", "weight": 12, "minCount": 2, "maxCount": 4 },
+    { "type": "minecraft:cow", "weight": 10, "minCount": 2, "maxCount": 4 },
+    { "type": "minecraft:pig", "weight": 10, "minCount": 1, "maxCount": 3 },
+    { "type": "minecraft:chicken", "weight": 10, "minCount": 2, "maxCount": 4 },
+    { "type": "minecraft:rabbit", "weight": 6, "minCount": 1, "maxCount": 3 },
+    { "type": "minecraft:fox", "weight": 4, "minCount": 1, "maxCount": 2 },
+    { "type": "minecraft:wolf", "weight": 4, "minCount": 1, "maxCount": 2 }
+  ]
+}

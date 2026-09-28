@@ -1,0 +1,14 @@
+{
+  "name": "白三日月宗近",
+  "category": "toukenranbu_mod:toukendanshi_sword",
+  "icon": "toukenranbu_mod:white_mikazuki_munechika",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "例外：白三日月宗近",
+      "link_recipe": true,
+      "item": "toukenranbu_mod:white_mikazuki_munechika",
+      "text": "$(br2)$(#ff0000)$(bold)白三日月宗近能够对敌人造成高达2147483646点的无视附魔、护甲及抗性的真实伤害，只能通过击败白三日月宗近BOSS掉落，耐久度为1，无法被修复也无法被附魔。$()"
+    }
+  ]
+}
