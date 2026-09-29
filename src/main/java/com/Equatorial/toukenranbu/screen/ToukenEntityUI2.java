@@ -18,6 +18,7 @@ import com.lowdragmc.lowdraglib2.gui.ui.elements.Label;
 import com.lowdragmc.lowdraglib2.gui.ui.elements.ProgressBar;
 import com.lowdragmc.lowdraglib2.gui.ui.elements.ScrollerView;
 import com.lowdragmc.lowdraglib2.gui.ui.elements.TabView;
+import com.lowdragmc.lowdraglib2.gui.ui.event.UIEvents;
 import com.lowdragmc.lowdraglib2.gui.ui.rendering.GUIContext;
 import com.lowdragmc.lowdraglib2.gui.ui.styletemplate.Sprites;
 import com.lowdragmc.lowdraglib2.utils.XmlUtils;
@@ -652,6 +653,7 @@ public class ToukenEntityUI2 {
                 slot.bind(entity.getArmorHandler(), idx);
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(100));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
+                bindEquipShortcut(slot, entity, player, idx, entity.getArmorHandler());
             });
         }
         for (int i = 0; i < 3; i++) {
@@ -660,18 +662,21 @@ public class ToukenEntityUI2 {
                 slot.bind(entity.getKnifeHandler(), idx);
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(90));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
+                bindEquipShortcut(slot, entity, player, idx, entity.getKnifeHandler());
             });
         }
         ui.selectId("mount", ItemSlot.class).findFirst().ifPresent(slot -> {
             slot.bind(entity.getMountHandler(), 0);
             slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(80));
             slot.style(s -> s.backgroundTexture(tex("slot")));
+            bindEquipShortcut(slot, entity, player, 0, entity.getMountHandler());
         });
 
         ui.selectId("blade", ItemSlot.class).findFirst().ifPresent(slot -> {
             slot.bind(entity.getBladeHandler(), 0);
             slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(80));
             slot.style(s -> s.backgroundTexture(tex("slot")));
+            bindEquipShortcut(slot, entity, player, 0, entity.getBladeHandler());
         });
 
         for (int i = 0; i < 25; i++) {
@@ -699,6 +704,150 @@ public class ToukenEntityUI2 {
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(10).isPlayerSlot(true));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
             });
+        }
+
+        // ===== 整理背包：R 键，挂在 main_tabs 上 =====
+        ui.selectId("main_tabs", TabView.class).findFirst().ifPresent(tv -> {
+            tv.setFocusable(true);
+            tv.addEventListener(UIEvents.KEY_DOWN, event -> {
+                if (event.keyCode == org.lwjgl.glfw.GLFW.GLFW_KEY_R) {
+                    tv.sendMessage("touken_sort_inv");
+                    event.stopPropagation();
+                }
+            });
+            tv.onMessage("touken_sort_inv", tag -> {
+                sortHandler(entity.getInventoryHandler());
+            });
+        });
+    }
+
+    // ===== 一键穿戴 =====
+
+    private void bindEquipShortcut(ItemSlot slot,
+                                   ToukenDanshiEntity entity,
+                                   Player player,
+                                   int targetIndex,
+                                   net.minecraftforge.items.IItemHandlerModifiable targetHandler) {
+        slot.addEventListener(UIEvents.MOUSE_DOWN, event -> {
+            if (event.button == 1 && UIElement.isShiftDown()) {
+                slot.sendMessage("touken_equip");
+            }
+        });
+        slot.onMessage("touken_equip", tag -> {
+            equipFromAnyInventory(player, entity, targetIndex, targetHandler);
+        });
+    }
+
+    private static void equipFromAnyInventory(Player player,
+                                              ToukenDanshiEntity entity,
+                                              int equipSlotIndex,
+                                              net.minecraftforge.items.IItemHandlerModifiable equipHandler) {
+        var playerInv = new InvWrapper(player.getInventory());
+        var danshiInv = entity.getInventoryHandler();
+
+        // 1. 先在玩家背包找，再在刀男背包找
+        int foundFromPlayer = -1;
+        int foundFromDanshi = -1;
+        net.minecraft.world.item.ItemStack foundStack = net.minecraft.world.item.ItemStack.EMPTY;
+
+        for (int i = 0; i < playerInv.getSlots(); i++) {
+            net.minecraft.world.item.ItemStack candidate = playerInv.getStackInSlot(i);
+            if (candidate.isEmpty()) continue;
+            if (!equipHandler.isItemValid(equipSlotIndex, candidate)) continue;
+            foundFromPlayer = i;
+            foundStack = candidate;
+            break;
+        }
+        if (foundFromPlayer == -1) {
+            for (int i = 0; i < danshiInv.getSlots(); i++) {
+                net.minecraft.world.item.ItemStack candidate = danshiInv.getStackInSlot(i);
+                if (candidate.isEmpty()) continue;
+                if (!equipHandler.isItemValid(equipSlotIndex, candidate)) continue;
+                foundFromDanshi = i;
+                foundStack = candidate;
+                break;
+            }
+        }
+        if (foundFromPlayer == -1 && foundFromDanshi == -1) return;
+
+        // 2. 旧装备找地方放回：先刀男背包，再玩家背包
+        net.minecraft.world.item.ItemStack old = equipHandler.getStackInSlot(equipSlotIndex);
+        int emptyInDanshi = -1;
+        int emptyInPlayer = -1;
+        if (!old.isEmpty()) {
+            for (int j = 0; j < danshiInv.getSlots(); j++) {
+                if (danshiInv.getStackInSlot(j).isEmpty()) { emptyInDanshi = j; break; }
+            }
+            if (emptyInDanshi == -1) {
+                for (int j = 0; j < playerInv.getSlots(); j++) {
+                    if (playerInv.getStackInSlot(j).isEmpty()) { emptyInPlayer = j; break; }
+                }
+            }
+            if (emptyInDanshi == -1 && emptyInPlayer == -1) return;
+        }
+
+        // 3. 执行移动
+        equipHandler.setStackInSlot(equipSlotIndex, foundStack.copy());
+        if (foundFromPlayer != -1) {
+            playerInv.setStackInSlot(foundFromPlayer, net.minecraft.world.item.ItemStack.EMPTY);
+        } else {
+            danshiInv.setStackInSlot(foundFromDanshi, net.minecraft.world.item.ItemStack.EMPTY);
+        }
+        if (!old.isEmpty()) {
+            if (emptyInDanshi != -1) {
+                danshiInv.setStackInSlot(emptyInDanshi, old.copy());
+            } else if (emptyInPlayer != -1) {
+                playerInv.setStackInSlot(emptyInPlayer, old.copy());
+            }
+        }
+    }
+
+// ===== 整理背包 =====
+
+    private static void sortHandler(net.minecraftforge.items.IItemHandlerModifiable handler) {
+        int size = handler.getSlots();
+        java.util.List<net.minecraft.world.item.ItemStack> stacks = new java.util.ArrayList<>();
+
+        // 1. 收集并清空
+        for (int i = 0; i < size; i++) {
+            net.minecraft.world.item.ItemStack s = handler.getStackInSlot(i);
+            if (!s.isEmpty()) stacks.add(s.copy());
+            handler.setStackInSlot(i, net.minecraft.world.item.ItemStack.EMPTY);
+        }
+
+        // 2. 合并同类
+        java.util.List<net.minecraft.world.item.ItemStack> merged = new java.util.ArrayList<>();
+        for (net.minecraft.world.item.ItemStack s : stacks) {
+            boolean didMerge = false;
+            for (net.minecraft.world.item.ItemStack m : merged) {
+                if (net.minecraft.world.item.ItemStack.isSameItemSameTags(m, s)) {
+                    int max = m.getMaxStackSize();
+                    int total = m.getCount() + s.getCount();
+                    if (total <= max) {
+                        m.setCount(total);
+                        didMerge = true;
+                        break;
+                    } else {
+                        m.setCount(max);
+                        s.setCount(total - max);
+                    }
+                }
+            }
+            if (!didMerge) merged.add(s);
+        }
+
+        // 3. 按物品注册名排序，数量降序
+        merged.sort((a, b) -> {
+            String idA = net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(a.getItem()).toString();
+            String idB = net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(b.getItem()).toString();
+            int cmp = idA.compareTo(idB);
+            if (cmp != 0) return cmp;
+            return Integer.compare(b.getCount(), a.getCount());
+        });
+
+        // 4. 回填
+        for (int i = 0; i < size && i < merged.size(); i++) {
+            handler.setStackInSlot(i, merged.get(i));
         }
     }
 

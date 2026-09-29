@@ -72,7 +72,7 @@
 
 ## 已知问题
 
-- 打开刀剑男士的 GUI 时，无法触发 Shift+右键一键穿戴。预计在后续版本中修复，具体版本尚未确定。如果该问题无法通过修复解决，将重新绘制 GUI 以规避此问题。
+- 群体收容符会收容周边 32 格内的所有生物，而非仅限刀剑男士实体。该行为是否调整将根据后续反馈决定。
 - 其他已知问题将在此处持续更新。
 
 ## 反馈与支持
@@ -176,7 +176,7 @@ An unofficial fan-made Minecraft mod based on *Touken Ranbu*, built for **Minecr
 
 ## Known Issues
 
-- When opening the Touken Danshi GUI, Shift+Right-click one-click equipping cannot be triggered. This is expected to be fixed in a future version, but the specific version is not yet determined. If this issue cannot be resolved through a fix, the GUI will be redesigned to work around it.
+- The Group Capture Talisman captures all entities within a 32-block radius, not just Touken Danshi entities. Whether this behavior will be adjusted depends on future feedback.
 - Other known issues will be updated here.
 
 ## Feedback & Support
