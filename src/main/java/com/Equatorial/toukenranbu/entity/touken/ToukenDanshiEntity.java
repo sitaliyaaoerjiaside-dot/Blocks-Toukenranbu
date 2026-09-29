@@ -195,6 +195,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     private int teleportCooldown = 0;
     private final java.util.Set<net.minecraft.world.effect.MobEffect> lastSyncedEffects = new java.util.HashSet<>();
     private static final int TELEPORT_COOLDOWN = 100;
+    private int summonCooldown = 0;
 
     protected ToukenDanshiEntity(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
@@ -267,6 +268,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                 }) {
             @Override
             public boolean canUse() {
+                if (ToukenDanshiEntity.this.summonCooldown > 0) return false;
                 if (ToukenDanshiEntity.this.isOrderedToSit()) return false;
                 if (ToukenDanshiEntity.this.isFarming()) return false;
                 boolean result = super.canUse();
@@ -282,6 +284,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
 
             @Override
             public boolean canContinueToUse() {
+                if (ToukenDanshiEntity.this.summonCooldown > 0) return false;
                 if (ToukenDanshiEntity.this.isOrderedToSit()) return false;
                 if (ToukenDanshiEntity.this.isFarming()) return false;
                 if (this.targetMob != null && this.targetMob.isAlive()
@@ -523,6 +526,8 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     @Override
     public void tick() {
         super.tick();
+
+        if (this.summonCooldown > 0) this.summonCooldown--;
 
         // ===== 主动向附近玩家同步效果 =====
         if (!this.level().isClientSide && this.tickCount % 10 == 0) {
@@ -2260,5 +2265,6 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
 
         // 2. 冷却，防止 tick 里的自动传送立刻重复触发
         this.teleportCooldown = TELEPORT_COOLDOWN;
+        this.summonCooldown = 100;
     }
 }
