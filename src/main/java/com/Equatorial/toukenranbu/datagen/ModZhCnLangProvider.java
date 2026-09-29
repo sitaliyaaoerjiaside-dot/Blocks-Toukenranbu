@@ -267,6 +267,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.rng", "索敌 ×%s");
         add("gui.toukenranbu.formation.follow_captain", "跟随队长");
 
+        add("key.toukenranbu.sort_inventory", "整理刀剑男士背包");
+        add("key.categories.toukenranbu", "刀剑乱舞");
+
         add("effect.toukenranbu_mod.spirit_regen", "灵力恢复加成");
         add("effect.toukenranbu_mod.touken_anti_invis", "反隐");
         add("effect.toukenranbu_mod.touken_mixed_damage", "混合伤害");

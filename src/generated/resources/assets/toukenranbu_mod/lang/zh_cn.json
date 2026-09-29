@@ -435,6 +435,8 @@
   "item.toukenranbu_mod.yari_plus_spawn_egg": "敌特化枪刷怪蛋",
   "item.toukenranbu_mod.yari_spawn_egg": "敌枪刷怪蛋",
   "itemGroup.toukenranbu_tab": "方块与刀剑乱舞",
+  "key.categories.toukenranbu": "刀剑乱舞",
+  "key.toukenranbu.sort_inventory": "整理刀剑男士背包",
   "message.toukenranbu_mod.capture.fail_boss": "强大的存在无法被收容。",
   "message.toukenranbu_mod.capture.fail_full": "这个收容符已经装有实体了！",
   "message.toukenranbu_mod.capture.fail_player": "不能收容玩家！",

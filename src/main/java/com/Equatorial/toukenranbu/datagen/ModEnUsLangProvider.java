@@ -258,6 +258,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.rng", "RNG ×%s");
         add("gui.toukenranbu.formation.follow_captain", "Following Captain");
 
+        add("key.toukenranbu.sort_inventory", "Sort Touken Danshi Inventory");
+        add("key.categories.toukenranbu", "Touken Ranbu");
+
         add("effect.toukenranbu_mod.spirit_regen", "spirit_regen");
         add("effect.toukenranbu_mod.touken_anti_invis", "Anti-Invisibility");
         add("effect.toukenranbu_mod.touken_mixed_damage", "Mixed Damage");

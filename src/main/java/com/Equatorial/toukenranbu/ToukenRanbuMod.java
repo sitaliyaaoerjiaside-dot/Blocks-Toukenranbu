@@ -44,6 +44,14 @@ public class ToukenRanbuMod
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final net.minecraftforge.common.util.Lazy<net.minecraft.client.KeyMapping> SORT_INVENTORY_KEY =
+            net.minecraftforge.common.util.Lazy.of(() -> new net.minecraft.client.KeyMapping(
+                    "key.toukenranbu.sort_inventory",
+                    net.minecraftforge.client.settings.KeyConflictContext.GUI,
+                    com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM,
+                    org.lwjgl.glfw.GLFW.GLFW_KEY_R,
+                    "key.categories.toukenranbu"
+            ));
 
     public ToukenRanbuMod(FMLJavaModLoadingContext context)
     {
@@ -68,6 +76,7 @@ public class ToukenRanbuMod
         // ModDimensions.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::onRegisterKeyMappings);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -235,6 +244,10 @@ public class ToukenRanbuMod
             event.accept(ModItems.COOLANT);
             event.accept(ModItems.WHETSTONE);
         }
+    }
+
+    private void onRegisterKeyMappings(net.minecraftforge.client.event.RegisterKeyMappingsEvent event) {
+        event.register(SORT_INVENTORY_KEY.get());
     }
 
     @SubscribeEvent

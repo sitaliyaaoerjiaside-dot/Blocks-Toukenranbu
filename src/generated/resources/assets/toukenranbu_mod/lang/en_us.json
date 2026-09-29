@@ -436,6 +436,8 @@
   "item.toukenranbu_mod.yari_plus_spawn_egg": "Yari Plus Spawn Egg",
   "item.toukenranbu_mod.yari_spawn_egg": "yari Spawn Egg",
   "itemGroup.toukenranbu_tab": "Blocks ＆ Touken Ranbu",
+  "key.categories.toukenranbu": "Touken Ranbu",
+  "key.toukenranbu.sort_inventory": "Sort Touken Danshi Inventory",
   "message.toukenranbu_mod.capture.fail_boss": "This powerful being cannot be captured.",
   "message.toukenranbu_mod.capture.fail_full": "This talisman already contains an entity!",
   "message.toukenranbu_mod.capture.fail_player": "Cannot capture players!",

@@ -647,6 +647,7 @@ public class ToukenEntityUI2 {
     }
 
     private void bindItemSlots(UI ui, ToukenDanshiEntity entity, Player player) {
+        var playerInv = new InvWrapper(player.getInventory());
         for (int i = 0; i < 4; i++) {
             final int idx = i;
             ui.selectId("armor_" + i, ItemSlot.class).findFirst().ifPresent(slot -> {
@@ -685,16 +686,19 @@ public class ToukenEntityUI2 {
                 slot.bind(entity.getInventoryHandler(), idx);
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(50));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
+                bindTransferShortcut(slot, () -> transferSlots(
+                        entity.getInventoryHandler(), idx, playerInv));
             });
         }
 
-        var playerInv = new InvWrapper(player.getInventory());
         for (int i = 0; i < 27; i++) {
             final int idx = 9 + i;
             ui.selectId("p_main_" + i, ItemSlot.class).findFirst().ifPresent(slot -> {
                 slot.bind(playerInv, idx);
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(10).isPlayerSlot(true));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
+                bindTransferShortcut(slot, () -> transferSlots(
+                        playerInv, idx, entity.getInventoryHandler()));
             });
         }
         for (int i = 0; i < 9; i++) {
@@ -703,14 +707,18 @@ public class ToukenEntityUI2 {
                 slot.bind(playerInv, idx);
                 slot.slotStyle(style -> style.acceptQuickMove(true).quickMovePriority(10).isPlayerSlot(true));
                 slot.style(s -> s.backgroundTexture(tex("slot")));
+                bindTransferShortcut(slot, () -> transferSlots(
+                        playerInv, idx, entity.getInventoryHandler()));
             });
         }
 
-        // ===== 整理背包：R 键，挂在 main_tabs 上 =====
+        // ===== 整理背包：按键绑定可自定义 =====
         ui.selectId("main_tabs", TabView.class).findFirst().ifPresent(tv -> {
             tv.setFocusable(true);
             tv.addEventListener(UIEvents.KEY_DOWN, event -> {
-                if (event.keyCode == org.lwjgl.glfw.GLFW.GLFW_KEY_R) {
+                com.mojang.blaze3d.platform.InputConstants.Key pressed =
+                        com.mojang.blaze3d.platform.InputConstants.getKey(event.keyCode, event.scanCode);
+                if (com.Equatorial.toukenranbu.ToukenRanbuMod.SORT_INVENTORY_KEY.get().isActiveAndMatches(pressed)) {
                     tv.sendMessage("touken_sort_inv");
                     event.stopPropagation();
                 }
@@ -736,6 +744,50 @@ public class ToukenEntityUI2 {
         slot.onMessage("touken_equip", tag -> {
             equipFromAnyInventory(player, entity, targetIndex, targetHandler);
         });
+    }
+
+    private void bindTransferShortcut(ItemSlot slot, Runnable transferAction) {
+        slot.addEventListener(UIEvents.MOUSE_DOWN, event -> {
+            if (event.button == 0 && UIElement.isShiftDown()) {
+                slot.sendMessage("touken_transfer");
+            }
+        });
+        slot.onMessage("touken_transfer", tag -> transferAction.run());
+    }
+
+    private static void transferSlots(net.minecraftforge.items.IItemHandlerModifiable source,
+                                      int sourceSlot,
+                                      net.minecraftforge.items.IItemHandlerModifiable target) {
+        net.minecraft.world.item.ItemStack stack = source.getStackInSlot(sourceSlot).copy();
+        if (stack.isEmpty()) return;
+
+        source.setStackInSlot(sourceSlot, net.minecraft.world.item.ItemStack.EMPTY);
+
+        // 先合并到目标背包已有的同类物品
+        for (int i = 0; i < target.getSlots() && !stack.isEmpty(); i++) {
+            net.minecraft.world.item.ItemStack targetStack = target.getStackInSlot(i);
+            if (targetStack.isEmpty()) continue;
+            if (!net.minecraft.world.item.ItemStack.isSameItemSameTags(targetStack, stack)) continue;
+            int max = targetStack.getMaxStackSize();
+            int space = max - targetStack.getCount();
+            if (space <= 0) continue;
+            int toMove = Math.min(space, stack.getCount());
+            targetStack.grow(toMove);
+            stack.shrink(toMove);
+            target.setStackInSlot(i, targetStack);
+        }
+
+        // 再放到空槽位
+        for (int i = 0; i < target.getSlots() && !stack.isEmpty(); i++) {
+            if (!target.getStackInSlot(i).isEmpty()) continue;
+            target.setStackInSlot(i, stack.copy());
+            stack.setCount(0);
+        }
+
+        // 放不下就退还原槽位
+        if (!stack.isEmpty()) {
+            source.setStackInSlot(sourceSlot, stack);
+        }
     }
 
     private static void equipFromAnyInventory(Player player,
