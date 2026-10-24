@@ -1,0 +1,77 @@
+{
+  "name": "Make Your Touken Danshi Speak",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:silent_note",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Customize Your Touken Danshi's Speech with a Resource Pack!",
+      "text": "This mod includes bubble dialogue that can be calibrated and modified via KubeJS.$(br2)When certain conditions are triggered, a speech bubble will pop up above the Touken Danshi's head.$(br2)The mod does not include voice.$(br2)Players can use KubeJS to adjust what the Touken Danshi say. Please look up how to do so yourself.$(br2)$(l)Note: Servers do not currently support direct text editing. Please do this in a single-player environment."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "How to Modify Dialogue",
+      "text": "All bubble dialogue is stored in translation keys. Recommended approach: make a resource pack, and in assets/toukenranbu_mod/lang/en_us.json write only the keys you want to change; leave the rest at default.$(br2)Multi-sentence random: a key's value can use the pipe | to separate multiple sentences; one is picked at random each trigger.$(br2)Example:$(br)gui.toukenranbu.bubble.social_owner = Master.|Welcome back.|What is it?$(br2)All default keys and default lines are listed below. To change a line, copy that line into your resource pack and change the value to whatever you want."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Danshi-Specific Lines (Three-Level Fallback)",
+      "text": "To make a specific danshi say something unique, just write the corresponding key. Lookup order goes from most precise to most generic:$(br2)1. gui.toukenranbu.bubble.danshi_talk.<speaker>.to.<listener>$(br)2. gui.toukenranbu.bubble.danshi_talk.<speaker>$(br)3. gui.toukenranbu.bubble.danshi_talk$(br2)Between danshi of different owners, same idea; replace danshi_talk with danshi_talk_other.$(br2)Danshi entity name reference:$(br)mikazuki_munechika / yamanbagiri_kunihiro / kashuu_kiyomitsu / hachisuka_kotetsu / kasen_kanesada / mutsunokami_yoshiyuki / ichigo_hitofuri / tsurumaru_kuninaga / shokudaikiri_mitsutada / ishikirimaru / heshikiri_hasebe / yamatonokami_yasusada / yamanbagiri_chogi / ookurikara / tonbokiri / tomoegata_naginata / nikkari_aoe / horikawa_kunihiro / imanotsurugi / gotou_toushirou"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unowned Danshi & Emoticons",
+      "text": "If a Touken Danshi has no owner (wild state), they will not say complex lines.$(br2)Regardless of the state triggered, the bubble above their head will automatically be replaced with random emoticons (e.g., (・ω・)).$(br2)If you use KubeJS to handle wild danshi, you can directly write emoticons in the return value; the client will render them as plain text."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Special Dialogue While Following",
+      "text": "When a danshi is in the [Follow] state and there are no enemies nearby:$(br2)Daytime: High chance to emit emoticons.$(br2)Nighttime: Low chance to emit a night alert (Key: enemy_alert_night).$(br2)Very low chance: Suddenly turn around and call for the master (Key: social_owner).$(br2)Note: While following, they will not frequently trigger idle chatter (like talking to strangers or other danshi)."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Enemies",
+      "text": "enemy_alert_night$(br)Something's stirring in the night...|Be on guard.|Something's nearby. Could be the Retrograde Army.$(br2)enemy_alert_captain$(br)All hands, on guard.|Follow me.|I won't let the master get hurt.$(br2)enemy_alert$(br)Enemies nearby.|I sense bloodlust.|Be careful."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Social (Idle State)",
+      "text": "social_owner$(br)Master.|Welcome back.|What is it?|Do you need something?|Thank you for your hard work today.$(br2)social_player$(br)Hello.|Nice to meet you.|What brings you here?|You are...?|Excuse me.$(br2)social_entity$(br)Hello.|Who are you?|What brings you here?|Sorry to bother you.|..."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Between Danshi",
+      "text": "danshi_talk$(br)Nice weather today.|How has the master been?|Things seem quiet lately.|I feel sleepy...|...Is something wrong?$(br2)danshi_talk_other$(br)Hello there?|Excuse me.|Nice weather today."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Greetings",
+      "text": "greeting_evening$(br)Good evening.|It's getting dark.|Master, welcome back.$(br2)greeting_morning$(br)Good morning, Master.|Did you sleep well?|A new day begins, Master."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Feeding & Fatigue",
+      "text": "feed_success$(br)Thank you.|Delicious.|Thank you, Master.$(br2)feed_full$(br)Master... I'm a bit full.$(br2)fatigue_sakura$(br)Feeling great today.$(br2)fatigue_critical$(br)I'm a little tired...$(br2)fatigue_recovered$(br)Recovered quite a bit."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Work Mode Switching",
+      "text": "When the player clicks a button to switch work modes, the danshi replies with an acknowledgment.$(br2)mode_ack_farming$(br)Understood. Off to farm.|Got it.|On my way.$(br2)mode_ack_mining$(br)Understood. Off to mine.|Got it.|On my way.$(br2)mode_ack_patrol$(br)Understood. Off to patrol.|Got it.|On my way.$(br2)mode_ack_cave$(br)Understood. Off to the cave.|Got it.|On my way.$(br2)mode_ack_follow$(br)Understood. Right behind you.|Got it.|On my way.$(br2)mode_ack_sit$(br)Do you want me to rest?|...I'm a little tired, I'll sit for a while.|Sneaking in a little break.$(br2)mode_ack_idle$(br)Understood.|Got it.|Alright.$(br2)mode_ack_spar$(br)Understood. Off to spar.|Got it.|On my way."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Work Fatigue Complaints (1/2)",
+      "text": "Triggered when fatigue drops to a new tier during work. Each mode has three suffixes:$(br)_normal (Normal 40-49)$(br)_tired (Tired 20-39)$(br)_exhausted (Severe 0-19)$(br2)mode_farming_*$(br)Normal: A little tired.|Not bad.|Keep going.$(br)Tired: So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...$(br)Severe: I can't...|I can't move...|I'm going to collapse...$(br2)mode_mining_*$(br)Normal: A little tired.|Not bad.|Keep going.$(br)Tired: So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...$(br)Severe: I can't...|I can't dig anymore...|I'm going to collapse...$(br2)mode_patrol_*$(br)Normal: A little tired...|Not bad.|Let's keep working...$(br)Tired: So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...$(br)Severe: I can't...|I can't move...|I'm going to collapse..."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Work Fatigue Complaints (2/2)",
+      "text": "mode_cave_*$(br)Normal: A little tired.|Not bad.|Keep going.$(br)Tired: So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...$(br)Severe: I can't...|I can't move...|I'm going to collapse...$(br2)mode_spar_*$(br)Normal: A little tired.|Not bad.|Keep going.$(br)Tired: So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...$(br)Severe: I can't...|I can't stand...|I'm going to collapse..."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Idle Chatter During Work",
+      "text": "Light lines said occasionally during work; triggered independently from fatigue complaints.$(br2)mode_farming_idle$(br)The crops are growing well.|Hope for a good harvest.|Nice weather.$(br2)mode_mining_idle$(br)This layer looks decent.|Hope to find something good.|Keep digging down.$(br2)mode_patrol_idle$(br)All clear.|No anomalies.|Continuing the patrol.$(br2)mode_cave_idle$(br)It's dark in there. Should I scout ahead?|Watch your step, don't trip.|Continue forward.$(br2)mode_spar_idle$(br)Take it seriously.|One more time.|Please don't hold back."
+    }
+  ]
+}

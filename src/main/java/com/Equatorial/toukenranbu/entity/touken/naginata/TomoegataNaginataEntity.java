@@ -85,11 +85,21 @@ public class TomoegataNaginataEntity extends ToukenDanshiEntity {
                     entity -> {
                         if (entity == this || entity == target || !entity.isAlive()) return false;
 
-                        // 友伤关闭时，横扫不伤主人
+                        // 1. 友伤关闭时，横扫不伤主人
                         if (entity instanceof net.minecraft.world.entity.player.Player player
                                 && this.isOwnedBy(player)) {
                             return player.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
                                     .map(cap -> cap.isFriendlyFireEnabled()).orElse(true);
+                        }
+
+                        // 2. 新增：友伤关闭时，横扫不伤同主人的刀剑男士
+                        if (entity instanceof ToukenDanshiEntity otherDanshi) {
+                            if (this.getOwnerUUID() != null && this.getOwnerUUID().equals(otherDanshi.getOwnerUUID())) {
+                                if (this.getOwner() instanceof net.minecraft.world.entity.player.Player owner) {
+                                    return owner.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
+                                            .map(cap -> cap.isFriendlyFireEnabled()).orElse(true);
+                                }
+                            }
                         }
 
                         return true;

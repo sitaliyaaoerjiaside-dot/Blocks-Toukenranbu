@@ -1,4 +1,4 @@
-// 1.20.1	2026-09-26T22:24:38.3084738	Item Models: toukenranbu_mod
+// 1.20.1	2026-10-10T16:16:04.2297127	Item Models: toukenranbu_mod
 7ea9f26e23b5c2af839849f90605c4c78db9e16a assets/toukenranbu_mod/models/item/amulet.json
 2495cd220fc85e5f74f075469878f88085293a4e assets/toukenranbu_mod/models/item/a_bite_of_dango.json
 ccd5a03136e4889e2e7f4066af084fcf6bef471d assets/toukenranbu_mod/models/item/a_set_of_paper_and_pen.json
@@ -63,6 +63,7 @@ f491ef99ac821f3bb617eec941eb061c71880b47 assets/toukenranbu_mod/models/item/ooku
 aa15281ea39538fe5c94771fa5e02284ce1493bd assets/toukenranbu_mod/models/item/power_of_attorney.json
 dd7225aceb7256adc096f5d58616972fb52c3699 assets/toukenranbu_mod/models/item/pure_spiritual_energy.json
 6fd51e5bf092ab95e2b2c109551404d548977d5d assets/toukenranbu_mod/models/item/shokudaikiri_mitsutada.json
+a450767ed9926f20fdf88f3d79eac477401832fe assets/toukenranbu_mod/models/item/silent_note.json
 1df6f9ec70e585f03a98329e0181b370ff13083a assets/toukenranbu_mod/models/item/silver_omamori.json
 807afbf949162eed83a8a9702998e27a9121a558 assets/toukenranbu_mod/models/item/small_koban.json
 1adb1507e212fa011bb253a85787bedce4c0c279 assets/toukenranbu_mod/models/item/soldier_candy.json
@@ -77,6 +78,7 @@ fbea64e346b3360be89827f927eb5c96c5693b47 assets/toukenranbu_mod/models/item/supr
 4a41445263a18c24f4ee4595e0aa9428d4116f97 assets/toukenranbu_mod/models/item/tomoegata_naginata.json
 eb849f987164b3ee6a5035c970eb365d63520c76 assets/toukenranbu_mod/models/item/tonbokiri.json
 fec956fefa30ca3aff3cfaea055fbe477d690cac assets/toukenranbu_mod/models/item/toukenranbu_encyclopedia.json
+ec6864978af8208bbd44cfc84d67f6b510fb1aa7 assets/toukenranbu_mod/models/item/touken_group_capture_ball.json
 69194ee6b8318e3790ae59515dcb99bc4f4bf263 assets/toukenranbu_mod/models/item/troop_candy.json
 6f127731a8c783dfbaa28818ae5630d8ee3ca218 assets/toukenranbu_mod/models/item/tsurumaru_kuninaga.json
 6b8346ee1fb0a7595325f6a76acb8c3577eeacd7 assets/toukenranbu_mod/models/item/turbid_spiritual_energy.json

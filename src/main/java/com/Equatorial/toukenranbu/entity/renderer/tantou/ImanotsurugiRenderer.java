@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.tantou;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tantou.ImanotsurugiEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class ImanotsurugiRenderer extends GeoEntityRenderer<ImanotsurugiEntity> 
     public ImanotsurugiRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new ImanotsurugiModel());
         this.shadowRadius = 0.3f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(ImanotsurugiEntity instance) {

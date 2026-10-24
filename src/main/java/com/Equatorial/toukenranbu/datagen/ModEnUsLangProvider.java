@@ -214,12 +214,80 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.GROUP_CAPTURE_BALL.get(), "Group Capture Talisman");
         add(ModItems.TOUKENRANBU_ENCYCLOPEDIA.get(), "Touken Ranbu Encyclopedia");
         add(ModItems.EMA.get(), "Ema");
-        add(ModItems.MOON_PHASE.get(),"Moon_Phase");
+        add(ModItems.MOON_PHASE.get(),"Moon Phase");
+        add(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get(),"Touken Group Capture Talisman");
+        add(ModItems.SILENT_NOTE.get(),"Silent Note");
         add(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(), "White Mikazuki Munechika");
 
         add("tooltip.toukenranbu_mod.white_mikazuki.line1", "A weapon dropped after defeating the dying White Mikazuki Munechika.");
         add("tooltip.toukenranbu_mod.white_mikazuki.line2", "A single swing deals 2147483646 true damage to the target, bypassing armor, enchantments, and resistance effects. Afterward, it shatters completely and cannot be repaired.");
         add("death.attack.white_mikazuki", "%1$s was pierced by the final strike of White Mikazuki Munechika");
+
+// ===== 气泡：敌人 =====
+        add("gui.toukenranbu.bubble.enemy_alert_night", "Something's stirring in the night...|Be on guard.|Something's nearby. Could be the Retrograde Army.");
+        add("gui.toukenranbu.bubble.enemy_alert_captain", "All hands, on guard.|Follow me.|I won't let the master get hurt.");
+        add("gui.toukenranbu.bubble.enemy_alert", "Enemies nearby.|I sense bloodlust.|Be careful.");
+
+// ===== 气泡：社交 =====
+        add("gui.toukenranbu.bubble.social_owner", "Master.|Welcome back.|What is it?|Do you need something?|Thank you for your hard work today.");
+        add("gui.toukenranbu.bubble.social_player", "Hello.|Nice to meet you.|What brings you here?|You are...?|Excuse me.");
+        add("gui.toukenranbu.bubble.social_entity", "Hello.|Who are you?|What brings you here?|Sorry to bother you.|...");
+
+// ===== 气泡：刀男之间 =====
+        add("gui.toukenranbu.bubble.danshi_talk", "Nice weather today.|How has the master been?|Things seem quiet lately.|I feel sleepy...|...Is something wrong?");
+        add("gui.toukenranbu.bubble.danshi_talk_other", "Hello there?|Excuse me.|Nice weather today.");
+
+// ===== 气泡：问候 =====
+        add("gui.toukenranbu.bubble.greeting_evening", "Good evening.|It's getting dark.|Master, welcome back.");
+        add("gui.toukenranbu.bubble.greeting_morning", "Good morning, Master.|Did you sleep well?|A new day begins, Master.");
+
+// ===== 气泡：喂食 =====
+        add("gui.toukenranbu.bubble.feed_success", "Thank you.|Delicious.|Thank you, Master.");
+        add("gui.toukenranbu.bubble.feed_full", "Master... I'm a bit full.");
+
+// ===== 气泡：疲劳 =====
+        add("gui.toukenranbu.bubble.fatigue_sakura", "Feeling great today.");
+        add("gui.toukenranbu.bubble.fatigue_critical", "I'm a little tired...");
+        add("gui.toukenranbu.bubble.fatigue_recovered", "Recovered quite a bit.");
+
+// ===== 气泡：工作模式切换 =====
+        add("gui.toukenranbu.bubble.mode_ack_farming", "Understood. Off to farm.|Got it.|On my way.");
+        add("gui.toukenranbu.bubble.mode_ack_mining", "Understood. Off to mine.|Got it.|On my way.");
+        add("gui.toukenranbu.bubble.mode_ack_patrol", "Understood. Off to patrol.|Got it.|On my way.");
+        add("gui.toukenranbu.bubble.mode_ack_cave", "Understood. Off to the cave.|Got it.|On my way.");
+        add("gui.toukenranbu.bubble.mode_ack_follow", "Understood. Right behind you.|Got it.|On my way.");
+        add("gui.toukenranbu.bubble.mode_ack_idle", "Understood.|Got it.|Alright.");
+        add("gui.toukenranbu.bubble.mode_ack_spar", "Understood. Off to spar.|Got it.|On my way.");
+
+// ===== 气泡：工作期间疲劳抱怨 =====
+        add("gui.toukenranbu.bubble.mode_farming_normal", "A little tired.|Not bad.|Keep going.");
+        add("gui.toukenranbu.bubble.mode_farming_tired", "So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...");
+        add("gui.toukenranbu.bubble.mode_farming_exhausted", "I can't...|I can't move...|I'm going to collapse...");
+
+        add("gui.toukenranbu.bubble.mode_mining_normal", "A little tired.|Not bad.|Keep going.");
+        add("gui.toukenranbu.bubble.mode_mining_tired", "So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...");
+        add("gui.toukenranbu.bubble.mode_mining_exhausted", "I can't...|I can't dig anymore...|I'm going to collapse...");
+
+        add("gui.toukenranbu.bubble.mode_patrol_normal", "A little tired...|Not bad.|Let's keep working...");
+        add("gui.toukenranbu.bubble.mode_patrol_tired", "So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...");
+        add("gui.toukenranbu.bubble.mode_patrol_exhausted", "I can't...|I can't move...|I'm going to collapse...");
+
+        add("gui.toukenranbu.bubble.mode_cave_normal", "A little tired.|Not bad.|Keep going.");
+        add("gui.toukenranbu.bubble.mode_cave_tired", "So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...");
+        add("gui.toukenranbu.bubble.mode_cave_exhausted", "I can't...|I can't move...|I'm going to collapse...");
+
+        add("gui.toukenranbu.bubble.mode_spar_normal", "A little tired.|Not bad.|Keep going.");
+        add("gui.toukenranbu.bubble.mode_spar_tired", "So tired...|Slipping away shouldn't be noticed...|I'm about to fall asleep...");
+        add("gui.toukenranbu.bubble.mode_spar_exhausted", "I can't...|I can't stand...|I'm going to collapse...");
+
+// ===== 气泡：工作期间闲聊 =====
+        add("gui.toukenranbu.bubble.mode_farming_idle", "The crops are growing well.|Hope for a good harvest.|Nice weather.");
+        add("gui.toukenranbu.bubble.mode_mining_idle", "This layer looks decent.|Hope to find something good.|Keep digging down.");
+        add("gui.toukenranbu.bubble.mode_patrol_idle", "All clear.|No anomalies.|Continuing the patrol.");
+        add("gui.toukenranbu.bubble.mode_cave_idle", "It's dark in there. Should I scout ahead?|Watch your step, don't trip.|Continue forward.");
+        add("gui.toukenranbu.bubble.mode_spar_idle", "Take it seriously.|One more time.|Please don't hold back.");
+
+        add("gui.toukenranbu.bubble.mode_ack_sit", "Do you want me to rest?|...I'm a little tired, I'll sit for a while.|Sneaking in a little break.");
 
         add("item.toukenranbu_mod.ema.bound", "Ema · %s");
         add("message.toukenranbu_mod.ema.already_bound", "This ema is already bound to a Touken Danshi.");
@@ -233,13 +301,17 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.ema.summon_fail", "Summon failed, bound Touken Danshi not found.");
 
         add("item.toukenranbu_mod.group_capture_ball.prefix", "Group Capture Talisman · %s");
-        add("tooltip.toukenranbu_mod.group_capture_ball.count", "Captured: %s");
+        add("tooltip.toukenranbu_mod.group_capture_ball.count", "Captured: %s entities");
         add("tooltip.toukenranbu_mod.group_capture_ball.empty", "Empty");
-        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "Right-click block to capture all owned Touken Danshi within 32 blocks. Sneak + right-click to release all.");
         add("message.toukenranbu_mod.group_capture.fail_owner", "This is not your talisman!");
-        add("message.toukenranbu_mod.group_capture.none", "No owned Touken Danshi nearby");
-        add("message.toukenranbu_mod.group_capture.captured", "Captured %s Touken Danshi");
-        add("message.toukenranbu_mod.group_capture.released", "Released %s Touken Danshi");
+        add("message.toukenranbu_mod.group_capture.none", "No owned tamed entities nearby");
+        add("message.toukenranbu_mod.group_capture.captured", "Captured %s entities");
+        add("message.toukenranbu_mod.group_capture.released", "Released %s entities");
+        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "Right-click: Captures all tamed entities within 32 blocks (including pets from other mods). Shift+Right-click: Release.(Crafting to another talisman clears captured contents)");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.usage", "Right-click: Captures only Touken Danshi within 32 blocks. Shift+Right-click: Release.(Crafting to another talisman clears captured contents)");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.empty", "No Touken Danshi captured");
+        add("item.toukenranbu_mod.touken_group_capture_ball.prefix", "Touken Group Capture Talisman · %s");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.count", "Captured: %s");
 
         add("command.toukenranbu_mod.touken.locate.empty", "[Touken Ranbu] You have no summoned Touken Danshi.");
         add("command.toukenranbu_mod.touken.locate.header", "[Touken Ranbu] You have %s Touken Danshi:");
@@ -257,9 +329,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.spd", "SPD ×%s");
         add("gui.toukenranbu.formation.rng", "RNG ×%s");
         add("gui.toukenranbu.formation.follow_captain", "Following Captain");
-
-        add("key.toukenranbu.sort_inventory", "Sort Touken Danshi Inventory");
-        add("key.categories.toukenranbu", "Touken Ranbu");
 
         add("effect.toukenranbu_mod.spirit_regen", "spirit_regen");
         add("effect.toukenranbu_mod.touken_anti_invis", "Anti-Invisibility");
@@ -342,6 +411,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.sparrow", "Spar");
         add("gui.toukenranbu.button.sparring", "Sparring");
         add("gui.toukenranbu.message.sparrow_no_partner", "No available partner nearby for sparring");
+        add("gui.toukenranbu.message.sparrow_need_idle", "Must be idle (not following)");
         add("gui.toukenranbu.button.cave_clear", "Cave Clear");
         add("gui.toukenranbu.button.cave_clearing", "Stop Clearing");
         add("gui.toukenranbu.button.cave_clear_no_torches", "No Torches");

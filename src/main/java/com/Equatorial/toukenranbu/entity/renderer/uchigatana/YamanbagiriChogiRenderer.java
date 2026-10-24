@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.uchigatana;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.YamanbagiriChogiEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class YamanbagiriChogiRenderer extends GeoEntityRenderer<YamanbagiriChogi
     public YamanbagiriChogiRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new YamanbagiriChogiModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(YamanbagiriChogiEntity instance) {

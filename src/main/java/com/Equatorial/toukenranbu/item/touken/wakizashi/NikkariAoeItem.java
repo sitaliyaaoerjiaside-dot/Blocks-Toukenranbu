@@ -60,6 +60,7 @@ public class NikkariAoeItem extends Item {
             danshi.yBodyRotO = faceYaw;
             danshi.yHeadRotO = faceYaw;
 
+            danshi.setFollowing(true); // 召唤即跟随
             level.addFreshEntity(danshi);
 
             if (!context.getPlayer().isCreative()) {

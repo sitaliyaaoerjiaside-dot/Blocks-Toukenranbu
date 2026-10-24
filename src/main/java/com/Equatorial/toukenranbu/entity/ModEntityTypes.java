@@ -20,6 +20,10 @@ import com.Equatorial.toukenranbu.entity.touken.yari.TonbokiriEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -278,5 +282,135 @@ public class ModEntityTypes {
                             .sized(0.6F, 1.8F)
                             .build(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "white_mikazuki_munechika").toString()));
 
-    public static void register(IEventBus eventBus) { ENTITY_TYPES.register(eventBus); }
+    public static void register(IEventBus eventBus) {
+        ENTITY_TYPES.register(eventBus);
+    }
+
+    public static void registerSpawnPlacements() {
+        SpawnPlacements.register(ModEntityTypes.TANTOU.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.WAKIZASHI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.UCHIGATANA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TACHI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.NAGINATA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.OOTACHI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.YARI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+
+        SpawnPlacements.register(ModEntityTypes.TANTOU_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.WAKIZASHI_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.UCHIGATANA_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TACHI_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.NAGINATA_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.OOTACHI_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.YARI_PLUS.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+
+        SpawnPlacements.register(ModEntityTypes.TANTOU_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.WAKIZASHI_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.UCHIGATANA_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TACHI_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.NAGINATA_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.OOTACHI_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.YARI_MAX.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules);
+
+        SpawnPlacements.register(ModEntityTypes.KONNOSUKE.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+
+        // ========== 白夜之庭：无主刀男地面生成规则 ==========
+        SpawnPlacements.register(ModEntityTypes.YAMANBAGIRI_KUNIHIRO.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.KASHUU_KIYOMITSU.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.HACHISUKA_KOTETSU.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.KASEN_KANESADA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.MUTSUNOKAMI_YOSHIYUKI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.ICHIGO_HITOFURI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TSURUMARU_KUNINAGA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.SHOKUDAIKIRI_MITSUTADA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.ISHIKIRIMARU.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.HESHIKIRI_HASEBE.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.YAMATONOKAMI_YASUSADA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.OOKURIKARA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TONBOKIRI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.TOMOEGATA_NAGINATA.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.NIKKARI_AOE.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.HORIKAWA_KUNIHIRO.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.IMANOTSURUGI.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.GOTOU_TOUSHIROU.get(),
+                SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules);
+    }
 }

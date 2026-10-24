@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.yari;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.yari.TonbokiriEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class TonbokiriRenderer extends GeoEntityRenderer<TonbokiriEntity> {
     public TonbokiriRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new TonbokiriModel());
         this.shadowRadius = 0.55f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(TonbokiriEntity instance) {

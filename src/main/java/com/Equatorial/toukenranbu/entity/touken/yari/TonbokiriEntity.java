@@ -85,13 +85,23 @@ public class TonbokiriEntity extends ToukenDanshiEntity {
             return false;
         }
 
-        // 友伤检查
+        // ===== 友伤检查 =====
+        // 1. 主人打刀男
         if (target instanceof net.minecraft.world.entity.player.Player player && this.isOwnedBy(player)) {
             if (!player.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
                     .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
                 return false;
             }
         }
+
+        // 2. 同主人的其他刀男（新增，直接在源头打断）
+        if (target instanceof ToukenDanshiEntity otherDanshi && this.getOwnerUUID() != null && this.getOwnerUUID().equals(otherDanshi.getOwnerUUID())) {
+            if (this.getOwner() instanceof Player owner && !owner.getCapability(com.Equatorial.toukenranbu.capability.ModCapabilities.SPIRIT_POWER)
+                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
+                return false; // 关闭友伤时，直接不进行后续伤害计算
+            }
+        }
+        // ===== 友伤检查结束 =====
 
         float damage = (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
 

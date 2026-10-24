@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "toukenranbu_mod:item/touken_group_capture_ball"
+  }
+}

@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.uchigatana;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.MutsunokamiYoshiyukiEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -20,6 +21,7 @@ public class MutsunokamiYoshiyukiRenderer extends GeoEntityRenderer<MutsunokamiY
     public MutsunokamiYoshiyukiRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new MutsunokamiYoshiyukiModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
 
     @Override

@@ -62,6 +62,7 @@ public class MikazukiMunechikaItem extends Item {
             danshi.yBodyRotO = faceYaw;
             danshi.yHeadRotO = faceYaw;
 
+            danshi.setFollowing(true); // 召唤即跟随
             level.addFreshEntity(danshi);
 
             // 触发成就

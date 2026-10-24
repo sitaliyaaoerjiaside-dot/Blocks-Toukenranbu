@@ -149,6 +149,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.DICE.get());
                         pOutput.accept(ModItems.CAPTURE_BALL.get());
                         pOutput.accept(ModItems.GROUP_CAPTURE_BALL.get());
+                        pOutput.accept(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get());
+                        pOutput.accept(ModItems.SILENT_NOTE.get());
                         pOutput.accept(ModItems.CAPTAIN_BADGE.get());
                         pOutput.accept(ModItems.BRONZE_OMAMORI.get());
                         pOutput.accept(ModItems.SILVER_OMAMORI.get());

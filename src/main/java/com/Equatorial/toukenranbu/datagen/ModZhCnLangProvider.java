@@ -224,11 +224,79 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.TOUKENRANBU_ENCYCLOPEDIA.get(), "刀剑乱舞百科全书");
         add(ModItems.EMA.get(), "绘马");
         add(ModItems.MOON_PHASE.get(),"月相");
+        add(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get(),"刀剑群体收容符");
+        add(ModItems.SILENT_NOTE.get(),"静音符");
         add(ModItems.WHITE_MIKAZUKI_MUNECHIKA.get(), "白三日月宗近");
 
         add("tooltip.toukenranbu_mod.white_mikazuki.line1", "击败濒死的白三日月宗近之后，掉落的武器。");
         add("tooltip.toukenranbu_mod.white_mikazuki.line2", "挥出这一刀能够对实体造成2147483646点无视护甲、附魔以及抗性提升的真实伤害，在此之后它便会彻底碎裂，无法修复。");
         add("death.attack.white_mikazuki", "%1$s 被白三日月宗近的最后一击贯穿了");
+
+// ===== 气泡：敌人 =====
+        add("gui.toukenranbu.bubble.enemy_alert_night", "夜里好像有动静……|戒备。|有东西在附近，可能是时间溯行军。");
+        add("gui.toukenranbu.bubble.enemy_alert_captain", "全员戒备。|跟我来。|不能让主人受伤。");
+        add("gui.toukenranbu.bubble.enemy_alert", "附近有敌人。|有杀气。|小心。");
+
+// ===== 气泡：社交 =====
+        add("gui.toukenranbu.bubble.social_owner", "主人。|您回来了。|怎么了？|需要我做什么吗？|今天也辛苦了。");
+        add("gui.toukenranbu.bubble.social_player", "你好。|初次见面。|有何贵干？|你是……？|失礼了。");
+        add("gui.toukenranbu.bubble.social_entity", "你好。|你是？|有何贵干？|打扰了。|……");
+
+// ===== 气泡：刀男之间 =====
+        add("gui.toukenranbu.bubble.danshi_talk", "今天天气不错。|主人最近怎么样？|最近好像很清闲的样子呢。|感觉好困...|……怎么了吗？");
+        add("gui.toukenranbu.bubble.danshi_talk_other", "您好？|失礼了。|今日天气不错。");
+
+// ===== 气泡：问候 =====
+        add("gui.toukenranbu.bubble.greeting_evening", "晚上好。|天黑了。|主人，您回来了。");
+        add("gui.toukenranbu.bubble.greeting_morning", "早上好，主人。|主人昨晚睡得怎么样？|新的一天又开始了，主人。");
+
+// ===== 气泡：喂食 =====
+        add("gui.toukenranbu.bubble.feed_success", "谢谢。|好吃。|多谢主人。");
+        add("gui.toukenranbu.bubble.feed_full", "主人...我有点吃不下了。");
+
+// ===== 气泡：疲劳 =====
+        add("gui.toukenranbu.bubble.fatigue_sakura", "今天状态很好。");
+        add("gui.toukenranbu.bubble.fatigue_critical", "有点累了……");
+        add("gui.toukenranbu.bubble.fatigue_recovered", "恢复了不少。");
+
+// ===== 气泡：工作模式切换 =====
+        add("gui.toukenranbu.bubble.mode_ack_farming", "知道了，去种田。|明白。|马上去。");
+        add("gui.toukenranbu.bubble.mode_ack_mining", "知道了，去挖矿。|明白。|马上去。");
+        add("gui.toukenranbu.bubble.mode_ack_patrol", "知道了，去巡逻。|明白。|马上去。");
+        add("gui.toukenranbu.bubble.mode_ack_cave", "知道了，去矿洞。|明白。|马上去。");
+        add("gui.toukenranbu.bubble.mode_ack_follow", "知道了，跟着您。|明白。|马上去。");
+        add("gui.toukenranbu.bubble.mode_ack_idle", "知道了。|明白。|好。");
+        add("gui.toukenranbu.bubble.mode_ack_spar", "知道了，去手合。|明白。|马上去。");
+
+// ===== 气泡：工作期间疲劳抱怨 =====
+        add("gui.toukenranbu.bubble.mode_farming_normal", "有点累了。|还行。|继续。");
+        add("gui.toukenranbu.bubble.mode_farming_tired", "好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...");
+        add("gui.toukenranbu.bubble.mode_farming_exhausted", "不行了……|走不动了……|要倒下了……");
+
+        add("gui.toukenranbu.bubble.mode_mining_normal", "有点累了。|还行。|继续。");
+        add("gui.toukenranbu.bubble.mode_mining_tired", "好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...");
+        add("gui.toukenranbu.bubble.mode_mining_exhausted", "不行了……|挖不动了……|要倒下了……");
+
+        add("gui.toukenranbu.bubble.mode_patrol_normal", "有点累了....|还行。|继续工作吧...");
+        add("gui.toukenranbu.bubble.mode_patrol_tired", "好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...");
+        add("gui.toukenranbu.bubble.mode_patrol_exhausted", "不行了……|走不动了……|要倒下了……");
+
+        add("gui.toukenranbu.bubble.mode_cave_normal", "有点累了。|还行。|继续。");
+        add("gui.toukenranbu.bubble.mode_cave_tired", "好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...");
+        add("gui.toukenranbu.bubble.mode_cave_exhausted", "不行了……|走不动了……|要倒下了……");
+
+        add("gui.toukenranbu.bubble.mode_spar_normal", "有点累了。|还行。|继续。");
+        add("gui.toukenranbu.bubble.mode_spar_tired", "好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...");
+        add("gui.toukenranbu.bubble.mode_spar_exhausted", "不行了……|站不住了……|要倒下了……");
+
+// ===== 气泡：工作期间闲聊 =====
+        add("gui.toukenranbu.bubble.mode_farming_idle", "今天庄稼长得好。|希望有好收成。|天气不错。");
+        add("gui.toukenranbu.bubble.mode_mining_idle", "这矿层还行。|希望挖到好东西。|继续往下。");
+        add("gui.toukenranbu.bubble.mode_patrol_idle", "一切正常。|没有异常。|继续巡视。");
+        add("gui.toukenranbu.bubble.mode_cave_idle", "里面很暗，需要我先去探探路吗？|小心脚下，不要摔着了。|继续前进。");
+        add("gui.toukenranbu.bubble.mode_spar_idle", "认真点。|再来一次。|请不要放水。");
+
+        add("gui.toukenranbu.bubble.mode_ack_sit", "是要我休息吗？|......有些累了，坐一会。|稍微偷懒摸个鱼。");
 
         add("item.toukenranbu_mod.ema.bound", "绘马 · %s");
         add("message.toukenranbu_mod.ema.already_bound", "这枚绘马已经绑定了一位刀剑男士。");
@@ -241,14 +309,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.toukenranbu_mod.ema.summon_success", "已将 %s 召唤到身边。");
         add("message.toukenranbu_mod.ema.summon_fail", "召唤失败，找不到绑定的刀剑男士。");
 
-        add("item.toukenranbu_mod.group_capture_ball.prefix", "群体收容符 · %s 振");
-        add("tooltip.toukenranbu_mod.group_capture_ball.count", "已收容：%s 振");
+        add("item.toukenranbu_mod.group_capture_ball.prefix", "群体收容符 · %s 个");
         add("tooltip.toukenranbu_mod.group_capture_ball.empty", "空符");
-        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "右键方块收容 32 格内所有属于自己的刀男，潜行右键全部释放");
+        add("tooltip.toukenranbu_mod.group_capture_ball.count", "已收容：%s 个实体");
+        add("message.toukenranbu_mod.group_capture.none", "附近没有属于你的已驯服生物");
+        add("message.toukenranbu_mod.group_capture.captured", "已收容 %s 个实体");
+        add("message.toukenranbu_mod.group_capture.released", "已释放 %s 个实体");
         add("message.toukenranbu_mod.group_capture.fail_owner", "这不是你的收容符！");
-        add("message.toukenranbu_mod.group_capture.none", "附近没有属于你的刀男");
-        add("message.toukenranbu_mod.group_capture.captured", "已收容 %s 振刀男");
-        add("message.toukenranbu_mod.group_capture.released", "已释放 %s 振刀男");
+        add("tooltip.toukenranbu_mod.group_capture_ball.usage", "右键：收容周围 32 格内所有已驯服的生物（含其他模组宠物）。Shift+右键：释放。（合成转换会清空已收容内容）");
+        add("item.toukenranbu_mod.touken_group_capture_ball.prefix", "刀剑群体收容符 · %s 振");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.count", "已收容：%s 振");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.empty", "空符");
+        add("tooltip.toukenranbu_mod.touken_group_capture_ball.usage", "右键：仅收容周围 32 格内的刀剑男士。Shift+右键：释放。（合成转换会清空已收容内容）");
 
         add("command.toukenranbu_mod.touken.locate.empty", "[刀剑乱舞] 你目前没有任何已召唤的刀剑男士。");
         add("command.toukenranbu_mod.touken.locate.header", "[刀剑乱舞] 你共有 %s 振刀剑男士：");
@@ -266,9 +338,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.formation.spd", "速度 ×%s");
         add("gui.toukenranbu.formation.rng", "索敌 ×%s");
         add("gui.toukenranbu.formation.follow_captain", "跟随队长");
-
-        add("key.toukenranbu.sort_inventory", "整理刀剑男士背包");
-        add("key.categories.toukenranbu", "刀剑乱舞");
 
         add("effect.toukenranbu_mod.spirit_regen", "灵力恢复加成");
         add("effect.toukenranbu_mod.touken_anti_invis", "反隐");
@@ -350,7 +419,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("gui.toukenranbu.button.patrolling", "巡逻中");
         add("gui.toukenranbu.button.sparrow", "手合");
         add("gui.toukenranbu.button.sparring", "手合中");
-        add("gui.toukenranbu.message.sparrow_no_partner", "附近没有可手合的刀剑男士");
+        add("gui.toukenranbu.message.sparrow_no_partner", "附近无可手合刀剑男士");
+        add("gui.toukenranbu.message.sparrow_need_idle", "需闲置(非跟随)");
         add("gui.toukenranbu.button.cave_clear", "矿洞清缴");
         add("gui.toukenranbu.button.cave_clearing", "停止清缴");
         add("gui.toukenranbu.button.cave_clear_no_torches", "没有火把");

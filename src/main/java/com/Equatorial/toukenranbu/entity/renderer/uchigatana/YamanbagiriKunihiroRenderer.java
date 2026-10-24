@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.uchigatana;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.YamanbagiriKunihiroEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -20,6 +21,7 @@ public class YamanbagiriKunihiroRenderer extends GeoEntityRenderer<YamanbagiriKu
     public YamanbagiriKunihiroRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new YamanbagiriKunihiroModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
 
     @Override

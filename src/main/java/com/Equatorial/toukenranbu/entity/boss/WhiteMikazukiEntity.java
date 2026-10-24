@@ -3,7 +3,6 @@ package com.Equatorial.toukenranbu.entity.boss;
 import com.Equatorial.toukenranbu.entity.ModEntityTypes;
 import com.Equatorial.toukenranbu.entity.touken.ToukenDanshiEntity;
 import com.Equatorial.toukenranbu.entity.util.CannotBeCaptured;
-import com.Equatorial.toukenranbu.entity.util.CannotBeMillstoned;
 import com.Equatorial.toukenranbu.util.InstantDeathHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -40,10 +39,10 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.List;
 import java.util.Set;
 
-public class WhiteMikazukiEntity extends PathfinderMob implements CannotBeMillstoned, CannotBeCaptured, GeoEntity {
+public class WhiteMikazukiEntity extends PathfinderMob implements CannotBeCaptured, GeoEntity {
 
     // ===== 常量 =====
-    private static final float MAX_HP = 100000.0f;
+    private static final float MAX_HP = 2000000.0f;
     private static final int BLOCK_DURATION_TICKS = 3 * 20;
     private static final int TELEPORT_CD_TICKS = 20 * 20;
     private static final double TELEPORT_DISTANCE_SQR = 16.0 * 16.0;
@@ -432,10 +431,7 @@ public class WhiteMikazukiEntity extends PathfinderMob implements CannotBeMillst
     }
 
     private void exitCombat() {
-        if (this.level() instanceof ServerLevel serverLevel) {
-            List<ServerPlayer> players = serverLevel.getPlayers(p -> p.distanceToSqr(this) <= 64.0 * 64.0);
-            for (ServerPlayer player : players) InstantDeathHelper.clearCountdown(player);
-        }
+        // BOSS脱战不管别人的层数
         clearMinions();
         if (altarPos != null) {
             this.teleportTo(altarPos.getX() + 0.5, altarPos.getY(), altarPos.getZ() + 0.5);
@@ -455,8 +451,27 @@ public class WhiteMikazukiEntity extends PathfinderMob implements CannotBeMillst
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
+        // 1. 完全免疫无主刀男的攻击
+        if (source.getEntity() instanceof ToukenDanshiEntity danshi && !danshi.isTame()) {
+            return false;
+        }
+
         if (transitionInvulTicks > 0) return false;
 
+        // ===== 2. 新增：怪物攻击白三日月时，自己会被叠层 =====
+        if (source.getEntity() instanceof LivingEntity attacker && attacker != this) {
+            boolean isPlayer = attacker instanceof Player;
+            // 判断是否已驯服（原版宠物、其他模组宠物）
+            boolean isTamed = (attacker instanceof TamableAnimal tamed && tamed.isTame())
+                    || (attacker instanceof OwnableEntity ownable && ownable.getOwnerUUID() != null);
+
+            // 如果不是玩家，也不是已驯服的生物，那它就一定是野怪/中立生物
+            if (!isPlayer && !isTamed) {
+                com.Equatorial.toukenranbu.util.InstantDeathHelper.addLayer(attacker);
+            }
+        }
+
+        // 3. 格挡机制（如果被打的时候在格挡，就反弹）
         if (this.isBlocking() && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             Entity attacker = source.getEntity();
             if (attacker instanceof LivingEntity living && living != this) {
@@ -464,14 +479,15 @@ public class WhiteMikazukiEntity extends PathfinderMob implements CannotBeMillst
             }
             return false;
         }
+
         return super.hurt(source, amount);
     }
 
     @Override
     public boolean doHurtTarget(Entity target) {
         boolean hit = super.doHurtTarget(target);
-        if (hit && !this.level().isClientSide && target instanceof ServerPlayer player) {
-            InstantDeathHelper.addLayer(player);
+        if (hit && !this.level().isClientSide && target instanceof LivingEntity living) {
+            InstantDeathHelper.addLayer(living); // 对所有被攻击到的生物都有用
         }
         return hit;
     }

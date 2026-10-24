@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toukenranbu_mod:touken_group_capture_ball"
+    }
+  ],
+  "result": {
+    "item": "toukenranbu_mod:group_capture_ball"
+  }
+}

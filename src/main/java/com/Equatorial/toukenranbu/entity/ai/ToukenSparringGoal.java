@@ -22,8 +22,8 @@ public class ToukenSparringGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        ToukenDanshiEntity partner = entity.getSparringPartner();
-        return entity.isSparring() && partner != null && partner.isAlive() && partner.isSparring();
+        // 👈 只要还在手合状态，就不要停，除非实体死了。
+        return entity.isSparring() && !entity.isDeadOrDying();
     }
 
     @Override
@@ -34,14 +34,13 @@ public class ToukenSparringGoal extends Goal {
     @Override
     public void stop() {
         entity.getNavigation().stop();
-        if (entity.isSparring()) {
-            entity.setSparring(false);
-        }
+        // 绝对不能在这里写 setSparring(false)，否则任何风吹草动都会导致手合提前结束！
     }
 
     @Override
     public void tick() {
         ToukenDanshiEntity partner = entity.getSparringPartner();
+        // 如果对方不存在、死了、或者对方不是手合状态了，自己才跟着结束
         if (partner == null || !partner.isAlive() || !partner.isSparring()) {
             entity.setSparring(false);
             return;

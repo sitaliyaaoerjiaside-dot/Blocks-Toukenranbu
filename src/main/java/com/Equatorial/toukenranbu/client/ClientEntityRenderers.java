@@ -2,7 +2,6 @@ package com.Equatorial.toukenranbu.client;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
 import com.Equatorial.toukenranbu.entity.ModEntityTypes;
-import com.Equatorial.toukenranbu.entity.boss.WhiteMikazukiEntity;
 import com.Equatorial.toukenranbu.entity.renderer.*;
 import com.Equatorial.toukenranbu.entity.renderer.boss.WhiteMikazukiRenderer;
 import com.Equatorial.toukenranbu.entity.renderer.naginata.TomoegataNaginataRenderer;
@@ -17,9 +16,6 @@ import com.Equatorial.toukenranbu.entity.renderer.uchigatana.*;
 import com.Equatorial.toukenranbu.entity.renderer.wakizashi.HorikawaKunihiroRenderer;
 import com.Equatorial.toukenranbu.entity.renderer.wakizashi.NikkariAoeRenderer;
 import com.Equatorial.toukenranbu.entity.renderer.yari.TonbokiriRenderer;
-import com.Equatorial.toukenranbu.screen.EntityUIMenuType;
-import com.lowdragmc.lowdraglib2.gui.holder.ModularUIContainerScreen;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -85,8 +81,8 @@ public class ClientEntityRenderers {
         EntityRenderers.register(ModEntityTypes.KEBIISHI_YARI.get(), KebiishiYariRenderer::new);
 
         EntityRenderers.register(ModEntityTypes.KONNOSUKE.get(), KonnosukeRenderer::new);
-        MenuScreens.register(EntityUIMenuType.ENTITY_UI.get(), ModularUIContainerScreen::new);
 
         EntityRenderers.register(ModEntityTypes.WHITE_MIKAZUKI_MUNECHIKA.get(), WhiteMikazukiRenderer::new);
+
     }
 }

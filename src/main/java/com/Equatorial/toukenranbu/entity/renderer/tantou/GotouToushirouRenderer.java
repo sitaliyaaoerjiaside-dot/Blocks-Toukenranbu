@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.tantou;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tantou.GotouToushirouEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class GotouToushirouRenderer extends GeoEntityRenderer<GotouToushirouEnti
     public GotouToushirouRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new GotouToushirouModel());
         this.shadowRadius = 0.3f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(GotouToushirouEntity instance) {

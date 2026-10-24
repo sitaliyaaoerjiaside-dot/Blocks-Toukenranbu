@@ -94,13 +94,6 @@ ordering="AFTER"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
-modId="ldlib2"
-mandatory=true
-versionRange="[2.2.27,)"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.${mod_id}]]
 modId="jei"
 mandatory=false
 versionRange="[15.20.0.129,15.57.0)"

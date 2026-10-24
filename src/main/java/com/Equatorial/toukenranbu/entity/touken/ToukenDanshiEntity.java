@@ -2,9 +2,9 @@ package com.Equatorial.toukenranbu.entity.touken;
 
 import com.Equatorial.toukenranbu.capability.ModCapabilities;
 import com.Equatorial.toukenranbu.entity.ai.*;
+import com.Equatorial.toukenranbu.entity.bubble.BubbleQueueManager;
 import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.item.ToukenHorseItem;
-import com.Equatorial.toukenranbu.screen.EntityUIMenuType;
 import com.Equatorial.toukenranbu.tag.ModItemTags;
 import com.Equatorial.toukenranbu.touken.FormationType;
 import com.Equatorial.toukenranbu.touken.ToukenType;
@@ -180,6 +180,25 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
             SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.STRING);
     private static final EntityDataAccessor<Boolean> DATA_IS_CAPTAIN =
             SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<String> DATA_BUBBLE_KEY =
+            SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Long> DATA_BUBBLE_UNTIL =
+            SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.LONG);
+    private static final EntityDataAccessor<Byte> DATA_BUBBLE_VARIANT =
+            SynchedEntityData.defineId(ToukenDanshiEntity.class, EntityDataSerializers.BYTE);
+
+    private final Set<UUID> enemiesInRange = new HashSet<>();
+    private static final int ENEMY_SCAN_INTERVAL = 20;
+    private static final double ENEMY_RANGE = 32.0;
+    private static final double ENEMY_Y_RANGE = 3.0;
+
+    private final Map<UUID, Long> socialCooldowns = new HashMap<>();
+    private static final long SOCIAL_COOLDOWN = 1200L;
+    private static final double SOCIAL_RANGE = 8.0;
+
+    private UUID turnTargetUUID = null;
+    private long turnUntilTick = 0L;
+    private static final long TURN_DURATION = 60L;
 
     private int autoHealCooldown = 0;
     private static final int AUTO_HEAL_INTERVAL = 10;
@@ -215,6 +234,9 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         this.entityData.define(DATA_PICKUP_WHEN_FOLLOWING, true);
         this.entityData.define(DATA_CAPTAIN_UUID, "");
         this.entityData.define(DATA_IS_CAPTAIN, false);
+        this.entityData.define(DATA_BUBBLE_KEY, "");
+        this.entityData.define(DATA_BUBBLE_UNTIL, 0L);
+        this.entityData.define(DATA_BUBBLE_VARIANT, (byte) 0);
     }
 
     @Override
@@ -526,6 +548,69 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     @Override
     public void tick() {
         super.tick();
+
+        if (!this.level().isClientSide && this.level() instanceof ServerLevel sl) {
+            if (this.tickCount % ENEMY_SCAN_INTERVAL == 0) {
+                tickBubbleEnemy(sl); // 只更新敌人列表
+
+                // ===== 气泡触发总控 =====
+                if (!enemiesInRange.isEmpty()) {
+                    // 1. 有敌人时：战斗中偶尔喊一句（约 15 秒有概率触发一次）
+                    if (this.random.nextInt(15) == 0) {
+                        String key;
+                        if (this.level().isNight()) {
+                            key = "gui.toukenranbu.bubble.enemy_alert_night";
+                        } else if (this.isCaptain()) {
+                            key = "gui.toukenranbu.bubble.enemy_alert_captain";
+                        } else {
+                            key = "gui.toukenranbu.bubble.enemy_alert";
+                        }
+                        BubbleQueueManager.enqueue(sl, this, key, 3);
+                    }
+                } else {
+                    // 2. 没敌人时：按状态闲聊/发颜文字
+                    if (this.isFollowing()) {
+                        // 跟随状态下，每 20 秒有极低概率 (1/100) 喊一声主人
+                        if (this.random.nextInt(100) == 0) {
+                            Player owner = this.getOwner() instanceof Player p ? p : null;
+                            // 只有主人在附近才喊
+                            if (owner != null && this.distanceTo(owner) <= SOCIAL_RANGE) {
+                                if (trySocialCooldown(owner.getUUID(), this.level().getGameTime())) {
+                                    BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.social_owner", 5);
+                                    startTurnTo(owner.getUUID());
+                                }
+                            }
+                        }
+                        // 如果没触发喊主人，则按原逻辑发颜文字或夜间警戒
+                        else if (this.level().isNight()) {
+                            if (this.random.nextInt(30) == 0) {
+                                BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.enemy_alert_night", 3);
+                            }
+                        } else {
+                            if (this.random.nextInt(20) == 0) {
+                                BubbleQueueManager.enqueueEmoticon(sl, this);
+                            }
+                        }
+                    }
+                    else if (this.isOrderedToSit()) {
+                        // 坐下：发颜文字
+                        if (this.random.nextInt(15) == 0) {
+                            BubbleQueueManager.enqueueEmoticon(sl, this);
+                        }
+                    } else if (this.isFarming() || this.isMining() || this.isPatrolling() || this.isCaveClearing() || this.isSparring()) {
+                        // 工作：工作闲聊
+                        tickWorkChatter(sl);
+                    } else {
+                        // 闲置：普通闲聊 + 颜文字
+                        tickBubbleSocial(sl);
+                        if (this.random.nextInt(10) == 0) {
+                            BubbleQueueManager.enqueueEmoticon(sl, this);
+                        }
+                    }
+                }
+            }
+            tickBubbleTurn();
+        }
 
         if (this.summonCooldown > 0) this.summonCooldown--;
 
@@ -1166,7 +1251,8 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (this.isInvulnerableTo(source)) return false;
-        // 友伤检查：主人打刀男
+
+        // ===== 友伤检查 1：主人打刀男 =====
         if (source.getEntity() instanceof Player player && this.isOwnedBy(player)) {
             if (!player.getCapability(ModCapabilities.SPIRIT_POWER)
                     .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
@@ -1174,6 +1260,21 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
             }
         }
 
+        // ===== 友伤检查 2：同主人的刀男打刀男（绝对免疫，直接一刀切） =====
+        if (source.getEntity() instanceof ToukenDanshiEntity attacker
+                && attacker != this
+                && this.isTame()
+                && this.getOwnerUUID() != null
+                && this.getOwnerUUID().equals(attacker.getOwnerUUID())) {
+
+            Player owner = this.getOwner() instanceof Player p ? p : null;
+            if (owner != null && !owner.getCapability(ModCapabilities.SPIRIT_POWER)
+                    .map(cap -> cap.isFriendlyFireEnabled()).orElse(true)) {
+                return false;
+            }
+        }
+
+        // ===== 濒死保护逻辑（优先消耗御守，没御守才自动回收） =====
         float newHealth = this.getHealth() - amount;
         if (newHealth <= 1.0f
                 && !this.level().isClientSide
@@ -1182,12 +1283,16 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                 && autoSealEnabled
                 && !source.is(net.minecraft.tags.DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 
+            // 先尝试用御守抵消这致命伤害
+            if (tryUseAmulet(source)) {
+                return true;
+            }
+
+            // 如果没有御守，触发残血自动回收
             this.setHealth(1.0f);
             this.invulnerableTime = 60;
-
             Player owner = this.getOwner() instanceof Player p ? p : null;
             performAutoSeal(owner);
-
             return true;
         }
 
@@ -1549,11 +1654,181 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         return inventoryHandler;
     }
 
+    private void tickBubbleEnemy(ServerLevel sl) {
+        AABB box = this.getBoundingBox().inflate(ENEMY_RANGE);
+        List<Monster> enemies = sl.getEntitiesOfClass(Monster.class, box, e ->
+                e.isAlive()
+                        && Math.abs(e.getY() - this.getY()) <= ENEMY_Y_RANGE
+                        && this.hasLineOfSight(e));
+
+        enemiesInRange.clear();
+        for (Monster m : enemies) {
+            enemiesInRange.add(m.getUUID());
+        }
+    }
+
+    private void tickBubbleSocial(ServerLevel sl) {
+        if (!enemiesInRange.isEmpty()) return;
+
+        long now = this.level().getGameTime();
+        AABB box = this.getBoundingBox().inflate(SOCIAL_RANGE);
+
+        Player owner = this.getOwner() instanceof Player p ? p : null;
+        if (owner != null && this.distanceTo(owner) <= SOCIAL_RANGE) {
+            if (trySocialCooldown(owner.getUUID(), now)) {
+                System.out.println("[Bubble] " + getEntityNameKey() + " -> social_owner");
+                BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.social_owner", 5);
+                startTurnTo(owner.getUUID());
+                return;
+            }
+        }
+
+        List<Player> players = sl.getEntitiesOfClass(Player.class, box,
+                p -> p != owner && p.isAlive());
+        if (!players.isEmpty()) {
+            Player target = players.get(0);
+            if (trySocialCooldown(target.getUUID(), now)) {
+                System.out.println("[Bubble] " + getEntityNameKey() + " -> social_player");
+                BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.social_player", 5);
+                startTurnTo(target.getUUID());
+                return;
+            }
+        }
+
+        UUID myOwner = this.getOwnerUUID();
+        List<ToukenDanshiEntity> sameOwner = sl.getEntitiesOfClass(ToukenDanshiEntity.class, box,
+                d -> d != this && d.isAlive() && myOwner != null && myOwner.equals(d.getOwnerUUID()));
+        if (!sameOwner.isEmpty()) {
+            ToukenDanshiEntity target = sameOwner.get(0);
+            if (trySocialCooldown(target.getUUID(), now)) {
+                String key = "gui.toukenranbu.bubble.danshi_talk."
+                        + getEntityNameKey() + ".to." + target.getEntityNameKey();
+                System.out.println("[Bubble] " + getEntityNameKey() + " -> " + key);
+                BubbleQueueManager.enqueue(sl, this, key, 5);
+                startTurnTo(target.getUUID());
+                return;
+            }
+        }
+
+        List<ToukenDanshiEntity> otherOwner = sl.getEntitiesOfClass(ToukenDanshiEntity.class, box,
+                d -> d != this && d.isAlive() && myOwner != null
+                        && d.getOwnerUUID() != null && !myOwner.equals(d.getOwnerUUID()));
+        if (!otherOwner.isEmpty()) {
+            ToukenDanshiEntity target = otherOwner.get(0);
+            if (trySocialCooldown(target.getUUID(), now)) {
+                String key = "gui.toukenranbu.bubble.danshi_talk_other."
+                        + getEntityNameKey() + ".to." + target.getEntityNameKey();
+                System.out.println("[Bubble] " + getEntityNameKey() + " -> " + key);
+                BubbleQueueManager.enqueue(sl, this, key, 3);
+                startTurnTo(target.getUUID());
+                return;
+            }
+        }
+
+        List<LivingEntity> others = sl.getEntitiesOfClass(LivingEntity.class, box, e ->
+                e != this && e.isAlive()
+                        && !(e instanceof Player)
+                        && !(e instanceof ToukenDanshiEntity)
+                        && !(e instanceof Monster)
+                        && !isAnimalCategory(e.getType().getCategory()));
+        if (!others.isEmpty()) {
+            LivingEntity target = others.get(0);
+            if (trySocialCooldown(target.getUUID(), now)) {
+                System.out.println("[Bubble] " + getEntityNameKey() + " -> social_entity");
+                BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.social_entity", 5);
+                startTurnTo(target.getUUID());
+            }
+        }
+    }
+
+    private static boolean isAnimalCategory(net.minecraft.world.entity.MobCategory c) {
+        return c == net.minecraft.world.entity.MobCategory.CREATURE
+                || c == net.minecraft.world.entity.MobCategory.AMBIENT
+                || c == net.minecraft.world.entity.MobCategory.WATER_CREATURE
+                || c == net.minecraft.world.entity.MobCategory.WATER_AMBIENT
+                || c == net.minecraft.world.entity.MobCategory.UNDERGROUND_WATER_CREATURE
+                || c == net.minecraft.world.entity.MobCategory.AXOLOTLS;
+    }
+
+    private boolean trySocialCooldown(UUID targetId, long now) {
+        Long last = socialCooldowns.get(targetId);
+        if (last != null && now - last < SOCIAL_COOLDOWN) return false;
+        socialCooldowns.put(targetId, now);
+        return true;
+    }
+
+    private void startTurnTo(UUID targetId) {
+        this.turnTargetUUID = targetId;
+        this.turnUntilTick = this.tickCount + TURN_DURATION;
+    }
+
+    private void tickBubbleTurn() {
+        if (turnTargetUUID == null) return;
+        if (this.tickCount >= turnUntilTick) {
+            turnTargetUUID = null;
+            return;
+        }
+        if (!(this.level() instanceof ServerLevel sl)) return;
+        Entity target = sl.getEntity(turnTargetUUID);
+        if (target == null || !target.isAlive()) {
+            turnTargetUUID = null;
+            return;
+        }
+        this.getLookControl().setLookAt(target, 30f, 30f);
+    }
+
+    public void showBubble(String key, int variant) {
+        if (this.level().isClientSide) return;
+        this.entityData.set(DATA_BUBBLE_KEY, key);
+        this.entityData.set(DATA_BUBBLE_VARIANT, (byte) variant);
+        this.entityData.set(DATA_BUBBLE_UNTIL, this.level().getGameTime() + 40L);
+    }
+
+    public void clearBubble() {
+        if (this.level().isClientSide) return;
+        this.entityData.set(DATA_BUBBLE_KEY, "");
+    }
+
+    public String getBubbleKey() {
+        return this.entityData.get(DATA_BUBBLE_KEY);
+    }
+
+    public long getBubbleUntil() {
+        return this.entityData.get(DATA_BUBBLE_UNTIL);
+    }
+
+    public int getBubbleVariant() {
+        return this.entityData.get(DATA_BUBBLE_VARIANT);
+    }
+
+    public boolean isSilenced() {
+        for (int i = 0; i < inventoryHandler.getSlots(); i++) {
+            if (inventoryHandler.getStackInSlot(i).is(
+                    com.Equatorial.toukenranbu.item.ModItems.SILENT_NOTE.get())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
+        // 1. 无主拦截
+        if (!this.isTame()) {
+            boolean isEma = itemStack.is(com.Equatorial.toukenranbu.item.ModItems.EMA.get());
+            boolean isCapture = itemStack.is(com.Equatorial.toukenranbu.item.ModItems.CAPTURE_BALL.get())
+                    || itemStack.is(com.Equatorial.toukenranbu.item.ModItems.TOUKEN_GROUP_CAPTURE_BALL.get());
+
+            if (!isEma && !isCapture) {
+                return InteractionResult.PASS;
+            }
+        }
+
+        // 2. 主人交互
         if (this.isOwnedBy(player)) {
+            // 塞队长卷轴
             if (itemStack.is(com.Equatorial.toukenranbu.item.ModItems.CAPTAIN_BADGE.get())) {
                 if (!this.level().isClientSide && this.level() instanceof ServerLevel sl) {
                     var nearCaptains = sl.getEntitiesOfClass(ToukenDanshiEntity.class,
@@ -1579,6 +1854,8 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                 }
                 return InteractionResult.SUCCESS;
             }
+
+            // 判断食物/矿石
             boolean isModOre = itemStack.is(ModItems.WOOTZ_STEEL.get()) ||
                     itemStack.is(ModItems.WHETSTONE.get()) ||
                     itemStack.is(Items.CHARCOAL) ||
@@ -1589,16 +1866,23 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
             if (isModOre || isFood) {
                 boolean needHeal = this.getHealth() < this.getMaxHealth();
                 boolean needFatigue = this.toukenData.fatigue < 100;
+                boolean isExpFood = itemStack.getItem() instanceof com.Equatorial.toukenranbu.item.ExpFoodItem;
 
-                if (!needHeal && !needFatigue) {
+                // 如果血满、疲劳满，且不是经验食物，拦截
+                if (!needHeal && !needFatigue && !isExpFood) {
                     if (!this.level().isClientSide) {
                         player.displayClientMessage(
                                 Component.translatable("gui.toukenranbu.message.feed_full", this.getName())
                                         .withStyle(ChatFormatting.YELLOW), true);
+                        // 触发“吃饱了”的气泡
+                        if (this.level() instanceof ServerLevel sl) {
+                            BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.feed_full", 1);
+                        }
                     }
                     return InteractionResult.SUCCESS;
                 }
 
+                // 开始吃东西
                 if (!this.level().isClientSide) {
                     if (isModOre) {
                         this.heal(4.0F);
@@ -1614,11 +1898,21 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                             }
                         }
                         applyFarmersDelightEffects(itemStack);
+
+                        if (isExpFood && itemStack.getItem() instanceof com.Equatorial.toukenranbu.item.ExpFoodItem expFood) {
+                            this.addExperience(expFood.getExpAmount());
+                        }
                     }
 
                     if (!player.isCreative()) itemStack.shrink(1);
                     this.syncExtraData();
 
+                    // 触发“谢谢/好吃”的气泡
+                    if (this.level() instanceof ServerLevel sl) {
+                        BubbleQueueManager.enqueue(sl, this, "gui.toukenranbu.bubble.feed_success", 3);
+                    }
+
+                    // 粒子与音效
                     if (this.level() instanceof ServerLevel serverLevel) {
                         serverLevel.sendParticles(ParticleTypes.HEART,
                                 this.getX(), this.getY() + this.getBbHeight() * 0.8, this.getZ(),
@@ -1628,13 +1922,20 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
                 }
                 return InteractionResult.SUCCESS;
             }
+
+            // 空手打开 GUI
             if (itemStack.isEmpty()) {
                 if (!this.level().isClientSide && player instanceof ServerPlayer serverPlayer) {
-                    EntityUIMenuType.openUI(serverPlayer, this);
+                    net.minecraftforge.network.NetworkHooks.openScreen(
+                            serverPlayer, new net.minecraft.world.SimpleMenuProvider(
+                                    (windowId, playerInventory, playerEntity) -> new com.Equatorial.toukenranbu.screen.ToukenContainerMenu(windowId, playerInventory, this),
+                                    this.getName()),
+                            (net.minecraft.network.FriendlyByteBuf buf) -> buf.writeVarInt(this.getId()));
                 }
                 return InteractionResult.SUCCESS;
             }
         }
+
         return super.mobInteract(player, hand);
     }
 
@@ -2001,6 +2302,7 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
 
     public void startSparring(ToukenDanshiEntity partner) {
         this.sparringPartnerUUID = partner.getUUID();
+        // 18000 ticks = 15 分钟，你的记忆完全正确！
         this.sparringTimer = 18000;
         this.setSparring(true);
         this.setFollowing(false);
@@ -2009,15 +2311,27 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         this.setMining(false);
         this.setPatrolling(false);
         this.setCaveClearing(false);
+
+        // 确保双端状态同步
+        this.syncExtraData();
     }
 
+    // 获取手合对象（兼容客户端和服务端，防止报错卡顿）
     public ToukenDanshiEntity getSparringPartner() {
         if (sparringPartnerUUID == null) return null;
-        if (this.level() instanceof ServerLevel serverLevel) {
-            Entity e = serverLevel.getEntity(sparringPartnerUUID);
-            if (e instanceof ToukenDanshiEntity t) return t;
+        if (this.level().isClientSide) {
+            var list = this.level().getEntitiesOfClass(ToukenDanshiEntity.class, this.getBoundingBox().inflate(64.0));
+            for (ToukenDanshiEntity e : list) {
+                if (e.getUUID().equals(sparringPartnerUUID)) return e;
+            }
+            return null;
+        } else {
+            if (this.level() instanceof ServerLevel serverLevel) {
+                Entity e = serverLevel.getEntity(sparringPartnerUUID);
+                if (e instanceof ToukenDanshiEntity t) return t;
+            }
+            return null;
         }
-        return null;
     }
 
     public void finishSparringReward() {
@@ -2053,18 +2367,28 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         }
     }
 
+    // 寻找手合对象（严格排斥无主，排斥正在工作的）
     public ToukenDanshiEntity findSparringPartner() {
-        if (!(this.level() instanceof ServerLevel level)) return null;
-        var list = level.getEntitiesOfClass(ToukenDanshiEntity.class,
-                this.getBoundingBox().inflate(16.0), e -> {
+        if (!this.isTame()) return null; // 👈 自己无主不能发起手合
+
+        // 自己必须处于纯闲置
+        if (this.isOrderedToSit() || this.isFollowing() || this.isFarming() ||
+                this.isMining() || this.isPatrolling() || this.isSparring() || this.isCaveClearing()) {
+            return null;
+        }
+
+        var list = this.level().getEntitiesOfClass(ToukenDanshiEntity.class,
+                this.getBoundingBox().inflate(32.0), e -> {
                     if (e == this) return false;
-                    if (!e.isOwnedBy(this.getOwner())) return false;
-                    if (e.isOrderedToSit()) return false;
-                    if (e.isFollowing()) return false;
-                    if (e.isFarming()) return false;
-                    if (e.isMining()) return false;
-                    if (e.isPatrolling()) return false;
-                    if (e.isSparring()) return false;
+                    if (!e.isTame()) return false; // 对方无主绝对不行
+                    if (this.getOwnerUUID() == null || !this.getOwnerUUID().equals(e.getOwnerUUID())) return false;
+                    if (e.isDeadOrDying()) return false;
+
+                    // 对方也必须是纯闲置
+                    if (e.isOrderedToSit() || e.isFollowing() || e.isFarming() ||
+                            e.isMining() || e.isPatrolling() || e.isSparring() || e.isCaveClearing()) {
+                        return false;
+                    }
                     return true;
                 });
         return list.isEmpty() ? null : list.get(0);
@@ -2266,5 +2590,26 @@ public abstract class ToukenDanshiEntity extends TamableAnimal implements GeoEnt
         // 2. 冷却，防止 tick 里的自动传送立刻重复触发
         this.teleportCooldown = TELEPORT_COOLDOWN;
         this.summonCooldown = 100;
+    }
+
+    private void tickWorkChatter(ServerLevel sl) {
+        // 只有 10% 的概率会触发说话，避免刷屏
+        if (this.random.nextInt(10) != 0) return;
+
+        String prefix = null;
+        if (this.isFarming()) prefix = "farming";
+        else if (this.isMining()) prefix = "mining";
+        else if (this.isPatrolling()) prefix = "patrol";
+        else if (this.isCaveClearing()) prefix = "cave";
+        else if (this.isSparring()) prefix = "spar";
+
+        if (prefix != null) {
+            String state = "idle"; // 闲聊
+            if (this.toukenData.fatigue <= 20) state = "exhausted"; // 严重疲劳
+            else if (this.toukenData.fatigue <= 49) state = "tired";  // 疲劳
+
+            String key = "gui.toukenranbu.bubble.mode_" + prefix + "_" + state;
+            BubbleQueueManager.enqueue(sl, this, key, 5);
+        }
     }
 }

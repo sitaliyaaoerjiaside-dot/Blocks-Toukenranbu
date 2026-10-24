@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.wakizashi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.wakizashi.NikkariAoeEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class NikkariAoeRenderer extends GeoEntityRenderer<NikkariAoeEntity> {
     public NikkariAoeRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new NikkariAoeModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(NikkariAoeEntity instance) {

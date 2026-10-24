@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.tachi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.MikazukiMunechikaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class IchigoHitofuriRenderer extends GeoEntityRenderer<IchigoHitofuriEnti
     public IchigoHitofuriRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new IchigoHitofuriModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(IchigoHitofuriEntity instance) {

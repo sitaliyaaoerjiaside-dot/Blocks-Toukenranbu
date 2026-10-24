@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.tachi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.ShokudaikiriMitsutadaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class ShokudaikiriMitsutadaRenderer extends GeoEntityRenderer<Shokudaikir
     public ShokudaikiriMitsutadaRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new ShokudaikiriMitsutadaModel());
         this.shadowRadius = 0.5f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(ShokudaikiriMitsutadaEntity instance) {

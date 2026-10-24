@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.naginata;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.naginata.TomoegataNaginataEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class TomoegataNaginataRenderer extends GeoEntityRenderer<TomoegataNagina
     public TomoegataNaginataRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new TomoegataNaginataModel());
         this.shadowRadius = 0.55f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(TomoegataNaginataEntity instance) {

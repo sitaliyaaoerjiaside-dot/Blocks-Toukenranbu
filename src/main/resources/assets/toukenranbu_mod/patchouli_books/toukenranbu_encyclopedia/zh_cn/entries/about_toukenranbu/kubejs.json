@@ -1,0 +1,77 @@
+{
+  "name": "让你的刀剑男士开始说话",
+  "category": "toukenranbu_mod:about_toukenranbu",
+  "icon": "toukenranbu_mod:silent_note",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "使用资源包让刀剑男士说的话自定义！",
+      "text": "本模组内置了可供 KubeJS 校准修正的气泡对话。$(br2)当触发某些条件的时候，气泡会在刀剑男士头上冒出来。$(br2)模组没有内置声音。$(br2)玩家可以使用 KubeJS 对刀剑男士所说的话进行调整。如何使用修改请自行查阅资料。$(br2)$(l)注意：服务器目前不支持直接改文本，想改自己的请在单人环境下操作。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "如何修改台词",
+      "text": "所有气泡台词都存在翻译键里。推荐做法：做一个资源包，在 assets/toukenranbu_mod/lang/zh_cn.json 里只写你想改的键，其余保持默认。$(br2)多句随机：一个键的值可以用竖线 | 分隔多句话，每次触发随机抽一句。$(br2)示例：$(br)gui.toukenranbu.bubble.social_owner = 主人。|您回来了。|怎么了？$(br2)下方列出所有默认键和默认台词。想改哪句，就把那行抄进你的资源包，值改成你想要的。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "刀男专属台词（三级 fallback）",
+      "text": "想让某个刀男说专属话，写对应的键即可。查找顺序从最精确到最通用：$(br2)1. gui.toukenranbu.bubble.danshi_talk.<说话者>.to.<听者>$(br)2. gui.toukenranbu.bubble.danshi_talk.<说话者>$(br)3. gui.toukenranbu.bubble.danshi_talk$(br2)不同主人刀男之间同理，把 danshi_talk 换成 danshi_talk_other。$(br2)刀男实体名对照：$(br)mikazuki_munechika / yamanbagiri_kunihiro / kashuu_kiyomitsu / hachisuka_kotetsu / kasen_kanesada / mutsunokami_yoshiyuki / ichigo_hitofuri / tsurumaru_kuninaga / shokudaikiri_mitsutada / ishikirimaru / heshikiri_hasebe / yamatonokami_yasusada / yamanbagiri_chogi / ookurikara / tonbokiri / tomoegata_naginata / nikkari_aoe / horikawa_kunihiro / imanotsurugi / gotou_toushirou"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "无主刀男与颜文字",
+      "text": "如果刀剑男士没有主人（野生状态），他们不会说复杂的台词。$(br2)无论在何种状态下被触发，他们头顶冒出的气泡都会自动被替换为随机颜文字（例如 (・ω・) 等）。$(br2)如果你用 KubeJS 接管了野生刀男，你可以直接在返回值里写颜文字，客户端会自动渲染纯文本。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "跟随状态下的特殊对话",
+      "text": "当刀男处于【跟随】状态，且附近没有敌人时：$(br2)白天：大概率会冒颜文字。$(br2)夜晚：有小概率会冒出一句夜间警戒（键名：enemy_alert_night）。$(br2)极小概率：会突然回头喊主人（键名：social_owner）。$(br2)注意：如果刀男处于跟随状态，他们不会频繁触发闲置时的闲聊（如喊路人、找同伴聊天等）。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "敌人",
+      "text": "enemy_alert_night$(br)夜里好像有动静……|戒备。|有东西在附近，可能是时间溯行军。$(br2)enemy_alert_captain$(br)全员戒备。|跟我来。|不能让主人受伤。$(br2)enemy_alert$(br)附近有敌人。|有杀气。|小心。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "社交（闲置状态）",
+      "text": "social_owner$(br)主人。|您回来了。|怎么了？|需要我做什么吗？|今天也辛苦了。$(br2)social_player$(br)你好。|初次见面。|有何贵干？|你是……？|失礼了。$(br2)social_entity$(br)你好。|你是？|有何贵干？|打扰了。|……"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "刀男之间",
+      "text": "danshi_talk$(br)今天天气不错。|主人最近怎么样？|最近好像很清闲的样子呢。|感觉好困...|……怎么了吗？$(br2)danshi_talk_other$(br)您好？|失礼了。|今日天气不错。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "问候",
+      "text": "greeting_evening$(br)晚上好。|天黑了。|主人，您回来了。$(br2)greeting_morning$(br)早上好，主人。|主人昨晚睡得怎么样？|新的一天又开始了，主人。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "喂食 & 疲劳",
+      "text": "feed_success$(br)谢谢。|好吃。|多谢主人。$(br2)feed_full$(br)主人...我有点吃不下了。$(br2)fatigue_sakura$(br)今天状态很好。$(br2)fatigue_critical$(br)有点累了……$(br2)fatigue_recovered$(br)恢复了不少。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "工作模式切换",
+      "text": "玩家点按钮切换工作模式时，刀男回一句确认。$(br2)mode_ack_farming$(br)知道了，去种田。|明白。|马上去。$(br2)mode_ack_mining$(br)知道了，去挖矿。|明白。|马上去。$(br2)mode_ack_patrol$(br)知道了，去巡逻。|明白。|马上去。$(br2)mode_ack_cave$(br)知道了，去矿洞。|明白。|马上去。$(br2)mode_ack_follow$(br)知道了，跟着您。|明白。|马上去。$(br2)mode_ack_sit$(br)是要我休息吗？|......有些累了，坐一会。|稍微偷懒摸个鱼。$(br2)mode_ack_idle$(br)知道了。|明白。|好。$(br2)mode_ack_spar$(br)知道了，去手合。|明白。|马上去。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "工作疲劳抱怨（1/2）",
+      "text": "工作期间疲劳降到新等级时触发。每个模式三个后缀：$(br)_normal（通常 40-49）$(br)_tired（疲劳 20-39）$(br)_exhausted（严重 0-19）$(br2)mode_farming_*$(br)正常：有点累了。|还行。|继续。$(br)疲劳：好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...$(br)重度：不行了……|走不动了……|要倒下了……$(br2)mode_mining_*$(br)正常：有点累了。|还行。|继续。$(br)疲劳：好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...$(br)重度：不行了……|挖不动了……|要倒下了……$(br2)mode_patrol_*$(br)正常：有点累了....|还行。|继续工作吧...$(br)疲劳：好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...$(br)重度：不行了……|走不动了……|要倒下了……"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "工作疲劳抱怨（2/2）",
+      "text": "mode_cave_*$(br)正常：有点累了。|还行。|继续。$(br)疲劳：好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...$(br)重度：不行了……|走不动了……|要倒下了……$(br2)mode_spar_*$(br)正常：有点累了。|还行。|继续。$(br)疲劳：好累啊……|偷偷逃一下应该不会被抓到...|感觉要睡着了...$(br)重度：不行了……|站不住了……|要倒下了……"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "工作期间闲聊",
+      "text": "工作期间偶尔说的轻松话，跟疲劳抱怨独立触发。$(br2)mode_farming_idle$(br)今天庄稼长得好。|希望有好收成。|天气不错。$(br2)mode_mining_idle$(br)这矿层还行。|希望挖到好东西。|继续往下。$(br2)mode_patrol_idle$(br)一切正常。|没有异常。|继续巡视。$(br2)mode_cave_idle$(br)里面很暗，需要我先去探探路吗？|小心脚下，不要摔着了。|继续前进。$(br2)mode_spar_idle$(br)认真点。|再来一次。|请不要放水。"
+    }
+  ]
+}

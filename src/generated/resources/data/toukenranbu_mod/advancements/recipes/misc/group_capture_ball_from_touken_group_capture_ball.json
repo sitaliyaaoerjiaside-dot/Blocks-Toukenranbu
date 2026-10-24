@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toukenranbu_mod:group_capture_ball_from_touken_group_capture_ball"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_touken_group_capture_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "toukenranbu_mod:touken_group_capture_ball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_touken_group_capture_ball",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toukenranbu_mod:group_capture_ball_from_touken_group_capture_ball"
+    ]
+  },
+  "sends_telemetry_event": false
+}

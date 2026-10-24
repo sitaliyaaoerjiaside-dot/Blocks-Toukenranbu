@@ -357,6 +357,12 @@ public class ModItems {
                     () -> new WhiteMikazukiMunechikaItem(new Item.Properties().stacksTo(1)
                             .durability(1).setNoRepair().rarity(Rarity.EPIC)));
 
+    public static final RegistryObject<Item> TOUKEN_GROUP_CAPTURE_BALL =
+            ITEMS.register("touken_group_capture_ball",
+                    () -> new ToukenGroupCaptureBallItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SILENT_NOTE =
+            ITEMS.register("silent_note",() -> new Item(new Item.Properties()));
+
     public static boolean isBlade(Item item) {
         return item == MIKAZUKI_BLADE.get()
                 || item == YAMANBAGIRI_BLADE.get()

@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.ootachi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.ootachi.IshikirimaruEntity;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class IshikirimaruRenderer extends GeoEntityRenderer<IshikirimaruEntity> 
     public IshikirimaruRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new IshikirimaruModel());
         this.shadowRadius = 0.55f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(IshikirimaruEntity instance) {

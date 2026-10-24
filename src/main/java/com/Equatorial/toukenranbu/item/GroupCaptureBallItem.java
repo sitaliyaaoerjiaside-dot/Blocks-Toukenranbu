@@ -33,6 +33,20 @@ public class GroupCaptureBallItem extends Item {
         super(properties);
     }
 
+    /** 子类覆盖这个来区分翻译键前缀 */
+    protected String getTranslationKey() {
+        return "group_capture_ball";
+    }
+
+    /** 子类覆盖这个来改筛选逻辑 */
+    protected List<LivingEntity> findTargets(Level level, Player player, AABB area) {
+        return level.getEntitiesOfClass(LivingEntity.class, area, entity -> {
+            if (!(entity instanceof TamableAnimal tamable)) return false;
+            if (!tamable.isTame()) return false;
+            return tamable.isOwnedBy(player);
+        });
+    }
+
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
@@ -50,7 +64,7 @@ public class GroupCaptureBallItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    private void captureNearby(ItemStack stack, Level level, Player player) {
+    protected void captureNearby(ItemStack stack, Level level, Player player) {
         // 主人校验
         UUID itemOwner = getItemOwner(stack);
         if (itemOwner == null) {
@@ -62,11 +76,7 @@ public class GroupCaptureBallItem extends Item {
         }
 
         AABB area = player.getBoundingBox().inflate(CAPTURE_RANGE);
-        List<LivingEntity> targets = level.getEntitiesOfClass(LivingEntity.class, area, entity -> {
-            if (!(entity instanceof TamableAnimal tamable)) return false;
-            if (!tamable.isTame()) return false;
-            return tamable.isOwnedBy(player);
-        });
+        List<LivingEntity> targets = findTargets(level, player, area);
 
         if (targets.isEmpty()) {
             player.displayClientMessage(
@@ -90,6 +100,7 @@ public class GroupCaptureBallItem extends Item {
             entityTag.remove("OnGround");
             entityTag.remove("PortalCooldown");
             entityTag.remove("Passengers");
+            entityTag.remove("RootVehicle");
             entityTag.remove("Leash");
 
             CompoundTag entry = new CompoundTag();
@@ -114,7 +125,7 @@ public class GroupCaptureBallItem extends Item {
                 Component.translatable("message.toukenranbu_mod.group_capture.captured", captured), true);
     }
 
-    private void releaseAll(ItemStack stack, Level level, UseOnContext context, Player player) {
+    protected void releaseAll(ItemStack stack, Level level, UseOnContext context, Player player) {
         if (!stack.hasTag()) {
             player.displayClientMessage(
                     Component.translatable("message.toukenranbu_mod.release.fail_empty"), true);
@@ -149,7 +160,6 @@ public class GroupCaptureBallItem extends Item {
                 clickLoc.z + face.getStepZ() * 0.1
         );
 
-        // 把列表拷贝出来，避免遍历时修改
         ListTag copy = entitiesList.copy();
         itemTag.remove(TAG_ENTITIES);
         stack.resetHoverName();
@@ -160,7 +170,6 @@ public class GroupCaptureBallItem extends Item {
             String typeId = entry.getString("Type");
             CompoundTag data = entry.getCompound("Data");
 
-            // 螺旋展开，避免实体堆在一起
             double angle = i * 0.7;
             double radius = 0.5 + i * 0.35;
             double offsetX = Math.cos(angle) * radius;
@@ -176,8 +185,6 @@ public class GroupCaptureBallItem extends Item {
             }
 
             final BlockPos finalPos = releasePos;
-            UUID itemOwnerUUID = getItemOwner(stack);   // 👈 提前取出物品主人
-
             EntityType.byString(typeId).ifPresent(type -> {
                 Entity entity = type.create(level);
                 if (entity instanceof LivingEntity living) {
@@ -187,18 +194,11 @@ public class GroupCaptureBallItem extends Item {
                     living.setXRot(0.0F);
 
                     if (living instanceof TamableAnimal tamable) {
-                        // 1. 优先用条目里记录的原主人
-                        UUID ownerToSet = null;
                         if (entry.hasUUID("Owner")) {
-                            ownerToSet = entry.getUUID("Owner");
-                        }
-                        // 2. 条目里没有，用物品主人兜底
-                        else if (itemOwnerUUID != null) {
-                            ownerToSet = itemOwnerUUID;
-                        }
-                        // 3. 两个都没有 → 本来就是无主，正常
-                        if (ownerToSet != null) {
-                            tamable.setOwnerUUID(ownerToSet);
+                            tamable.setOwnerUUID(entry.getUUID("Owner"));
+                            tamable.setTame(true);
+                        } else if (data.hasUUID("Owner")) {
+                            tamable.setOwnerUUID(data.getUUID("Owner"));
                             tamable.setTame(true);
                         }
                     }
@@ -212,10 +212,9 @@ public class GroupCaptureBallItem extends Item {
                 Component.translatable("message.toukenranbu_mod.group_capture.released", released), true);
     }
 
-    private static void updateHoverName(ItemStack stack, int count) {
-        stack.setHoverName(
-                Component.translatable("item.toukenranbu_mod.group_capture_ball.prefix", count)
-        );
+    protected void updateHoverName(ItemStack stack, int count) {
+        stack.setHoverName(Component.translatable(
+                "item.toukenranbu_mod." + getTranslationKey() + ".prefix", count));
     }
 
     @Nullable
@@ -241,17 +240,18 @@ public class GroupCaptureBallItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level,
                                 List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
+        String key = "tooltip.toukenranbu_mod." + getTranslationKey();
         int count = getCapturedCount(stack);
         if (count > 0) {
-            tooltip.add(Component.translatable("tooltip.toukenranbu_mod.group_capture_ball.count", count));
+            tooltip.add(Component.translatable(key + ".count", count));
             UUID owner = getItemOwner(stack);
             if (owner != null) {
                 tooltip.add(Component.translatable("tooltip.toukenranbu_mod.capture_ball.owner",
                         owner.toString().substring(0, 8) + "..."));
             }
         } else {
-            tooltip.add(Component.translatable("tooltip.toukenranbu_mod.group_capture_ball.empty"));
-            tooltip.add(Component.translatable("tooltip.toukenranbu_mod.group_capture_ball.usage"));
+            tooltip.add(Component.translatable(key + ".empty"));
+            tooltip.add(Component.translatable(key + ".usage"));
         }
     }
 }

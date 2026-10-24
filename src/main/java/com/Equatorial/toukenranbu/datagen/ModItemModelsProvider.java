@@ -163,6 +163,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(com.Equatorial.toukenranbu.item.ModItems.EMA.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.MOON_PHASE.get());
         basicItem(com.Equatorial.toukenranbu.item.ModItems.GROUP_CAPTURE_BALL.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.TOUKEN_GROUP_CAPTURE_BALL.get());
+        basicItem(com.Equatorial.toukenranbu.item.ModItems.SILENT_NOTE.get());
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

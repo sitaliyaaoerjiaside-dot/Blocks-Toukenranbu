@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.wakizashi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.wakizashi.HorikawaKunihiroEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class HorikawaKunihiroRenderer extends GeoEntityRenderer<HorikawaKunihiro
     public HorikawaKunihiroRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new HorikawaKunihiroModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(HorikawaKunihiroEntity instance) {

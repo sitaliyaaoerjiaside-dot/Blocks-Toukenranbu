@@ -18,7 +18,7 @@ public class RangedAttributeMixin {
     private void toukenranbu$setMaxValue(String name, double defaultValue, double minValue, double maxValue, CallbackInfo ci) {
         // 仅在创建 MAX_HEALTH 属性时修改上限
         if (name.equals("attribute.name.generic.max_health")) {
-            this.maxValue = 1000000.0D; // 新的上限
+            this.maxValue = 2000000.0D; // 新的上限
         }
     }
 }

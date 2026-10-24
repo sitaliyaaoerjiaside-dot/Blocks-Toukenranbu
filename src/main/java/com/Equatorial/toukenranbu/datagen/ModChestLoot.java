@@ -20,6 +20,7 @@ public class ModChestLoot implements LootTableSubProvider {
         // ========== 政府分部 ==========
         output.accept(ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "chests/gov_branch"),
                 LootTable.lootTable()
+                        // 物资池
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(2, 4))
                                 .add(LootItem.lootTableItem(ModItems.SMALL_KOBAN.get())
@@ -34,14 +35,17 @@ public class ModChestLoot implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_OMAMORI.get())
                                         .setWeight(2))
                         )
+                        // 刀男池（改了抽取次数和权重）
                         .withPool(LootPool.lootPool()
-                                .setRolls(UniformGenerator.between(0, 1))
+                                // 把 between(0, 1) 改成 between(1, 2)：
+                                // 意味着 100% 会出 1 把刀，且有 50% 概率一次出 2 把
+                                .setRolls(UniformGenerator.between(1, 2))
                                 .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_KUNIHIRO.get()).setWeight(3))
                                 .add(LootItem.lootTableItem(ModItems.KASHUU_KIYOMITSU.get()).setWeight(3))
                                 .add(LootItem.lootTableItem(ModItems.HACHISUKA_KOTETSU.get()).setWeight(3))
                                 .add(LootItem.lootTableItem(ModItems.MUTSUNOKAMI_YOSHIYUKI.get()).setWeight(3))
                                 .add(LootItem.lootTableItem(ModItems.KASEN_KANESADA.get()).setWeight(3))
-                                .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_CHOGI.get()).setWeight(4))
+                                .add(LootItem.lootTableItem(ModItems.YAMANBAGIRI_CHOGI.get()).setWeight(20))
                                 .add(LootItem.lootTableItem(ModItems.ICHIGO_HITOFURI.get()).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.TSURUMARU_KUNINAGA.get()).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.SHOKUDAIKIRI_MITSUTADA.get()).setWeight(2))
@@ -56,6 +60,7 @@ public class ModChestLoot implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.IMANOTSURUGI.get()).setWeight(4))
                                 .add(LootItem.lootTableItem(ModItems.GOTOU_TOUSHIROU.get()).setWeight(4))
                         )
+                        // 原版物资池
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(1, 3))
                                 .add(LootItem.lootTableItem(Items.IRON_INGOT)
@@ -72,12 +77,5 @@ public class ModChestLoot implements LootTableSubProvider {
                                         .setWeight(3))
                         )
         );
-
-        // ========== 以后新建建筑就往下加 ==========
-        // output.accept(
-        //     ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID, "chests/你的新建筑"),
-        //     LootTable.lootTable()...
-        // );
-
     }
 }

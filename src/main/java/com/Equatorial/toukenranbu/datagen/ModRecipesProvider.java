@@ -330,6 +330,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('#', ModItems.WHETSTONE.get())
                 .unlockedBy(getHasName(ModItems.WHETSTONE.get()), has(ModItems.WHETSTONE.get()))
                 .save(pWriter);
+        // 静音符（十字形符咒，用纸和纯净灵力合成）
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SILENT_NOTE.get(), 1)
+                .pattern(" # ")
+                .pattern("#@#")
+                .pattern(" # ")
+                .define('#', Items.PAPER)
+                .define('@', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(ModItems.PURE_SPIRITUAL_ENERGY.get()), has(ModItems.PURE_SPIRITUAL_ENERGY.get()))
+                .save(pWriter);
 
 //需要工作台
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUPREME_AMULET.get())
@@ -721,7 +730,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('|', Items.COPPER_BLOCK)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter);
-        // 油豆腐：海带 + 糖 + 面包 竖直有序合成 → 油豆腐 × 4
+// 油豆腐：海带 + 糖 + 面包 竖直有序合成 → 油豆腐 × 4
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.OIL_TOFU.get(), 4)
                 .pattern(" # ")
                 .pattern(" | ")
@@ -758,6 +767,28 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('@', ModItems.TURBID_SPIRITUAL_ENERGY.get())
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TOUKEN_GROUP_CAPTURE_BALL.get(), 1)
+                .pattern("@|@")
+                .pattern("#|#")
+                .pattern("@|@")
+                .define('#', ModItems.PURE_SPIRITUAL_ENERGY.get())
+                .define('|', Items.PAPER)
+                .define('@', ModItems.TURBID_SPIRITUAL_ENERGY.get())
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
+// 群体收容符 → 刀剑群体收容符
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TOUKEN_GROUP_CAPTURE_BALL.get(), 1)
+                .requires(ModItems.GROUP_CAPTURE_BALL.get())
+                .unlockedBy(getHasName(ModItems.GROUP_CAPTURE_BALL.get()), has(ModItems.GROUP_CAPTURE_BALL.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID,
+                        "touken_group_capture_ball_from_group_capture_ball"));
+// 刀剑群体收容符 → 群体收容符
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GROUP_CAPTURE_BALL.get(), 1)
+                .requires(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get())
+                .unlockedBy(getHasName(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get()), has(ModItems.TOUKEN_GROUP_CAPTURE_BALL.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(ToukenRanbuMod.MOD_ID,
+                        "group_capture_ball_from_touken_group_capture_ball"));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.POWER_OF_ATTORNEY.get(), 2)
                 .pattern(" # ")
                 .pattern(" | ")

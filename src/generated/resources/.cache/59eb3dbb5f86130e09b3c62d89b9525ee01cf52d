@@ -1,4 +1,4 @@
-// 1.20.1	2026-09-27T22:55:32.5532236	Loot Tables
+// 1.20.1	2026-10-23T15:14:23.1949909	Loot Tables
 62b632501e315339edaacd3be015e3fae619f84d data/toukenranbu_mod/loot_tables/blocks/blue_cherry_button.json
 6eebad3e06484cfb77436a0e91c253517ce38095 data/toukenranbu_mod/loot_tables/blocks/blue_cherry_door.json
 a1d80970f5210755a41efae4d9ada07bd8af8a8a data/toukenranbu_mod/loot_tables/blocks/blue_cherry_fence.json
@@ -56,7 +56,7 @@ b472fef0378a49fa1753c91d312259d3b96ce115 data/toukenranbu_mod/loot_tables/blocks
 3e7d7d94ef37787b48fb964814113021afb2d7ae data/toukenranbu_mod/loot_tables/blocks/wootz_steel_stairs.json
 f807c59e16a520765b6d31371e194e1950eeff6c data/toukenranbu_mod/loot_tables/blocks/wootz_steel_trapdoor.json
 aee3096e5463841b1560bc08567e8cfebd9e9e08 data/toukenranbu_mod/loot_tables/blocks/wootz_steel_wall.json
-8712a44b748933badd5525c1d62205264a35955f data/toukenranbu_mod/loot_tables/chests/gov_branch.json
+8b56f55c3342b0ab3760e2d8b73fb77aeb749a43 data/toukenranbu_mod/loot_tables/chests/gov_branch.json
 4b4562e17664a839652db023c8e883ef85e5db48 data/toukenranbu_mod/loot_tables/entities/kebiishi_leader.json
 9dc48a50f024b3c4ab07600dd301024fa7bfbaaf data/toukenranbu_mod/loot_tables/entities/kebiishi_naginata.json
 6bb0136437ecf561e7e936d73438605849a7da4a data/toukenranbu_mod/loot_tables/entities/kebiishi_ootachi.json

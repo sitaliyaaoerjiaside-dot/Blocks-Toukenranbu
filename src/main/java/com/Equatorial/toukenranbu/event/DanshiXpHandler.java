@@ -39,9 +39,6 @@ public class DanshiXpHandler {
         for (int i = 0; i < n; i++) {
             danshiList.get(i).addExperience(per + (i < remainder ? 1 : 0));
         }
-
-        event.getOrb().discard();
-        event.setCanceled(true);
     }
 
     @SubscribeEvent

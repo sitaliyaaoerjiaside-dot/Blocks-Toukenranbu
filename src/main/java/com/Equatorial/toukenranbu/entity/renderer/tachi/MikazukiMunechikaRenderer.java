@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.tachi;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.MikazukiMunechikaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -19,6 +20,7 @@ public class MikazukiMunechikaRenderer extends GeoEntityRenderer<MikazukiMunechi
     public MikazukiMunechikaRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new MikazukiMunechikaModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
 
     @Override

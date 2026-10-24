@@ -1,6 +1,7 @@
 package com.Equatorial.toukenranbu.entity.renderer.uchigatana;
 
 import com.Equatorial.toukenranbu.ToukenRanbuMod;
+import com.Equatorial.toukenranbu.client.BubbleRenderLayer;
 import com.Equatorial.toukenranbu.entity.touken.tachi.IchigoHitofuriEntity;
 import com.Equatorial.toukenranbu.entity.touken.uchigatana.HeshikiriHasebeEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,6 +20,7 @@ public class HeshikiriHasebeRenderer extends GeoEntityRenderer<HeshikiriHasebeEn
     public HeshikiriHasebeRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new HeshikiriHasebeModel());
         this.shadowRadius = 0.4f;
+        this.addRenderLayer(new BubbleRenderLayer<>(this));
     }
     @Override
     public ResourceLocation getTextureLocation(HeshikiriHasebeEntity instance) {

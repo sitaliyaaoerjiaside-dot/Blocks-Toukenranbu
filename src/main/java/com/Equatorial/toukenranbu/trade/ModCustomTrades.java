@@ -1,3 +1,5 @@
+//如果有什么需要调整的村民交易在这边调，不要再问小判还有没有什么其他兑换了，想要什么自己加。
+//对于整合包：如果想把小判作为通用货币，请自行来这边添加以适配整合包的其他兑换条目。
 package com.Equatorial.toukenranbu.trade;
 
 import com.Equatorial.toukenranbu.item.ModItems;
@@ -231,6 +233,7 @@ public class ModCustomTrades {
                     new ItemStack(ModItems.HORSE_UMAGOU.get(), 1),
                     2, 10, 0.3f
             ));
+
             // ===== 附魔之瓶兑换 =====
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.SMALL_KOBAN.get(), 8),
@@ -247,6 +250,84 @@ public class ModCustomTrades {
                     new ItemStack(Items.EXPERIENCE_BOTTLE, 8),
                     8, 10, 0.15f
             ));
+
+            // ===== 新增：小判换绿宝石 / 钻石 / 下界合金碎片 =====
+            // 48个小判换2个绿宝石
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 48),
+                    new ItemStack(Items.EMERALD, 2),
+                    16, 5, 0.05f
+            ));
+            // 64个小判换1个钻石
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.SMALL_KOBAN.get(), 64),
+                    new ItemStack(Items.DIAMOND, 1),
+                    12, 10, 0.05f
+            ));
+            // 16个钻石换1个下界合金碎片
+            trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.DIAMOND, 16),
+                    new ItemStack(Items.NETHERITE_SCRAP, 1),
+                    8, 15, 0.1f
+            ));
         }
+    }
+
+    @SubscribeEvent
+    public static void addWanderingTraderTrades(net.minecraftforge.event.village.WandererTradesEvent event) {
+        // ===== 1. 普通交易 (Generic Trades) =====
+        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
+
+        // 1个绿宝石换8个小判
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(ModItems.SMALL_KOBAN.get(), 8),
+                16, 1, 0.05f
+        ));
+
+        // 1个绿宝石换2个一口团子
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(ModItems.A_BITE_OF_DANGO.get(), 2),
+                12, 1, 0.05f
+        ));
+
+        // 2个绿宝石换1个纯净灵力
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 2),
+                new ItemStack(ModItems.PURE_SPIRITUAL_ENERGY.get(), 1),
+                8, 2, 0.05f
+        ));
+
+        // ===== 2. 稀有交易 (Rare Trades) =====
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
+
+        // 5个绿宝石换1个金刀装 (稀有)
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 5),
+                new ItemStack(ModItems.GOLD_OMAMORI.get(), 1),
+                3, 10, 0.1f
+        ));
+
+        // 3个绿宝石换1个御守 (稀有)
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 3),
+                new ItemStack(ModItems.AMULET.get(), 1),
+                3, 10, 0.1f
+        ));
+
+        // 1个钻石换32个小判 (稀有，方便玩家快速获取小判)
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.DIAMOND, 1),
+                new ItemStack(ModItems.SMALL_KOBAN.get(), 32),
+                5, 5, 0.05f
+        ));
+
+        // 1个下界合金碎片换1个极御守 (超级稀有)
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(Items.NETHERITE_SCRAP, 1),
+                new ItemStack(ModItems.SUPREME_AMULET.get(), 1),
+                1, 30, 0.2f
+        ));
     }
 }
