@@ -162,16 +162,39 @@ public class ToukenContainerMenu extends AbstractContainerMenu {
     public ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
-        if (slot.hasItem()) {
+
+        if (slot != null && slot.hasItem()) {
             ItemStack stack = slot.getItem();
             itemstack = stack.copy();
-            if (index == 0) {
-                if (!this.moveItemStackTo(stack, 1, this.slots.size(), true)) return ItemStack.EMPTY;
-            } else {
-                if (!this.moveItemStackTo(stack, 0, 1, false)) return ItemStack.EMPTY;
+
+            // 1. 如果点击的是玩家背包（34 到 69 包含快捷栏）
+            if (index >= 34) {
+                // 优先尝试放进刀男的专属槽位（0~8，会自动校验 isItemValid）
+                // 如果放不进去，再尝试放进刀男的 25 格背包（9~33）
+                if (!this.moveItemStackTo(stack, 0, 9, false) &&
+                        !this.moveItemStackTo(stack, 9, 34, false)) {
+                    return ItemStack.EMPTY;
+                }
             }
-            if (stack.isEmpty()) slot.set(ItemStack.EMPTY);
-            else slot.setChanged();
+            // 2. 如果点击的是刀男身上的物品（0 到 33）
+            else {
+                // 直接尝试移回玩家背包（34 到结束）
+                if (!this.moveItemStackTo(stack, 34, this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
+            if (stack.isEmpty()) {
+                slot.set(ItemStack.EMPTY);
+            } else {
+                slot.setChanged();
+            }
+
+            if (stack.getCount() == itemstack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+
+            slot.onTake(player, stack);
         }
         return itemstack;
     }

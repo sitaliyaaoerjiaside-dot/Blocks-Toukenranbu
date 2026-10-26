@@ -29,7 +29,7 @@ public class BubbleRenderLayer<T extends ToukenDanshiEntity> extends GeoRenderLa
     private static final int TAIL_W = 12;
     private static final int TAIL_H = 6;
     private static final int PADDING = 6;
-    private static final float Y_OFFSET = 6.0f;
+    private static final float Y_OFFSET = 4.0f;
 
     public BubbleRenderLayer(GeoRenderer<T> renderer) {
         super(renderer);
@@ -69,7 +69,7 @@ public class BubbleRenderLayer<T extends ToukenDanshiEntity> extends GeoRenderLa
         int packedLight = 0xF000F0;
 
         // 设置文字放大倍数（1.3f 是放大 30%）
-        float textScale = 1.5f;
+        float textScale = 1.9f;
 
         // 气泡的宽度根据放大后的文字宽度来算
         int textW = (int) (font.width(text) * textScale);

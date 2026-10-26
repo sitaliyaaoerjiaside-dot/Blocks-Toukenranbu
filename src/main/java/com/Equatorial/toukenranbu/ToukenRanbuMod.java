@@ -9,6 +9,7 @@ import com.Equatorial.toukenranbu.entity.renderer.*;
 import com.Equatorial.toukenranbu.entity.renderer.uchigatana.*;
 import com.Equatorial.toukenranbu.event.AmuletDeathHandler;
 import com.Equatorial.toukenranbu.event.JikkoKillHandler;
+import com.Equatorial.toukenranbu.event.ToukenHealthCompat;
 import com.Equatorial.toukenranbu.item.ModCreativeModeTabs;
 import com.Equatorial.toukenranbu.item.ModItems;
 import com.Equatorial.toukenranbu.loot.ModLootModifiers;
@@ -60,6 +61,7 @@ public class ToukenRanbuMod
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(AmuletDeathHandler.class);
         MinecraftForge.EVENT_BUS.register(new JikkoKillHandler());
+        MinecraftForge.EVENT_BUS.register(ToukenHealthCompat.class);
 
         MinecraftForge.EVENT_BUS.register(com.Equatorial.toukenranbu.event.ToukenSpawnHandler.class);
 
